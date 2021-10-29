@@ -22,6 +22,7 @@ export declare type Shadows = {
     warning: string;
     focus: string;
     inset: string;
+    tooltip: string;
 };
 export declare type Gradients = {
     bubblegum: string;
@@ -51,6 +52,7 @@ export declare type Colors = {
     background: string;
     backgroundDisabled: string;
     backgroundAlt: string;
+    backgroundAlt2: string;
     text: string;
     textDisabled: string;
     textSubtle: string;
