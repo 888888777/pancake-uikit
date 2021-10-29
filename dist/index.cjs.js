@@ -3212,7 +3212,7 @@ var StyledMenuItem = styled__default['default'].a(templateObject_2$h || (templat
     "\n\n  ",
     "\n\n  &:hover {\n    background: ", ";\n    ", ";\n  }\n"])), function (_a) {
     var theme = _a.theme, $isActive = _a.$isActive;
-    return ($isActive ? theme.colors.secondary : theme.colors.textSubtle);
+    return ($isActive ? theme.colors.primary : theme.colors.primary);
 }, function (_a) {
     var $isActive = _a.$isActive;
     return ($isActive ? "600" : "400");
@@ -4462,8 +4462,8 @@ var getTextColor = function (_a) {
     if (disabled)
         return theme.colors.textDisabled;
     if ($isActive)
-        return theme.colors.secondary;
-    return theme.colors.textSubtle;
+        return theme.colors.primary;
+    return theme.colors.primary;
 };
 var DropdownMenuItem = styled__default['default'].button(templateObject_1$b || (templateObject_1$b = __makeTemplateObject(["\n  align-items: center;\n  border: 0;\n  background: transparent;\n  color: ", ";\n  cursor: ", ";\n  font-weight: ", ";\n  display: flex;\n  font-size: 16px;\n  height: 48px;\n  justify-content: space-between;\n  outline: 0;\n  padding-left: 16px;\n  padding-right: 16px;\n  width: 100%;\n\n  &:hover:not(:disabled) {\n    background-color: ", ";\n  }\n\n  &:active:not(:disabled) {\n    opacity: 0.85;\n    transform: translateY(1px);\n  }\n"], ["\n  align-items: center;\n  border: 0;\n  background: transparent;\n  color: ", ";\n  cursor: ", ";\n  font-weight: ", ";\n  display: flex;\n  font-size: 16px;\n  height: 48px;\n  justify-content: space-between;\n  outline: 0;\n  padding-left: 16px;\n  padding-right: 16px;\n  width: 100%;\n\n  &:hover:not(:disabled) {\n    background-color: ", ";\n  }\n\n  &:active:not(:disabled) {\n    opacity: 0.85;\n    transform: translateY(1px);\n  }\n"])), function (_a) {
     var theme = _a.theme, disabled = _a.disabled, $isActive = _a.$isActive;
@@ -4831,7 +4831,7 @@ var MenuItems = function (_a) {
         var statusColor = (_c = (_b = menuItems === null || menuItems === void 0 ? void 0 : menuItems.find(function (menuItem) { return menuItem.status !== undefined; })) === null || _b === void 0 ? void 0 : _b.status) === null || _c === void 0 ? void 0 : _c.color;
         var isActive = activeItem === href;
         return (React__default['default'].createElement(DropdownMenu, { key: label + "#" + href + "#" + icon, items: menuItems, py: 1, activeItem: activeSubItem },
-            React__default['default'].createElement(MenuItem$1, { href: isTouchDevice() && menuItems && menuItems.length > 0 ? "" : href, isActive: isActive, statusColor: statusColor }, label || React__default['default'].createElement(IconComponent, { iconName: icon, color: isActive ? "secondary" : "textSubtle" }))));
+            React__default['default'].createElement(MenuItem$1, { href: isTouchDevice() && menuItems && menuItems.length > 0 ? "" : href, isActive: isActive, statusColor: statusColor }, label || React__default['default'].createElement(IconComponent, { iconName: icon, color: isActive ? "primary" : "primary" }))));
     })));
 };
 
