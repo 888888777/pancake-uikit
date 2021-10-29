@@ -652,7 +652,7 @@ var Icon$1o = function (props) {
 
 var Icon$1n = function (_a) {
     var isDark = _a.isDark, props = __rest(_a, ["isDark"]);
-    var textColor = isDark ? "#FFFFFF" : "#000000";
+    var textColor = isDark && isDark ? "#FFFFFF" : "#000000" ;
     return (React__default.createElement(Svg, __assign({ viewBox: "0 0 121 40" }, props),
         React__default.createElement("g", { stroke: "none", "stroke-width": "1", fill: "none", "fill-rule": "evenodd" },
             React__default.createElement("g", { transform: "translate(-24.000000, -12.000000)" },
@@ -2138,7 +2138,7 @@ var Bunny = styled.div(templateObject_2$s || (templateObject_2$s = __makeTemplat
 var FallingBunnies = function (_a) {
     var _b = _a.count, count = _b === void 0 ? 30 : _b, _c = _a.size, size = _c === void 0 ? 32 : _c, _d = _a.iterations, iterations = _d === void 0 ? Infinity : _d, _e = _a.duration, duration = _e === void 0 ? 10 : _e;
     var bunnies = __spreadArray([], Array(count)).map(function (_, index) { return (React__default.createElement(Bunny, { key: String(index), position: Math.random() * 100, iterations: iterations, duration: duration },
-        React__default.createElement(Icon$1n, { width: size, height: size, isDark: false }))); });
+        React__default.createElement(Icon$1n, { width: size, height: size }))); });
     return React__default.createElement("div", null, bunnies);
 };
 var templateObject_1$P, templateObject_2$s;
