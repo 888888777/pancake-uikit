@@ -4640,7 +4640,7 @@ var DropdownMenu = function (_a) {
     }, [targetRef, tooltipRef, hideTimeout, isHoveringOverTooltip, setIsOpen, openMenuTimeout, isOpen, isBottomNav]);
     useEffect(function () {
         if (setMenuOpenByIndex && index !== undefined) {
-            setMenuOpenByIndex(function (prevValue) {
+            showItemsOnMobile && setMenuOpenByIndex(function (prevValue) {
                 var _a;
                 return (__assign(__assign({}, prevValue), (_a = {}, _a[index] = isOpen, _a)));
             });
