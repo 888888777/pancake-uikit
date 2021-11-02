@@ -3035,7 +3035,7 @@ var Icon = function (props) {
 
 var rotate = keyframes(templateObject_1$u || (templateObject_1$u = __makeTemplateObject(["\n  0%   {\n    transform: scale(0);\n    opacity: 1;\n  }\n  75%  {\n    transform: scale(.75)\n    opacity: 1;\n  }\n  100% {\n    transform: scale(1);\n    opacity: 0;\n  }\n"], ["\n  0%   {\n    transform: scale(0);\n    opacity: 1;\n  }\n  75%  {\n    transform: scale(.75)\n    opacity: 1;\n  }\n  100% {\n    transform: scale(1);\n    opacity: 0;\n  }\n"])));
 var Container = styled.div(templateObject_2$k || (templateObject_2$k = __makeTemplateObject(["\n  position: relative;\n"], ["\n  position: relative;\n"])));
-var RotatingPancakeIcon = styled(Icon)(templateObject_3$8 || (templateObject_3$8 = __makeTemplateObject(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  animation: ", " 1.4s infinite;\n"], ["\n  position: absolute;\n  top: 0;\n  left: 0;\n  animation: ", " 1.4s infinite;\n"])), rotate);
+var RotatingPancakeIcon = styled(Icon)(templateObject_3$8 || (templateObject_3$8 = __makeTemplateObject(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  margin-top: -64px;\n  margin-left: -30px;\n  animation: ", " 1.4s infinite;\n"], ["\n  position: absolute;\n  top: 0;\n  left: 0;\n  margin-top: -64px;\n  margin-left: -30px;\n  animation: ", " 1.4s infinite;\n"])), rotate);
 var Spinner = function (_a) {
     var _b = _a.size, size = _b === void 0 ? 128 : _b;
     return (React__default.createElement(Container, null,
