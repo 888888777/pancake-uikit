@@ -4819,19 +4819,14 @@ var LangSelector = function (_a) {
 var LangSelector$1 = React__default.memo(LangSelector, function (prev, next) { return prev.currentLang === next.currentLang; });
 
 var MenuItem = function (_a) {
-    _a.items; var isDark = _a.isDark, toggleTheme = _a.toggleTheme, currentLang = _a.currentLang, langs = _a.langs, setLang = _a.setLang, cakePriceUsd = _a.cakePriceUsd, buyCakeLabel = _a.buyCakeLabel, props = __rest(_a, ["items", "isDark", "toggleTheme", "currentLang", "langs", "setLang", "cakePriceUsd", "buyCakeLabel"]);
+    _a.items; var isDark = _a.isDark, toggleTheme = _a.toggleTheme, currentLang = _a.currentLang, langs = _a.langs, setLang = _a.setLang; _a.cakePriceUsd; _a.buyCakeLabel; var props = __rest(_a, ["items", "isDark", "toggleTheme", "currentLang", "langs", "setLang", "cakePriceUsd", "buyCakeLabel"]);
     return (React__default.createElement(StyledFooter, __assign({ p: ["40px 16px", null, "56px 40px 32px 40px"] }, props, { justifyContent: "center" }),
         React__default.createElement(Flex, { flexDirection: "column", width: ["100%", null, "1200px;"] },
             React__default.createElement(StyledToolsContainer, { order: [1, null, 3], flexDirection: ["column", null, "row"], justifyContent: "space-between" },
                 React__default.createElement(Flex, { order: [2, null, 1], alignItems: "center" },
                     React__default.createElement(ThemeSwitcher$1, { isDark: isDark, toggleTheme: toggleTheme }),
                     React__default.createElement(LangSelector$1, { currentLang: currentLang, langs: langs, setLang: setLang, color: darkColors.textSubtle, dropdownPosition: "top-right" })),
-                React__default.createElement(Flex, { order: [1, null, 2], mb: ["24px", null, "0"], justifyContent: "space-between", alignItems: "center" },
-                    React__default.createElement(Box, { mr: "20px" },
-                        React__default.createElement(CakePrice$1, { cakePriceUsd: cakePriceUsd, color: darkColors.textSubtle })),
-                    React__default.createElement(Button, { as: "a", 
-                        // href="https://pancakeswap.finance/swap?outputCurrency=0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82"
-                        href: "", target: "_blank", scale: "sm", endIcon: React__default.createElement(Icon$28, { color: lightColors.backgroundAlt }) }, buyCakeLabel))))));
+                React__default.createElement(Flex, { order: [1, null, 2], mb: ["24px", null, "0"], justifyContent: "space-between", alignItems: "center" })))));
 };
 
 var MenuItems = function (_a) {
@@ -5081,8 +5076,6 @@ var Menu$1 = function (_a) {
                 React__default.createElement(Logo$1, { isDark: isDark, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
                 !isMobile && React__default.createElement(MenuItems, { items: links, activeItem: activeItem, activeSubItem: activeSubItem, ml: "24px" })),
             React__default.createElement(Flex, { alignItems: "center" },
-                !isMobile && (React__default.createElement(Box, { mr: "12px" },
-                    React__default.createElement(CakePrice$1, { cakePriceUsd: cakePriceUsd }))),
                 React__default.createElement(Box, { mt: "4px" },
                     React__default.createElement(LangSelector$1, { currentLang: currentLang, langs: langs, setLang: setLang, buttonScale: "xs", color: "textSubtle", hideLanguage: true })),
                 globalMenu,
