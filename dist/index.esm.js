@@ -2671,7 +2671,7 @@ var additionalColors = {
     silver: "#B2B2B2",
     bronze: "#E7974D",
 };
-var lightColors = __assign(__assign(__assign({}, baseColors), additionalColors), { background: "#FAF9FA", backgroundDisabled: "#E9EAEB", backgroundAlt: "#000", backgroundAlt2: "rgba(255, 255, 255, 0.7)", cardBorder: "#E7E3EB", contrast: "#191326", dropdown: "#F6F6F6", dropdownDeep: "#EEEEEE", invertedContrast: "#FFFFFF", input: "#eeeaf4", inputSecondary: "#d7caec", inputBackground: "#FEFBF4", tertiary: "#EFF4F5", text: "#280D5F", textDisabled: "#BDC2C4", textSubtle: "#FAB126", textCommon: "#fff", textCommonSecond: "#0D0C33B2", textGrey: "#0A1127", disabled: "#E9EAEB", gradients: {
+var lightColors = __assign(__assign(__assign({}, baseColors), additionalColors), { background: "#FAF9FA", backgroundDisabled: "#E9EAEB", backgroundAlt: "#000", backgroundAlt2: "rgba(255, 255, 255, 0.7)", cardBorder: "#E7E3EB", contrast: "#191326", dropdown: "#F6F6F6", dropdownDeep: "#EEEEEE", invertedContrast: "#FFFFFF", input: "#eeeaf4", inputSecondary: "#d7caec", inputBackground: "#FEFBF4", tertiary: "grey", text: "#280D5F", textDisabled: "#BDC2C4", textSubtle: "#FAB126", textCommon: "#fff", textCommonSecond: "#0D0C33B2", textGrey: "#0A1127", disabled: "#E9EAEB", gradients: {
         bubblegum: "linear-gradient(139.73deg, #FFFCF7 0%, #C8DEFF 100%)",
         inverseBubblegum: "linear-gradient(139.73deg, #C8DEFF 0%, #FFFCF7 100%)",
         cardHeader: "linear-gradient(111.68deg, #F2ECF2 0%, #E8F2F6 100%)",
@@ -2680,7 +2680,7 @@ var lightColors = __assign(__assign(__assign({}, baseColors), additionalColors),
         violetAlt: "linear-gradient(180deg, #CBD7EF 0%, #9A9FD0 100%)",
         gold: "linear-gradient(180deg, #FFD800 0%, #FDAB32 100%)",
     } });
-var darkColors = __assign(__assign(__assign({}, baseColors), additionalColors), { secondary: "#9A6AFF", background: "#08060B", backgroundDisabled: "#3c3742", backgroundAlt: "#000", backgroundAlt2: "rgba(39, 38, 44, 0.7)", cardBorder: "#383241", contrast: "#FFFFFF", dropdown: "#1E1D20", dropdownDeep: "#100C18", invertedContrast: "#191326", input: "#372F47", inputSecondary: "#262130", inputBackground: "#363B42", primaryDark: "#0098A1", tertiary: "#353547", text: "#F4EEFF", textDisabled: "#666171", textSubtle: "#FAB126", textCommon: "#fff", textCommonSecond: "#FCFCFFB2", textGrey: "#FCFCFF", disabled: "#524B63", gradients: {
+var darkColors = __assign(__assign(__assign({}, baseColors), additionalColors), { secondary: "#9A6AFF", background: "#08060B", backgroundDisabled: "#3c3742", backgroundAlt: "#000", backgroundAlt2: "rgba(39, 38, 44, 0.7)", cardBorder: "#383241", contrast: "#FFFFFF", dropdown: "#1E1D20", dropdownDeep: "#100C18", invertedContrast: "#191326", input: "#372F47", inputSecondary: "#262130", inputBackground: "#363B42", primaryDark: "#0098A1", tertiary: "grey", text: "#F4EEFF", textDisabled: "#666171", textSubtle: "#FAB126", textCommon: "#fff", textCommonSecond: "#FCFCFFB2", textGrey: "#FCFCFF", disabled: "#524B63", gradients: {
         bubblegum: "linear-gradient(139.73deg, #4D4A43 0%, #0F2240 100%)",
         inverseBubblegum: "linear-gradient(139.73deg, #0F2240 0%, #4D4A43 100%)",
         cardHeader: "linear-gradient(166.77deg, #3B4155 0%, #3A3045 100%)",
@@ -3236,14 +3236,19 @@ var StyledMenuItemContainer = styled.div(templateObject_1$q || (templateObject_1
         $variant === "subMenu" &&
         "\n      &:before{\n        content: \"\";\n        position: absolute;\n        bottom: 0;\n        height: 4px;\n        width: 100%;\n        background-color: " + theme.colors.primary + ";\n        border-radius: 2px 2px 0 0;\n      }\n    ";
 });
-var StyledMenuItem = styled.a(templateObject_2$h || (templateObject_2$h = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  align-items: center;\n\n  color: ", ";\n  font-size: 16px;\n  font-weight: ", ";\n\n  ", "\n\n  ", "\n\n  &:hover {\n    background: ", ";\n    ", ";\n  }\n"], ["\n  position: relative;\n  display: flex;\n  align-items: center;\n\n  color: ", ";\n  font-size: 16px;\n  font-weight: ", ";\n\n  ",
+var StyledMenuItem = styled.a(templateObject_2$h || (templateObject_2$h = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  align-items: center;\n\n  color: ", ";\n  font-size: 16px;\n  /* font-weight: ", "; */\n\n  ", "\n\n  ", "\n\n  ", "\n\n  &:hover {\n    background: ", ";\n    ", ";\n  }\n"], ["\n  position: relative;\n  display: flex;\n  align-items: center;\n\n  color: ", ";\n  font-size: 16px;\n  /* font-weight: ", "; */\n\n  ",
+    "\n\n  ",
     "\n\n  ",
     "\n\n  &:hover {\n    background: ", ";\n    ", ";\n  }\n"])), function (_a) {
     var theme = _a.theme, $isActive = _a.$isActive;
-    return ($isActive ? theme.colors.primary : theme.colors.primary);
+    return ($isActive ? theme.colors.textCommon : theme.colors.textCommon);
 }, function (_a) {
     var $isActive = _a.$isActive;
     return ($isActive ? "600" : "400");
+}, function (_a) {
+    var $isActive = _a.$isActive, $isMain = _a.$isMain;
+    return $isMain && $isActive &&
+        "\n    &:before {\n      content: \"\";\n      position: absolute;\n      width: calc(100% - 32px);\n      height: 2px;\n      bottom: 8px;\n      background: linear-gradient(90deg, #9F9F9F 0%, #3C3C3C 100%);\n    }\n  ";
 }, function (_a) {
     var $statusColor = _a.$statusColor, theme = _a.theme;
     return $statusColor &&
@@ -3263,9 +3268,9 @@ var StyledMenuItem = styled.a(templateObject_2$h || (templateObject_2$h = __make
 var templateObject_1$q, templateObject_2$h;
 
 var MenuItem$1 = function (_a) {
-    var children = _a.children, href = _a.href, _b = _a.isActive, isActive = _b === void 0 ? false : _b, _c = _a.variant, variant = _c === void 0 ? "default" : _c, statusColor = _a.statusColor, props = __rest(_a, ["children", "href", "isActive", "variant", "statusColor"]);
+    var children = _a.children, href = _a.href, _b = _a.isActive, isActive = _b === void 0 ? false : _b, _c = _a.isMain, isMain = _c === void 0 ? false : _c, _d = _a.variant, variant = _d === void 0 ? "default" : _d, statusColor = _a.statusColor, props = __rest(_a, ["children", "href", "isActive", "isMain", "variant", "statusColor"]);
     return (React__default.createElement(StyledMenuItemContainer, { "$isActive": isActive, "$variant": variant },
-        React__default.createElement(StyledMenuItem, __assign({ as: Link$1, to: href, "$isActive": isActive, "$variant": variant, "$statusColor": statusColor }, props), children)));
+        React__default.createElement(StyledMenuItem, __assign({ "$isMain": isMain, as: Link$1, to: href, "$isActive": isActive, "$variant": variant, "$statusColor": statusColor }, props), children)));
 };
 
 var Icons$1 = IconModule;
@@ -4490,8 +4495,8 @@ var getTextColor = function (_a) {
     if (disabled)
         return theme.colors.textDisabled;
     if ($isActive)
-        return theme.colors.primary;
-    return theme.colors.primary;
+        return theme.colors.textCommon;
+    return theme.colors.textCommon;
 };
 var DropdownMenuItem = styled.button(templateObject_1$b || (templateObject_1$b = __makeTemplateObject(["\n  align-items: center;\n  border: 0;\n  background: transparent;\n  color: ", ";\n  cursor: ", ";\n  font-weight: ", ";\n  display: flex;\n  font-size: 16px;\n  height: 48px;\n  justify-content: space-between;\n  outline: 0;\n  padding-left: 16px;\n  padding-right: 16px;\n  width: 100%;\n\n  &:hover:not(:disabled) {\n    background-color: ", ";\n  }\n\n  &:active:not(:disabled) {\n    opacity: 0.85;\n    transform: translateY(1px);\n  }\n"], ["\n  align-items: center;\n  border: 0;\n  background: transparent;\n  color: ", ";\n  cursor: ", ";\n  font-weight: ", ";\n  display: flex;\n  font-size: 16px;\n  height: 48px;\n  justify-content: space-between;\n  outline: 0;\n  padding-left: 16px;\n  padding-right: 16px;\n  width: 100%;\n\n  &:hover:not(:disabled) {\n    background-color: ", ";\n  }\n\n  &:active:not(:disabled) {\n    opacity: 0.85;\n    transform: translateY(1px);\n  }\n"])), function (_a) {
     var theme = _a.theme, disabled = _a.disabled, $isActive = _a.$isActive;
@@ -4839,20 +4844,20 @@ var MenuItem = function (_a) {
 };
 
 var MenuItems = function (_a) {
-    var _b = _a.items, items = _b === void 0 ? [] : _b, activeItem = _a.activeItem, activeSubItem = _a.activeSubItem, props = __rest(_a, ["items", "activeItem", "activeSubItem"]);
+    var _b = _a.items, items = _b === void 0 ? [] : _b, activeItem = _a.activeItem, activeSubItem = _a.activeSubItem, isMain = _a.isMain, props = __rest(_a, ["items", "activeItem", "activeSubItem", "isMain"]);
     return (React__default.createElement(Flex, __assign({}, props), items.map(function (_a) {
         var _b, _c;
         var label = _a.label, _d = _a.items, menuItems = _d === void 0 ? [] : _d, href = _a.href, _e = _a.icon, icon = _e === void 0 ? "" : _e;
         var statusColor = (_c = (_b = menuItems === null || menuItems === void 0 ? void 0 : menuItems.find(function (menuItem) { return menuItem.status !== undefined; })) === null || _b === void 0 ? void 0 : _b.status) === null || _c === void 0 ? void 0 : _c.color;
         var isActive = activeItem === href;
         return (React__default.createElement(DropdownMenu, { key: label + "#" + href + "#" + icon, items: menuItems, py: 1, activeItem: activeSubItem },
-            React__default.createElement(MenuItem$1, { href: isTouchDevice() && menuItems && menuItems.length > 0 ? "" : href, isActive: isActive, statusColor: statusColor }, label || React__default.createElement(IconComponent, { iconName: icon, color: isActive ? "primary" : "primary" }))));
+            React__default.createElement(MenuItem$1, { href: isTouchDevice() && menuItems && menuItems.length > 0 ? "" : href, isMain: isMain, isActive: isActive, statusColor: statusColor }, label || React__default.createElement(IconComponent, { iconName: icon, color: isActive ? "textCommon" : "textCommon" }))));
     })));
 };
 
 var StyledLogoImage = styled.img(templateObject_1$8 || (templateObject_1$8 = __makeTemplateObject(["\n  width: 315px;\n  height: 56px;\n"], ["\n  width: 315px;\n  height: 56px;\n"])));
 var blink = keyframes(templateObject_2$5 || (templateObject_2$5 = __makeTemplateObject(["\n  0%,  100% { transform: scaleY(1); } \n  50% { transform:  scaleY(0.1); } \n"], ["\n  0%,  100% { transform: scaleY(1); } \n  50% { transform:  scaleY(0.1); } \n"])));
-var StyledLink = styled(Link$1)(templateObject_3$2 || (templateObject_3$2 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  .mobile-icon {\n    width: 121px;\n    ", " {\n      display: none;\n    }\n  }\n  .desktop-icon {\n    width: 121px;\n    display: none;\n    ", " {\n      display: block;\n    }\n  }\n  .right-eye {\n    animation-delay: 20ms;\n  }\n  &:hover {\n    .left-eye,\n    .right-eye {\n      transform-origin: center 60%;\n      animation-name: ", ";\n      animation-duration: 350ms;\n      animation-iteration-count: 1;\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  .mobile-icon {\n    width: 121px;\n    ", " {\n      display: none;\n    }\n  }\n  .desktop-icon {\n    width: 121px;\n    display: none;\n    ", " {\n      display: block;\n    }\n  }\n  .right-eye {\n    animation-delay: 20ms;\n  }\n  &:hover {\n    .left-eye,\n    .right-eye {\n      transform-origin: center 60%;\n      animation-name: ", ";\n      animation-duration: 350ms;\n      animation-iteration-count: 1;\n    }\n  }\n"])), function (_a) {
+var StyledLink = styled(Link$1)(templateObject_3$2 || (templateObject_3$2 = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  .mobile-icon {\n    width: 315px;\n    ", " {\n      display: none;\n    }\n  }\n  .desktop-icon {\n    width: 315px;\n    display: none;\n    ", " {\n      display: block;\n    }\n  }\n  .right-eye {\n    animation-delay: 20ms;\n  }\n  &:hover {\n    .left-eye,\n    .right-eye {\n      transform-origin: center 60%;\n      animation-name: ", ";\n      animation-duration: 350ms;\n      animation-iteration-count: 1;\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  .mobile-icon {\n    width: 315px;\n    ", " {\n      display: none;\n    }\n  }\n  .desktop-icon {\n    width: 315px;\n    display: none;\n    ", " {\n      display: block;\n    }\n  }\n  .right-eye {\n    animation-delay: 20ms;\n  }\n  &:hover {\n    .left-eye,\n    .right-eye {\n      transform-origin: center 60%;\n      animation-name: ", ";\n      animation-duration: 350ms;\n      animation-iteration-count: 1;\n    }\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.nav;
 }, function (_a) {
@@ -5084,7 +5089,7 @@ var Menu$1 = function (_a) {
         React__default.createElement(StyledNav, { showMenu: showMenu },
             React__default.createElement(Flex, null,
                 React__default.createElement(Logo$1, { imgUrl: imgUrl, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" }),
-                !isMobile && React__default.createElement(MenuItems, { items: links, activeItem: activeItem, activeSubItem: activeSubItem, ml: "24px" })),
+                !isMobile && React__default.createElement(MenuItems, { isMain: true, items: links, activeItem: activeItem, activeSubItem: activeSubItem, ml: "24px" })),
             React__default.createElement(Flex, { alignItems: "center" },
                 React__default.createElement(Box, { mt: "4px" },
                     React__default.createElement(LangSelector$1, { currentLang: currentLang, langs: langs, setLang: setLang, buttonScale: "xs", color: "textSubtle", hideLanguage: true })),
