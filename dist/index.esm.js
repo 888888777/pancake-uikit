@@ -4831,7 +4831,11 @@ var templateObject_1$9;
 
 var LangSelector = function (_a) {
     var currentLang = _a.currentLang, langs = _a.langs, color = _a.color, setLang = _a.setLang, _b = _a.dropdownPosition, dropdownPosition = _b === void 0 ? "bottom" : _b, _c = _a.buttonScale, buttonScale = _c === void 0 ? "md" : _c, _d = _a.hideLanguage, hideLanguage = _d === void 0 ? false : _d;
-    return (React__default.createElement(Dropdown, { position: dropdownPosition, target: React__default.createElement(Button, { mt: '5px', mb: '5px', scale: buttonScale, variant: "text", startIcon: React__default.createElement(Icon$1x, { color: color, width: "15px" }), endIcon: React__default.createElement(Icon$1F, { color: color, width: "13px" }) }, !hideLanguage && React__default.createElement(Text, { small: true, color: color }, currentLang === null || currentLang === void 0 ? void 0 : currentLang.toUpperCase())) }, langs.map(function (lang) { return (React__default.createElement(MenuButton, { key: lang.locale, fullWidth: true, onClick: function () { return setLang(lang); }, 
+    return (React__default.createElement(Dropdown, { position: dropdownPosition, target: React__default.createElement(Button
+        // mt='7px' 
+        , { 
+            // mt='7px' 
+            my: '7px', scale: buttonScale, variant: "text", startIcon: React__default.createElement(Icon$1x, { color: color, width: "15px" }), endIcon: React__default.createElement(Icon$1F, { color: color, width: "13px" }) }, !hideLanguage && React__default.createElement(Text, { small: true, color: color }, currentLang === null || currentLang === void 0 ? void 0 : currentLang.toUpperCase())) }, langs.map(function (lang) { return (React__default.createElement(MenuButton, { key: lang.locale, fullWidth: true, onClick: function () { return setLang(lang); }, 
         // Safari fix
         style: { minHeight: "32px", height: "auto" } }, lang.language)); })));
 };
@@ -5100,9 +5104,9 @@ var Menu$1 = function (_a) {
             React__default.createElement(Flex, null,
                 React__default.createElement(Logo$1, { imgUrl: imgUrl, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" })),
             React__default.createElement(Flex, { alignItems: "center" },
-                !isMobile && React__default.createElement(MenuItems, { isMain: true, items: links, activeItem: activeItem, activeSubItem: activeSubItem, ml: "24px" }),
+                !isMobile && React__default.createElement(MenuItems, { isMain: true, items: links, activeItem: activeItem, activeSubItem: activeSubItem, mr: "24px" }),
                 userMenu,
-                React__default.createElement(Box, { mt: "4px" },
+                React__default.createElement(Box, { ml: '16px' },
                     React__default.createElement(LangSelector$1, { currentLang: currentLang, langs: langs, setLang: setLang, buttonScale: "xs", color: "text" })),
                 globalMenu)),
         subLinks && (React__default.createElement(Flex, { justifyContent: "space-around" },
