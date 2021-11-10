@@ -182,7 +182,7 @@ var scales$8 = {
     XS: "xs",
 };
 var variants$6 = {
-    PRIMARY: "primary",
+    PRIMARY: "tertiary",
     SECONDARY: "secondary",
     TERTIARY: "tertiary",
     TEXT: "text",

@@ -7,7 +7,7 @@ export declare const scales: {
     readonly XS: "xs";
 };
 export declare const variants: {
-    readonly PRIMARY: "primary";
+    readonly PRIMARY: "tertiary";
     readonly SECONDARY: "secondary";
     readonly TERTIARY: "tertiary";
     readonly TEXT: "text";
