@@ -2,15 +2,18 @@ export declare const scaleVariants: {
     md: {
         height: string;
         padding: string;
+        fontWeight: string;
     };
     sm: {
         height: string;
         padding: string;
+        fontWeight: string;
     };
     xs: {
         height: string;
         fontSize: string;
         padding: string;
+        fontWeight: string;
     };
 };
 export declare const styleVariants: {

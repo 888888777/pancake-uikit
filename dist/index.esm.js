@@ -163,15 +163,18 @@ var scaleVariants$1 = (_a$4 = {},
     _a$4[scales$8.MD] = {
         height: "40px",
         padding: "0 24px",
+        fontWeight: "normal",
     },
     _a$4[scales$8.SM] = {
         height: "32px",
         padding: "0 16px",
+        fontWeight: "normal",
     },
     _a$4[scales$8.XS] = {
         height: "20px",
         fontSize: "12px",
         padding: "0 8px",
+        fontWeight: "normal",
     },
     _a$4);
 var styleVariants$2 = (_b$3 = {},
@@ -192,7 +195,7 @@ var styleVariants$2 = (_b$3 = {},
     _b$3[variants$6.TERTIARY] = {
         backgroundColor: "tertiary",
         boxShadow: "none",
-        color: "primary",
+        color: "text",
     },
     _b$3[variants$6.SUBTLE] = {
         backgroundColor: "textSubtle",
