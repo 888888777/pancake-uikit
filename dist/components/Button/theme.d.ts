@@ -14,9 +14,8 @@ export declare const scaleVariants: {
     };
 };
 export declare const styleVariants: {
-    tertiary: {
+    primary: {
         backgroundColor: string;
-        boxShadow: string;
         color: string;
     };
     secondary: {
@@ -28,6 +27,11 @@ export declare const styleVariants: {
         ":disabled": {
             backgroundColor: string;
         };
+    };
+    tertiary: {
+        backgroundColor: string;
+        boxShadow: string;
+        color: string;
     };
     subtle: {
         backgroundColor: string;

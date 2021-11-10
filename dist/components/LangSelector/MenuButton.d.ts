@@ -4,7 +4,7 @@ declare const MenuButton: import("styled-components").StyledComponent<{
     defaultProps: {
         isLoading: boolean;
         external: boolean;
-        variant: "tertiary";
+        variant: "primary";
         scale: "md";
         disabled: boolean;
     };
