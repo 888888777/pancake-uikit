@@ -25,6 +25,7 @@ export declare type Shadows = {
     tooltip: string;
 };
 export declare type Gradients = {
+    cardBorderGradients: string;
     bubblegum: string;
     inverseBubblegum: string;
     cardHeader: string;
