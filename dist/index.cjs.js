@@ -5086,7 +5086,7 @@ var MENU_HEIGHT = 136;
 var MOBILE_MENU_HEIGHT = 44;
 
 var Wrapper = styled__default['default'].div(templateObject_1$7 || (templateObject_1$7 = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n"], ["\n  position: relative;\n  width: 100%;\n"])));
-var StyledNav = styled__default['default'].nav(templateObject_2$4 || (templateObject_2$4 = __makeTemplateObject(["\n  position: fixed;\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  height: ", "px;\n  background-color: ", ";\n  border-bottom: 1px solid ", ";\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n\n  padding-left: 16px;\n  padding-right: 16px;\n"], ["\n  position: fixed;\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  height: ", "px;\n  background-color: ", ";\n  border-bottom: 1px solid ", ";\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n\n  padding-left: 16px;\n  padding-right: 16px;\n"])), function (_a) {
+var StyledNav = styled__default['default'].nav(templateObject_2$4 || (templateObject_2$4 = __makeTemplateObject(["\n  position: fixed;\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  height: ", "px;\n  background-color: ", ";\n  /* border-bottom: 1px solid ", "; */\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n\n  padding-left: 16px;\n  padding-right: 16px;\n"], ["\n  position: fixed;\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  height: ", "px;\n  background-color: ", ";\n  /* border-bottom: 1px solid ", "; */\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n\n  padding-left: 16px;\n  padding-right: 16px;\n"])), function (_a) {
     var showMenu = _a.showMenu;
     return (showMenu ? 0 : "-" + MENU_HEIGHT + "px");
 }, MENU_HEIGHT, function (_a) {
@@ -5146,7 +5146,7 @@ var Menu$1 = function (_a) {
                 React__default['default'].createElement(Box, { ml: '16px' },
                     React__default['default'].createElement(LangSelector$1, { currentLang: currentLang, langs: langs, setLang: setLang, buttonScale: "xs", color: "text" })),
                 globalMenu)),
-        subLinks && (React__default['default'].createElement(Flex, { justifyContent: "space-around" },
+        subLinks && (React__default['default'].createElement(Flex, { justifyContent: "space-around", background: "#000" },
             React__default['default'].createElement(SubMenuItems, { items: subLinksWithoutMobile, mt: MENU_HEIGHT + 1 + "px", activeItem: activeSubItem }),
             (subLinksMobileOnly === null || subLinksMobileOnly === void 0 ? void 0 : subLinksMobileOnly.length) > 0 && (React__default['default'].createElement(SubMenuItems, { items: subLinksMobileOnly, mt: MENU_HEIGHT + 1 + "px", activeItem: activeSubItem, isMobileOnly: true })))),
         React__default['default'].createElement(BodyWrapper, { mt: !subLinks ? MENU_HEIGHT + 1 + "px" : "0" },
