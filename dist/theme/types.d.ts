@@ -43,6 +43,9 @@ export declare type Colors = {
     success: string;
     failure: string;
     warning: string;
+    greyPrimary: string;
+    deepGreyPrimary: string;
+    disableGrey: string;
     cardBorder: string;
     cardBackground: string;
     contrast: string;

@@ -28,7 +28,7 @@ export declare const styleVariants: {
         boxShadow: string;
         color: string;
         ":disabled": {
-            backgroundColor: string;
+            color: string;
         };
     };
     tertiary: {
@@ -54,6 +54,11 @@ export declare const styleVariants: {
         boxShadow: string;
     };
     light: {
+        backgroundColor: string;
+        color: string;
+        boxShadow: string;
+    };
+    buttonmenuitem: {
         backgroundColor: string;
         color: string;
         boxShadow: string;

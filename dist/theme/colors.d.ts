@@ -7,6 +7,9 @@ export declare const baseColors: {
     secondary: string;
     success: string;
     warning: string;
+    greyPrimary: string;
+    deepGreyPrimary: string;
+    disableGrey: string;
 };
 export declare const additionalColors: {
     binance: string;
