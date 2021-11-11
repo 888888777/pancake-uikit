@@ -2704,10 +2704,10 @@ var PancakeToggle = function (_a) {
 
 var baseColors = {
     failure: "#ED4B9E",
-    primary: "#5F97EC",
-    primaryBright: "#53DEE9",
-    primaryDark: "#0098A1",
-    secondary: "#FFBE00",
+    primary: "#fff",
+    primaryBright: "#fff",
+    primaryDark: "#fff",
+    secondary: "#6d6d6d",
     success: "#31D0AA",
     warning: "#FFB237",
 };
