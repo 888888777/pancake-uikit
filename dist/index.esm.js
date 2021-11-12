@@ -3042,7 +3042,7 @@ var lightColors = __assign(__assign(__assign({}, baseColors), additionalColors),
         cardBorderGradients: "linear-gradient(225deg, #444 0%, #181818 100%)",
         bubblegum: "linear-gradient(139.73deg, #242424 0%, #242424 100%)",
         inverseBubblegum: "linear-gradient(139.73deg, #C8DEFF 0%, #FFFCF7 100%)",
-        cardHeader: "linear-gradient(111.68deg, #242424 0%, #242424 100%)",
+        cardHeader: "linear-gradient(111.68deg, #000 0%, #000 100%)",
         blue: "linear-gradient(180deg, #A7E8F1 0%, #94E1F2 100%)",
         violet: "linear-gradient(180deg, #E2C9FB 0%, #CDB8FA 100%)",
         violetAlt: "linear-gradient(180deg, #CBD7EF 0%, #9A9FD0 100%)",
@@ -3052,7 +3052,7 @@ var darkColors = __assign(__assign(__assign({}, baseColors), additionalColors), 
         cardBorderGradients: "linear-gradient(225deg, #444 0%, #181818 100%)",
         bubblegum: "linear-gradient(139.73deg, #242424 0%, #242424 100%)",
         inverseBubblegum: "linear-gradient(139.73deg, #0F2240 0%, #4D4A43 100%)",
-        cardHeader: "linear-gradient(111.68deg, #242424 0%, #242424 100%)",
+        cardHeader: "linear-gradient(111.68deg, #000 0%, #000 100%)",
         blue: "linear-gradient(180deg, #00707F 0%, #19778C 100%)",
         violet: "linear-gradient(180deg, #6C4999 0%, #6D4DB2 100%)",
         violetAlt: "linear-gradient(180deg, #434575 0%, #66578D 100%)",
@@ -3393,7 +3393,7 @@ var Slider = function (_a) {
 var Icon = function (props) {
     return (React__default.createElement(Svg, __assign({ viewBox: "0 0 24 24" }, props),
         React__default.createElement("g", { stroke: "none", "stroke-width": "1", fill: "none", "fill-rule": "evenodd" },
-            React__default.createElement("circle", { fill: "#FAB126", cx: "12", cy: "12", r: "12" }))));
+            React__default.createElement("circle", { fill: "#666", cx: "12", cy: "12", r: "12" }))));
 };
 
 var rotate = keyframes(templateObject_1$u || (templateObject_1$u = __makeTemplateObject(["\n  0%   {\n    transform: scale(0);\n    opacity: 1;\n  }\n  75%  {\n    transform: scale(.75)\n    opacity: 1;\n  }\n  100% {\n    transform: scale(1);\n    opacity: 0;\n  }\n"], ["\n  0%   {\n    transform: scale(0);\n    opacity: 1;\n  }\n  75%  {\n    transform: scale(.75)\n    opacity: 1;\n  }\n  100% {\n    transform: scale(1);\n    opacity: 0;\n  }\n"])));
@@ -5189,7 +5189,9 @@ var MenuItem = function (_a) {
                             var label = _a.label, href = _a.href, _b = _a.isHighlighted, isHighlighted = _b === void 0 ? false : _b;
                             return (React__default.createElement(StyledListItem, { key: label }, href ? (React__default.createElement(Link, { href: href, target: "_blank", rel: "noreferrer noopener", color: isHighlighted ? baseColors.warning : darkColors.text, bold: false }, label)) : (React__default.createElement(StyledText, null, label))));
                         })));
-                })))));
+                }),
+                React__default.createElement("ul", null),
+                React__default.createElement("ul", null)))));
 };
 
 var MenuItems = function (_a) {
@@ -5405,7 +5407,7 @@ var LangSelector = function (_a) {
 };
 var LangSelector$1 = React__default.memo(LangSelector, function (prev, next) { return prev.currentLang === next.currentLang; });
 
-var Wrapper = styled.div(templateObject_1$7 || (templateObject_1$7 = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n"], ["\n  position: relative;\n  width: 100%;\n"])));
+var Wrapper = styled.div(templateObject_1$7 || (templateObject_1$7 = __makeTemplateObject(["\n  position: relative;\n  width: 1200px;\n"], ["\n  position: relative;\n  width: 1200px;\n"])));
 var StyledNav = styled.nav(templateObject_2$4 || (templateObject_2$4 = __makeTemplateObject(["\n  position: fixed;\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  height: ", "px;\n  background-color: ", ";\n  /* border-bottom: 1px solid ", "; */\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n\n  padding-left: 16px;\n  padding-right: 16px;\n"], ["\n  position: fixed;\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  height: ", "px;\n  background-color: ", ";\n  /* border-bottom: 1px solid ", "; */\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n\n  padding-left: 16px;\n  padding-right: 16px;\n"])), function (_a) {
     var showMenu = _a.showMenu;
     return (showMenu ? 0 : "-" + MENU_HEIGHT + "px");
