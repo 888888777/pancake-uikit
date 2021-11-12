@@ -5441,8 +5441,8 @@ var LangSelector = function (_a) {
 };
 var LangSelector$1 = React__default['default'].memo(LangSelector, function (prev, next) { return prev.currentLang === next.currentLang; });
 
-var Wrapper = styled__default['default'].div(templateObject_1$7 || (templateObject_1$7 = __makeTemplateObject(["\n  position: relative;\n  width: 1200px;\n"], ["\n  position: relative;\n  width: 1200px;\n"])));
-var StyledNav = styled__default['default'].nav(templateObject_2$4 || (templateObject_2$4 = __makeTemplateObject(["\n  position: fixed;\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  height: ", "px;\n  background-color: ", ";\n  /* border-bottom: 1px solid ", "; */\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n\n  padding-left: 16px;\n  padding-right: 16px;\n"], ["\n  position: fixed;\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  height: ", "px;\n  background-color: ", ";\n  /* border-bottom: 1px solid ", "; */\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n\n  padding-left: 16px;\n  padding-right: 16px;\n"])), function (_a) {
+var Wrapper = styled__default['default'].div(templateObject_1$7 || (templateObject_1$7 = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n"], ["\n  position: relative;\n  width: 100%;\n"])));
+var StyledNav = styled__default['default'].nav(templateObject_2$4 || (templateObject_2$4 = __makeTemplateObject(["\n  position: fixed;\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  height: ", "px;\n  background-color: ", ";\n  /* border-bottom: 1px solid ", "; */\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n\n  padding-left: 16px;\n  padding-right: 16px;\n\n  ", " {\n    width: 1200px;\n    left: 50%;\n    transform: translate3d(-50%, 0, 0);\n  }\n"], ["\n  position: fixed;\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  height: ", "px;\n  background-color: ", ";\n  /* border-bottom: 1px solid ", "; */\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n\n  padding-left: 16px;\n  padding-right: 16px;\n\n  ", " {\n    width: 1200px;\n    left: 50%;\n    transform: translate3d(-50%, 0, 0);\n  }\n"])), function (_a) {
     var showMenu = _a.showMenu;
     return (showMenu ? 0 : "-" + MENU_HEIGHT + "px");
 }, MENU_HEIGHT, function (_a) {
@@ -5451,6 +5451,9 @@ var StyledNav = styled__default['default'].nav(templateObject_2$4 || (templateOb
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.cardBorder;
+}, function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.xxl;
 });
 var BodyWrapper = styled__default['default'](Box)(templateObject_3$1 || (templateObject_3$1 = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n"], ["\n  position: relative;\n  display: flex;\n"])));
 var Inner = styled__default['default'].div(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  flex-grow: 1;\n  transition: margin-top 0.2s, margin-left 0.2s cubic-bezier(0.4, 0, 0.2, 1);\n  transform: translate3d(0, 0, 0);\n  max-width: 100%;\n"], ["\n  flex-grow: 1;\n  transition: margin-top 0.2s, margin-left 0.2s cubic-bezier(0.4, 0, 0.2, 1);\n  transform: translate3d(0, 0, 0);\n  max-width: 100%;\n"])));
@@ -5493,6 +5496,7 @@ var Menu$1 = function (_a) {
     var subLinksWithoutMobile = subLinks === null || subLinks === void 0 ? void 0 : subLinks.filter(function (subLink) { return !subLink.isMobileOnly; });
     var subLinksMobileOnly = subLinks === null || subLinks === void 0 ? void 0 : subLinks.filter(function (subLink) { return subLink.isMobileOnly; });
     return (React__default['default'].createElement(Wrapper, null,
+        React__default['default'].createElement(Flex, { maxWidth: "1200px", justifyContent: "" }),
         React__default['default'].createElement(StyledNav, { showMenu: showMenu },
             React__default['default'].createElement(Flex, null,
                 React__default['default'].createElement(Logo$1, { imgUrl: imgUrl, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" })),
