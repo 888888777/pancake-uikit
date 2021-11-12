@@ -101,9 +101,12 @@ var getThemeValue = function (path, fallback) {
     };
 };
 
-var rotate$1 = styled.keyframes(templateObject_1$19 || (templateObject_1$19 = __makeTemplateObject(["\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n"], ["\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n"])));
-var spinStyle = styled.css(templateObject_2$y || (templateObject_2$y = __makeTemplateObject(["\n  animation: ", " 2s linear infinite;\n"], ["\n  animation: ", " 2s linear infinite;\n"])), rotate$1);
-var Svg = styled__default['default'].svg(templateObject_3$f || (templateObject_3$f = __makeTemplateObject(["\n  align-self: center; // Safari fix\n  fill: ", ";\n  flex-shrink: 0;\n  ", "\n  ", "\n"], ["\n  align-self: center; // Safari fix\n  fill: ", ";\n  flex-shrink: 0;\n  ", "\n  ", "\n"])), function (_a) {
+var rotate$1 = styled.keyframes(templateObject_1$1a || (templateObject_1$1a = __makeTemplateObject(["\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n"], ["\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n"])));
+var spinStyle = styled.css(templateObject_2$z || (templateObject_2$z = __makeTemplateObject(["\n  animation: ", " 2s linear infinite;\n"], ["\n  animation: ", " 2s linear infinite;\n"])), rotate$1);
+var Svg = styled__default['default'].svg(templateObject_3$g || (templateObject_3$g = __makeTemplateObject(["\n  /* align-self: center; // Safari fix */\n  align-self: ", ";\n  fill: ", ";\n  flex-shrink: 0;\n  ", "\n  ", "\n"], ["\n  /* align-self: center; // Safari fix */\n  align-self: ", ";\n  fill: ", ";\n  flex-shrink: 0;\n  ", "\n  ", "\n"])), function (_a) {
+    var alignSelf = _a.alignSelf;
+    return alignSelf || 'center';
+}, function (_a) {
     var theme = _a.theme, color = _a.color;
     return getThemeValue("colors." + color, color)(theme);
 }, function (_a) {
@@ -116,7 +119,7 @@ Svg.defaultProps = {
     xmlns: "http://www.w3.org/2000/svg",
     spin: false,
 };
-var templateObject_1$19, templateObject_2$y, templateObject_3$f;
+var templateObject_1$1a, templateObject_2$z, templateObject_3$g;
 
 var Icon$2l = function (props) {
     return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 24 24" }, props),
@@ -146,7 +149,7 @@ var getFontSize = function (_a) {
     var fontSize = _a.fontSize, small = _a.small;
     return small ? "14px" : fontSize || "16px";
 };
-var Text = styled__default['default'].div(templateObject_1$18 || (templateObject_1$18 = __makeTemplateObject(["\n  color: ", ";\n  font-size: ", ";\n  font-weight: ", ";\n  line-height: 1.5;\n  ", "\n  ", "\n\n  ", "\n  ", "\n  ", "\n"], ["\n  color: ", ";\n  font-size: ", ";\n  font-weight: ", ";\n  line-height: 1.5;\n  ", "\n  ",
+var Text = styled__default['default'].div(templateObject_1$19 || (templateObject_1$19 = __makeTemplateObject(["\n  color: ", ";\n  font-size: ", ";\n  font-weight: ", ";\n  line-height: 1.5;\n  ", "\n  ", "\n\n  ", "\n  ", "\n  ", "\n"], ["\n  color: ", ";\n  font-size: ", ";\n  font-weight: ", ";\n  line-height: 1.5;\n  ", "\n  ",
     "\n\n  ", "\n  ", "\n  ", "\n"])), getColor, getFontSize, function (_a) {
     var bold = _a.bold;
     return (bold ? 600 : 400);
@@ -163,13 +166,13 @@ Text.defaultProps = {
     small: false,
     ellipsis: false,
 };
-var templateObject_1$18;
+var templateObject_1$19;
 
-var TooltipText = styled__default['default'](Text)(templateObject_1$17 || (templateObject_1$17 = __makeTemplateObject(["\n  text-decoration: ", ";\n  text-underline-offset: 0.1em;\n"], ["\n  text-decoration: ", ";\n  text-underline-offset: 0.1em;\n"])), function (_a) {
+var TooltipText = styled__default['default'](Text)(templateObject_1$18 || (templateObject_1$18 = __makeTemplateObject(["\n  text-decoration: ", ";\n  text-underline-offset: 0.1em;\n"], ["\n  text-decoration: ", ";\n  text-underline-offset: 0.1em;\n"])), function (_a) {
     var theme = _a.theme;
     return "underline dotted " + theme.colors.textSubtle;
 });
-var templateObject_1$17;
+var templateObject_1$18;
 
 var getExternalLinkProps = function () { return ({
     target: "_blank",
@@ -277,7 +280,7 @@ var getOpacity = function (_a) {
     var _b = _a.$isLoading, $isLoading = _b === void 0 ? false : _b;
     return $isLoading ? ".5" : "1";
 };
-var StyledButton = styled__default['default'].button(templateObject_1$16 || (templateObject_1$16 = __makeTemplateObject(["\n  align-items: center;\n  border: 0;\n  border-radius: 20px;\n  box-shadow: 0px -1px 0px 0px rgba(14, 14, 44, 0.4) inset;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  letter-spacing: 0.03em;\n  line-height: 1;\n  opacity: ", ";\n  outline: 0;\n  transition: background-color 0.2s, opacity 0.2s;\n\n  &:hover:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled):not(:active) {\n    opacity: 0.65;\n  }\n\n  &:active:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled) {\n    opacity: 0.85;\n    transform: translateY(1px);\n    box-shadow: none;\n  }\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  border: 0;\n  border-radius: 20px;\n  box-shadow: 0px -1px 0px 0px rgba(14, 14, 44, 0.4) inset;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  letter-spacing: 0.03em;\n  line-height: 1;\n  opacity: ", ";\n  outline: 0;\n  transition: background-color 0.2s, opacity 0.2s;\n\n  &:hover:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled):not(:active) {\n    opacity: 0.65;\n  }\n\n  &:active:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled) {\n    opacity: 0.85;\n    transform: translateY(1px);\n    box-shadow: none;\n  }\n\n  ", "\n  ",
+var StyledButton = styled__default['default'].button(templateObject_1$17 || (templateObject_1$17 = __makeTemplateObject(["\n  align-items: center;\n  border: 0;\n  border-radius: 20px;\n  box-shadow: 0px -1px 0px 0px rgba(14, 14, 44, 0.4) inset;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  letter-spacing: 0.03em;\n  line-height: 1;\n  opacity: ", ";\n  outline: 0;\n  transition: background-color 0.2s, opacity 0.2s;\n\n  &:hover:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled):not(:active) {\n    opacity: 0.65;\n  }\n\n  &:active:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled) {\n    opacity: 0.85;\n    transform: translateY(1px);\n    box-shadow: none;\n  }\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"], ["\n  align-items: center;\n  border: 0;\n  border-radius: 20px;\n  box-shadow: 0px -1px 0px 0px rgba(14, 14, 44, 0.4) inset;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  letter-spacing: 0.03em;\n  line-height: 1;\n  opacity: ", ";\n  outline: 0;\n  transition: background-color 0.2s, opacity 0.2s;\n\n  &:hover:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled):not(:active) {\n    opacity: 0.65;\n  }\n\n  &:active:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled) {\n    opacity: 0.85;\n    transform: translateY(1px);\n    box-shadow: none;\n  }\n\n  ", "\n  ",
     "\n  ",
     "\n  ", "\n  ", "\n"])), getOpacity, getDisabledStyles, styledSystem.variant({
     prop: "scale",
@@ -285,7 +288,7 @@ var StyledButton = styled__default['default'].button(templateObject_1$16 || (tem
 }), styledSystem.variant({
     variants: styleVariants$2,
 }), styledSystem.layout, styledSystem.space);
-var templateObject_1$16;
+var templateObject_1$17;
 
 var Button = function (props) {
     var startIcon = props.startIcon, endIcon = props.endIcon, external = props.external, className = props.className, isLoading = props.isLoading, disabled = props.disabled, children = props.children, rest = __rest(props, ["startIcon", "endIcon", "external", "className", "isLoading", "disabled", "children"]);
@@ -318,11 +321,11 @@ Button.defaultProps = {
     disabled: false,
 };
 
-var IconButton = styled__default['default'](Button)(templateObject_1$15 || (templateObject_1$15 = __makeTemplateObject(["\n  padding: 0;\n  width: ", ";\n"], ["\n  padding: 0;\n  width: ", ";\n"])), function (_a) {
+var IconButton = styled__default['default'](Button)(templateObject_1$16 || (templateObject_1$16 = __makeTemplateObject(["\n  padding: 0;\n  width: ", ";\n"], ["\n  padding: 0;\n  width: ", ";\n"])), function (_a) {
     var scale = _a.scale;
     return (scale === "sm" ? "32px" : "48px");
 });
-var templateObject_1$15;
+var templateObject_1$16;
 
 var Icon$2h = function (props) { return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 24 24" }, props),
     React__default['default'].createElement("path", { fillRule: "evenodd", clipRule: "evenodd", d: "M12 14.2619C9.69993 14.2619 7.57238 14.6197 5.98327 15.2327C5.19201 15.5379 4.48317 15.9258 3.95486 16.4076C3.42611 16.8898 3 17.544 3 18.3476C3 20.0992 4.33478 21.5622 6.07901 21.7223L6.21662 21.735C10.0641 22.0883 13.9359 22.0883 17.7834 21.735L17.921 21.7223C19.6652 21.5622 21 20.0992 21 18.3476C21 17.544 20.5739 16.8898 20.0451 16.4076C19.5168 15.9258 18.808 15.5379 18.0167 15.2327C16.4276 14.6197 14.3001 14.2619 12 14.2619ZM5 18.3476C5 18.2991 5.0216 18.1416 5.3025 17.8854C5.58383 17.6289 6.04656 17.3519 6.70302 17.0987C8.00934 16.5948 9.88179 16.2619 12 16.2619C14.1182 16.2619 15.9907 16.5948 17.297 17.0987C17.9534 17.3519 18.4162 17.6289 18.6975 17.8854C18.9784 18.1416 19 18.2991 19 18.3476C19 19.0655 18.453 19.6651 17.7381 19.7307L17.6005 19.7434C13.8747 20.0855 10.1253 20.0855 6.39952 19.7434L6.26191 19.7307C5.54705 19.6651 5 19.0655 5 18.3476Z" }),
@@ -723,21 +726,195 @@ var Icon$1s = function (props) {
 };
 
 var Icon$1r = function (_a) {
-    var isDark = _a.isDark, props = __rest(_a, ["isDark"]);
-    var textColor = isDark && isDark ? "#FFFFFF" : "#000000" ;
-    return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 121 40" }, props),
-        React__default['default'].createElement("g", { stroke: "none", "stroke-width": "1", fill: "none", "fill-rule": "evenodd" },
-            React__default['default'].createElement("g", { transform: "translate(-24.000000, -12.000000)" },
-                React__default['default'].createElement("g", { transform: "translate(24.000000, 11.998268)" },
-                    React__default['default'].createElement("g", null,
-                        React__default['default'].createElement("path", { d: "M61.7517241,39.1683989 L61.7517241,35.608875 L52.7393103,35.608875 L52.7393103,32.0493512 L61.7517241,32.0493512 L61.7517241,22.8180587 L58.9786737,20.0017322 L52.0075332,20.0017322 L49.2344828,22.8180587 L49.2344828,36.3129567 L52.0075332,39.1683989 L61.7517241,39.1683989 Z M58.4137931,29.1683989 L52.5724138,29.1683989 L52.5724138,24.1683989 L58.4137931,24.1683989 L58.4137931,29.1683989 Z M66.843635,40.0017322 L70.3046131,33.2862255 L73.6134603,40.0017322 L77.1885366,40.0017322 L72.1682167,29.6995344 L77.6068966,19.1683989 L73.9937876,19.1683989 L70.4187113,26.1891559 L67.0337987,19.1683989 L63.4206897,19.1683989 L68.5931404,29.775847 L63.4206897,40.0017322 L66.843635,40.0017322 Z M104.002228,39.1683989 L106.813793,36.3724379 L106.813793,23.1969504 L104.002228,20.4009894 L97.8013793,20.4009894 L97.8013793,11.6683989 L94.2965517,11.6683989 L94.2965517,39.1683989 L104.002228,39.1683989 Z M103.475862,35.8350655 L97.6344828,35.8350655 L97.6344828,24.1683989 L103.475862,24.1683989 L103.475862,35.8350655 Z M121,39.1683989 L121,35.6015959 L111.987586,35.6015959 L111.987586,23.5685352 L121,23.5685352 L121,20.0017322 L111.294324,20.0017322 L108.482759,22.8630137 L108.482759,36.3071173 L111.294324,39.1683989 L121,39.1683989 Z", id: "exabc", fill: textColor, "fill-rule": "nonzero" }),
-                        React__default['default'].createElement("g", null,
-                            React__default['default'].createElement("path", { d: "M33.5725347,13.0223116 C33.704459,14.160504 33.7460178,14.9276771 33.6972112,15.323831 C33.6607609,15.6196914 33.5206249,16.0335227 33.2768033,16.5653251 C36.2065417,17.784156 39.0015028,16.6608569 41.0529539,13.1023932 C42.3212389,16.6804628 39.0141857,21.8498746 35.1649406,22.2746683 C32.8978812,22.5262768 30.7893573,22.0230597 28.7283941,21.0394991 C25.519633,19.5037067 22.2474576,19.1213924 19.0133308,20.9872168 C16.6321257,22.359627 15.2433536,24.4607217 15.1450615,27.2970362 C15.0055501,31.2182083 18.591626,34.1982991 22.5328218,33.5415028 C25.4276823,33.0578916 27.6566933,31.4175346 29.6605836,29.3131722 C32.1654465,26.6990575 36.2905436,26.2317845 39.5975968,28.3328792 C35.095185,27.6630123 32.1432516,29.764107 29.5939987,33.0709621 C24.967929,39.0703554 15.569937,39.3252316 10.5697233,33.6885467 C7.89047113,30.6790471 7.13267083,27.1532599 8.31851733,23.2549613 C9.61533877,18.9841514 12.6655643,16.5628276 16.7589542,15.8308755 C19.4730841,15.3472642 26.5612232,15.6734703 27.2888906,15.798199 C29.7271686,16.0334694 31.9213017,15.5890699 33.4305609,13.2919165 L33.5725347,13.0223116 Z", fill: "#FAB126", "fill-rule": "nonzero" }),
-                            React__default['default'].createElement("path", { d: "M31.7050356,25.3620641 C31.0513647,25.6061429 30.4766228,25.8604434 29.7408498,26.0575214 C27.9925581,26.5258042 26.5074001,27.1876396 25.41266,28.7323574 C24.4607121,30.0697754 23.1628898,30.7585456 21.5636173,30.4977491 C19.8025137,30.2135478 18.8124879,28.779167 18.9774922,26.9335302 C19.1551891,24.9274032 21.0368728,23.2890662 23.1025997,23.3893726 C23.6293871,23.4216857 24.1504636,23.5216161 24.6542748,23.6869481 C25.8093049,24.0580816 26.923084,24.6298277 28.1003262,24.8371275 C29.2267979,25.0377402 31.3782662,25.0878049 32.5364695,25.0878049 L31.7050356,25.3620641 Z", fill: "#FAB126", "fill-rule": "nonzero" }),
-                            React__default['default'].createElement("path", { d: "M6.34839084,31.2092758 C6.66231724,30.6009286 9.03891207,34.5703492 9.40774262,35.3126151 C9.77651862,36.0548265 8.88771445,38.2151005 8.88771445,38.2151005 C11.3908204,38.2151005 11.6628889,39.9891895 11.6628889,39.9891895 L11.6628889,39.9891895 L0,39.9891895 C0.0906531165,38.4323093 2.83572224,38.3481515 3.13361965,38.0789718 C3.17617643,38.0405175 3.26577504,37.8852675 3.38902169,37.6456033 L3.55221153,37.3195597 C4.38113518,35.6282772 6.09724972,31.6959535 6.34839084,31.2092758 Z", fill: textColor }),
-                            React__default['default'].createElement("path", { d: "M42.2555436,39.9294622 C42.2555436,39.9294622 42.1309797,38.0050356 39.9452863,38.1073519 L36.0861627,30.1939116 L33.4565011,31.1830724 C33.4565011,31.1830724 31.646481,32.1381277 32.7734495,34.986318 C33.9004693,37.8345083 34.0029116,38.0050356 34.0029116,38.0050356 L32.8874202,38.0050356 C32.8874202,38.0050356 30.6655849,38.0458256 31.019647,39.9294622 L42.2555436,39.9294622 Z", id: "Fill-3", fill: textColor }),
-                            React__default['default'].createElement("path", { d: "M23.0401162,0.119447893 L23.0434272,0.126123495 L23.0693806,0.178452565 C23.2682165,0.57937118 24.4515335,2.96555333 25.7340286,5.55658013 L26.0368449,6.16844669 C27.5051682,9.13575607 29.0119737,12.1874103 29.2595932,12.7136902 C29.3110416,12.8230151 29.3471885,12.9259618 29.3693629,13.022786 L25.3868695,13.0217138 L22.5265023,5.70678684 L22.0398695,0.00202013247 L22.0400614,0.001 L22.9238572,0.000420611395 C22.9969768,0.0649228462 23.0401162,0.119447893 23.0401162,0.119447893 Z M21.3490614,0.001 L21.075924,5.67051309 L18.5692298,12.4733159 C18.5692298,12.4733159 18.473283,12.7252019 18.3604407,13.021443 L14.3710614,13.0222327 C14.4156564,12.9381738 14.4616691,12.8512913 14.5086746,12.7623456 C14.7330575,12.3377583 15.7733463,10.0781439 16.9017554,7.61580608 L17.1536678,7.06594633 C17.6170818,6.05418488 18.086174,5.0288442 18.5117304,4.10030362 C19.4338951,2.08819079 20.1483212,0.525307151 20.1483212,0.525307151 C20.1483212,0.525307151 20.2719849,0.208179367 20.5084158,3.376327e-13 L21.3490614,0.001 Z", fill: textColor }))),
-                    React__default['default'].createElement("path", { d: "M89.1067073,20.0017322 L92,22.8208379 L92,39.0017322 L81.8932927,39.0017322 L79,36.1826265 L79,29.5017322 L81.8932927,26.7212444 L88.3932927,26.7212444 L88.3932927,23.5159598 L79.1189024,23.5159598 L79.1189024,20.0017322 L89.1067073,20.0017322 Z M88.5333333,29.9147757 L82.4666667,29.9147757 L82.4666667,35.6973844 L88.5333333,35.6973844 L88.5333333,29.9147757 Z", fill: "#FAB126" }))))));
+    _a.isDark; var props = __rest(_a, ["isDark"]);
+    return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 2173 381" }, props),
+        React__default['default'].createElement("defs", null,
+            React__default['default'].createElement("polygon", { id: "path-1", points: "273.783 26.908 273.783 97.45 273.248 97.56 147.546 124.357 21.953 101.435 -2.84217094e-14 97.45 -2.84217094e-14 26.908 21.953 22.927 147.546 0 273.248 26.802" }),
+            React__default['default'].createElement("linearGradient", { x1: "6.66951564e-05%", y1: "50.0002429%", x2: "99.9996839%", y2: "50.0002429%", id: "linearGradient-3" },
+                React__default['default'].createElement("stop", { "stop-color": "#565454", offset: "0%" }),
+                React__default['default'].createElement("stop", { "stop-color": "#AAAAAA", offset: "100%" })),
+            React__default['default'].createElement("polygon", { id: "path-4", points: "21.952 22.926 -2.84217094e-14 26.908 -2.84217094e-14 97.45 21.952 101.434 147.546 124.357 273.248 97.56 273.781 97.45 273.781 26.908 273.248 26.802 147.546 0" }),
+            React__default['default'].createElement("linearGradient", { x1: "-0.00032084038%", y1: "50.0002798%", x2: "100.000038%", y2: "50.0002798%", id: "linearGradient-6" },
+                React__default['default'].createElement("stop", { "stop-color": "#565454", offset: "0%" }),
+                React__default['default'].createElement("stop", { "stop-color": "#AAAAAA", offset: "100%" })),
+            React__default['default'].createElement("polygon", { id: "path-7", points: "376.993 76.466 376.993 119.46 270.608 105.09 147.546 88.519 23.836 114.453 -2.84217094e-14 119.46 -2.84217094e-14 72.591 29.165 58.225 147.546 0 263.29 38.582 341.206 64.52 341.206 64.573" }),
+            React__default['default'].createElement("linearGradient", { x1: "4.84359126e-05%", y1: "50.0002464%", x2: "99.9999867%", y2: "50.0002464%", id: "linearGradient-9" },
+                React__default['default'].createElement("stop", { "stop-color": "#565454", offset: "0%" }),
+                React__default['default'].createElement("stop", { "stop-color": "#AAAAAA", offset: "100%" })),
+            React__default['default'].createElement("polygon", { id: "path-10", points: "29.164 58.225 -2.84217094e-14 72.592 -2.84217094e-14 119.46 23.835 114.453 147.546 88.519 270.607 105.09 376.992 119.46 376.992 76.466 341.206 64.573 341.206 64.52 263.289 38.582 147.546 0" }),
+            React__default['default'].createElement("linearGradient", { x1: "-0.000216821577%", y1: "50.0003487%", x2: "99.9999867%", y2: "50.0003487%", id: "linearGradient-12" },
+                React__default['default'].createElement("stop", { "stop-color": "#565454", offset: "0%" }),
+                React__default['default'].createElement("stop", { "stop-color": "#AAAAAA", offset: "100%" })),
+            React__default['default'].createElement("path", { d: "M147.546,6.673 C101.43,12.753 59.837,22.764 25.343,35.676 L25.343,35.676 C16.411,39.013 7.908,42.565 2.84217094e-14,46.277 L2.84217094e-14,46.277 L2.84217094e-14,59.727 L23.835,54.724 L147.546,28.79 L270.607,45.361 L376.989,59.727 L376.989,16.737 L341.206,4.844 L341.206,4.791 C317.153,2.151 292.027,0.538 266.088,0.105 L266.088,0.105 C261.46,0.057 256.832,0 252.15,0 L252.15,0 C215.561,0 180.426,2.367 147.546,6.673", id: "path-13" }),
+            React__default['default'].createElement("linearGradient", { x1: "-0.000216823303%", y1: "49.9999617%", x2: "99.9997868%", y2: "49.9999617%", id: "linearGradient-15" },
+                React__default['default'].createElement("stop", { "stop-color": "#565454", offset: "0%" }),
+                React__default['default'].createElement("stop", { "stop-color": "#AAAAAA", offset: "100%" })),
+            React__default['default'].createElement("path", { d: "M147.546,6.673 C101.43,12.753 59.837,22.764 25.343,35.676 L25.343,35.676 C16.411,39.013 7.908,42.565 0,46.277 L0,46.277 L0,59.727 L23.835,54.724 L147.546,28.79 L270.607,45.361 L376.989,59.727 L376.989,16.737 L341.206,4.844 L341.206,4.791 C317.153,2.151 292.027,0.538 266.088,0.105 L266.088,0.105 C261.46,0.057 256.832,0 252.15,0 L252.15,0 C215.561,0 180.426,2.367 147.546,6.673", id: "path-16" }),
+            React__default['default'].createElement("linearGradient", { x1: "80.4024777%", y1: "50.0001659%", x2: "-1.56407381%", y2: "50.0001659%", id: "linearGradient-18" },
+                React__default['default'].createElement("stop", { "stop-color": "#565454", offset: "0%" }),
+                React__default['default'].createElement("stop", { "stop-color": "#AAAAAA", offset: "100%" })),
+            React__default['default'].createElement("polygon", { id: "path-19", points: "270.607 14.367 147.546 30.937 23.835 5.004 2.84217094e-14 0 2.84217094e-14 46.819 29.164 61.183 147.546 119.404 263.289 80.875 341.206 54.937 376.989 42.998 376.989 0" }),
+            React__default['default'].createElement("linearGradient", { x1: "-0.000216823303%", y1: "49.9997274%", x2: "99.9997868%", y2: "49.9997274%", id: "linearGradient-21" },
+                React__default['default'].createElement("stop", { "stop-color": "#565454", offset: "0%" }),
+                React__default['default'].createElement("stop", { "stop-color": "#AAAAAA", offset: "100%" })),
+            React__default['default'].createElement("polygon", { id: "path-22", points: "270.607 14.367 147.546 30.937 23.835 5.004 2.84217094e-14 0 2.84217094e-14 46.819 29.164 61.183 147.546 119.404 263.289 80.875 341.206 54.937 376.989 42.998 376.989 0" }),
+            React__default['default'].createElement("linearGradient", { x1: "-0.000216823303%", y1: "49.9998232%", x2: "99.9997706%", y2: "49.9998232%", id: "linearGradient-24" },
+                React__default['default'].createElement("stop", { "stop-color": "#565454", offset: "0%" }),
+                React__default['default'].createElement("stop", { "stop-color": "#AAAAAA", offset: "100%" })),
+            React__default['default'].createElement("path", { d: "M270.607,14.367 L147.546,30.937 L23.835,5.004 L2.84217094e-14,0 L2.84217094e-14,13.45 C7.908,17.166 16.411,20.715 25.343,24.052 L25.343,24.052 C59.837,36.964 101.43,46.974 147.546,53.057 L147.546,53.057 C180.426,57.361 215.561,59.733 252.15,59.733 L252.15,59.733 C256.832,59.733 261.46,59.671 266.088,59.622 L266.088,59.622 C292.027,59.19 317.153,57.577 341.206,54.937 L341.206,54.937 L376.989,42.998 L376.989,0 L270.607,14.367 Z", id: "path-25" }),
+            React__default['default'].createElement("linearGradient", { x1: "-0.000216823303%", y1: "49.999208%", x2: "99.9997868%", y2: "49.999208%", id: "linearGradient-27" },
+                React__default['default'].createElement("stop", { "stop-color": "#565454", offset: "0%" }),
+                React__default['default'].createElement("stop", { "stop-color": "#AAAAAA", offset: "100%" })),
+            React__default['default'].createElement("path", { d: "M270.607,14.367 L147.546,30.937 L23.835,5.004 L2.84217094e-14,0 L2.84217094e-14,13.45 C7.908,17.166 16.411,20.715 25.343,24.052 L25.343,24.052 C59.837,36.964 101.43,46.974 147.546,53.057 L147.546,53.057 C180.426,57.361 215.561,59.733 252.15,59.733 L252.15,59.733 C256.832,59.733 261.46,59.671 266.088,59.622 L266.088,59.622 C292.027,59.19 317.153,57.577 341.206,54.937 L341.206,54.937 L376.989,42.998 L376.989,0 L270.607,14.367 Z", id: "path-28" }),
+            React__default['default'].createElement("linearGradient", { x1: "80.4024777%", y1: "49.9993997%", x2: "-1.56407381%", y2: "49.9993997%", id: "linearGradient-30" },
+                React__default['default'].createElement("stop", { "stop-color": "#565454", offset: "0%" }),
+                React__default['default'].createElement("stop", { "stop-color": "#AAAAAA", offset: "100%" })),
+            React__default['default'].createElement("path", { d: "M5.329,58.225 C3.822,70.33 2.53,82.762 1.508,95.405 L1.508,95.405 C0.916,101.699 0.432,108.052 0,114.453 L0,114.453 L123.711,88.519 L246.772,105.09 C245.59,89.648 244.082,74.523 242.253,59.834 L242.253,59.834 C241.394,52.626 240.477,45.577 239.454,38.582 L239.454,38.582 L123.711,-5.68434189e-14 L5.329,58.225 Z", id: "path-31" }),
+            React__default['default'].createElement("linearGradient", { x1: "4.86684065e-05%", y1: "50.0001422%", x2: "100.000025%", y2: "50.0001422%", id: "linearGradient-33" },
+                React__default['default'].createElement("stop", { "stop-color": "#565454", offset: "0%" }),
+                React__default['default'].createElement("stop", { "stop-color": "#AAAAAA", offset: "100%" })),
+            React__default['default'].createElement("path", { d: "M123.713,0 L239.453,38.581 L239.83175,41.2068613 C240.704344,47.3407344 241.500375,53.526 242.252,59.833 L242.252,59.833 L242.613519,62.7765781 C244.280618,76.5400756 245.6678,90.6764667 246.771,105.089 L246.771,105.089 L123.71,88.518 L-5.68434189e-14,114.452 L-5.68434189e-14,114.437 L0.219592593,111.255551 C0.520185185,106.999088 0.848037037,102.764773 1.21974074,98.5558657 L1.507,95.404 L1.74761402,92.490183 C2.72904142,80.8503195 3.93692308,69.3978462 5.328,58.224 L5.328,58.224 L123.708,0 L123.713,0 Z", id: "path-34" }),
+            React__default['default'].createElement("linearGradient", { x1: "-0.000381284673%", y1: "50.0001422%", x2: "100%", y2: "50.0001422%", id: "linearGradient-36" },
+                React__default['default'].createElement("stop", { "stop-color": "#565454", offset: "0%" }),
+                React__default['default'].createElement("stop", { "stop-color": "#AAAAAA", offset: "100%" })),
+            React__default['default'].createElement("path", { d: "M1.508,19.048 C2.53,31.695 3.822,44.065 5.329,56.179 L5.329,56.179 L123.711,114.4 L239.454,75.871 C240.477,68.878 241.394,61.826 242.253,54.618 L242.253,54.618 C244.082,39.925 245.59,24.809 246.772,9.363 L246.772,9.363 L123.711,25.933 L0,0 C0.432,6.401 0.916,12.753 1.508,19.048", id: "path-37" }),
+            React__default['default'].createElement("linearGradient", { x1: "4.86684065e-05%", y1: "49.9994878%", x2: "100.000025%", y2: "49.9994878%", id: "linearGradient-39" },
+                React__default['default'].createElement("stop", { "stop-color": "#565454", offset: "0%" }),
+                React__default['default'].createElement("stop", { "stop-color": "#AAAAAA", offset: "100%" })),
+            React__default['default'].createElement("path", { d: "M0,0 L123.711,25.933 L246.772,9.363 L246.531255,12.4477724 C245.387507,26.8225867 243.960067,40.9045333 242.253,54.618 L242.253,54.618 L241.928063,57.313877 C241.163094,63.5880781 240.349125,69.752125 239.454,75.871 L239.454,75.871 L123.714,114.399 L123.709,114.399 L5.329,56.179 L4.956761,53.1451545 C3.60854167,42.0014097 2.44483333,30.6410833 1.508,19.048 C0.916,12.753 0.432,6.401 0,0 L0,0.015 L0,0 Z", id: "path-40" }),
+            React__default['default'].createElement("linearGradient", { x1: "-0.000381284673%", y1: "50.0000248%", x2: "100%", y2: "50.0000248%", id: "linearGradient-42" },
+                React__default['default'].createElement("stop", { "stop-color": "#565454", offset: "0%" }),
+                React__default['default'].createElement("stop", { "stop-color": "#AAAAAA", offset: "100%" })),
+            React__default['default'].createElement("path", { d: "M0.647,22.926 C0.22,35.843 0,48.914 0,62.152 L0,62.152 C0,75.443 0.22,88.518 0.647,101.434 L0.647,101.434 L126.241,124.357 L251.943,97.56 C252.322,85.882 252.476,74.095 252.476,62.152 L252.476,62.152 C252.476,50.263 252.322,38.423 251.943,26.802 L251.943,26.802 L126.241,0 L0.647,22.926 Z", id: "path-43" }),
+            React__default['default'].createElement("linearGradient", { x1: "-2.44775741e-05%", y1: "50.0002429%", x2: "100.000053%", y2: "50.0002429%", id: "linearGradient-45" },
+                React__default['default'].createElement("stop", { "stop-color": "#565454", offset: "0%" }),
+                React__default['default'].createElement("stop", { "stop-color": "#AAAAAA", offset: "100%" })),
+            React__default['default'].createElement("path", { d: "M126.241,0 L251.943,26.802 L252.050021,30.2947 C252.35126,40.79149 252.476,51.4519 252.476,62.152 L252.476,62.152 L252.470199,66.1272867 C252.439,76.7129877 252.279889,87.1795556 251.943,97.56 L251.943,97.56 L126.241,124.357 L0.647,101.434 L0.535687453,97.9074696 C0.181818182,86.1389421 0,74.2347273 0,62.152 L0,62.152 L0.006587,58.185597 C0.04607,46.30134 0.2627,34.5513 0.647,22.926 L0.647,22.926 L126.241,0 Z", id: "path-46" }),
+            React__default['default'].createElement("linearGradient", { x1: "-4.86380938e-05%", y1: "50.0003288%", x2: "99.999633%", y2: "50.0003288%", id: "linearGradient-48" },
+                React__default['default'].createElement("stop", { "stop-color": "#565454", offset: "0%" }),
+                React__default['default'].createElement("stop", { "stop-color": "#AAAAAA", offset: "100%" })),
+            React__default['default'].createElement("polygon", { id: "path-49", points: "0 0 125.699 26.801 126.237 26.907 126.237 97.453 125.699 97.56 0 124.357" }),
+            React__default['default'].createElement("linearGradient", { x1: "0.000547699961%", y1: "50.0000466%", x2: "99.9999308%", y2: "50.0000466%", id: "linearGradient-51" },
+                React__default['default'].createElement("stop", { "stop-color": "#565454", offset: "0%" }),
+                React__default['default'].createElement("stop", { "stop-color": "#AAAAAA", offset: "100%" })),
+            React__default['default'].createElement("polygon", { id: "path-52", points: "0 0 115.745 38.582 193.665 64.516 193.665 64.569 229.448 76.462 229.448 119.456 123.067 105.09 0 88.515" }),
+            React__default['default'].createElement("polygon", { id: "path-54", points: "229.448 0 229.448 42.998 193.665 54.94 115.745 80.879 0 119.403 0 30.942 123.067 14.367" })),
+        React__default['default'].createElement("g", { id: "\u9875\u9762-1", stroke: "none", "stroke-width": "1", fill: "none", "fill-rule": "evenodd" },
+            React__default['default'].createElement("g", { id: "\u7F16\u7EC4", transform: "translate(0.987000, 0.609000)" },
+                React__default['default'].createElement("g", { transform: "translate(491.535500, 75.645800)", fill: "#FFFFFF" },
+                    React__default['default'].createElement("polygon", { id: "Fill-1", points: "0 14.5392 103.679 14.5392 103.679 37.6582 27.648 37.6582 27.648 86.5182 92 86.5182 92 109.8762 27.648 109.8762 27.648 166.6012 106.301 166.6012 106.301 189.9592 0 189.9592" }),
+                    React__default['default'].createElement("path", { d: "M211.4063,156.1144 L211.4063,123.9384 C172.5563,128.7054 159.4473,138.4774 159.4473,153.2554 C159.4473,166.1254 168.2653,171.3684 179.9443,171.3684 C191.3853,171.3684 200.6803,165.8854 211.4063,156.1144 M132.9913,155.1614 C132.9913,127.0364 156.8253,112.4974 211.4063,106.5394 C211.1683,91.2854 205.6853,77.9384 186.3803,77.9384 C172.5563,77.9384 159.6853,84.1354 148.4833,91.2854 L138.2353,72.6944 C151.8203,64.1144 170.1733,55.5344 191.1463,55.5344 C223.8003,55.5344 238.8153,76.2694 238.8153,111.0674 L238.8153,189.9594 L216.4113,189.9594 L214.0273,174.9434 L213.3123,174.9434 C201.3953,185.1924 187.3333,193.0574 171.6023,193.0574 C148.9603,193.0574 132.9913,178.2804 132.9913,155.1614", id: "Fill-3" }),
+                    React__default['default'].createElement("path", { d: "M277.6631,58.8703 L300.0671,58.8703 L302.2121,76.9853 L302.9271,76.9853 C315.0821,65.3063 328.4301,55.5343 346.3051,55.5343 C374.1911,55.5343 386.5851,74.1243 386.5851,107.4933 L386.5851,189.9593 L359.1761,189.9593 L359.1761,110.8293 C359.1761,88.1863 352.5021,79.1303 337.0101,79.1303 C324.8541,79.1303 316.5131,85.3273 304.8341,97.0053 L304.8341,189.9593 L277.6631,189.9593 L277.6631,58.8703 Z", id: "Fill-5" }),
+                    React__default['default'].createElement("path", { d: "M496.9345,102.7257 C496.9345,85.0887 485.9705,74.8397 472.1465,74.8397 C458.3235,74.8397 447.3595,84.8507 447.3595,102.7257 C447.3595,120.1237 458.5615,130.8507 472.1465,130.8507 C485.7325,130.8507 496.9345,120.1237 496.9345,102.7257 M513.3795,207.3587 C513.3795,196.3947 504.7995,193.0577 488.8305,193.0577 L469.0485,193.0577 C462.8515,193.0577 456.8925,192.3427 451.4115,191.1507 C443.5455,196.8717 440.2085,203.5447 440.2085,210.2177 C440.2085,223.0887 453.5565,230.7157 475.2455,230.7157 C498.1255,230.7157 513.3795,219.5137 513.3795,207.3587 M416.8515,214.2697 C416.8515,203.3067 423.7635,193.0577 435.9185,185.6687 L435.9185,184.4777 C429.2455,180.4257 424.0015,173.5137 424.0015,162.7887 C424.0015,152.5387 431.3905,143.7207 438.5405,138.4777 L438.5405,137.5237 C429.7215,130.6127 421.3795,118.2177 421.3795,102.7257 C421.3795,72.9327 444.9755,55.5347 472.1465,55.5347 C479.5355,55.5347 486.2085,56.9637 491.2135,58.8707 L537.6915,58.8707 L537.6915,79.3687 L512.6645,79.3687 C517.6695,84.6127 521.2455,93.4307 521.2455,103.4407 C521.2455,132.0417 499.5565,148.4877 472.1465,148.4877 C466.1885,148.4877 459.5145,147.0577 453.7945,144.4357 C449.5035,148.2487 446.6445,152.0627 446.6445,158.2587 C446.6445,166.1247 451.8875,171.1297 468.5725,171.1297 L492.6445,171.1297 C523.6285,171.1297 539.8355,180.6637 539.8355,203.0677 C539.8355,228.3317 513.1415,248.8297 471.1935,248.8297 C439.7325,248.8297 416.8515,237.1507 416.8515,214.2697", id: "Fill-7" }),
+                    React__default['default'].createElement("path", { d: "M644.4629,112.7365 C644.4629,90.0935 634.2149,76.9855 615.1479,76.9855 C598.7009,76.9855 584.1629,89.6165 581.5409,112.7365 L644.4629,112.7365 Z M554.8469,124.6535 C554.8469,81.9895 583.9249,55.5345 614.6709,55.5345 C649.4689,55.5345 668.0599,80.5595 668.0599,117.7415 C668.0599,122.9855 667.5829,128.4665 666.8669,131.5655 L581.7789,131.5655 C583.9249,156.5905 599.6549,171.6065 622.2979,171.6065 C633.9769,171.6065 643.9859,168.0315 653.5209,161.8355 L663.0539,179.2335 C650.8989,187.3375 635.8829,193.0575 618.7229,193.0575 C583.2089,193.0575 554.8469,167.7935 554.8469,124.6535 L554.8469,124.6535 Z", id: "Fill-9" }),
+                    React__default['default'].createElement("path", { d: "M698.8007,159.213 L698.8007,0 L725.9727,0 L725.9727,160.644 C725.9727,168.031 729.3087,170.653 732.6457,170.653 C733.8377,170.653 734.7907,170.653 737.1737,170.177 L740.7487,190.912 C737.4127,192.105 732.6457,193.058 725.9727,193.058 C706.1897,193.058 698.8007,180.426 698.8007,159.213", id: "Fill-11" }),
+                    React__default['default'].createElement("path", { d: "M769.8232,58.8703 L792.2272,58.8703 L794.3732,77.2243 L795.0882,77.2243 C806.2902,65.3063 819.3982,55.5343 835.6062,55.5343 C855.1502,55.5343 866.1142,64.5913 871.8342,79.6063 C884.7052,65.7823 898.0522,55.5343 914.4972,55.5343 C941.9072,55.5343 954.7772,74.1243 954.7772,107.4933 L954.7772,189.9593 L927.3682,189.9593 L927.3682,110.8293 C927.3682,88.1863 920.2182,79.1303 905.4402,79.1303 C896.3842,79.1303 886.8492,85.0893 875.8862,97.0053 L875.8862,189.9593 L848.4762,189.9593 L848.4762,110.8293 C848.4762,88.1863 841.5642,79.1303 826.5492,79.1303 C817.7302,79.1303 807.9582,85.0893 796.9952,97.0053 L796.9952,189.9593 L769.8232,189.9593 L769.8232,58.8703 Z", id: "Fill-13" }),
+                    React__default['default'].createElement("path", { d: "M1065.123,156.1144 L1065.123,123.9384 C1026.273,128.7054 1013.164,138.4774 1013.164,153.2554 C1013.164,166.1254 1021.983,171.3684 1033.662,171.3684 C1045.102,171.3684 1054.397,165.8854 1065.123,156.1144 M986.708,155.1614 C986.708,127.0364 1010.543,112.4974 1065.123,106.5394 C1064.885,91.2854 1059.402,77.9384 1040.097,77.9384 C1026.273,77.9384 1013.402,84.1354 1002.201,91.2854 L991.952,72.6944 C1005.537,64.1144 1023.89,55.5344 1044.864,55.5344 C1077.517,55.5344 1092.532,76.2694 1092.532,111.0674 L1092.532,189.9594 L1070.128,189.9594 L1067.745,174.9434 L1067.029,174.9434 C1055.112,185.1924 1041.051,193.0574 1025.32,193.0574 C1002.678,193.0574 986.708,178.2804 986.708,155.1614", id: "Fill-15" }),
+                    React__default['default'].createElement("path", { d: "M1131.3798,58.8703 L1153.7838,58.8703 L1155.9298,82.4673 L1156.6448,82.4673 C1165.9398,65.5443 1179.7638,55.5343 1193.8258,55.5343 C1200.2618,55.5343 1204.5518,56.4873 1208.6038,58.3933 L1203.5978,82.2283 C1199.0688,80.7983 1195.7328,80.0833 1190.4888,80.0833 C1179.7638,80.0833 1166.8938,87.4723 1158.5518,108.2083 L1158.5518,189.9593 L1131.3798,189.9593 L1131.3798,58.8703 Z", id: "Fill-17" }),
+                    React__default['default'].createElement("polygon", { id: "Fill-19", points: "1228.8593 0.0001 1255.5533 0.0001 1255.5533 122.5091 1256.2693 122.5091 1307.7513 58.8701 1338.0203 58.8701 1293.4503 112.0201 1343.0253 189.9591 1313.2333 189.9591 1277.7193 130.6121 1255.5533 156.1141 1255.5533 189.9591 1228.8593 189.9591" }),
+                    React__default['default'].createElement("path", { d: "M1446.2265,112.7365 C1446.2265,90.0935 1435.9775,76.9855 1416.9105,76.9855 C1400.4645,76.9855 1385.9255,89.6165 1383.3035,112.7365 L1446.2265,112.7365 Z M1356.6095,124.6535 C1356.6095,81.9895 1385.6875,55.5345 1416.4335,55.5345 C1451.2315,55.5345 1469.8225,80.5595 1469.8225,117.7415 C1469.8225,122.9855 1469.3455,128.4665 1468.6295,131.5655 L1383.5415,131.5655 C1385.6875,156.5905 1401.4175,171.6065 1424.0605,171.6065 C1435.7395,171.6065 1445.7485,168.0315 1455.2835,161.8355 L1464.8165,179.2335 C1452.6615,187.3375 1437.6455,193.0575 1420.4855,193.0575 C1384.9715,193.0575 1356.6095,167.7935 1356.6095,124.6535 L1356.6095,124.6535 Z", id: "Fill-21" }),
+                    React__default['default'].createElement("path", { d: "M1504.8535,147.0577 L1504.8535,80.7977 L1485.7865,80.7977 L1485.7865,60.3007 L1506.0445,58.8707 L1509.1435,22.6427 L1532.2625,22.6427 L1532.2625,58.8707 L1566.3455,58.8707 L1566.3455,80.7977 L1532.2625,80.7977 L1532.2625,147.2957 C1532.2625,163.0267 1537.7445,171.1297 1551.3305,171.1297 C1555.8585,171.1297 1561.5785,169.7007 1565.3915,168.0317 L1570.3975,188.2907 C1563.0085,190.6737 1554.1895,193.0577 1544.6565,193.0577 C1515.1015,193.0577 1504.8535,174.7047 1504.8535,147.0577", id: "Fill-23" }),
+                    React__default['default'].createElement("path", { d: "M1581.1211,174.9435 L1593.9911,157.3055 C1605.6701,166.6015 1617.1101,172.3215 1631.1731,172.3215 C1646.9031,172.3215 1654.2921,164.6945 1654.2921,154.6845 C1654.2921,142.7665 1639.5151,137.5235 1625.2141,132.0425 C1607.8151,125.3685 1587.7951,116.0735 1587.7951,93.9075 C1587.7951,71.9795 1605.4321,55.5345 1634.2711,55.5345 C1651.9081,55.5345 1666.2091,62.6845 1676.9341,71.0265 L1664.0641,87.9485 C1655.0071,81.2745 1645.7121,76.5075 1634.7481,76.5075 C1620.4471,76.5075 1613.7731,83.6585 1613.7731,92.7155 C1613.7731,103.9175 1627.3591,108.2085 1641.6601,113.4515 C1660.0121,120.3635 1680.2711,128.4665 1680.2711,153.2555 C1680.2711,175.1815 1662.8721,193.0575 1630.4581,193.0575 C1612.3441,193.0575 1593.7531,185.4305 1581.1211,174.9435", id: "Fill-25" })),
+                React__default['default'].createElement("g", { transform: "translate(-0.000000, 127.850000)" },
+                    React__default['default'].createElement("mask", { id: "mask-2", fill: "white" },
+                        React__default['default'].createElement("use", { href: "#path-1" })),
+                    React__default['default'].createElement("g", { id: "Clip-29" }),
+                    React__default['default'].createElement("polygon", { id: "Fill-28", fill: "url(#linearGradient-3)", mask: "url(#mask-2)", points: "273.783 26.908 273.783 97.45 273.248 97.56 147.546 124.357 21.953 101.435 -2.84217094e-14 97.45 -2.84217094e-14 26.908 21.953 22.927 147.546 0 273.248 26.802" })),
+                React__default['default'].createElement("g", { transform: "translate(0.001000, 127.850000)" },
+                    React__default['default'].createElement("mask", { id: "mask-5", fill: "white" },
+                        React__default['default'].createElement("use", { href: "#path-4" })),
+                    React__default['default'].createElement("g", { id: "Clip-31" }),
+                    React__default['default'].createElement("polygon", { id: "Fill-30", fill: "url(#linearGradient-6)", mask: "url(#mask-5)", points: "21.952 22.926 -2.84217094e-14 26.908 -2.84217094e-14 97.45 21.952 101.434 147.546 124.357 273.248 97.56 273.781 97.45 273.781 26.908 273.248 26.802 147.546 0" })),
+                React__default['default'].createElement("g", { transform: "translate(-0.000000, 0.000000)" },
+                    React__default['default'].createElement("mask", { id: "mask-8", fill: "white" },
+                        React__default['default'].createElement("use", { href: "#path-7" })),
+                    React__default['default'].createElement("g", { id: "Clip-33" }),
+                    React__default['default'].createElement("polygon", { id: "Fill-32", fill: "url(#linearGradient-9)", mask: "url(#mask-8)", points: "376.993 76.466 376.993 119.46 270.608 105.09 147.546 88.519 23.836 114.453 -2.84217094e-14 119.46 -2.84217094e-14 72.591 29.165 58.225 147.546 0 263.29 38.582 341.206 64.52 341.206 64.573" })),
+                React__default['default'].createElement("g", { transform: "translate(0.001000, 0.000000)" },
+                    React__default['default'].createElement("mask", { id: "mask-11", fill: "white" },
+                        React__default['default'].createElement("use", { href: "#path-10" })),
+                    React__default['default'].createElement("g", { id: "Clip-35" }),
+                    React__default['default'].createElement("polygon", { id: "Fill-34", fill: "url(#linearGradient-12)", mask: "url(#mask-11)", points: "29.164 58.225 -2.84217094e-14 72.592 -2.84217094e-14 119.46 23.835 114.453 147.546 88.519 270.607 105.09 376.992 119.46 376.992 76.466 341.206 64.573 341.206 64.52 263.289 38.582 147.546 0" })),
+                React__default['default'].createElement("g", { transform: "translate(0.001000, 59.729000)" },
+                    React__default['default'].createElement("mask", { id: "mask-14", fill: "white" },
+                        React__default['default'].createElement("use", { href: "#path-13" })),
+                    React__default['default'].createElement("g", { id: "Clip-37" }),
+                    React__default['default'].createElement("path", { d: "M147.546,6.673 C101.43,12.753 59.837,22.764 25.343,35.676 L25.343,35.676 C16.411,39.013 7.908,42.565 2.84217094e-14,46.277 L2.84217094e-14,46.277 L2.84217094e-14,59.727 L23.835,54.724 L147.546,28.79 L270.607,45.361 L376.989,59.727 L376.989,16.737 L341.206,4.844 L341.206,4.791 C317.153,2.151 292.027,0.538 266.088,0.105 L266.088,0.105 C261.46,0.057 256.832,0 252.15,0 L252.15,0 C215.561,0 180.426,2.367 147.546,6.673", id: "Fill-36", fill: "url(#linearGradient-15)", mask: "url(#mask-14)" })),
+                React__default['default'].createElement("g", { transform: "translate(0.001000, 59.729000)" },
+                    React__default['default'].createElement("mask", { id: "mask-17", fill: "white" },
+                        React__default['default'].createElement("use", { href: "#path-16" })),
+                    React__default['default'].createElement("g", { id: "Clip-39" }),
+                    React__default['default'].createElement("path", { d: "M147.546,6.673 C101.43,12.753 59.837,22.764 25.343,35.676 L25.343,35.676 C16.411,39.013 7.908,42.565 0,46.277 L0,46.277 L0,59.727 L23.835,54.724 L147.546,28.79 L270.607,45.361 L376.989,59.727 L376.989,16.737 L341.206,4.844 L341.206,4.791 C317.153,2.151 292.027,0.538 266.088,0.105 L266.088,0.105 C261.46,0.057 256.832,0 252.15,0 L252.15,0 C215.561,0 180.426,2.367 147.546,6.673", id: "Fill-38", fill: "url(#linearGradient-18)", mask: "url(#mask-17)" })),
+                React__default['default'].createElement("g", { transform: "translate(0.001000, 260.601000)" },
+                    React__default['default'].createElement("mask", { id: "mask-20", fill: "white" },
+                        React__default['default'].createElement("use", { href: "#path-19" })),
+                    React__default['default'].createElement("g", { id: "Clip-41" }),
+                    React__default['default'].createElement("polygon", { id: "Fill-40", fill: "url(#linearGradient-21)", mask: "url(#mask-20)", points: "270.607 14.367 147.546 30.937 23.835 5.004 2.84217094e-14 0 2.84217094e-14 46.819 29.164 61.183 147.546 119.404 263.289 80.875 341.206 54.937 376.989 42.998 376.989 0" })),
+                React__default['default'].createElement("g", { transform: "translate(0.001000, 260.601000)" },
+                    React__default['default'].createElement("mask", { id: "mask-23", fill: "white" },
+                        React__default['default'].createElement("use", { href: "#path-22" })),
+                    React__default['default'].createElement("g", { id: "Clip-43" }),
+                    React__default['default'].createElement("polygon", { id: "Fill-42", fill: "url(#linearGradient-24)", mask: "url(#mask-23)", points: "270.607 14.367 147.546 30.937 23.835 5.004 2.84217094e-14 0 2.84217094e-14 46.819 29.164 61.183 147.546 119.404 263.289 80.875 341.206 54.937 376.989 42.998 376.989 0" })),
+                React__default['default'].createElement("g", { transform: "translate(0.001000, 260.601000)" },
+                    React__default['default'].createElement("mask", { id: "mask-26", fill: "white" },
+                        React__default['default'].createElement("use", { href: "#path-25" })),
+                    React__default['default'].createElement("g", { id: "Clip-45" }),
+                    React__default['default'].createElement("path", { d: "M270.607,14.367 L147.546,30.937 L23.835,5.004 L2.84217094e-14,0 L2.84217094e-14,13.45 C7.908,17.166 16.411,20.715 25.343,24.052 L25.343,24.052 C59.837,36.964 101.43,46.974 147.546,53.057 L147.546,53.057 C180.426,57.361 215.561,59.733 252.15,59.733 L252.15,59.733 C256.832,59.733 261.46,59.671 266.088,59.622 L266.088,59.622 C292.027,59.19 317.153,57.577 341.206,54.937 L341.206,54.937 L376.989,42.998 L376.989,0 L270.607,14.367 Z", id: "Fill-44", fill: "url(#linearGradient-27)", mask: "url(#mask-26)" })),
+                React__default['default'].createElement("g", { transform: "translate(0.001000, 260.601000)" },
+                    React__default['default'].createElement("mask", { id: "mask-29", fill: "white" },
+                        React__default['default'].createElement("use", { href: "#path-28" })),
+                    React__default['default'].createElement("g", { id: "Clip-47" }),
+                    React__default['default'].createElement("path", { d: "M270.607,14.367 L147.546,30.937 L23.835,5.004 L2.84217094e-14,0 L2.84217094e-14,13.45 C7.908,17.166 16.411,20.715 25.343,24.052 L25.343,24.052 C59.837,36.964 101.43,46.974 147.546,53.057 L147.546,53.057 C180.426,57.361 215.561,59.733 252.15,59.733 L252.15,59.733 C256.832,59.733 261.46,59.671 266.088,59.622 L266.088,59.622 C292.027,59.19 317.153,57.577 341.206,54.937 L341.206,54.937 L376.989,42.998 L376.989,0 L270.607,14.367 Z", id: "Fill-46", fill: "url(#linearGradient-30)", mask: "url(#mask-29)" })),
+                React__default['default'].createElement("g", { transform: "translate(23.836000, 0.000000)" },
+                    React__default['default'].createElement("mask", { id: "mask-32", fill: "white" },
+                        React__default['default'].createElement("use", { href: "#path-31" })),
+                    React__default['default'].createElement("g", { id: "Clip-49" }),
+                    React__default['default'].createElement("path", { d: "M5.329,58.225 C3.822,70.33 2.53,82.762 1.508,95.405 L1.508,95.405 C0.916,101.699 0.432,108.052 0,114.453 L0,114.453 L123.711,88.519 L246.772,105.09 C245.59,89.648 244.082,74.523 242.253,59.834 L242.253,59.834 C241.394,52.626 240.477,45.577 239.454,38.582 L239.454,38.582 L123.711,-5.68434189e-14 L5.329,58.225 Z", id: "Fill-48", fill: "url(#linearGradient-33)", mask: "url(#mask-32)" })),
+                React__default['default'].createElement("g", { transform: "translate(23.837000, 0.001000)" },
+                    React__default['default'].createElement("mask", { id: "mask-35", fill: "white" },
+                        React__default['default'].createElement("use", { href: "#path-34" })),
+                    React__default['default'].createElement("g", { id: "Clip-51" }),
+                    React__default['default'].createElement("polygon", { id: "Fill-50", fill: "url(#linearGradient-36)", mask: "url(#mask-35)", points: "-5.68434189e-14 114.452 246.771 114.452 246.771 -0.001 -5.68434189e-14 -0.001" })),
+                React__default['default'].createElement("g", { transform: "translate(23.836000, 265.605000)" },
+                    React__default['default'].createElement("mask", { id: "mask-38", fill: "white" },
+                        React__default['default'].createElement("use", { href: "#path-37" })),
+                    React__default['default'].createElement("g", { id: "Clip-53" }),
+                    React__default['default'].createElement("path", { d: "M1.508,19.048 C2.53,31.695 3.822,44.065 5.329,56.179 L5.329,56.179 L123.711,114.4 L239.454,75.871 C240.477,68.878 241.394,61.826 242.253,54.618 L242.253,54.618 C244.082,39.925 245.59,24.809 246.772,9.363 L246.772,9.363 L123.711,25.933 L0,0 C0.432,6.401 0.916,12.753 1.508,19.048", id: "Fill-52", fill: "url(#linearGradient-39)", mask: "url(#mask-38)" })),
+                React__default['default'].createElement("g", { transform: "translate(23.836000, 265.605000)" },
+                    React__default['default'].createElement("mask", { id: "mask-41", fill: "white" },
+                        React__default['default'].createElement("use", { href: "#path-40" })),
+                    React__default['default'].createElement("g", { id: "Clip-55" }),
+                    React__default['default'].createElement("polygon", { id: "Fill-54", fill: "url(#linearGradient-42)", mask: "url(#mask-41)", points: "0.001 114.399 246.772 114.399 246.772 0 0.001 0" })),
+                React__default['default'].createElement("g", { transform: "translate(21.306000, 127.850000)" },
+                    React__default['default'].createElement("mask", { id: "mask-44", fill: "white" },
+                        React__default['default'].createElement("use", { href: "#path-43" })),
+                    React__default['default'].createElement("g", { id: "Clip-57" }),
+                    React__default['default'].createElement("path", { d: "M0.647,22.926 C0.22,35.843 0,48.914 0,62.152 L0,62.152 C0,75.443 0.22,88.518 0.647,101.434 L0.647,101.434 L126.241,124.357 L251.943,97.56 C252.322,85.882 252.476,74.095 252.476,62.152 L252.476,62.152 C252.476,50.263 252.322,38.423 251.943,26.802 L251.943,26.802 L126.241,0 L0.647,22.926 Z", id: "Fill-56", fill: "url(#linearGradient-45)", mask: "url(#mask-44)" })),
+                React__default['default'].createElement("g", { transform: "translate(21.306000, 127.850000)" },
+                    React__default['default'].createElement("mask", { id: "mask-47", fill: "white" },
+                        React__default['default'].createElement("use", { href: "#path-46" })),
+                    React__default['default'].createElement("g", { id: "Clip-59" }),
+                    React__default['default'].createElement("polygon", { id: "Fill-58", fill: "url(#linearGradient-48)", mask: "url(#mask-47)", points: "0 124.357 252.477 124.357 252.477 0 0 0" })),
+                React__default['default'].createElement("g", { transform: "translate(147.544000, 0.002000)" },
+                    React__default['default'].createElement("g", { transform: "translate(0.002000, 127.848000)" },
+                        React__default['default'].createElement("mask", { id: "mask-50", fill: "white" },
+                            React__default['default'].createElement("use", { href: "#path-49" })),
+                        React__default['default'].createElement("g", { id: "Clip-61" }),
+                        React__default['default'].createElement("polygon", { id: "Fill-60", fill: "url(#linearGradient-51)", mask: "url(#mask-50)", points: "126.237 26.907 126.237 97.453 125.699 97.56 0 124.357 0 0 125.699 26.801" })),
+                    React__default['default'].createElement("g", { transform: "translate(0.000000, 0.000000)" },
+                        React__default['default'].createElement("mask", { id: "mask-53", fill: "white" },
+                            React__default['default'].createElement("use", { href: "#path-52" })),
+                        React__default['default'].createElement("g", { id: "Clip-63" })),
+                    React__default['default'].createElement("g", { transform: "translate(0.000000, 260.598000)" },
+                        React__default['default'].createElement("mask", { id: "mask-55", fill: "white" },
+                            React__default['default'].createElement("use", { href: "#path-54" })),
+                        React__default['default'].createElement("g", { id: "Clip-65" })),
+                    React__default['default'].createElement("path", { d: "M12.1273,161.328 C18.0813,162.159 21.0583,162.575 27.0113,163.406 C26.6743,165.815 26.5233,167.022 26.2583,169.439 C21.8773,168.957 19.6863,168.716 15.3043,168.235 C14.7133,173.611 14.5013,176.306 14.2433,181.702 C17.9703,181.88 19.8323,181.969 23.5593,182.147 C23.4403,184.617 23.4003,185.852 23.3553,188.324 C19.6243,188.255 17.7603,188.221 14.0293,188.153 C13.9143,194.422 13.9693,197.56 14.3033,203.824 C18.8563,203.581 21.1333,203.46 25.6873,203.217 C25.8163,205.662 25.8993,206.884 26.1033,209.325 C19.9603,209.833 16.8903,210.088 10.7473,210.597 C9.4953,194.224 9.7343,177.598 12.1273,161.328", id: "Fill-21298", fill: "#FFFFFF" }),
+                    React__default['default'].createElement("path", { d: "M40.7825,199.8632 C40.6575,196.7412 40.6265,195.1792 40.6285,192.0552 C34.9965,193.2092 33.0945,195.7172 33.2295,199.4432 C33.3465,202.6882 34.7235,203.9322 36.4135,203.8322 C38.0685,203.7342 39.3235,202.2972 40.7825,199.8632 M29.4155,200.0722 C29.1355,192.8462 32.7355,189.1002 40.6775,187.8312 C40.7255,184.1292 40.1315,180.8452 37.3375,180.6812 C35.3385,180.5642 33.3825,182.0002 31.6835,183.7492 C31.1695,181.8352 30.9235,180.8712 30.4555,178.9312 C32.5625,176.8662 35.4005,174.9482 38.4285,175.2122 C43.1435,175.6232 44.7665,180.7272 44.6285,188.9982 C44.5015,196.4992 44.6255,200.2562 45.2455,207.7382 C43.9505,207.8452 43.3035,207.8992 42.0095,208.0062 C41.7515,206.5692 41.6295,205.8492 41.3985,204.4052 C41.3565,204.4082 41.3365,204.4092 41.2955,204.4122 C39.7295,207.0012 37.8735,209.1192 35.6015,209.3162 C32.3325,209.6002 29.6455,206.0132 29.4155,200.0722", id: "Fill-21300", fill: "#FFFFFF" }),
+                    React__default['default'].createElement("path", { d: "M50.8577,177.0682 C52.1527,177.1752 52.7997,177.2292 54.0947,177.3362 C54.0837,178.9842 54.0867,179.8062 54.1127,181.4502 C54.1537,181.4522 54.1737,181.4532 54.2157,181.4562 C56.1317,178.9262 58.2537,176.9392 60.8357,177.1642 C64.8617,177.5152 66.2097,181.5752 66.0597,188.6052 C65.9117,195.5542 66.0177,199.0362 66.5917,205.9682 C65.0087,206.1002 64.2167,206.1662 62.6327,206.2972 C62.0687,199.4862 61.9567,196.0672 62.0737,189.2392 C62.1577,184.3572 61.3617,182.3512 59.1207,182.2232 C57.3607,182.1222 56.0617,183.4112 54.2787,185.9862 C53.9887,194.3722 54.0887,198.5792 54.7827,206.9472 C53.2127,207.0772 52.4277,207.1432 50.8577,207.2732 C49.9527,197.3892 49.9527,186.9522 50.8577,177.0682", id: "Fill-21302", fill: "#FFFFFF" }),
+                    React__default['default'].createElement("path", { d: "M82.0736,188.0385 C82.1656,184.6795 80.7256,182.6315 78.7256,182.5055 C76.7256,182.3805 74.9876,184.2755 74.8896,187.8415 C74.7956,191.3145 76.4606,193.4415 78.4286,193.42559 C80.3976,193.4095 81.9826,191.3525 82.0736,188.0385 M85.2146,207.7035 C84.9996,205.6555 83.7186,205.1385 81.4126,205.3385 C80.2696,205.4375 79.6986,205.4875 78.5556,205.5865 C77.6616,205.6645 76.7886,205.5985 75.9766,205.4295 C74.9366,206.6605 74.5826,208.0485 74.7276,209.3835 C75.0076,211.9575 77.1436,213.2205 80.2596,212.7995 C83.5466,212.3555 85.4526,209.9735 85.2146,207.7035 M71.4536,210.5765 C71.1986,208.3375 72.0096,206.1385 73.6496,204.5155 C73.6426,204.4195 73.6386,204.3715 73.6326,204.2755 C72.6046,203.5335 71.7406,202.1765 71.6356,199.9915 C71.5336,197.9045 72.5606,196.0725 73.5776,194.9995 C73.5766,194.9225 73.5756,194.8845 73.5746,194.8085 C72.2736,193.4385 71.0396,190.9045 71.1266,187.7385 C71.2926,181.6535 75.0846,178.4055 79.0086,178.7475 C80.0746,178.8405 81.0136,179.2005 81.7066,179.6245 C84.3916,179.8475 85.7346,179.9585 88.4206,180.1815 C88.2966,181.6785 88.2436,182.4275 88.1586,183.9265 C86.7106,183.8445 85.9856,183.8035 84.5376,183.7205 C85.2056,184.7445 85.6406,186.4065 85.5926,188.2685 C85.4516,193.5895 82.4666,196.7455 78.4956,196.8655 C77.6326,196.8915 76.6556,196.6415 75.8136,196.1425 C75.2116,196.9155 74.8186,197.6925 74.8726,198.9295 C74.9386,200.4975 75.7616,201.4525 78.1756,201.3095 C79.5676,201.2275 80.2646,201.1865 81.6586,201.1045 C86.1416,200.8395 88.5416,202.4445 88.9476,206.5225 C89.4056,211.1205 86.1966,215.4355 80.1916,216.3865 C75.6876,217.0995 71.9856,215.2475 71.4536,210.5765", id: "Fill-21304", fill: "#FFFFFF" }),
+                    React__default['default'].createElement("path", { d: "M103.4163,190.2606 C103.4713,186.5576 102.1513,184.3276 99.3933,184.1626 C97.0133,184.0196 94.7363,186.0856 94.2963,190.1256 C97.9443,190.1796 99.7683,190.2066 103.4163,190.2606 M90.4122994,192.2136 C90.4103,184.5366 95.1493,180.1536 99.5893,180.5406 C104.6143,180.9786 106.8763,185.1876 106.8263,191.1086 C106.8193,191.9436 106.7533,192.8156 106.6543,193.3116 C101.7213,193.3556 99.2543,193.3776 94.3213,193.4226 C94.6723,197.7986 97.1473,200.2726 100.4243,200.0766 C102.1133,199.9766 103.5243,199.2946 104.8573,198.2266 C105.4633,199.3266 105.7713,199.8706 106.3993,200.9456 C104.7313,202.3626 102.6483,203.4946 100.1703,203.7106 C95.0423,204.1556 90.4143,199.9766 90.4122994,192.2136", id: "Fill-21306", fill: "#FFFFFF" }),
+                    React__default['default'].createElement("path", { d: "M111.3968,197.5155 C110.9668,187.7395 111.2438,182.8095 112.7788,173.1175 C114.3348,173.3645 115.1128,173.4875 116.6688,173.7335 C115.1698,183.1965 114.9038,188.0105 115.3408,197.5555 C115.3908,198.6525 115.9008,199.0135 116.3828,198.9855 C116.5558,198.9745 116.6948,198.9665 117.0348,198.8775 C117.3118,200.0795 117.4588,200.6775 117.7658,201.8675 C117.2988,202.0815 116.6228,202.2815 115.6598,202.3655 C112.8028,202.6135 111.5398,200.7715 111.3968,197.5155", id: "Fill-21308", fill: "#FFFFFF" }))))));
 };
 
 var Icon$1q = function (props) {
@@ -759,23 +936,197 @@ var Icon$1p = function (props) {
 };
 
 var Logo$2 = function (_a) {
-    var isDark = _a.isDark, props = __rest(_a, ["isDark"]);
-    var textColor = isDark ? "#FFFFFF" : "#000000";
-    return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 121 40" }, props),
-        React__default['default'].createElement("g", { stroke: "none", "stroke-width": "1", fill: "none", "fill-rule": "evenodd" },
-            React__default['default'].createElement("g", { transform: "translate(-24.000000, -12.000000)" },
-                React__default['default'].createElement("g", { transform: "translate(24.000000, 11.998268)" },
-                    React__default['default'].createElement("g", null,
-                        React__default['default'].createElement("path", { d: "M61.7517241,39.1683989 L61.7517241,35.608875 L52.7393103,35.608875 L52.7393103,32.0493512 L61.7517241,32.0493512 L61.7517241,22.8180587 L58.9786737,20.0017322 L52.0075332,20.0017322 L49.2344828,22.8180587 L49.2344828,36.3129567 L52.0075332,39.1683989 L61.7517241,39.1683989 Z M58.4137931,29.1683989 L52.5724138,29.1683989 L52.5724138,24.1683989 L58.4137931,24.1683989 L58.4137931,29.1683989 Z M66.843635,40.0017322 L70.3046131,33.2862255 L73.6134603,40.0017322 L77.1885366,40.0017322 L72.1682167,29.6995344 L77.6068966,19.1683989 L73.9937876,19.1683989 L70.4187113,26.1891559 L67.0337987,19.1683989 L63.4206897,19.1683989 L68.5931404,29.775847 L63.4206897,40.0017322 L66.843635,40.0017322 Z M104.002228,39.1683989 L106.813793,36.3724379 L106.813793,23.1969504 L104.002228,20.4009894 L97.8013793,20.4009894 L97.8013793,11.6683989 L94.2965517,11.6683989 L94.2965517,39.1683989 L104.002228,39.1683989 Z M103.475862,35.8350655 L97.6344828,35.8350655 L97.6344828,24.1683989 L103.475862,24.1683989 L103.475862,35.8350655 Z M121,39.1683989 L121,35.6015959 L111.987586,35.6015959 L111.987586,23.5685352 L121,23.5685352 L121,20.0017322 L111.294324,20.0017322 L108.482759,22.8630137 L108.482759,36.3071173 L111.294324,39.1683989 L121,39.1683989 Z", id: "exabc", fill: textColor, "fill-rule": "nonzero" }),
-                        React__default['default'].createElement("g", null,
-                            React__default['default'].createElement("path", { d: "M33.5725347,13.0223116 C33.704459,14.160504 33.7460178,14.9276771 33.6972112,15.323831 C33.6607609,15.6196914 33.5206249,16.0335227 33.2768033,16.5653251 C36.2065417,17.784156 39.0015028,16.6608569 41.0529539,13.1023932 C42.3212389,16.6804628 39.0141857,21.8498746 35.1649406,22.2746683 C32.8978812,22.5262768 30.7893573,22.0230597 28.7283941,21.0394991 C25.519633,19.5037067 22.2474576,19.1213924 19.0133308,20.9872168 C16.6321257,22.359627 15.2433536,24.4607217 15.1450615,27.2970362 C15.0055501,31.2182083 18.591626,34.1982991 22.5328218,33.5415028 C25.4276823,33.0578916 27.6566933,31.4175346 29.6605836,29.3131722 C32.1654465,26.6990575 36.2905436,26.2317845 39.5975968,28.3328792 C35.095185,27.6630123 32.1432516,29.764107 29.5939987,33.0709621 C24.967929,39.0703554 15.569937,39.3252316 10.5697233,33.6885467 C7.89047113,30.6790471 7.13267083,27.1532599 8.31851733,23.2549613 C9.61533877,18.9841514 12.6655643,16.5628276 16.7589542,15.8308755 C19.4730841,15.3472642 26.5612232,15.6734703 27.2888906,15.798199 C29.7271686,16.0334694 31.9213017,15.5890699 33.4305609,13.2919165 L33.5725347,13.0223116 Z", fill: "#FAB126", "fill-rule": "nonzero" }),
-                            React__default['default'].createElement("path", { d: "M31.7050356,25.3620641 C31.0513647,25.6061429 30.4766228,25.8604434 29.7408498,26.0575214 C27.9925581,26.5258042 26.5074001,27.1876396 25.41266,28.7323574 C24.4607121,30.0697754 23.1628898,30.7585456 21.5636173,30.4977491 C19.8025137,30.2135478 18.8124879,28.779167 18.9774922,26.9335302 C19.1551891,24.9274032 21.0368728,23.2890662 23.1025997,23.3893726 C23.6293871,23.4216857 24.1504636,23.5216161 24.6542748,23.6869481 C25.8093049,24.0580816 26.923084,24.6298277 28.1003262,24.8371275 C29.2267979,25.0377402 31.3782662,25.0878049 32.5364695,25.0878049 L31.7050356,25.3620641 Z", fill: "#FAB126", "fill-rule": "nonzero" }),
-                            React__default['default'].createElement("path", { d: "M6.34839084,31.2092758 C6.66231724,30.6009286 9.03891207,34.5703492 9.40774262,35.3126151 C9.77651862,36.0548265 8.88771445,38.2151005 8.88771445,38.2151005 C11.3908204,38.2151005 11.6628889,39.9891895 11.6628889,39.9891895 L11.6628889,39.9891895 L0,39.9891895 C0.0906531165,38.4323093 2.83572224,38.3481515 3.13361965,38.0789718 C3.17617643,38.0405175 3.26577504,37.8852675 3.38902169,37.6456033 L3.55221153,37.3195597 C4.38113518,35.6282772 6.09724972,31.6959535 6.34839084,31.2092758 Z", fill: textColor }),
-                            React__default['default'].createElement("path", { d: "M42.2555436,39.9294622 C42.2555436,39.9294622 42.1309797,38.0050356 39.9452863,38.1073519 L36.0861627,30.1939116 L33.4565011,31.1830724 C33.4565011,31.1830724 31.646481,32.1381277 32.7734495,34.986318 C33.9004693,37.8345083 34.0029116,38.0050356 34.0029116,38.0050356 L32.8874202,38.0050356 C32.8874202,38.0050356 30.6655849,38.0458256 31.019647,39.9294622 L42.2555436,39.9294622 Z", id: "Fill-3", fill: textColor }),
-                            React__default['default'].createElement("path", { d: "M23.0401162,0.119447893 L23.0434272,0.126123495 L23.0693806,0.178452565 C23.2682165,0.57937118 24.4515335,2.96555333 25.7340286,5.55658013 L26.0368449,6.16844669 C27.5051682,9.13575607 29.0119737,12.1874103 29.2595932,12.7136902 C29.3110416,12.8230151 29.3471885,12.9259618 29.3693629,13.022786 L25.3868695,13.0217138 L22.5265023,5.70678684 L22.0398695,0.00202013247 L22.0400614,0.001 L22.9238572,0.000420611395 C22.9969768,0.0649228462 23.0401162,0.119447893 23.0401162,0.119447893 Z M21.3490614,0.001 L21.075924,5.67051309 L18.5692298,12.4733159 C18.5692298,12.4733159 18.473283,12.7252019 18.3604407,13.021443 L14.3710614,13.0222327 C14.4156564,12.9381738 14.4616691,12.8512913 14.5086746,12.7623456 C14.7330575,12.3377583 15.7733463,10.0781439 16.9017554,7.61580608 L17.1536678,7.06594633 C17.6170818,6.05418488 18.086174,5.0288442 18.5117304,4.10030362 C19.4338951,2.08819079 20.1483212,0.525307151 20.1483212,0.525307151 C20.1483212,0.525307151 20.2719849,0.208179367 20.5084158,3.376327e-13 L21.3490614,0.001 Z", fill: textColor }))),
-                    React__default['default'].createElement("path", { d: "M89.1067073,20.0017322 L92,22.8208379 L92,39.0017322 L81.8932927,39.0017322 L79,36.1826265 L79,29.5017322 L81.8932927,26.7212444 L88.3932927,26.7212444 L88.3932927,23.5159598 L79.1189024,23.5159598 L79.1189024,20.0017322 L89.1067073,20.0017322 Z M88.5333333,29.9147757 L82.4666667,29.9147757 L82.4666667,35.6973844 L88.5333333,35.6973844 L88.5333333,29.9147757 Z", fill: "#FAB126" }))))));
+    _a.isDark; var props = __rest(_a, ["isDark"]);
+    return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 2173 381" }, props),
+        React__default['default'].createElement("defs", null,
+            React__default['default'].createElement("polygon", { id: "path-1", points: "273.783 26.908 273.783 97.45 273.248 97.56 147.546 124.357 21.953 101.435 -2.84217094e-14 97.45 -2.84217094e-14 26.908 21.953 22.927 147.546 0 273.248 26.802" }),
+            React__default['default'].createElement("linearGradient", { x1: "6.66951564e-05%", y1: "50.0002429%", x2: "99.9996839%", y2: "50.0002429%", id: "linearGradient-3" },
+                React__default['default'].createElement("stop", { "stop-color": "#565454", offset: "0%" }),
+                React__default['default'].createElement("stop", { "stop-color": "#AAAAAA", offset: "100%" })),
+            React__default['default'].createElement("polygon", { id: "path-4", points: "21.952 22.926 -2.84217094e-14 26.908 -2.84217094e-14 97.45 21.952 101.434 147.546 124.357 273.248 97.56 273.781 97.45 273.781 26.908 273.248 26.802 147.546 0" }),
+            React__default['default'].createElement("linearGradient", { x1: "-0.00032084038%", y1: "50.0002798%", x2: "100.000038%", y2: "50.0002798%", id: "linearGradient-6" },
+                React__default['default'].createElement("stop", { "stop-color": "#565454", offset: "0%" }),
+                React__default['default'].createElement("stop", { "stop-color": "#AAAAAA", offset: "100%" })),
+            React__default['default'].createElement("polygon", { id: "path-7", points: "376.993 76.466 376.993 119.46 270.608 105.09 147.546 88.519 23.836 114.453 -2.84217094e-14 119.46 -2.84217094e-14 72.591 29.165 58.225 147.546 0 263.29 38.582 341.206 64.52 341.206 64.573" }),
+            React__default['default'].createElement("linearGradient", { x1: "4.84359126e-05%", y1: "50.0002464%", x2: "99.9999867%", y2: "50.0002464%", id: "linearGradient-9" },
+                React__default['default'].createElement("stop", { "stop-color": "#565454", offset: "0%" }),
+                React__default['default'].createElement("stop", { "stop-color": "#AAAAAA", offset: "100%" })),
+            React__default['default'].createElement("polygon", { id: "path-10", points: "29.164 58.225 -2.84217094e-14 72.592 -2.84217094e-14 119.46 23.835 114.453 147.546 88.519 270.607 105.09 376.992 119.46 376.992 76.466 341.206 64.573 341.206 64.52 263.289 38.582 147.546 0" }),
+            React__default['default'].createElement("linearGradient", { x1: "-0.000216821577%", y1: "50.0003487%", x2: "99.9999867%", y2: "50.0003487%", id: "linearGradient-12" },
+                React__default['default'].createElement("stop", { "stop-color": "#565454", offset: "0%" }),
+                React__default['default'].createElement("stop", { "stop-color": "#AAAAAA", offset: "100%" })),
+            React__default['default'].createElement("path", { d: "M147.546,6.673 C101.43,12.753 59.837,22.764 25.343,35.676 L25.343,35.676 C16.411,39.013 7.908,42.565 2.84217094e-14,46.277 L2.84217094e-14,46.277 L2.84217094e-14,59.727 L23.835,54.724 L147.546,28.79 L270.607,45.361 L376.989,59.727 L376.989,16.737 L341.206,4.844 L341.206,4.791 C317.153,2.151 292.027,0.538 266.088,0.105 L266.088,0.105 C261.46,0.057 256.832,0 252.15,0 L252.15,0 C215.561,0 180.426,2.367 147.546,6.673", id: "path-13" }),
+            React__default['default'].createElement("linearGradient", { x1: "-0.000216823303%", y1: "49.9999617%", x2: "99.9997868%", y2: "49.9999617%", id: "linearGradient-15" },
+                React__default['default'].createElement("stop", { "stop-color": "#565454", offset: "0%" }),
+                React__default['default'].createElement("stop", { "stop-color": "#AAAAAA", offset: "100%" })),
+            React__default['default'].createElement("path", { d: "M147.546,6.673 C101.43,12.753 59.837,22.764 25.343,35.676 L25.343,35.676 C16.411,39.013 7.908,42.565 0,46.277 L0,46.277 L0,59.727 L23.835,54.724 L147.546,28.79 L270.607,45.361 L376.989,59.727 L376.989,16.737 L341.206,4.844 L341.206,4.791 C317.153,2.151 292.027,0.538 266.088,0.105 L266.088,0.105 C261.46,0.057 256.832,0 252.15,0 L252.15,0 C215.561,0 180.426,2.367 147.546,6.673", id: "path-16" }),
+            React__default['default'].createElement("linearGradient", { x1: "80.4024777%", y1: "50.0001659%", x2: "-1.56407381%", y2: "50.0001659%", id: "linearGradient-18" },
+                React__default['default'].createElement("stop", { "stop-color": "#565454", offset: "0%" }),
+                React__default['default'].createElement("stop", { "stop-color": "#AAAAAA", offset: "100%" })),
+            React__default['default'].createElement("polygon", { id: "path-19", points: "270.607 14.367 147.546 30.937 23.835 5.004 2.84217094e-14 0 2.84217094e-14 46.819 29.164 61.183 147.546 119.404 263.289 80.875 341.206 54.937 376.989 42.998 376.989 0" }),
+            React__default['default'].createElement("linearGradient", { x1: "-0.000216823303%", y1: "49.9997274%", x2: "99.9997868%", y2: "49.9997274%", id: "linearGradient-21" },
+                React__default['default'].createElement("stop", { "stop-color": "#565454", offset: "0%" }),
+                React__default['default'].createElement("stop", { "stop-color": "#AAAAAA", offset: "100%" })),
+            React__default['default'].createElement("polygon", { id: "path-22", points: "270.607 14.367 147.546 30.937 23.835 5.004 2.84217094e-14 0 2.84217094e-14 46.819 29.164 61.183 147.546 119.404 263.289 80.875 341.206 54.937 376.989 42.998 376.989 0" }),
+            React__default['default'].createElement("linearGradient", { x1: "-0.000216823303%", y1: "49.9998232%", x2: "99.9997706%", y2: "49.9998232%", id: "linearGradient-24" },
+                React__default['default'].createElement("stop", { "stop-color": "#565454", offset: "0%" }),
+                React__default['default'].createElement("stop", { "stop-color": "#AAAAAA", offset: "100%" })),
+            React__default['default'].createElement("path", { d: "M270.607,14.367 L147.546,30.937 L23.835,5.004 L2.84217094e-14,0 L2.84217094e-14,13.45 C7.908,17.166 16.411,20.715 25.343,24.052 L25.343,24.052 C59.837,36.964 101.43,46.974 147.546,53.057 L147.546,53.057 C180.426,57.361 215.561,59.733 252.15,59.733 L252.15,59.733 C256.832,59.733 261.46,59.671 266.088,59.622 L266.088,59.622 C292.027,59.19 317.153,57.577 341.206,54.937 L341.206,54.937 L376.989,42.998 L376.989,0 L270.607,14.367 Z", id: "path-25" }),
+            React__default['default'].createElement("linearGradient", { x1: "-0.000216823303%", y1: "49.999208%", x2: "99.9997868%", y2: "49.999208%", id: "linearGradient-27" },
+                React__default['default'].createElement("stop", { "stop-color": "#565454", offset: "0%" }),
+                React__default['default'].createElement("stop", { "stop-color": "#AAAAAA", offset: "100%" })),
+            React__default['default'].createElement("path", { d: "M270.607,14.367 L147.546,30.937 L23.835,5.004 L2.84217094e-14,0 L2.84217094e-14,13.45 C7.908,17.166 16.411,20.715 25.343,24.052 L25.343,24.052 C59.837,36.964 101.43,46.974 147.546,53.057 L147.546,53.057 C180.426,57.361 215.561,59.733 252.15,59.733 L252.15,59.733 C256.832,59.733 261.46,59.671 266.088,59.622 L266.088,59.622 C292.027,59.19 317.153,57.577 341.206,54.937 L341.206,54.937 L376.989,42.998 L376.989,0 L270.607,14.367 Z", id: "path-28" }),
+            React__default['default'].createElement("linearGradient", { x1: "80.4024777%", y1: "49.9993997%", x2: "-1.56407381%", y2: "49.9993997%", id: "linearGradient-30" },
+                React__default['default'].createElement("stop", { "stop-color": "#565454", offset: "0%" }),
+                React__default['default'].createElement("stop", { "stop-color": "#AAAAAA", offset: "100%" })),
+            React__default['default'].createElement("path", { d: "M5.329,58.225 C3.822,70.33 2.53,82.762 1.508,95.405 L1.508,95.405 C0.916,101.699 0.432,108.052 0,114.453 L0,114.453 L123.711,88.519 L246.772,105.09 C245.59,89.648 244.082,74.523 242.253,59.834 L242.253,59.834 C241.394,52.626 240.477,45.577 239.454,38.582 L239.454,38.582 L123.711,-5.68434189e-14 L5.329,58.225 Z", id: "path-31" }),
+            React__default['default'].createElement("linearGradient", { x1: "4.86684065e-05%", y1: "50.0001422%", x2: "100.000025%", y2: "50.0001422%", id: "linearGradient-33" },
+                React__default['default'].createElement("stop", { "stop-color": "#565454", offset: "0%" }),
+                React__default['default'].createElement("stop", { "stop-color": "#AAAAAA", offset: "100%" })),
+            React__default['default'].createElement("path", { d: "M123.713,0 L239.453,38.581 L239.83175,41.2068613 C240.704344,47.3407344 241.500375,53.526 242.252,59.833 L242.252,59.833 L242.613519,62.7765781 C244.280618,76.5400756 245.6678,90.6764667 246.771,105.089 L246.771,105.089 L123.71,88.518 L-5.68434189e-14,114.452 L-5.68434189e-14,114.437 L0.219592593,111.255551 C0.520185185,106.999088 0.848037037,102.764773 1.21974074,98.5558657 L1.507,95.404 L1.74761402,92.490183 C2.72904142,80.8503195 3.93692308,69.3978462 5.328,58.224 L5.328,58.224 L123.708,0 L123.713,0 Z", id: "path-34" }),
+            React__default['default'].createElement("linearGradient", { x1: "-0.000381284673%", y1: "50.0001422%", x2: "100%", y2: "50.0001422%", id: "linearGradient-36" },
+                React__default['default'].createElement("stop", { "stop-color": "#565454", offset: "0%" }),
+                React__default['default'].createElement("stop", { "stop-color": "#AAAAAA", offset: "100%" })),
+            React__default['default'].createElement("path", { d: "M1.508,19.048 C2.53,31.695 3.822,44.065 5.329,56.179 L5.329,56.179 L123.711,114.4 L239.454,75.871 C240.477,68.878 241.394,61.826 242.253,54.618 L242.253,54.618 C244.082,39.925 245.59,24.809 246.772,9.363 L246.772,9.363 L123.711,25.933 L0,0 C0.432,6.401 0.916,12.753 1.508,19.048", id: "path-37" }),
+            React__default['default'].createElement("linearGradient", { x1: "4.86684065e-05%", y1: "49.9994878%", x2: "100.000025%", y2: "49.9994878%", id: "linearGradient-39" },
+                React__default['default'].createElement("stop", { "stop-color": "#565454", offset: "0%" }),
+                React__default['default'].createElement("stop", { "stop-color": "#AAAAAA", offset: "100%" })),
+            React__default['default'].createElement("path", { d: "M0,0 L123.711,25.933 L246.772,9.363 L246.531255,12.4477724 C245.387507,26.8225867 243.960067,40.9045333 242.253,54.618 L242.253,54.618 L241.928063,57.313877 C241.163094,63.5880781 240.349125,69.752125 239.454,75.871 L239.454,75.871 L123.714,114.399 L123.709,114.399 L5.329,56.179 L4.956761,53.1451545 C3.60854167,42.0014097 2.44483333,30.6410833 1.508,19.048 C0.916,12.753 0.432,6.401 0,0 L0,0.015 L0,0 Z", id: "path-40" }),
+            React__default['default'].createElement("linearGradient", { x1: "-0.000381284673%", y1: "50.0000248%", x2: "100%", y2: "50.0000248%", id: "linearGradient-42" },
+                React__default['default'].createElement("stop", { "stop-color": "#565454", offset: "0%" }),
+                React__default['default'].createElement("stop", { "stop-color": "#AAAAAA", offset: "100%" })),
+            React__default['default'].createElement("path", { d: "M0.647,22.926 C0.22,35.843 0,48.914 0,62.152 L0,62.152 C0,75.443 0.22,88.518 0.647,101.434 L0.647,101.434 L126.241,124.357 L251.943,97.56 C252.322,85.882 252.476,74.095 252.476,62.152 L252.476,62.152 C252.476,50.263 252.322,38.423 251.943,26.802 L251.943,26.802 L126.241,0 L0.647,22.926 Z", id: "path-43" }),
+            React__default['default'].createElement("linearGradient", { x1: "-2.44775741e-05%", y1: "50.0002429%", x2: "100.000053%", y2: "50.0002429%", id: "linearGradient-45" },
+                React__default['default'].createElement("stop", { "stop-color": "#565454", offset: "0%" }),
+                React__default['default'].createElement("stop", { "stop-color": "#AAAAAA", offset: "100%" })),
+            React__default['default'].createElement("path", { d: "M126.241,0 L251.943,26.802 L252.050021,30.2947 C252.35126,40.79149 252.476,51.4519 252.476,62.152 L252.476,62.152 L252.470199,66.1272867 C252.439,76.7129877 252.279889,87.1795556 251.943,97.56 L251.943,97.56 L126.241,124.357 L0.647,101.434 L0.535687453,97.9074696 C0.181818182,86.1389421 0,74.2347273 0,62.152 L0,62.152 L0.006587,58.185597 C0.04607,46.30134 0.2627,34.5513 0.647,22.926 L0.647,22.926 L126.241,0 Z", id: "path-46" }),
+            React__default['default'].createElement("linearGradient", { x1: "-4.86380938e-05%", y1: "50.0003288%", x2: "99.999633%", y2: "50.0003288%", id: "linearGradient-48" },
+                React__default['default'].createElement("stop", { "stop-color": "#565454", offset: "0%" }),
+                React__default['default'].createElement("stop", { "stop-color": "#AAAAAA", offset: "100%" })),
+            React__default['default'].createElement("polygon", { id: "path-49", points: "0 0 125.699 26.801 126.237 26.907 126.237 97.453 125.699 97.56 0 124.357" }),
+            React__default['default'].createElement("linearGradient", { x1: "0.000547699961%", y1: "50.0000466%", x2: "99.9999308%", y2: "50.0000466%", id: "linearGradient-51" },
+                React__default['default'].createElement("stop", { "stop-color": "#565454", offset: "0%" }),
+                React__default['default'].createElement("stop", { "stop-color": "#AAAAAA", offset: "100%" })),
+            React__default['default'].createElement("polygon", { id: "path-52", points: "0 0 115.745 38.582 193.665 64.516 193.665 64.569 229.448 76.462 229.448 119.456 123.067 105.09 0 88.515" }),
+            React__default['default'].createElement("polygon", { id: "path-54", points: "229.448 0 229.448 42.998 193.665 54.94 115.745 80.879 0 119.403 0 30.942 123.067 14.367" })),
+        React__default['default'].createElement("g", { id: "\u9875\u9762-1", stroke: "none", "stroke-width": "1", fill: "none", "fill-rule": "evenodd" },
+            React__default['default'].createElement("g", { id: "\u7F16\u7EC4", transform: "translate(0.987000, 0.609000)" },
+                React__default['default'].createElement("g", { transform: "translate(491.535500, 75.645800)", fill: "#FFFFFF" },
+                    React__default['default'].createElement("polygon", { id: "Fill-1", points: "0 14.5392 103.679 14.5392 103.679 37.6582 27.648 37.6582 27.648 86.5182 92 86.5182 92 109.8762 27.648 109.8762 27.648 166.6012 106.301 166.6012 106.301 189.9592 0 189.9592" }),
+                    React__default['default'].createElement("path", { d: "M211.4063,156.1144 L211.4063,123.9384 C172.5563,128.7054 159.4473,138.4774 159.4473,153.2554 C159.4473,166.1254 168.2653,171.3684 179.9443,171.3684 C191.3853,171.3684 200.6803,165.8854 211.4063,156.1144 M132.9913,155.1614 C132.9913,127.0364 156.8253,112.4974 211.4063,106.5394 C211.1683,91.2854 205.6853,77.9384 186.3803,77.9384 C172.5563,77.9384 159.6853,84.1354 148.4833,91.2854 L138.2353,72.6944 C151.8203,64.1144 170.1733,55.5344 191.1463,55.5344 C223.8003,55.5344 238.8153,76.2694 238.8153,111.0674 L238.8153,189.9594 L216.4113,189.9594 L214.0273,174.9434 L213.3123,174.9434 C201.3953,185.1924 187.3333,193.0574 171.6023,193.0574 C148.9603,193.0574 132.9913,178.2804 132.9913,155.1614", id: "Fill-3" }),
+                    React__default['default'].createElement("path", { d: "M277.6631,58.8703 L300.0671,58.8703 L302.2121,76.9853 L302.9271,76.9853 C315.0821,65.3063 328.4301,55.5343 346.3051,55.5343 C374.1911,55.5343 386.5851,74.1243 386.5851,107.4933 L386.5851,189.9593 L359.1761,189.9593 L359.1761,110.8293 C359.1761,88.1863 352.5021,79.1303 337.0101,79.1303 C324.8541,79.1303 316.5131,85.3273 304.8341,97.0053 L304.8341,189.9593 L277.6631,189.9593 L277.6631,58.8703 Z", id: "Fill-5" }),
+                    React__default['default'].createElement("path", { d: "M496.9345,102.7257 C496.9345,85.0887 485.9705,74.8397 472.1465,74.8397 C458.3235,74.8397 447.3595,84.8507 447.3595,102.7257 C447.3595,120.1237 458.5615,130.8507 472.1465,130.8507 C485.7325,130.8507 496.9345,120.1237 496.9345,102.7257 M513.3795,207.3587 C513.3795,196.3947 504.7995,193.0577 488.8305,193.0577 L469.0485,193.0577 C462.8515,193.0577 456.8925,192.3427 451.4115,191.1507 C443.5455,196.8717 440.2085,203.5447 440.2085,210.2177 C440.2085,223.0887 453.5565,230.7157 475.2455,230.7157 C498.1255,230.7157 513.3795,219.5137 513.3795,207.3587 M416.8515,214.2697 C416.8515,203.3067 423.7635,193.0577 435.9185,185.6687 L435.9185,184.4777 C429.2455,180.4257 424.0015,173.5137 424.0015,162.7887 C424.0015,152.5387 431.3905,143.7207 438.5405,138.4777 L438.5405,137.5237 C429.7215,130.6127 421.3795,118.2177 421.3795,102.7257 C421.3795,72.9327 444.9755,55.5347 472.1465,55.5347 C479.5355,55.5347 486.2085,56.9637 491.2135,58.8707 L537.6915,58.8707 L537.6915,79.3687 L512.6645,79.3687 C517.6695,84.6127 521.2455,93.4307 521.2455,103.4407 C521.2455,132.0417 499.5565,148.4877 472.1465,148.4877 C466.1885,148.4877 459.5145,147.0577 453.7945,144.4357 C449.5035,148.2487 446.6445,152.0627 446.6445,158.2587 C446.6445,166.1247 451.8875,171.1297 468.5725,171.1297 L492.6445,171.1297 C523.6285,171.1297 539.8355,180.6637 539.8355,203.0677 C539.8355,228.3317 513.1415,248.8297 471.1935,248.8297 C439.7325,248.8297 416.8515,237.1507 416.8515,214.2697", id: "Fill-7" }),
+                    React__default['default'].createElement("path", { d: "M644.4629,112.7365 C644.4629,90.0935 634.2149,76.9855 615.1479,76.9855 C598.7009,76.9855 584.1629,89.6165 581.5409,112.7365 L644.4629,112.7365 Z M554.8469,124.6535 C554.8469,81.9895 583.9249,55.5345 614.6709,55.5345 C649.4689,55.5345 668.0599,80.5595 668.0599,117.7415 C668.0599,122.9855 667.5829,128.4665 666.8669,131.5655 L581.7789,131.5655 C583.9249,156.5905 599.6549,171.6065 622.2979,171.6065 C633.9769,171.6065 643.9859,168.0315 653.5209,161.8355 L663.0539,179.2335 C650.8989,187.3375 635.8829,193.0575 618.7229,193.0575 C583.2089,193.0575 554.8469,167.7935 554.8469,124.6535 L554.8469,124.6535 Z", id: "Fill-9" }),
+                    React__default['default'].createElement("path", { d: "M698.8007,159.213 L698.8007,0 L725.9727,0 L725.9727,160.644 C725.9727,168.031 729.3087,170.653 732.6457,170.653 C733.8377,170.653 734.7907,170.653 737.1737,170.177 L740.7487,190.912 C737.4127,192.105 732.6457,193.058 725.9727,193.058 C706.1897,193.058 698.8007,180.426 698.8007,159.213", id: "Fill-11" }),
+                    React__default['default'].createElement("path", { d: "M769.8232,58.8703 L792.2272,58.8703 L794.3732,77.2243 L795.0882,77.2243 C806.2902,65.3063 819.3982,55.5343 835.6062,55.5343 C855.1502,55.5343 866.1142,64.5913 871.8342,79.6063 C884.7052,65.7823 898.0522,55.5343 914.4972,55.5343 C941.9072,55.5343 954.7772,74.1243 954.7772,107.4933 L954.7772,189.9593 L927.3682,189.9593 L927.3682,110.8293 C927.3682,88.1863 920.2182,79.1303 905.4402,79.1303 C896.3842,79.1303 886.8492,85.0893 875.8862,97.0053 L875.8862,189.9593 L848.4762,189.9593 L848.4762,110.8293 C848.4762,88.1863 841.5642,79.1303 826.5492,79.1303 C817.7302,79.1303 807.9582,85.0893 796.9952,97.0053 L796.9952,189.9593 L769.8232,189.9593 L769.8232,58.8703 Z", id: "Fill-13" }),
+                    React__default['default'].createElement("path", { d: "M1065.123,156.1144 L1065.123,123.9384 C1026.273,128.7054 1013.164,138.4774 1013.164,153.2554 C1013.164,166.1254 1021.983,171.3684 1033.662,171.3684 C1045.102,171.3684 1054.397,165.8854 1065.123,156.1144 M986.708,155.1614 C986.708,127.0364 1010.543,112.4974 1065.123,106.5394 C1064.885,91.2854 1059.402,77.9384 1040.097,77.9384 C1026.273,77.9384 1013.402,84.1354 1002.201,91.2854 L991.952,72.6944 C1005.537,64.1144 1023.89,55.5344 1044.864,55.5344 C1077.517,55.5344 1092.532,76.2694 1092.532,111.0674 L1092.532,189.9594 L1070.128,189.9594 L1067.745,174.9434 L1067.029,174.9434 C1055.112,185.1924 1041.051,193.0574 1025.32,193.0574 C1002.678,193.0574 986.708,178.2804 986.708,155.1614", id: "Fill-15" }),
+                    React__default['default'].createElement("path", { d: "M1131.3798,58.8703 L1153.7838,58.8703 L1155.9298,82.4673 L1156.6448,82.4673 C1165.9398,65.5443 1179.7638,55.5343 1193.8258,55.5343 C1200.2618,55.5343 1204.5518,56.4873 1208.6038,58.3933 L1203.5978,82.2283 C1199.0688,80.7983 1195.7328,80.0833 1190.4888,80.0833 C1179.7638,80.0833 1166.8938,87.4723 1158.5518,108.2083 L1158.5518,189.9593 L1131.3798,189.9593 L1131.3798,58.8703 Z", id: "Fill-17" }),
+                    React__default['default'].createElement("polygon", { id: "Fill-19", points: "1228.8593 0.0001 1255.5533 0.0001 1255.5533 122.5091 1256.2693 122.5091 1307.7513 58.8701 1338.0203 58.8701 1293.4503 112.0201 1343.0253 189.9591 1313.2333 189.9591 1277.7193 130.6121 1255.5533 156.1141 1255.5533 189.9591 1228.8593 189.9591" }),
+                    React__default['default'].createElement("path", { d: "M1446.2265,112.7365 C1446.2265,90.0935 1435.9775,76.9855 1416.9105,76.9855 C1400.4645,76.9855 1385.9255,89.6165 1383.3035,112.7365 L1446.2265,112.7365 Z M1356.6095,124.6535 C1356.6095,81.9895 1385.6875,55.5345 1416.4335,55.5345 C1451.2315,55.5345 1469.8225,80.5595 1469.8225,117.7415 C1469.8225,122.9855 1469.3455,128.4665 1468.6295,131.5655 L1383.5415,131.5655 C1385.6875,156.5905 1401.4175,171.6065 1424.0605,171.6065 C1435.7395,171.6065 1445.7485,168.0315 1455.2835,161.8355 L1464.8165,179.2335 C1452.6615,187.3375 1437.6455,193.0575 1420.4855,193.0575 C1384.9715,193.0575 1356.6095,167.7935 1356.6095,124.6535 L1356.6095,124.6535 Z", id: "Fill-21" }),
+                    React__default['default'].createElement("path", { d: "M1504.8535,147.0577 L1504.8535,80.7977 L1485.7865,80.7977 L1485.7865,60.3007 L1506.0445,58.8707 L1509.1435,22.6427 L1532.2625,22.6427 L1532.2625,58.8707 L1566.3455,58.8707 L1566.3455,80.7977 L1532.2625,80.7977 L1532.2625,147.2957 C1532.2625,163.0267 1537.7445,171.1297 1551.3305,171.1297 C1555.8585,171.1297 1561.5785,169.7007 1565.3915,168.0317 L1570.3975,188.2907 C1563.0085,190.6737 1554.1895,193.0577 1544.6565,193.0577 C1515.1015,193.0577 1504.8535,174.7047 1504.8535,147.0577", id: "Fill-23" }),
+                    React__default['default'].createElement("path", { d: "M1581.1211,174.9435 L1593.9911,157.3055 C1605.6701,166.6015 1617.1101,172.3215 1631.1731,172.3215 C1646.9031,172.3215 1654.2921,164.6945 1654.2921,154.6845 C1654.2921,142.7665 1639.5151,137.5235 1625.2141,132.0425 C1607.8151,125.3685 1587.7951,116.0735 1587.7951,93.9075 C1587.7951,71.9795 1605.4321,55.5345 1634.2711,55.5345 C1651.9081,55.5345 1666.2091,62.6845 1676.9341,71.0265 L1664.0641,87.9485 C1655.0071,81.2745 1645.7121,76.5075 1634.7481,76.5075 C1620.4471,76.5075 1613.7731,83.6585 1613.7731,92.7155 C1613.7731,103.9175 1627.3591,108.2085 1641.6601,113.4515 C1660.0121,120.3635 1680.2711,128.4665 1680.2711,153.2555 C1680.2711,175.1815 1662.8721,193.0575 1630.4581,193.0575 C1612.3441,193.0575 1593.7531,185.4305 1581.1211,174.9435", id: "Fill-25" })),
+                React__default['default'].createElement("g", { transform: "translate(-0.000000, 127.850000)" },
+                    React__default['default'].createElement("mask", { id: "mask-2", fill: "white" },
+                        React__default['default'].createElement("use", { href: "#path-1" })),
+                    React__default['default'].createElement("g", { id: "Clip-29" }),
+                    React__default['default'].createElement("polygon", { id: "Fill-28", fill: "url(#linearGradient-3)", mask: "url(#mask-2)", points: "273.783 26.908 273.783 97.45 273.248 97.56 147.546 124.357 21.953 101.435 -2.84217094e-14 97.45 -2.84217094e-14 26.908 21.953 22.927 147.546 0 273.248 26.802" })),
+                React__default['default'].createElement("g", { transform: "translate(0.001000, 127.850000)" },
+                    React__default['default'].createElement("mask", { id: "mask-5", fill: "white" },
+                        React__default['default'].createElement("use", { href: "#path-4" })),
+                    React__default['default'].createElement("g", { id: "Clip-31" }),
+                    React__default['default'].createElement("polygon", { id: "Fill-30", fill: "url(#linearGradient-6)", mask: "url(#mask-5)", points: "21.952 22.926 -2.84217094e-14 26.908 -2.84217094e-14 97.45 21.952 101.434 147.546 124.357 273.248 97.56 273.781 97.45 273.781 26.908 273.248 26.802 147.546 0" })),
+                React__default['default'].createElement("g", { transform: "translate(-0.000000, 0.000000)" },
+                    React__default['default'].createElement("mask", { id: "mask-8", fill: "white" },
+                        React__default['default'].createElement("use", { href: "#path-7" })),
+                    React__default['default'].createElement("g", { id: "Clip-33" }),
+                    React__default['default'].createElement("polygon", { id: "Fill-32", fill: "url(#linearGradient-9)", mask: "url(#mask-8)", points: "376.993 76.466 376.993 119.46 270.608 105.09 147.546 88.519 23.836 114.453 -2.84217094e-14 119.46 -2.84217094e-14 72.591 29.165 58.225 147.546 0 263.29 38.582 341.206 64.52 341.206 64.573" })),
+                React__default['default'].createElement("g", { transform: "translate(0.001000, 0.000000)" },
+                    React__default['default'].createElement("mask", { id: "mask-11", fill: "white" },
+                        React__default['default'].createElement("use", { href: "#path-10" })),
+                    React__default['default'].createElement("g", { id: "Clip-35" }),
+                    React__default['default'].createElement("polygon", { id: "Fill-34", fill: "url(#linearGradient-12)", mask: "url(#mask-11)", points: "29.164 58.225 -2.84217094e-14 72.592 -2.84217094e-14 119.46 23.835 114.453 147.546 88.519 270.607 105.09 376.992 119.46 376.992 76.466 341.206 64.573 341.206 64.52 263.289 38.582 147.546 0" })),
+                React__default['default'].createElement("g", { transform: "translate(0.001000, 59.729000)" },
+                    React__default['default'].createElement("mask", { id: "mask-14", fill: "white" },
+                        React__default['default'].createElement("use", { href: "#path-13" })),
+                    React__default['default'].createElement("g", { id: "Clip-37" }),
+                    React__default['default'].createElement("path", { d: "M147.546,6.673 C101.43,12.753 59.837,22.764 25.343,35.676 L25.343,35.676 C16.411,39.013 7.908,42.565 2.84217094e-14,46.277 L2.84217094e-14,46.277 L2.84217094e-14,59.727 L23.835,54.724 L147.546,28.79 L270.607,45.361 L376.989,59.727 L376.989,16.737 L341.206,4.844 L341.206,4.791 C317.153,2.151 292.027,0.538 266.088,0.105 L266.088,0.105 C261.46,0.057 256.832,0 252.15,0 L252.15,0 C215.561,0 180.426,2.367 147.546,6.673", id: "Fill-36", fill: "url(#linearGradient-15)", mask: "url(#mask-14)" })),
+                React__default['default'].createElement("g", { transform: "translate(0.001000, 59.729000)" },
+                    React__default['default'].createElement("mask", { id: "mask-17", fill: "white" },
+                        React__default['default'].createElement("use", { href: "#path-16" })),
+                    React__default['default'].createElement("g", { id: "Clip-39" }),
+                    React__default['default'].createElement("path", { d: "M147.546,6.673 C101.43,12.753 59.837,22.764 25.343,35.676 L25.343,35.676 C16.411,39.013 7.908,42.565 0,46.277 L0,46.277 L0,59.727 L23.835,54.724 L147.546,28.79 L270.607,45.361 L376.989,59.727 L376.989,16.737 L341.206,4.844 L341.206,4.791 C317.153,2.151 292.027,0.538 266.088,0.105 L266.088,0.105 C261.46,0.057 256.832,0 252.15,0 L252.15,0 C215.561,0 180.426,2.367 147.546,6.673", id: "Fill-38", fill: "url(#linearGradient-18)", mask: "url(#mask-17)" })),
+                React__default['default'].createElement("g", { transform: "translate(0.001000, 260.601000)" },
+                    React__default['default'].createElement("mask", { id: "mask-20", fill: "white" },
+                        React__default['default'].createElement("use", { href: "#path-19" })),
+                    React__default['default'].createElement("g", { id: "Clip-41" }),
+                    React__default['default'].createElement("polygon", { id: "Fill-40", fill: "url(#linearGradient-21)", mask: "url(#mask-20)", points: "270.607 14.367 147.546 30.937 23.835 5.004 2.84217094e-14 0 2.84217094e-14 46.819 29.164 61.183 147.546 119.404 263.289 80.875 341.206 54.937 376.989 42.998 376.989 0" })),
+                React__default['default'].createElement("g", { transform: "translate(0.001000, 260.601000)" },
+                    React__default['default'].createElement("mask", { id: "mask-23", fill: "white" },
+                        React__default['default'].createElement("use", { href: "#path-22" })),
+                    React__default['default'].createElement("g", { id: "Clip-43" }),
+                    React__default['default'].createElement("polygon", { id: "Fill-42", fill: "url(#linearGradient-24)", mask: "url(#mask-23)", points: "270.607 14.367 147.546 30.937 23.835 5.004 2.84217094e-14 0 2.84217094e-14 46.819 29.164 61.183 147.546 119.404 263.289 80.875 341.206 54.937 376.989 42.998 376.989 0" })),
+                React__default['default'].createElement("g", { transform: "translate(0.001000, 260.601000)" },
+                    React__default['default'].createElement("mask", { id: "mask-26", fill: "white" },
+                        React__default['default'].createElement("use", { href: "#path-25" })),
+                    React__default['default'].createElement("g", { id: "Clip-45" }),
+                    React__default['default'].createElement("path", { d: "M270.607,14.367 L147.546,30.937 L23.835,5.004 L2.84217094e-14,0 L2.84217094e-14,13.45 C7.908,17.166 16.411,20.715 25.343,24.052 L25.343,24.052 C59.837,36.964 101.43,46.974 147.546,53.057 L147.546,53.057 C180.426,57.361 215.561,59.733 252.15,59.733 L252.15,59.733 C256.832,59.733 261.46,59.671 266.088,59.622 L266.088,59.622 C292.027,59.19 317.153,57.577 341.206,54.937 L341.206,54.937 L376.989,42.998 L376.989,0 L270.607,14.367 Z", id: "Fill-44", fill: "url(#linearGradient-27)", mask: "url(#mask-26)" })),
+                React__default['default'].createElement("g", { transform: "translate(0.001000, 260.601000)" },
+                    React__default['default'].createElement("mask", { id: "mask-29", fill: "white" },
+                        React__default['default'].createElement("use", { href: "#path-28" })),
+                    React__default['default'].createElement("g", { id: "Clip-47" }),
+                    React__default['default'].createElement("path", { d: "M270.607,14.367 L147.546,30.937 L23.835,5.004 L2.84217094e-14,0 L2.84217094e-14,13.45 C7.908,17.166 16.411,20.715 25.343,24.052 L25.343,24.052 C59.837,36.964 101.43,46.974 147.546,53.057 L147.546,53.057 C180.426,57.361 215.561,59.733 252.15,59.733 L252.15,59.733 C256.832,59.733 261.46,59.671 266.088,59.622 L266.088,59.622 C292.027,59.19 317.153,57.577 341.206,54.937 L341.206,54.937 L376.989,42.998 L376.989,0 L270.607,14.367 Z", id: "Fill-46", fill: "url(#linearGradient-30)", mask: "url(#mask-29)" })),
+                React__default['default'].createElement("g", { transform: "translate(23.836000, 0.000000)" },
+                    React__default['default'].createElement("mask", { id: "mask-32", fill: "white" },
+                        React__default['default'].createElement("use", { href: "#path-31" })),
+                    React__default['default'].createElement("g", { id: "Clip-49" }),
+                    React__default['default'].createElement("path", { d: "M5.329,58.225 C3.822,70.33 2.53,82.762 1.508,95.405 L1.508,95.405 C0.916,101.699 0.432,108.052 0,114.453 L0,114.453 L123.711,88.519 L246.772,105.09 C245.59,89.648 244.082,74.523 242.253,59.834 L242.253,59.834 C241.394,52.626 240.477,45.577 239.454,38.582 L239.454,38.582 L123.711,-5.68434189e-14 L5.329,58.225 Z", id: "Fill-48", fill: "url(#linearGradient-33)", mask: "url(#mask-32)" })),
+                React__default['default'].createElement("g", { transform: "translate(23.837000, 0.001000)" },
+                    React__default['default'].createElement("mask", { id: "mask-35", fill: "white" },
+                        React__default['default'].createElement("use", { href: "#path-34" })),
+                    React__default['default'].createElement("g", { id: "Clip-51" }),
+                    React__default['default'].createElement("polygon", { id: "Fill-50", fill: "url(#linearGradient-36)", mask: "url(#mask-35)", points: "-5.68434189e-14 114.452 246.771 114.452 246.771 -0.001 -5.68434189e-14 -0.001" })),
+                React__default['default'].createElement("g", { transform: "translate(23.836000, 265.605000)" },
+                    React__default['default'].createElement("mask", { id: "mask-38", fill: "white" },
+                        React__default['default'].createElement("use", { href: "#path-37" })),
+                    React__default['default'].createElement("g", { id: "Clip-53" }),
+                    React__default['default'].createElement("path", { d: "M1.508,19.048 C2.53,31.695 3.822,44.065 5.329,56.179 L5.329,56.179 L123.711,114.4 L239.454,75.871 C240.477,68.878 241.394,61.826 242.253,54.618 L242.253,54.618 C244.082,39.925 245.59,24.809 246.772,9.363 L246.772,9.363 L123.711,25.933 L0,0 C0.432,6.401 0.916,12.753 1.508,19.048", id: "Fill-52", fill: "url(#linearGradient-39)", mask: "url(#mask-38)" })),
+                React__default['default'].createElement("g", { transform: "translate(23.836000, 265.605000)" },
+                    React__default['default'].createElement("mask", { id: "mask-41", fill: "white" },
+                        React__default['default'].createElement("use", { href: "#path-40" })),
+                    React__default['default'].createElement("g", { id: "Clip-55" }),
+                    React__default['default'].createElement("polygon", { id: "Fill-54", fill: "url(#linearGradient-42)", mask: "url(#mask-41)", points: "0.001 114.399 246.772 114.399 246.772 0 0.001 0" })),
+                React__default['default'].createElement("g", { transform: "translate(21.306000, 127.850000)" },
+                    React__default['default'].createElement("mask", { id: "mask-44", fill: "white" },
+                        React__default['default'].createElement("use", { href: "#path-43" })),
+                    React__default['default'].createElement("g", { id: "Clip-57" }),
+                    React__default['default'].createElement("path", { d: "M0.647,22.926 C0.22,35.843 0,48.914 0,62.152 L0,62.152 C0,75.443 0.22,88.518 0.647,101.434 L0.647,101.434 L126.241,124.357 L251.943,97.56 C252.322,85.882 252.476,74.095 252.476,62.152 L252.476,62.152 C252.476,50.263 252.322,38.423 251.943,26.802 L251.943,26.802 L126.241,0 L0.647,22.926 Z", id: "Fill-56", fill: "url(#linearGradient-45)", mask: "url(#mask-44)" })),
+                React__default['default'].createElement("g", { transform: "translate(21.306000, 127.850000)" },
+                    React__default['default'].createElement("mask", { id: "mask-47", fill: "white" },
+                        React__default['default'].createElement("use", { href: "#path-46" })),
+                    React__default['default'].createElement("g", { id: "Clip-59" }),
+                    React__default['default'].createElement("polygon", { id: "Fill-58", fill: "url(#linearGradient-48)", mask: "url(#mask-47)", points: "0 124.357 252.477 124.357 252.477 0 0 0" })),
+                React__default['default'].createElement("g", { transform: "translate(147.544000, 0.002000)" },
+                    React__default['default'].createElement("g", { transform: "translate(0.002000, 127.848000)" },
+                        React__default['default'].createElement("mask", { id: "mask-50", fill: "white" },
+                            React__default['default'].createElement("use", { href: "#path-49" })),
+                        React__default['default'].createElement("g", { id: "Clip-61" }),
+                        React__default['default'].createElement("polygon", { id: "Fill-60", fill: "url(#linearGradient-51)", mask: "url(#mask-50)", points: "126.237 26.907 126.237 97.453 125.699 97.56 0 124.357 0 0 125.699 26.801" })),
+                    React__default['default'].createElement("g", { transform: "translate(0.000000, 0.000000)" },
+                        React__default['default'].createElement("mask", { id: "mask-53", fill: "white" },
+                            React__default['default'].createElement("use", { href: "#path-52" })),
+                        React__default['default'].createElement("g", { id: "Clip-63" })),
+                    React__default['default'].createElement("g", { transform: "translate(0.000000, 260.598000)" },
+                        React__default['default'].createElement("mask", { id: "mask-55", fill: "white" },
+                            React__default['default'].createElement("use", { href: "#path-54" })),
+                        React__default['default'].createElement("g", { id: "Clip-65" })),
+                    React__default['default'].createElement("path", { d: "M12.1273,161.328 C18.0813,162.159 21.0583,162.575 27.0113,163.406 C26.6743,165.815 26.5233,167.022 26.2583,169.439 C21.8773,168.957 19.6863,168.716 15.3043,168.235 C14.7133,173.611 14.5013,176.306 14.2433,181.702 C17.9703,181.88 19.8323,181.969 23.5593,182.147 C23.4403,184.617 23.4003,185.852 23.3553,188.324 C19.6243,188.255 17.7603,188.221 14.0293,188.153 C13.9143,194.422 13.9693,197.56 14.3033,203.824 C18.8563,203.581 21.1333,203.46 25.6873,203.217 C25.8163,205.662 25.8993,206.884 26.1033,209.325 C19.9603,209.833 16.8903,210.088 10.7473,210.597 C9.4953,194.224 9.7343,177.598 12.1273,161.328", id: "Fill-21298", fill: "#FFFFFF" }),
+                    React__default['default'].createElement("path", { d: "M40.7825,199.8632 C40.6575,196.7412 40.6265,195.1792 40.6285,192.0552 C34.9965,193.2092 33.0945,195.7172 33.2295,199.4432 C33.3465,202.6882 34.7235,203.9322 36.4135,203.8322 C38.0685,203.7342 39.3235,202.2972 40.7825,199.8632 M29.4155,200.0722 C29.1355,192.8462 32.7355,189.1002 40.6775,187.8312 C40.7255,184.1292 40.1315,180.8452 37.3375,180.6812 C35.3385,180.5642 33.3825,182.0002 31.6835,183.7492 C31.1695,181.8352 30.9235,180.8712 30.4555,178.9312 C32.5625,176.8662 35.4005,174.9482 38.4285,175.2122 C43.1435,175.6232 44.7665,180.7272 44.6285,188.9982 C44.5015,196.4992 44.6255,200.2562 45.2455,207.7382 C43.9505,207.8452 43.3035,207.8992 42.0095,208.0062 C41.7515,206.5692 41.6295,205.8492 41.3985,204.4052 C41.3565,204.4082 41.3365,204.4092 41.2955,204.4122 C39.7295,207.0012 37.8735,209.1192 35.6015,209.3162 C32.3325,209.6002 29.6455,206.0132 29.4155,200.0722", id: "Fill-21300", fill: "#FFFFFF" }),
+                    React__default['default'].createElement("path", { d: "M50.8577,177.0682 C52.1527,177.1752 52.7997,177.2292 54.0947,177.3362 C54.0837,178.9842 54.0867,179.8062 54.1127,181.4502 C54.1537,181.4522 54.1737,181.4532 54.2157,181.4562 C56.1317,178.9262 58.2537,176.9392 60.8357,177.1642 C64.8617,177.5152 66.2097,181.5752 66.0597,188.6052 C65.9117,195.5542 66.0177,199.0362 66.5917,205.9682 C65.0087,206.1002 64.2167,206.1662 62.6327,206.2972 C62.0687,199.4862 61.9567,196.0672 62.0737,189.2392 C62.1577,184.3572 61.3617,182.3512 59.1207,182.2232 C57.3607,182.1222 56.0617,183.4112 54.2787,185.9862 C53.9887,194.3722 54.0887,198.5792 54.7827,206.9472 C53.2127,207.0772 52.4277,207.1432 50.8577,207.2732 C49.9527,197.3892 49.9527,186.9522 50.8577,177.0682", id: "Fill-21302", fill: "#FFFFFF" }),
+                    React__default['default'].createElement("path", { d: "M82.0736,188.0385 C82.1656,184.6795 80.7256,182.6315 78.7256,182.5055 C76.7256,182.3805 74.9876,184.2755 74.8896,187.8415 C74.7956,191.3145 76.4606,193.4415 78.4286,193.42559 C80.3976,193.4095 81.9826,191.3525 82.0736,188.0385 M85.2146,207.7035 C84.9996,205.6555 83.7186,205.1385 81.4126,205.3385 C80.2696,205.4375 79.6986,205.4875 78.5556,205.5865 C77.6616,205.6645 76.7886,205.5985 75.9766,205.4295 C74.9366,206.6605 74.5826,208.0485 74.7276,209.3835 C75.0076,211.9575 77.1436,213.2205 80.2596,212.7995 C83.5466,212.3555 85.4526,209.9735 85.2146,207.7035 M71.4536,210.5765 C71.1986,208.3375 72.0096,206.1385 73.6496,204.5155 C73.6426,204.4195 73.6386,204.3715 73.6326,204.2755 C72.6046,203.5335 71.7406,202.1765 71.6356,199.9915 C71.5336,197.9045 72.5606,196.0725 73.5776,194.9995 C73.5766,194.9225 73.5756,194.8845 73.5746,194.8085 C72.2736,193.4385 71.0396,190.9045 71.1266,187.7385 C71.2926,181.6535 75.0846,178.4055 79.0086,178.7475 C80.0746,178.8405 81.0136,179.2005 81.7066,179.6245 C84.3916,179.8475 85.7346,179.9585 88.4206,180.1815 C88.2966,181.6785 88.2436,182.4275 88.1586,183.9265 C86.7106,183.8445 85.9856,183.8035 84.5376,183.7205 C85.2056,184.7445 85.6406,186.4065 85.5926,188.2685 C85.4516,193.5895 82.4666,196.7455 78.4956,196.8655 C77.6326,196.8915 76.6556,196.6415 75.8136,196.1425 C75.2116,196.9155 74.8186,197.6925 74.8726,198.9295 C74.9386,200.4975 75.7616,201.4525 78.1756,201.3095 C79.5676,201.2275 80.2646,201.1865 81.6586,201.1045 C86.1416,200.8395 88.5416,202.4445 88.9476,206.5225 C89.4056,211.1205 86.1966,215.4355 80.1916,216.3865 C75.6876,217.0995 71.9856,215.2475 71.4536,210.5765", id: "Fill-21304", fill: "#FFFFFF" }),
+                    React__default['default'].createElement("path", { d: "M103.4163,190.2606 C103.4713,186.5576 102.1513,184.3276 99.3933,184.1626 C97.0133,184.0196 94.7363,186.0856 94.2963,190.1256 C97.9443,190.1796 99.7683,190.2066 103.4163,190.2606 M90.4122994,192.2136 C90.4103,184.5366 95.1493,180.1536 99.5893,180.5406 C104.6143,180.9786 106.8763,185.1876 106.8263,191.1086 C106.8193,191.9436 106.7533,192.8156 106.6543,193.3116 C101.7213,193.3556 99.2543,193.3776 94.3213,193.4226 C94.6723,197.7986 97.1473,200.2726 100.4243,200.0766 C102.1133,199.9766 103.5243,199.2946 104.8573,198.2266 C105.4633,199.3266 105.7713,199.8706 106.3993,200.9456 C104.7313,202.3626 102.6483,203.4946 100.1703,203.7106 C95.0423,204.1556 90.4143,199.9766 90.4122994,192.2136", id: "Fill-21306", fill: "#FFFFFF" }),
+                    React__default['default'].createElement("path", { d: "M111.3968,197.5155 C110.9668,187.7395 111.2438,182.8095 112.7788,173.1175 C114.3348,173.3645 115.1128,173.4875 116.6688,173.7335 C115.1698,183.1965 114.9038,188.0105 115.3408,197.5555 C115.3908,198.6525 115.9008,199.0135 116.3828,198.9855 C116.5558,198.9745 116.6948,198.9665 117.0348,198.8775 C117.3118,200.0795 117.4588,200.6775 117.7658,201.8675 C117.2988,202.0815 116.6228,202.2815 115.6598,202.3655 C112.8028,202.6135 111.5398,200.7715 111.3968,197.5155", id: "Fill-21308", fill: "#FFFFFF" }))))));
 };
-var LogoWithText = React__default['default'].memo(Logo$2, function (prev, next) { return prev.isDark === next.isDark; });
+var LogoWithTextIcon = React__default['default'].memo(Logo$2, function (prev, next) { return prev.isDark === next.isDark; });
 
 var Icon$1o = function (props) {
     return (React__default['default'].createElement(Svg, __assign({ viewBox: "0 0 512 512" }, props),
@@ -1609,7 +1960,7 @@ var IconModule = /*#__PURE__*/Object.freeze({
     LogoIcon: Icon$1r,
     LogoExabcIcon: Icon$1q,
     LogoExabcWhiteIcon: Icon$1p,
-    LogoWithTextIcon: LogoWithText,
+    LogoWithTextIcon: LogoWithTextIcon,
     LogoRoundIcon: Icon$1o,
     MathWalletIcon: Icon$1n,
     LogoutIcon: Icon$1m,
@@ -1719,11 +2070,11 @@ ExpandableLabel.defaultProps = {
     expanded: false,
 };
 
-var Box = styled__default['default'].div(templateObject_1$14 || (templateObject_1$14 = __makeTemplateObject(["\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"], ["\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"])), styledSystem.background, styledSystem.border, styledSystem.layout, styledSystem.position, styledSystem.space);
-var templateObject_1$14;
+var Box = styled__default['default'].div(templateObject_1$15 || (templateObject_1$15 = __makeTemplateObject(["\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"], ["\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n"])), styledSystem.background, styledSystem.border, styledSystem.layout, styledSystem.position, styledSystem.space);
+var templateObject_1$15;
 
-var Flex = styled__default['default'](Box)(templateObject_1$13 || (templateObject_1$13 = __makeTemplateObject(["\n  display: flex;\n  ", "\n"], ["\n  display: flex;\n  ", "\n"])), styledSystem.flexbox);
-var templateObject_1$13;
+var Flex = styled__default['default'](Box)(templateObject_1$14 || (templateObject_1$14 = __makeTemplateObject(["\n  display: flex;\n  ", "\n"], ["\n  display: flex;\n  ", "\n"])), styledSystem.flexbox);
+var templateObject_1$14;
 
 var variants$5 = {
     INFO: "info",
@@ -1760,17 +2111,17 @@ var getIcon = function (variant) {
             return Icon$2i;
     }
 };
-var IconLabel = styled__default['default'].div(templateObject_1$12 || (templateObject_1$12 = __makeTemplateObject(["\n  background-color: ", ";\n  border-radius: 16px 0 0 16px;\n  color: ", ";\n  padding: 12px;\n"], ["\n  background-color: ", ";\n  border-radius: 16px 0 0 16px;\n  color: ", ";\n  padding: 12px;\n"])), getThemeColor, function (_a) {
+var IconLabel = styled__default['default'].div(templateObject_1$13 || (templateObject_1$13 = __makeTemplateObject(["\n  background-color: ", ";\n  border-radius: 16px 0 0 16px;\n  color: ", ";\n  padding: 12px;\n"], ["\n  background-color: ", ";\n  border-radius: 16px 0 0 16px;\n  color: ", ";\n  padding: 12px;\n"])), getThemeColor, function (_a) {
     var theme = _a.theme;
     return theme.alert.background;
 });
 var withHandlerSpacing = 32 + 12 + 8; // button size + inner spacing + handler position
-var Details = styled__default['default'].div(templateObject_2$x || (templateObject_2$x = __makeTemplateObject(["\n  flex: 1;\n  padding-bottom: 12px;\n  padding-left: 12px;\n  padding-right: ", ";\n  padding-top: 12px;\n"], ["\n  flex: 1;\n  padding-bottom: 12px;\n  padding-left: 12px;\n  padding-right: ", ";\n  padding-top: 12px;\n"])), function (_a) {
+var Details = styled__default['default'].div(templateObject_2$y || (templateObject_2$y = __makeTemplateObject(["\n  flex: 1;\n  padding-bottom: 12px;\n  padding-left: 12px;\n  padding-right: ", ";\n  padding-top: 12px;\n"], ["\n  flex: 1;\n  padding-bottom: 12px;\n  padding-left: 12px;\n  padding-right: ", ";\n  padding-top: 12px;\n"])), function (_a) {
     var hasHandler = _a.hasHandler;
     return (hasHandler ? withHandlerSpacing + "px" : "12px");
 });
-var CloseHandler = styled__default['default'].div(templateObject_3$e || (templateObject_3$e = __makeTemplateObject(["\n  border-radius: 0 16px 16px 0;\n  right: 8px;\n  position: absolute;\n  top: 8px;\n"], ["\n  border-radius: 0 16px 16px 0;\n  right: 8px;\n  position: absolute;\n  top: 8px;\n"])));
-var StyledAlert = styled__default['default'](Flex)(templateObject_4$9 || (templateObject_4$9 = __makeTemplateObject(["\n  position: relative;\n  background-color: ", ";\n  border-radius: 16px;\n  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);\n"], ["\n  position: relative;\n  background-color: ", ";\n  border-radius: 16px;\n  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);\n"])), function (_a) {
+var CloseHandler = styled__default['default'].div(templateObject_3$f || (templateObject_3$f = __makeTemplateObject(["\n  border-radius: 0 16px 16px 0;\n  right: 8px;\n  position: absolute;\n  top: 8px;\n"], ["\n  border-radius: 0 16px 16px 0;\n  right: 8px;\n  position: absolute;\n  top: 8px;\n"])));
+var StyledAlert = styled__default['default'](Flex)(templateObject_4$a || (templateObject_4$a = __makeTemplateObject(["\n  position: relative;\n  background-color: ", ";\n  border-radius: 16px;\n  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);\n"], ["\n  position: relative;\n  background-color: ", ";\n  border-radius: 16px;\n  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);\n"])), function (_a) {
     var theme = _a.theme;
     return theme.alert.background;
 });
@@ -1787,10 +2138,10 @@ var Alert = function (_a) {
             React__default['default'].createElement(IconButton, { scale: "sm", variant: "text", onClick: onClick },
                 React__default['default'].createElement(Icon$1O, { width: "24px", color: "currentColor" }))))));
 };
-var templateObject_1$12, templateObject_2$x, templateObject_3$e, templateObject_4$9;
+var templateObject_1$13, templateObject_2$y, templateObject_3$f, templateObject_4$a;
 
-var Grid = styled__default['default'](Box)(templateObject_1$11 || (templateObject_1$11 = __makeTemplateObject(["\n  display: grid;\n  ", "\n  ", "\n"], ["\n  display: grid;\n  ", "\n  ", "\n"])), styledSystem.flexbox, styledSystem.grid);
-var templateObject_1$11;
+var Grid = styled__default['default'](Box)(templateObject_1$12 || (templateObject_1$12 = __makeTemplateObject(["\n  display: grid;\n  ", "\n  ", "\n"], ["\n  display: grid;\n  ", "\n  ", "\n"])), styledSystem.flexbox, styledSystem.grid);
+var templateObject_1$12;
 
 var scales$7 = {
     SM: "sm",
@@ -1823,7 +2174,7 @@ var getHeight = function (_a) {
             return "40px";
     }
 };
-var Input$1 = styled__default['default'].input(templateObject_1$10 || (templateObject_1$10 = __makeTemplateObject(["\n  background-color: ", ";\n  border: 0;\n  border-radius: 16px;\n  box-shadow: ", ";\n  color: ", ";\n  display: block;\n  font-size: 16px;\n  height: ", ";\n  outline: 0;\n  padding: 0 16px;\n  width: 100%;\n  border: 1px solid ", ";\n\n  &::placeholder {\n    color: ", ";\n  }\n\n  &:disabled {\n    background-color: ", ";\n    box-shadow: none;\n    color: ", ";\n    cursor: not-allowed;\n  }\n\n  &:focus:not(:disabled) {\n    box-shadow: ", ";\n  }\n"], ["\n  background-color: ", ";\n  border: 0;\n  border-radius: 16px;\n  box-shadow: ", ";\n  color: ", ";\n  display: block;\n  font-size: 16px;\n  height: ", ";\n  outline: 0;\n  padding: 0 16px;\n  width: 100%;\n  border: 1px solid ", ";\n\n  &::placeholder {\n    color: ", ";\n  }\n\n  &:disabled {\n    background-color: ", ";\n    box-shadow: none;\n    color: ", ";\n    cursor: not-allowed;\n  }\n\n  &:focus:not(:disabled) {\n    box-shadow: ", ";\n  }\n"])), function (_a) {
+var Input$1 = styled__default['default'].input(templateObject_1$11 || (templateObject_1$11 = __makeTemplateObject(["\n  background-color: ", ";\n  border: 0;\n  border-radius: 16px;\n  box-shadow: ", ";\n  color: ", ";\n  display: block;\n  font-size: 16px;\n  height: ", ";\n  outline: 0;\n  padding: 0 16px;\n  width: 100%;\n  border: 1px solid ", ";\n\n  &::placeholder {\n    color: ", ";\n  }\n\n  &:disabled {\n    background-color: ", ";\n    box-shadow: none;\n    color: ", ";\n    cursor: not-allowed;\n  }\n\n  &:focus:not(:disabled) {\n    box-shadow: ", ";\n  }\n"], ["\n  background-color: ", ";\n  border: 0;\n  border-radius: 16px;\n  box-shadow: ", ";\n  color: ", ";\n  display: block;\n  font-size: 16px;\n  height: ", ";\n  outline: 0;\n  padding: 0 16px;\n  width: 100%;\n  border: 1px solid ", ";\n\n  &::placeholder {\n    color: ", ";\n  }\n\n  &:disabled {\n    background-color: ", ";\n    box-shadow: none;\n    color: ", ";\n    cursor: not-allowed;\n  }\n\n  &:focus:not(:disabled) {\n    box-shadow: ", ";\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.input;
 }, getBoxShadow, function (_a) {
@@ -1850,28 +2201,28 @@ Input$1.defaultProps = {
     isSuccess: false,
     isWarning: false,
 };
-var templateObject_1$10;
+var templateObject_1$11;
 
-var SwitchUnitsButton = styled__default['default'](IconButton)(templateObject_1$$ || (templateObject_1$$ = __makeTemplateObject(["\n  width: 16px;\n"], ["\n  width: 16px;\n"])));
-var UnitContainer = styled__default['default'](Text)(templateObject_2$w || (templateObject_2$w = __makeTemplateObject(["\n  margin-left: 4px;\n  text-align: right;\n  color: ", ";\n  white-space: nowrap;\n"], ["\n  margin-left: 4px;\n  text-align: right;\n  color: ", ";\n  white-space: nowrap;\n"])), function (_a) {
+var SwitchUnitsButton = styled__default['default'](IconButton)(templateObject_1$10 || (templateObject_1$10 = __makeTemplateObject(["\n  width: 16px;\n"], ["\n  width: 16px;\n"])));
+var UnitContainer = styled__default['default'](Text)(templateObject_2$x || (templateObject_2$x = __makeTemplateObject(["\n  margin-left: 4px;\n  text-align: right;\n  color: ", ";\n  white-space: nowrap;\n"], ["\n  margin-left: 4px;\n  text-align: right;\n  color: ", ";\n  white-space: nowrap;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.textSubtle;
 });
-var StyledBalanceInput = styled__default['default'](Box)(templateObject_3$d || (templateObject_3$d = __makeTemplateObject(["\n  background-color: ", ";\n  border-radius: 16px;\n  box-shadow: ", ";\n  padding: 8px 16px;\n"], ["\n  background-color: ", ";\n  border-radius: 16px;\n  box-shadow: ", ";\n  padding: 8px 16px;\n"])), function (_a) {
+var StyledBalanceInput = styled__default['default'](Box)(templateObject_3$e || (templateObject_3$e = __makeTemplateObject(["\n  background-color: ", ";\n  border-radius: 16px;\n  box-shadow: ", ";\n  padding: 8px 16px;\n"], ["\n  background-color: ", ";\n  border-radius: 16px;\n  box-shadow: ", ";\n  padding: 8px 16px;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.input;
 }, function (_a) {
     var theme = _a.theme, isWarning = _a.isWarning;
     return theme.shadows[isWarning ? "warning" : "inset"];
 });
-var StyledInput$1 = styled__default['default'](Input$1)(templateObject_4$8 || (templateObject_4$8 = __makeTemplateObject(["\n  background: transparent;\n  border-radius: 0;\n  box-shadow: none;\n  padding-left: 0;\n  padding-right: 0;\n  text-align: ", ";\n  border: none;\n\n  ::placeholder {\n    color: ", ";\n  }\n\n  &:focus:not(:disabled) {\n    box-shadow: none;\n  }\n"], ["\n  background: transparent;\n  border-radius: 0;\n  box-shadow: none;\n  padding-left: 0;\n  padding-right: 0;\n  text-align: ", ";\n  border: none;\n\n  ::placeholder {\n    color: ", ";\n  }\n\n  &:focus:not(:disabled) {\n    box-shadow: none;\n  }\n"])), function (_a) {
+var StyledInput$1 = styled__default['default'](Input$1)(templateObject_4$9 || (templateObject_4$9 = __makeTemplateObject(["\n  background: transparent;\n  border-radius: 0;\n  box-shadow: none;\n  padding-left: 0;\n  padding-right: 0;\n  text-align: ", ";\n  border: none;\n\n  ::placeholder {\n    color: ", ";\n  }\n\n  &:focus:not(:disabled) {\n    box-shadow: none;\n  }\n"], ["\n  background: transparent;\n  border-radius: 0;\n  box-shadow: none;\n  padding-left: 0;\n  padding-right: 0;\n  text-align: ", ";\n  border: none;\n\n  ::placeholder {\n    color: ", ";\n  }\n\n  &:focus:not(:disabled) {\n    box-shadow: none;\n  }\n"])), function (_a) {
     var _b = _a.textAlign, textAlign = _b === void 0 ? "right" : _b;
     return textAlign;
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.textSubtle;
 });
-var templateObject_1$$, templateObject_2$w, templateObject_3$d, templateObject_4$8;
+var templateObject_1$10, templateObject_2$x, templateObject_3$e, templateObject_4$9;
 
 var BalanceInput = function (_a) {
     var value = _a.value, _b = _a.placeholder, placeholder = _b === void 0 ? "0.0" : _b, onUserInput = _a.onUserInput, currencyValue = _a.currencyValue, inputProps = _a.inputProps, innerRef = _a.innerRef, _c = _a.isWarning, isWarning = _c === void 0 ? false : _c, _d = _a.decimals, decimals = _d === void 0 ? 18 : _d, unit = _a.unit, switchEditingUnits = _a.switchEditingUnits, props = __rest(_a, ["value", "placeholder", "onUserInput", "currencyValue", "inputProps", "innerRef", "isWarning", "decimals", "unit", "switchEditingUnits"]);
@@ -1902,7 +2253,7 @@ var Textfield = function (_a) {
         React__default['default'].createElement(StyledInput$1, __assign({ value: value, onChange: handleOnChange, placeholder: placeholder, textAlign: "left" }, inputProps))));
 };
 
-var Separator = styled__default['default'].div(templateObject_1$_ || (templateObject_1$_ = __makeTemplateObject(["\n  align-items: center;\n  color: ", ";\n  display: flex;\n  justify-content: center;\n  padding-left: 4px;\n  padding-right: 4px;\n\n  ", " {\n    padding-left: 8px;\n    padding-right: 8px;\n  }\n\n  ", " {\n    padding-left: 16px;\n    padding-right: 16px;\n  }\n"], ["\n  align-items: center;\n  color: ", ";\n  display: flex;\n  justify-content: center;\n  padding-left: 4px;\n  padding-right: 4px;\n\n  ", " {\n    padding-left: 8px;\n    padding-right: 8px;\n  }\n\n  ", " {\n    padding-left: 16px;\n    padding-right: 16px;\n  }\n"])), function (_a) {
+var Separator = styled__default['default'].div(templateObject_1$$ || (templateObject_1$$ = __makeTemplateObject(["\n  align-items: center;\n  color: ", ";\n  display: flex;\n  justify-content: center;\n  padding-left: 4px;\n  padding-right: 4px;\n\n  ", " {\n    padding-left: 8px;\n    padding-right: 8px;\n  }\n\n  ", " {\n    padding-left: 16px;\n    padding-right: 16px;\n  }\n"], ["\n  align-items: center;\n  color: ", ";\n  display: flex;\n  justify-content: center;\n  padding-left: 4px;\n  padding-right: 4px;\n\n  ", " {\n    padding-left: 8px;\n    padding-right: 8px;\n  }\n\n  ", " {\n    padding-left: 16px;\n    padding-right: 16px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.textDisabled;
 }, function (_a) {
@@ -1912,7 +2263,7 @@ var Separator = styled__default['default'].div(templateObject_1$_ || (templateOb
     var theme = _a.theme;
     return theme.mediaQueries.md;
 });
-var StyledBreadcrumbs = styled__default['default'].ul(templateObject_2$v || (templateObject_2$v = __makeTemplateObject(["\n  align-items: center;\n  display: flex;\n  flex-wrap: wrap;\n  list-style-type: none;\n\n  a {\n    color: ", ";\n\n    &:hover {\n      color: ", ";\n    }\n  }\n\n  ", "\n"], ["\n  align-items: center;\n  display: flex;\n  flex-wrap: wrap;\n  list-style-type: none;\n\n  a {\n    color: ", ";\n\n    &:hover {\n      color: ", ";\n    }\n  }\n\n  ", "\n"])), function (_a) {
+var StyledBreadcrumbs = styled__default['default'].ul(templateObject_2$w || (templateObject_2$w = __makeTemplateObject(["\n  align-items: center;\n  display: flex;\n  flex-wrap: wrap;\n  list-style-type: none;\n\n  a {\n    color: ", ";\n\n    &:hover {\n      color: ", ";\n    }\n  }\n\n  ", "\n"], ["\n  align-items: center;\n  display: flex;\n  flex-wrap: wrap;\n  list-style-type: none;\n\n  a {\n    color: ", ";\n\n    &:hover {\n      color: ", ";\n    }\n  }\n\n  ", "\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.primary;
 }, function (_a) {
@@ -1937,7 +2288,7 @@ var Breadcrumbs = function (_a) {
     var items = insertSeparators(validItems, separator);
     return (React__default['default'].createElement(StyledBreadcrumbs, null, items.map(function (item, index) { return (React__default['default'].createElement("li", { key: "child-" + index }, item)); })));
 };
-var templateObject_1$_, templateObject_2$v;
+var templateObject_1$$, templateObject_2$w;
 
 var getBackgroundColor = function (_a) {
     var theme = _a.theme, variant = _a.variant;
@@ -1947,7 +2298,7 @@ var getBorderColor$1 = function (_a) {
     var theme = _a.theme, variant = _a.variant;
     return theme.colors[variant === variants$6.SUBTLE ? "inputSecondary" : "disabled"];
 };
-var StyledButtonMenu = styled__default['default'].div(templateObject_1$Z || (templateObject_1$Z = __makeTemplateObject(["\n  background-color: ", ";\n  border-radius: 50px;\n  display: ", ";\n  border: 1px solid ", ";\n  width: ", ";\n\n  & > button,\n  & > a {\n    flex: ", ";\n  }\n\n  & > button + button,\n  & > a + a {\n    margin-left: 2px; // To avoid focus shadow overlap\n  }\n\n  & > button,\n  & a {\n    box-shadow: none;\n  }\n\n  ", "\n  ", "\n"], ["\n  background-color: ", ";\n  border-radius: 50px;\n  display: ", ";\n  border: 1px solid ", ";\n  width: ", ";\n\n  & > button,\n  & > a {\n    flex: ", ";\n  }\n\n  & > button + button,\n  & > a + a {\n    margin-left: 2px; // To avoid focus shadow overlap\n  }\n\n  & > button,\n  & a {\n    box-shadow: none;\n  }\n\n  ",
+var StyledButtonMenu = styled__default['default'].div(templateObject_1$_ || (templateObject_1$_ = __makeTemplateObject(["\n  background-color: ", ";\n  border-radius: 50px;\n  display: ", ";\n  border: 1px solid ", ";\n  width: ", ";\n\n  & > button,\n  & > a {\n    flex: ", ";\n  }\n\n  & > button + button,\n  & > a + a {\n    margin-left: 2px; // To avoid focus shadow overlap\n  }\n\n  & > button,\n  & a {\n    box-shadow: none;\n  }\n\n  ", "\n  ", "\n"], ["\n  background-color: ", ";\n  border-radius: 50px;\n  display: ", ";\n  border: 1px solid ", ";\n  width: ", ";\n\n  & > button,\n  & > a {\n    flex: ", ";\n  }\n\n  & > button + button,\n  & > a + a {\n    margin-left: 2px; // To avoid focus shadow overlap\n  }\n\n  & > button,\n  & a {\n    box-shadow: none;\n  }\n\n  ",
     "\n  ", "\n"])), getBackgroundColor, function (_a) {
     var fullWidth = _a.fullWidth;
     return (fullWidth ? "flex" : "inline-flex");
@@ -1976,9 +2327,9 @@ var ButtonMenu$1 = function (_a) {
         });
     })));
 };
-var templateObject_1$Z;
+var templateObject_1$_;
 
-var InactiveButton = styled__default['default'](Button)(templateObject_1$Y || (templateObject_1$Y = __makeTemplateObject(["\n  background-color: transparent;\n  color: ", ";\n  &:hover:not(:disabled):not(:active) {\n    background-color: transparent;\n  }\n"], ["\n  background-color: transparent;\n  color: ", ";\n  &:hover:not(:disabled):not(:active) {\n    background-color: transparent;\n  }\n"])), function (_a) {
+var InactiveButton = styled__default['default'](Button)(templateObject_1$Z || (templateObject_1$Z = __makeTemplateObject(["\n  background-color: transparent;\n  color: ", ";\n  &:hover:not(:disabled):not(:active) {\n    background-color: transparent;\n  }\n"], ["\n  background-color: transparent;\n  color: ", ";\n  &:hover:not(:disabled):not(:active) {\n    background-color: transparent;\n  }\n"])), function (_a) {
     var theme = _a.theme, variant = _a.variant;
     return (variant === variants$6.PRIMARY ? theme.colors.primary : theme.colors.textSubtle);
 });
@@ -1989,9 +2340,9 @@ var ButtonMenuItem = function (_a) {
     }
     return React__default['default'].createElement(Button, __assign({ as: as, variant: variant }, props));
 };
-var templateObject_1$Y;
+var templateObject_1$Z;
 
-var PromotedGradient = styled.keyframes(templateObject_1$X || (templateObject_1$X = __makeTemplateObject(["\n  0% {\n    background-position: 50% 0%;\n  }\n  50% {\n    background-position: 50% 100%;\n  }\n  100% {\n    background-position: 50% 0%;\n  }\n"], ["\n  0% {\n    background-position: 50% 0%;\n  }\n  50% {\n    background-position: 50% 100%;\n  }\n  100% {\n    background-position: 50% 0%;\n  }\n"])));
+var PromotedGradient = styled.keyframes(templateObject_1$Y || (templateObject_1$Y = __makeTemplateObject(["\n  0% {\n    background-position: 50% 0%;\n  }\n  50% {\n    background-position: 50% 100%;\n  }\n  100% {\n    background-position: 50% 0%;\n  }\n"], ["\n  0% {\n    background-position: 50% 0%;\n  }\n  50% {\n    background-position: 50% 100%;\n  }\n  100% {\n    background-position: 50% 0%;\n  }\n"])));
 /**
  * Priority: Warning --> Success --> Active
  */
@@ -2011,7 +2362,7 @@ var getBorderColor = function (_a) {
     }
     return theme.colors.gradients.cardBorderGradients;
 };
-var StyledCard = styled__default['default'].div(templateObject_3$c || (templateObject_3$c = __makeTemplateObject(["\n  background: ", ";\n  border-radius: ", ";\n  color: ", ";\n  overflow: hidden;\n  position: relative;\n\n  ", "\n\n  padding: 1px;\n\n  ", "\n"], ["\n  background: ", ";\n  border-radius: ", ";\n  color: ", ";\n  overflow: hidden;\n  position: relative;\n\n  ",
+var StyledCard = styled__default['default'].div(templateObject_3$d || (templateObject_3$d = __makeTemplateObject(["\n  background: ", ";\n  border-radius: ", ";\n  color: ", ";\n  overflow: hidden;\n  position: relative;\n\n  ", "\n\n  padding: 1px;\n\n  ", "\n"], ["\n  background: ", ";\n  border-radius: ", ";\n  color: ", ";\n  overflow: hidden;\n  position: relative;\n\n  ",
     "\n\n  padding: 1px;\n\n  ", "\n"])), getBorderColor, function (_a) {
     var theme = _a.theme;
     return theme.radii.card;
@@ -2020,9 +2371,9 @@ var StyledCard = styled__default['default'].div(templateObject_3$c || (templateO
     return theme.colors[isDisabled ? "textDisabled" : "text"];
 }, function (_a) {
     var isActive = _a.isActive;
-    return isActive && styled.css(templateObject_2$u || (templateObject_2$u = __makeTemplateObject(["\n      animation: ", " 3s ease infinite;\n      background-size: 400% 400%;\n    "], ["\n      animation: ", " 3s ease infinite;\n      background-size: 400% 400%;\n    "])), PromotedGradient);
+    return isActive && styled.css(templateObject_2$v || (templateObject_2$v = __makeTemplateObject(["\n      animation: ", " 3s ease infinite;\n      background-size: 400% 400%;\n    "], ["\n      animation: ", " 3s ease infinite;\n      background-size: 400% 400%;\n    "])), PromotedGradient);
 }, styledSystem.space);
-var StyledCardInner = styled__default['default'](Box)(templateObject_4$7 || (templateObject_4$7 = __makeTemplateObject(["\n  width: 100%;\n  height: 100%;\n  overflow: ", ";\n  background: ", ";\n  border-radius: ", ";\n"], ["\n  width: 100%;\n  height: 100%;\n  overflow: ", ";\n  background: ", ";\n  border-radius: ", ";\n"])), function (_a) {
+var StyledCardInner = styled__default['default'](Box)(templateObject_4$8 || (templateObject_4$8 = __makeTemplateObject(["\n  width: 100%;\n  height: 100%;\n  overflow: ", ";\n  background: ", ";\n  border-radius: ", ";\n"], ["\n  width: 100%;\n  height: 100%;\n  overflow: ", ";\n  background: ", ";\n  border-radius: ", ";\n"])), function (_a) {
     var hasCustomBorder = _a.hasCustomBorder;
     return (hasCustomBorder ? "initial" : "inherit");
 }, function (_a) {
@@ -2038,7 +2389,7 @@ StyledCard.defaultProps = {
     isWarning: false,
     isDisabled: false,
 };
-var templateObject_1$X, templateObject_2$u, templateObject_3$c, templateObject_4$7;
+var templateObject_1$Y, templateObject_2$v, templateObject_3$d, templateObject_4$8;
 
 var Card = function (_a) {
     var ribbon = _a.ribbon, children = _a.children, background = _a.background, props = __rest(_a, ["ribbon", "children", "background"]);
@@ -2048,13 +2399,13 @@ var Card = function (_a) {
             children)));
 };
 
-var CardBody = styled__default['default'].div(templateObject_1$W || (templateObject_1$W = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), styledSystem.space);
+var CardBody = styled__default['default'].div(templateObject_1$X || (templateObject_1$X = __makeTemplateObject(["\n  ", "\n"], ["\n  ", "\n"])), styledSystem.space);
 CardBody.defaultProps = {
     p: "24px",
 };
-var templateObject_1$W;
+var templateObject_1$X;
 
-var CardHeader = styled__default['default'].div(templateObject_1$V || (templateObject_1$V = __makeTemplateObject(["\n  background: ", ";\n  border-radius: ", ";\n  ", "\n"], ["\n  background: ", ";\n  border-radius: ", ";\n  ", "\n"])), function (_a) {
+var CardHeader = styled__default['default'].div(templateObject_1$W || (templateObject_1$W = __makeTemplateObject(["\n  background: ", ";\n  border-radius: ", ";\n  ", "\n"], ["\n  background: ", ";\n  border-radius: ", ";\n  ", "\n"])), function (_a) {
     var theme = _a.theme, _b = _a.variant, variant = _b === void 0 ? "default" : _b;
     return theme.card.cardHeaderBackground[variant];
 }, function (_a) {
@@ -2064,18 +2415,18 @@ var CardHeader = styled__default['default'].div(templateObject_1$V || (templateO
 CardHeader.defaultProps = {
     p: "24px",
 };
-var templateObject_1$V;
+var templateObject_1$W;
 
-var CardFooter = styled__default['default'].div(templateObject_1$U || (templateObject_1$U = __makeTemplateObject(["\n  border-top: 1px solid ", ";\n  ", "\n"], ["\n  border-top: 1px solid ", ";\n  ", "\n"])), function (_a) {
+var CardFooter = styled__default['default'].div(templateObject_1$V || (templateObject_1$V = __makeTemplateObject(["\n  border-top: 1px solid ", ";\n  ", "\n"], ["\n  border-top: 1px solid ", ";\n  ", "\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.cardBorder;
 }, styledSystem.space);
 CardFooter.defaultProps = {
     p: "24px",
 };
-var templateObject_1$U;
+var templateObject_1$V;
 
-var StyledCardRibbon = styled__default['default'].div(templateObject_1$T || (templateObject_1$T = __makeTemplateObject(["\n  z-index: 10;\n  background-color: ", ";\n  color: white;\n  margin: 0;\n  padding: 0;\n  padding: 8px 0;\n  position: absolute;\n  right: ", ";\n  top: 0;\n  text-align: center;\n  transform: translateX(30%) translateY(0%) rotate(45deg);\n  transform: ", ";\n  transform-origin: top left;\n  width: 96px;\n\n  &:before,\n  &:after {\n    background-color: ", ";\n    content: \"\";\n    height: 100%;\n    margin: 0 -1px; /* Removes tiny gap */\n    position: absolute;\n    top: 0;\n    width: 100%;\n  }\n\n  &:before {\n    right: 100%;\n  }\n\n  &:after {\n    left: 100%;\n  }\n\n  & > div {\n    overflow: hidden;\n    text-overflow: ellipsis;\n    white-space: nowrap;\n    width: 96px;\n  }\n"], ["\n  z-index: 10;\n  background-color: ", ";\n  color: white;\n  margin: 0;\n  padding: 0;\n  padding: 8px 0;\n  position: absolute;\n  right: ", ";\n  top: 0;\n  text-align: center;\n  transform: translateX(30%) translateY(0%) rotate(45deg);\n  transform: ",
+var StyledCardRibbon = styled__default['default'].div(templateObject_1$U || (templateObject_1$U = __makeTemplateObject(["\n  z-index: 10;\n  background-color: ", ";\n  color: white;\n  margin: 0;\n  padding: 0;\n  padding: 8px 0;\n  position: absolute;\n  right: ", ";\n  top: 0;\n  text-align: center;\n  transform: translateX(30%) translateY(0%) rotate(45deg);\n  transform: ", ";\n  transform-origin: top left;\n  width: 96px;\n\n  &:before,\n  &:after {\n    background-color: ", ";\n    content: \"\";\n    height: 100%;\n    margin: 0 -1px; /* Removes tiny gap */\n    position: absolute;\n    top: 0;\n    width: 100%;\n  }\n\n  &:before {\n    right: 100%;\n  }\n\n  &:after {\n    left: 100%;\n  }\n\n  & > div {\n    overflow: hidden;\n    text-overflow: ellipsis;\n    white-space: nowrap;\n    width: 96px;\n  }\n"], ["\n  z-index: 10;\n  background-color: ", ";\n  color: white;\n  margin: 0;\n  padding: 0;\n  padding: 8px 0;\n  position: absolute;\n  right: ", ";\n  top: 0;\n  text-align: center;\n  transform: translateX(30%) translateY(0%) rotate(45deg);\n  transform: ",
     ";\n  transform-origin: top left;\n  width: 96px;\n\n  &:before,\n  &:after {\n    background-color: ", ";\n    content: \"\";\n    height: 100%;\n    margin: 0 -1px; /* Removes tiny gap */\n    position: absolute;\n    top: 0;\n    width: 100%;\n  }\n\n  &:before {\n    right: 100%;\n  }\n\n  &:after {\n    left: 100%;\n  }\n\n  & > div {\n    overflow: hidden;\n    text-overflow: ellipsis;\n    white-space: nowrap;\n    width: 96px;\n  }\n"])), function (_a) {
     var _b = _a.variantColor, variantColor = _b === void 0 ? "secondary" : _b, theme = _a.theme;
     return theme.colors[variantColor];
@@ -2099,7 +2450,7 @@ var CardRibbon = function (_a) {
 CardRibbon.defaultProps = {
     ribbonPosition: "right",
 };
-var templateObject_1$T;
+var templateObject_1$U;
 
 var animation = {
     WAVES: "waves",
@@ -2110,17 +2461,17 @@ var variant = {
     CIRCLE: "circle",
 };
 
-var waves = styled.keyframes(templateObject_1$S || (templateObject_1$S = __makeTemplateObject(["\n   from {\n        left: -150px;\n    }\n    to   {\n        left: 100%;\n    }\n"], ["\n   from {\n        left: -150px;\n    }\n    to   {\n        left: 100%;\n    }\n"])));
-var pulse = styled.keyframes(templateObject_2$t || (templateObject_2$t = __makeTemplateObject(["\n  0% {\n    opacity: 1;\n  }\n  50% {\n    opacity: 0.4;\n  }\n  100% {\n    opacity: 1;\n  }\n"], ["\n  0% {\n    opacity: 1;\n  }\n  50% {\n    opacity: 0.4;\n  }\n  100% {\n    opacity: 1;\n  }\n"])));
-var Root = styled__default['default'].div(templateObject_3$b || (templateObject_3$b = __makeTemplateObject(["\n  min-height: 20px;\n  display: block;\n  background-color: ", ";\n  border-radius: ", ";\n\n  ", "\n  ", "\n"], ["\n  min-height: 20px;\n  display: block;\n  background-color: ", ";\n  border-radius: ", ";\n\n  ", "\n  ", "\n"])), function (_a) {
+var waves = styled.keyframes(templateObject_1$T || (templateObject_1$T = __makeTemplateObject(["\n   from {\n        left: -150px;\n    }\n    to   {\n        left: 100%;\n    }\n"], ["\n   from {\n        left: -150px;\n    }\n    to   {\n        left: 100%;\n    }\n"])));
+var pulse = styled.keyframes(templateObject_2$u || (templateObject_2$u = __makeTemplateObject(["\n  0% {\n    opacity: 1;\n  }\n  50% {\n    opacity: 0.4;\n  }\n  100% {\n    opacity: 1;\n  }\n"], ["\n  0% {\n    opacity: 1;\n  }\n  50% {\n    opacity: 0.4;\n  }\n  100% {\n    opacity: 1;\n  }\n"])));
+var Root = styled__default['default'].div(templateObject_3$c || (templateObject_3$c = __makeTemplateObject(["\n  min-height: 20px;\n  display: block;\n  background-color: ", ";\n  border-radius: ", ";\n\n  ", "\n  ", "\n"], ["\n  min-height: 20px;\n  display: block;\n  background-color: ", ";\n  border-radius: ", ";\n\n  ", "\n  ", "\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.backgroundDisabled;
 }, function (_a) {
     var variant$1 = _a.variant, theme = _a.theme;
     return (variant$1 === variant.CIRCLE ? theme.radii.circle : theme.radii.small);
 }, styledSystem.layout, styledSystem.space);
-var Pulse = styled__default['default'](Root)(templateObject_4$6 || (templateObject_4$6 = __makeTemplateObject(["\n  animation: ", " 2s infinite ease-out;\n  transform: translate3d(0, 0, 0);\n"], ["\n  animation: ", " 2s infinite ease-out;\n  transform: translate3d(0, 0, 0);\n"])), pulse);
-var Waves = styled__default['default'](Root)(templateObject_5$3 || (templateObject_5$3 = __makeTemplateObject(["\n  position: relative;\n  overflow: hidden;\n  transform: translate3d(0, 0, 0);\n  &:before {\n    content: \"\";\n    position: absolute;\n    background-image: linear-gradient(90deg, transparent, rgba(243, 243, 243, 0.5), transparent);\n    top: 0;\n    left: -150px;\n    height: 100%;\n    width: 150px;\n    animation: ", " 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;\n  }\n"], ["\n  position: relative;\n  overflow: hidden;\n  transform: translate3d(0, 0, 0);\n  &:before {\n    content: \"\";\n    position: absolute;\n    background-image: linear-gradient(90deg, transparent, rgba(243, 243, 243, 0.5), transparent);\n    top: 0;\n    left: -150px;\n    height: 100%;\n    width: 150px;\n    animation: ", " 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;\n  }\n"])), waves);
+var Pulse = styled__default['default'](Root)(templateObject_4$7 || (templateObject_4$7 = __makeTemplateObject(["\n  animation: ", " 2s infinite ease-out;\n  transform: translate3d(0, 0, 0);\n"], ["\n  animation: ", " 2s infinite ease-out;\n  transform: translate3d(0, 0, 0);\n"])), pulse);
+var Waves = styled__default['default'](Root)(templateObject_5$4 || (templateObject_5$4 = __makeTemplateObject(["\n  position: relative;\n  overflow: hidden;\n  transform: translate3d(0, 0, 0);\n  &:before {\n    content: \"\";\n    position: absolute;\n    background-image: linear-gradient(90deg, transparent, rgba(243, 243, 243, 0.5), transparent);\n    top: 0;\n    left: -150px;\n    height: 100%;\n    width: 150px;\n    animation: ", " 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;\n  }\n"], ["\n  position: relative;\n  overflow: hidden;\n  transform: translate3d(0, 0, 0);\n  &:before {\n    content: \"\";\n    position: absolute;\n    background-image: linear-gradient(90deg, transparent, rgba(243, 243, 243, 0.5), transparent);\n    top: 0;\n    left: -150px;\n    height: 100%;\n    width: 150px;\n    animation: ", " 2s cubic-bezier(0.4, 0, 0.2, 1) infinite;\n  }\n"])), waves);
 var Skeleton = function (_a) {
     var _b = _a.variant, variant$1 = _b === void 0 ? variant.RECT : _b, _c = _a.animation, animation$1 = _c === void 0 ? animation.PULSE : _c, props = __rest(_a, ["variant", "animation"]);
     if (animation$1 === animation.WAVES) {
@@ -2128,9 +2479,9 @@ var Skeleton = function (_a) {
     }
     return React__default['default'].createElement(Pulse, __assign({ variant: variant$1 }, props));
 };
-var templateObject_1$S, templateObject_2$t, templateObject_3$b, templateObject_4$6, templateObject_5$3;
+var templateObject_1$T, templateObject_2$u, templateObject_3$c, templateObject_4$7, templateObject_5$4;
 
-var PriceLink = styled__default['default'].a(templateObject_1$R || (templateObject_1$R = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  svg {\n    transition: transform 0.3s;\n  }\n  :hover {\n    svg {\n      transform: scale(1.2);\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  svg {\n    transition: transform 0.3s;\n  }\n  :hover {\n    svg {\n      transform: scale(1.2);\n    }\n  }\n"])));
+var PriceLink = styled__default['default'].a(templateObject_1$S || (templateObject_1$S = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  svg {\n    transition: transform 0.3s;\n  }\n  :hover {\n    svg {\n      transform: scale(1.2);\n    }\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  svg {\n    transition: transform 0.3s;\n  }\n  :hover {\n    svg {\n      transform: scale(1.2);\n    }\n  }\n"])));
 var CakePrice = function (_a) {
     var cakePriceUsd = _a.cakePriceUsd, _b = _a.color, color = _b === void 0 ? "textSubtle" : _b;
     return cakePriceUsd ? (React__default['default'].createElement(PriceLink, { href: "https://pancakeswap.finance/swap?outputCurrency=0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82", target: "_blank" },
@@ -2138,7 +2489,7 @@ var CakePrice = function (_a) {
         React__default['default'].createElement(Text, { color: color, bold: true }, "$" + cakePriceUsd.toFixed(3)))) : (React__default['default'].createElement(Skeleton, { width: 80, height: 24 }));
 };
 var CakePrice$1 = React__default['default'].memo(CakePrice);
-var templateObject_1$R;
+var templateObject_1$S;
 
 var scales$6 = {
     SM: "sm",
@@ -2155,9 +2506,9 @@ var getScale$3 = function (_a) {
             return "32px";
     }
 };
-var Checkbox = styled__default['default'].input.attrs({ type: "checkbox" })(templateObject_1$Q || (templateObject_1$Q = __makeTemplateObject(["\n  appearance: none;\n  overflow: hidden;\n  cursor: pointer;\n  position: relative;\n  display: inline-block;\n  height: ", ";\n  width: ", ";\n  vertical-align: middle;\n  transition: background-color 0.2s ease-in-out;\n  border: 0;\n  border-radius: 8px;\n  background-color: ", ";\n  box-shadow: ", ";\n\n  &:after {\n    content: \"\";\n    position: absolute;\n    border-bottom: 2px solid;\n    border-left: 2px solid;\n    border-color: transparent;\n    top: 30%;\n    left: 0;\n    right: 0;\n    width: 50%;\n    height: 25%;\n    margin: auto;\n    transform: rotate(-50deg);\n    transition: border-color 0.2s ease-in-out;\n  }\n\n  &:hover:not(:disabled):not(:checked) {\n    box-shadow: ", ";\n  }\n\n  &:focus {\n    outline: none;\n    box-shadow: ", ";\n  }\n\n  &:checked {\n    background-color: ", ";\n    &:after {\n      border-color: white;\n    }\n  }\n\n  &:disabled {\n    cursor: default;\n    opacity: 0.6;\n  }\n"], ["\n  appearance: none;\n  overflow: hidden;\n  cursor: pointer;\n  position: relative;\n  display: inline-block;\n  height: ", ";\n  width: ", ";\n  vertical-align: middle;\n  transition: background-color 0.2s ease-in-out;\n  border: 0;\n  border-radius: 8px;\n  background-color: ", ";\n  box-shadow: ", ";\n\n  &:after {\n    content: \"\";\n    position: absolute;\n    border-bottom: 2px solid;\n    border-left: 2px solid;\n    border-color: transparent;\n    top: 30%;\n    left: 0;\n    right: 0;\n    width: 50%;\n    height: 25%;\n    margin: auto;\n    transform: rotate(-50deg);\n    transition: border-color 0.2s ease-in-out;\n  }\n\n  &:hover:not(:disabled):not(:checked) {\n    box-shadow: ", ";\n  }\n\n  &:focus {\n    outline: none;\n    box-shadow: ", ";\n  }\n\n  &:checked {\n    background-color: ", ";\n    &:after {\n      border-color: white;\n    }\n  }\n\n  &:disabled {\n    cursor: default;\n    opacity: 0.6;\n  }\n"])), getScale$3, getScale$3, function (_a) {
+var Checkbox = styled__default['default'].input.attrs({ type: "checkbox" })(templateObject_1$R || (templateObject_1$R = __makeTemplateObject(["\n  appearance: none;\n  overflow: hidden;\n  cursor: pointer;\n  position: relative;\n  display: inline-block;\n  height: ", ";\n  width: ", ";\n  vertical-align: middle;\n  transition: background-color 0.2s ease-in-out;\n  border: 0;\n  border-radius: 8px;\n  background-color: ", ";\n  box-shadow: ", ";\n\n  &:after {\n    content: \"\";\n    position: absolute;\n    border-bottom: 2px solid;\n    border-left: 2px solid;\n    border-color: transparent;\n    top: 30%;\n    left: 0;\n    right: 0;\n    width: 50%;\n    height: 25%;\n    margin: auto;\n    transform: rotate(-50deg);\n    transition: border-color 0.2s ease-in-out;\n  }\n\n  &:hover:not(:disabled):not(:checked) {\n    box-shadow: ", ";\n  }\n\n  &:focus {\n    outline: none;\n    box-shadow: ", ";\n  }\n\n  &:checked {\n    background-color: ", ";\n    &:after {\n      border-color: white;\n    }\n  }\n\n  &:disabled {\n    cursor: default;\n    opacity: 0.6;\n  }\n"], ["\n  appearance: none;\n  overflow: hidden;\n  cursor: pointer;\n  position: relative;\n  display: inline-block;\n  height: ", ";\n  width: ", ";\n  vertical-align: middle;\n  transition: background-color 0.2s ease-in-out;\n  border: 0;\n  border-radius: 8px;\n  background-color: ", ";\n  box-shadow: ", ";\n\n  &:after {\n    content: \"\";\n    position: absolute;\n    border-bottom: 2px solid;\n    border-left: 2px solid;\n    border-color: transparent;\n    top: 30%;\n    left: 0;\n    right: 0;\n    width: 50%;\n    height: 25%;\n    margin: auto;\n    transform: rotate(-50deg);\n    transition: border-color 0.2s ease-in-out;\n  }\n\n  &:hover:not(:disabled):not(:checked) {\n    box-shadow: ", ";\n  }\n\n  &:focus {\n    outline: none;\n    box-shadow: ", ";\n  }\n\n  &:checked {\n    background-color: ", ";\n    &:after {\n      border-color: white;\n    }\n  }\n\n  &:disabled {\n    cursor: default;\n    opacity: 0.6;\n  }\n"])), getScale$3, getScale$3, function (_a) {
     var theme = _a.theme;
-    return theme.colors.input;
+    return theme.colors.greyPrimary;
 }, function (_a) {
     var theme = _a.theme;
     return theme.shadows.inset;
@@ -2174,7 +2525,7 @@ var Checkbox = styled__default['default'].input.attrs({ type: "checkbox" })(temp
 Checkbox.defaultProps = {
     scale: scales$6.MD,
 };
-var templateObject_1$Q;
+var templateObject_1$R;
 
 var getLeft = function (_a) {
     var position = _a.position;
@@ -2190,7 +2541,7 @@ var getBottom = function (_a) {
     }
     return "auto";
 };
-var DropdownContent = styled__default['default'].div(templateObject_1$P || (templateObject_1$P = __makeTemplateObject(["\n  width: max-content;\n  display: none;\n  flex-direction: column;\n  position: absolute;\n  transform: translate(-50%, 0);\n  left: ", ";\n  bottom: ", ";\n  background-color: ", ";\n  box-shadow: ", ";\n  padding: 16px;\n  max-height: 400px;\n  overflow-y: auto;\n  z-index: ", ";\n  border-radius: ", ";\n"], ["\n  width: max-content;\n  display: none;\n  flex-direction: column;\n  position: absolute;\n  transform: translate(-50%, 0);\n  left: ", ";\n  bottom: ", ";\n  background-color: ", ";\n  box-shadow: ", ";\n  padding: 16px;\n  max-height: 400px;\n  overflow-y: auto;\n  z-index: ", ";\n  border-radius: ", ";\n"])), getLeft, getBottom, function (_a) {
+var DropdownContent = styled__default['default'].div(templateObject_1$Q || (templateObject_1$Q = __makeTemplateObject(["\n  width: max-content;\n  display: none;\n  flex-direction: column;\n  position: absolute;\n  transform: translate(-50%, 0);\n  left: ", ";\n  bottom: ", ";\n  background-color: ", ";\n  box-shadow: ", ";\n  padding: 16px;\n  max-height: 400px;\n  overflow-y: auto;\n  z-index: ", ";\n  border-radius: ", ";\n"], ["\n  width: max-content;\n  display: none;\n  flex-direction: column;\n  position: absolute;\n  transform: translate(-50%, 0);\n  left: ", ";\n  bottom: ", ";\n  background-color: ", ";\n  box-shadow: ", ";\n  padding: 16px;\n  max-height: 400px;\n  overflow-y: auto;\n  z-index: ", ";\n  border-radius: ", ";\n"])), getLeft, getBottom, function (_a) {
     var theme = _a.theme;
     return theme.nav.background;
 }, function (_a) {
@@ -2203,7 +2554,7 @@ var DropdownContent = styled__default['default'].div(templateObject_1$P || (temp
     var theme = _a.theme;
     return theme.radii.small;
 });
-var Container$1 = styled__default['default'].div(templateObject_2$s || (templateObject_2$s = __makeTemplateObject(["\n  position: relative;\n  &:hover ", ", &:focus-within ", " {\n    display: flex;\n  }\n"], ["\n  position: relative;\n  &:hover ", ", &:focus-within ", " {\n    display: flex;\n  }\n"])), DropdownContent, DropdownContent);
+var Container$1 = styled__default['default'].div(templateObject_2$t || (templateObject_2$t = __makeTemplateObject(["\n  position: relative;\n  &:hover ", ", &:focus-within ", " {\n    display: flex;\n  }\n"], ["\n  position: relative;\n  &:hover ", ", &:focus-within ", " {\n    display: flex;\n  }\n"])), DropdownContent, DropdownContent);
 var Dropdown = function (_a) {
     var target = _a.target, _b = _a.position, position = _b === void 0 ? "bottom" : _b, children = _a.children;
     return (React__default['default'].createElement(Container$1, null,
@@ -2213,10 +2564,10 @@ var Dropdown = function (_a) {
 Dropdown.defaultProps = {
     position: "bottom",
 };
-var templateObject_1$P, templateObject_2$s;
+var templateObject_1$Q, templateObject_2$t;
 
-var bunnyFall = styled.keyframes(templateObject_1$O || (templateObject_1$O = __makeTemplateObject(["\n  0% {\n    opacity: 1;\n    transform: translate(0, -100%) rotateZ(0deg);\n  }\n\n  75% {\n    opacity: 1;\n    transform: translate(100px, 75vh) rotateZ(270deg);\n  }\n\n  100% {\n    opacity: 0;\n    transform: translate(150px, 100vh) rotateZ(360deg);\n  }\n"], ["\n  0% {\n    opacity: 1;\n    transform: translate(0, -100%) rotateZ(0deg);\n  }\n\n  75% {\n    opacity: 1;\n    transform: translate(100px, 75vh) rotateZ(270deg);\n  }\n\n  100% {\n    opacity: 0;\n    transform: translate(150px, 100vh) rotateZ(360deg);\n  }\n"])));
-var Bunny = styled__default['default'].div(templateObject_2$r || (templateObject_2$r = __makeTemplateObject(["\n  display: inline-flex;\n  position: fixed;\n  top: 0;\n  left: ", ";\n  transform: translate3d(0, -100%, 0);\n  user-select: none;\n  pointer-events: none;\n  z-index: 99999;\n\n  animation-name: ", ";\n  animation-duration: ", ";\n  animation-timing-function: linear;\n  animation-iteration-count: ", ";\n  animation-play-state: running;\n\n  &:nth-child(5n + 5) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(3n + 2) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(2n + 5) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(3n + 10) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(7n + 2) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(4n + 5) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(3n + 7) {\n    animation-delay: ", ";\n  }\n"], ["\n  display: inline-flex;\n  position: fixed;\n  top: 0;\n  left: ", ";\n  transform: translate3d(0, -100%, 0);\n  user-select: none;\n  pointer-events: none;\n  z-index: 99999;\n\n  animation-name: ", ";\n  animation-duration: ", ";\n  animation-timing-function: linear;\n  animation-iteration-count: ", ";\n  animation-play-state: running;\n\n  &:nth-child(5n + 5) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(3n + 2) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(2n + 5) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(3n + 10) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(7n + 2) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(4n + 5) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(3n + 7) {\n    animation-delay: ", ";\n  }\n"])), function (_a) {
+var bunnyFall = styled.keyframes(templateObject_1$P || (templateObject_1$P = __makeTemplateObject(["\n  0% {\n    opacity: 1;\n    transform: translate(0, -100%) rotateZ(0deg);\n  }\n\n  75% {\n    opacity: 1;\n    transform: translate(100px, 75vh) rotateZ(270deg);\n  }\n\n  100% {\n    opacity: 0;\n    transform: translate(150px, 100vh) rotateZ(360deg);\n  }\n"], ["\n  0% {\n    opacity: 1;\n    transform: translate(0, -100%) rotateZ(0deg);\n  }\n\n  75% {\n    opacity: 1;\n    transform: translate(100px, 75vh) rotateZ(270deg);\n  }\n\n  100% {\n    opacity: 0;\n    transform: translate(150px, 100vh) rotateZ(360deg);\n  }\n"])));
+var Bunny = styled__default['default'].div(templateObject_2$s || (templateObject_2$s = __makeTemplateObject(["\n  display: inline-flex;\n  position: fixed;\n  top: 0;\n  left: ", ";\n  transform: translate3d(0, -100%, 0);\n  user-select: none;\n  pointer-events: none;\n  z-index: 99999;\n\n  animation-name: ", ";\n  animation-duration: ", ";\n  animation-timing-function: linear;\n  animation-iteration-count: ", ";\n  animation-play-state: running;\n\n  &:nth-child(5n + 5) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(3n + 2) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(2n + 5) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(3n + 10) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(7n + 2) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(4n + 5) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(3n + 7) {\n    animation-delay: ", ";\n  }\n"], ["\n  display: inline-flex;\n  position: fixed;\n  top: 0;\n  left: ", ";\n  transform: translate3d(0, -100%, 0);\n  user-select: none;\n  pointer-events: none;\n  z-index: 99999;\n\n  animation-name: ", ";\n  animation-duration: ", ";\n  animation-timing-function: linear;\n  animation-iteration-count: ", ";\n  animation-play-state: running;\n\n  &:nth-child(5n + 5) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(3n + 2) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(2n + 5) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(3n + 10) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(7n + 2) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(4n + 5) {\n    animation-delay: ", ";\n  }\n\n  &:nth-child(3n + 7) {\n    animation-delay: ", ";\n  }\n"])), function (_a) {
     var position = _a.position;
     return position + "vw";
 }, bunnyFall, function (_a) {
@@ -2253,7 +2604,7 @@ var FallingBunnies = function (_a) {
         React__default['default'].createElement(Icon$1r, { width: size, height: size }))); });
     return React__default['default'].createElement("div", null, bunnies);
 };
-var templateObject_1$O, templateObject_2$r;
+var templateObject_1$P, templateObject_2$s;
 
 var tags = {
     H1: "h1",
@@ -2289,7 +2640,7 @@ var style = (_a$3 = {},
         fontSizeLg: "64px",
     },
     _a$3);
-var Heading = styled__default['default'](Text).attrs({ bold: true })(templateObject_1$N || (templateObject_1$N = __makeTemplateObject(["\n  font-size: ", ";\n  font-weight: 600;\n  line-height: 1.1;\n\n  ", " {\n    font-size: ", ";\n  }\n"], ["\n  font-size: ", ";\n  font-weight: 600;\n  line-height: 1.1;\n\n  ", " {\n    font-size: ", ";\n  }\n"])), function (_a) {
+var Heading = styled__default['default'](Text).attrs({ bold: true })(templateObject_1$O || (templateObject_1$O = __makeTemplateObject(["\n  font-size: ", ";\n  font-weight: 600;\n  line-height: 1.1;\n\n  ", " {\n    font-size: ", ";\n  }\n"], ["\n  font-size: ", ";\n  font-weight: 600;\n  line-height: 1.1;\n\n  ", " {\n    font-size: ", ";\n  }\n"])), function (_a) {
     var scale = _a.scale;
     return style[scale || scales$5.MD].fontSize;
 }, function (_a) {
@@ -2302,7 +2653,7 @@ var Heading = styled__default['default'](Text).attrs({ bold: true })(templateObj
 Heading.defaultProps = {
     as: tags.H2,
 };
-var templateObject_1$N;
+var templateObject_1$O;
 
 var observerOptions = {
     root: null,
@@ -2310,7 +2661,7 @@ var observerOptions = {
     threshold: 0,
 };
 
-var StyledWrapper = styled__default['default'].div(templateObject_1$M || (templateObject_1$M = __makeTemplateObject(["\n  max-height: ", "px;\n  max-width: ", "px;\n  position: relative;\n  width: 100%;\n\n  &:after {\n    content: \"\";\n    display: block;\n    padding-top: ", "%;\n  }\n\n  ", "\n"], ["\n  max-height: ", "px;\n  max-width: ", "px;\n  position: relative;\n  width: 100%;\n\n  &:after {\n    content: \"\";\n    display: block;\n    padding-top: ", "%;\n  }\n\n  ", "\n"])), function (_a) {
+var StyledWrapper = styled__default['default'].div(templateObject_1$N || (templateObject_1$N = __makeTemplateObject(["\n  max-height: ", "px;\n  max-width: ", "px;\n  position: relative;\n  width: 100%;\n\n  &:after {\n    content: \"\";\n    display: block;\n    padding-top: ", "%;\n  }\n\n  ", "\n"], ["\n  max-height: ", "px;\n  max-width: ", "px;\n  position: relative;\n  width: 100%;\n\n  &:after {\n    content: \"\";\n    display: block;\n    padding-top: ", "%;\n  }\n\n  ", "\n"])), function (_a) {
     var $height = _a.$height;
     return $height;
 }, function (_a) {
@@ -2324,12 +2675,12 @@ var Wrapper$3 = React.forwardRef(function (_a, ref) {
     var width = _a.width, height = _a.height, props = __rest(_a, ["width", "height"]);
     return React__default['default'].createElement(StyledWrapper, __assign({ ref: ref, "$width": width, "$height": height }, props));
 });
+var templateObject_1$N;
+
+var Placeholder = styled__default['default'].div(templateObject_1$M || (templateObject_1$M = __makeTemplateObject(["\n  height: 100%;\n  left: 0;\n  position: absolute;\n  top: 0;\n  width: 100%;\n"], ["\n  height: 100%;\n  left: 0;\n  position: absolute;\n  top: 0;\n  width: 100%;\n"])));
 var templateObject_1$M;
 
-var Placeholder = styled__default['default'].div(templateObject_1$L || (templateObject_1$L = __makeTemplateObject(["\n  height: 100%;\n  left: 0;\n  position: absolute;\n  top: 0;\n  width: 100%;\n"], ["\n  height: 100%;\n  left: 0;\n  position: absolute;\n  top: 0;\n  width: 100%;\n"])));
-var templateObject_1$L;
-
-var StyledBackgroundImage = styled__default['default'](Wrapper$3)(templateObject_1$K || (templateObject_1$K = __makeTemplateObject(["\n  background-repeat: no-repeat;\n  background-size: contain;\n"], ["\n  background-repeat: no-repeat;\n  background-size: contain;\n"])));
+var StyledBackgroundImage = styled__default['default'](Wrapper$3)(templateObject_1$L || (templateObject_1$L = __makeTemplateObject(["\n  background-repeat: no-repeat;\n  background-size: contain;\n"], ["\n  background-repeat: no-repeat;\n  background-size: contain;\n"])));
 var BackgroundImage = function (_a) {
     var loadingPlaceholder = _a.loadingPlaceholder, src = _a.src, width = _a.width, height = _a.height, props = __rest(_a, ["loadingPlaceholder", "src", "width", "height"]);
     var _b = React.useState(false), isLoaded = _b[0], setIsLoaded = _b[1];
@@ -2366,9 +2717,9 @@ var BackgroundImage = function (_a) {
     }, [src, setIsLoaded]);
     return (React__default['default'].createElement(StyledBackgroundImage, __assign({ ref: ref, width: width, height: height }, props), !isLoaded && placeholder));
 };
-var templateObject_1$K;
+var templateObject_1$L;
 
-var StyledImage = styled__default['default'].img(templateObject_1$J || (templateObject_1$J = __makeTemplateObject(["\n  height: 100%;\n  left: 0;\n  position: absolute;\n  top: 0;\n  width: 100%;\n"], ["\n  height: 100%;\n  left: 0;\n  position: absolute;\n  top: 0;\n  width: 100%;\n"])));
+var StyledImage = styled__default['default'].img(templateObject_1$K || (templateObject_1$K = __makeTemplateObject(["\n  height: 100%;\n  left: 0;\n  position: absolute;\n  top: 0;\n  width: 100%;\n"], ["\n  height: 100%;\n  left: 0;\n  position: absolute;\n  top: 0;\n  width: 100%;\n"])));
 var Image = function (_a) {
     var src = _a.src, alt = _a.alt, width = _a.width, height = _a.height, props = __rest(_a, ["src", "alt", "width", "height"]);
     var imgRef = React.useRef(null);
@@ -2395,10 +2746,10 @@ var Image = function (_a) {
     }, [src]);
     return (React__default['default'].createElement(Wrapper$3, __assign({ ref: imgRef, height: height, width: width }, props), isLoaded ? React__default['default'].createElement(StyledImage, { src: src, alt: alt }) : React__default['default'].createElement(Placeholder, null)));
 };
-var templateObject_1$J;
+var templateObject_1$K;
 
-var TokenImage = styled__default['default'](Image)(templateObject_1$I || (templateObject_1$I = __makeTemplateObject(["\n  &:before {\n    border-radius: 50%;\n    border: 1px solid rgba(0, 0, 0, 0.25);\n    content: \"\";\n    height: 100%;\n    left: 0;\n    position: absolute;\n    top: 0;\n    width: 100%;\n    z-index: 7;\n  }\n"], ["\n  &:before {\n    border-radius: 50%;\n    border: 1px solid rgba(0, 0, 0, 0.25);\n    content: \"\";\n    height: 100%;\n    left: 0;\n    position: absolute;\n    top: 0;\n    width: 100%;\n    z-index: 7;\n  }\n"])));
-var templateObject_1$I;
+var TokenImage = styled__default['default'](Image)(templateObject_1$J || (templateObject_1$J = __makeTemplateObject(["\n  &:before {\n    border-radius: 50%;\n    border: 1px solid rgba(0, 0, 0, 0.25);\n    content: \"\";\n    height: 100%;\n    left: 0;\n    position: absolute;\n    top: 0;\n    width: 100%;\n    z-index: 7;\n  }\n"], ["\n  &:before {\n    border-radius: 50%;\n    border: 1px solid rgba(0, 0, 0, 0.25);\n    content: \"\";\n    height: 100%;\n    left: 0;\n    position: absolute;\n    top: 0;\n    width: 100%;\n    z-index: 7;\n  }\n"])));
+var templateObject_1$J;
 
 var variants$4 = {
     DEFAULT: "default",
@@ -2406,7 +2757,7 @@ var variants$4 = {
 };
 
 var _a$2, _b$2;
-var StyledPrimaryImage = styled__default['default'](TokenImage)(templateObject_1$H || (templateObject_1$H = __makeTemplateObject(["\n  position: absolute;\n  width: ", "; // 92, 82 are arbitrary numbers to fit the variant\n\n  ", "\n"], ["\n  position: absolute;\n  width: ",
+var StyledPrimaryImage = styled__default['default'](TokenImage)(templateObject_1$I || (templateObject_1$I = __makeTemplateObject(["\n  position: absolute;\n  width: ", "; // 92, 82 are arbitrary numbers to fit the variant\n\n  ", "\n"], ["\n  position: absolute;\n  width: ",
     "; // 92, 82 are arbitrary numbers to fit the variant\n\n  ",
     "\n"])), function (_a) {
     var variant = _a.variant;
@@ -2429,7 +2780,7 @@ var StyledPrimaryImage = styled__default['default'](TokenImage)(templateObject_1
         },
         _a$2),
 }));
-var StyledSecondaryImage = styled__default['default'](TokenImage)(templateObject_2$q || (templateObject_2$q = __makeTemplateObject(["\n  position: absolute;\n  width: 50%;\n\n  ", "\n"], ["\n  position: absolute;\n  width: 50%;\n\n  ",
+var StyledSecondaryImage = styled__default['default'](TokenImage)(templateObject_2$r || (templateObject_2$r = __makeTemplateObject(["\n  position: absolute;\n  width: 50%;\n\n  ", "\n"], ["\n  position: absolute;\n  width: 50%;\n\n  ",
     "\n"])), styledSystem.variant({
     variants: (_b$2 = {},
         _b$2[variants$4.DEFAULT] = {
@@ -2448,7 +2799,7 @@ var StyledSecondaryImage = styled__default['default'](TokenImage)(templateObject
         },
         _b$2),
 }));
-var templateObject_1$H, templateObject_2$q;
+var templateObject_1$I, templateObject_2$r;
 
 var TokenPairImage = function (_a) {
     var primarySrc = _a.primarySrc, secondarySrc = _a.secondarySrc, width = _a.width, height = _a.height, _b = _a.variant, variant = _b === void 0 ? variants$4.DEFAULT : _b, _c = _a.primaryImageProps, primaryImageProps = _c === void 0 ? {} : _c, _d = _a.secondaryImageProps, secondaryImageProps = _d === void 0 ? {} : _d, props = __rest(_a, ["primarySrc", "secondarySrc", "width", "height", "variant", "primaryImageProps", "secondaryImageProps"]);
@@ -2458,10 +2809,10 @@ var TokenPairImage = function (_a) {
         React__default['default'].createElement(StyledSecondaryImage, __assign({ variant: variant, src: secondarySrc, width: secondaryImageSize, height: secondaryImageSize }, secondaryImageProps))));
 };
 
-var StyledProfileAvatar = styled__default['default'](BackgroundImage)(templateObject_1$G || (templateObject_1$G = __makeTemplateObject(["\n  border-radius: 50%;\n"], ["\n  border-radius: 50%;\n"])));
-var StyledBunnyPlaceholder = styled__default['default'](Icon$20)(templateObject_2$p || (templateObject_2$p = __makeTemplateObject(["\n  height: 100%;\n  width: 100%;\n"], ["\n  height: 100%;\n  width: 100%;\n"])));
+var StyledProfileAvatar = styled__default['default'](BackgroundImage)(templateObject_1$H || (templateObject_1$H = __makeTemplateObject(["\n  border-radius: 50%;\n"], ["\n  border-radius: 50%;\n"])));
+var StyledBunnyPlaceholder = styled__default['default'](Icon$20)(templateObject_2$q || (templateObject_2$q = __makeTemplateObject(["\n  height: 100%;\n  width: 100%;\n"], ["\n  height: 100%;\n  width: 100%;\n"])));
 var ProfileAvatar = function (props) { return (React__default['default'].createElement(StyledProfileAvatar, __assign({ loadingPlaceholder: React__default['default'].createElement(StyledBunnyPlaceholder, null) }, props))); };
-var templateObject_1$G, templateObject_2$p;
+var templateObject_1$H, templateObject_2$q;
 
 var getPadding$1 = function (scale, hasIcon) {
     if (!hasIcon) {
@@ -2477,14 +2828,14 @@ var getPadding$1 = function (scale, hasIcon) {
             return "48px";
     }
 };
-var StyledInputGroup = styled__default['default'](Box)(templateObject_1$F || (templateObject_1$F = __makeTemplateObject(["\n  ", " {\n    padding-left: ", ";\n    padding-right: ", ";\n  }\n"], ["\n  ", " {\n    padding-left: ", ";\n    padding-right: ", ";\n  }\n"])), Input$1, function (_a) {
+var StyledInputGroup = styled__default['default'](Box)(templateObject_1$G || (templateObject_1$G = __makeTemplateObject(["\n  ", " {\n    padding-left: ", ";\n    padding-right: ", ";\n  }\n"], ["\n  ", " {\n    padding-left: ", ";\n    padding-right: ", ";\n  }\n"])), Input$1, function (_a) {
     var hasStartIcon = _a.hasStartIcon, scale = _a.scale;
     return getPadding$1(scale, hasStartIcon);
 }, function (_a) {
     var hasEndIcon = _a.hasEndIcon, scale = _a.scale;
     return getPadding$1(scale, hasEndIcon);
 });
-var InputIcon = styled__default['default'].div(templateObject_2$o || (templateObject_2$o = __makeTemplateObject(["\n  align-items: center;\n  display: flex;\n  height: 100%;\n  position: absolute;\n  top: 0;\n\n  ", "\n"], ["\n  align-items: center;\n  display: flex;\n  height: 100%;\n  position: absolute;\n  top: 0;\n\n  ",
+var InputIcon = styled__default['default'].div(templateObject_2$p || (templateObject_2$p = __makeTemplateObject(["\n  align-items: center;\n  display: flex;\n  height: 100%;\n  position: absolute;\n  top: 0;\n\n  ", "\n"], ["\n  align-items: center;\n  display: flex;\n  height: 100%;\n  position: absolute;\n  top: 0;\n\n  ",
     "\n"])), function (_a) {
     var isEndIcon = _a.isEndIcon, scale = _a.scale;
     return isEndIcon
@@ -2498,9 +2849,9 @@ var InputGroup = function (_a) {
         React.cloneElement(children, { scale: scale }),
         endIcon && (React__default['default'].createElement(InputIcon, { scale: scale, isEndIcon: true }, endIcon))));
 };
-var templateObject_1$F, templateObject_2$o;
+var templateObject_1$G, templateObject_2$p;
 
-var GridLayout$1 = styled__default['default'](Grid)(templateObject_1$E || (templateObject_1$E = __makeTemplateObject(["\n  grid-template-columns: repeat(6, 1fr);\n  grid-gap: 16px;\n  ", " {\n    grid-template-columns: repeat(8, 1fr);\n    grid-gap: 24px;\n  }\n  ", " {\n    grid-template-columns: repeat(12, 1fr);\n    grid-gap: 24px;\n  }\n  ", " {\n    grid-template-columns: repeat(12, 1fr);\n    grid-gap: 32px;\n  }\n"], ["\n  grid-template-columns: repeat(6, 1fr);\n  grid-gap: 16px;\n  ", " {\n    grid-template-columns: repeat(8, 1fr);\n    grid-gap: 24px;\n  }\n  ", " {\n    grid-template-columns: repeat(12, 1fr);\n    grid-gap: 24px;\n  }\n  ", " {\n    grid-template-columns: repeat(12, 1fr);\n    grid-gap: 32px;\n  }\n"])), function (_a) {
+var GridLayout$1 = styled__default['default'](Grid)(templateObject_1$F || (templateObject_1$F = __makeTemplateObject(["\n  grid-template-columns: repeat(6, 1fr);\n  grid-gap: 16px;\n  ", " {\n    grid-template-columns: repeat(8, 1fr);\n    grid-gap: 24px;\n  }\n  ", " {\n    grid-template-columns: repeat(12, 1fr);\n    grid-gap: 24px;\n  }\n  ", " {\n    grid-template-columns: repeat(12, 1fr);\n    grid-gap: 32px;\n  }\n"], ["\n  grid-template-columns: repeat(6, 1fr);\n  grid-gap: 16px;\n  ", " {\n    grid-template-columns: repeat(8, 1fr);\n    grid-gap: 24px;\n  }\n  ", " {\n    grid-template-columns: repeat(12, 1fr);\n    grid-gap: 24px;\n  }\n  ", " {\n    grid-template-columns: repeat(12, 1fr);\n    grid-gap: 32px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 }, function (_a) {
@@ -2510,15 +2861,15 @@ var GridLayout$1 = styled__default['default'](Grid)(templateObject_1$E || (templ
     var theme = _a.theme;
     return theme.mediaQueries.lg;
 });
-var templateObject_1$E;
+var templateObject_1$F;
 
-var GridLayout = styled__default['default'](GridLayout$1)(templateObject_1$D || (templateObject_1$D = __makeTemplateObject(["\n  & > div {\n    grid-column: span 6;\n    ", " {\n      grid-column: span 4;\n    }\n  }\n"], ["\n  & > div {\n    grid-column: span 6;\n    ", " {\n      grid-column: span 4;\n    }\n  }\n"])), function (_a) {
+var GridLayout = styled__default['default'](GridLayout$1)(templateObject_1$E || (templateObject_1$E = __makeTemplateObject(["\n  & > div {\n    grid-column: span 6;\n    ", " {\n      grid-column: span 4;\n    }\n  }\n"], ["\n  & > div {\n    grid-column: span 6;\n    ", " {\n      grid-column: span 4;\n    }\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var templateObject_1$D;
+var templateObject_1$E;
 
-var StyledLink$1 = styled__default['default'](Text)(templateObject_1$C || (templateObject_1$C = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  width: fit-content;\n  &:hover {\n    text-decoration: underline;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  width: fit-content;\n  &:hover {\n    text-decoration: underline;\n  }\n"])));
+var StyledLink$1 = styled__default['default'](Text)(templateObject_1$D || (templateObject_1$D = __makeTemplateObject(["\n  display: flex;\n  align-items: center;\n  width: fit-content;\n  &:hover {\n    text-decoration: underline;\n  }\n"], ["\n  display: flex;\n  align-items: center;\n  width: fit-content;\n  &:hover {\n    text-decoration: underline;\n  }\n"])));
 var Link = function (_a) {
     var external = _a.external, props = __rest(_a, ["external"]);
     var internalProps = external ? getExternalLinkProps() : {};
@@ -2527,7 +2878,7 @@ var Link = function (_a) {
 Link.defaultProps = {
     color: "primary",
 };
-var templateObject_1$C;
+var templateObject_1$D;
 
 var LinkExternal = function (_a) {
     var children = _a.children, props = __rest(_a, ["children"]);
@@ -2551,7 +2902,7 @@ var Icons$2 = {
     warning: Icon$m,
     danger: Icon$2k,
 };
-var MessageContainer = styled__default['default'].div(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  display: flex;\n  background-color: gray;\n  padding: 16px;\n  border-radius: 16px;\n  border: solid 1px;\n\n  ", "\n  ", "\n"], ["\n  display: flex;\n  background-color: gray;\n  padding: 16px;\n  border-radius: 16px;\n  border: solid 1px;\n\n  ", "\n  ",
+var MessageContainer = styled__default['default'].div(templateObject_1$C || (templateObject_1$C = __makeTemplateObject(["\n  display: flex;\n  background-color: gray;\n  padding: 16px;\n  border-radius: 16px;\n  border: solid 1px;\n\n  ", "\n  ", "\n"], ["\n  display: flex;\n  background-color: gray;\n  padding: 16px;\n  border-radius: 16px;\n  border: solid 1px;\n\n  ", "\n  ",
     "\n"])), styledSystem.space, styledSystem.variant({
     variants: variants$3,
 }));
@@ -2562,10 +2913,10 @@ var Message = function (_a) {
         React__default['default'].createElement(Box, { mr: "12px" }, icon !== null && icon !== void 0 ? icon : React__default['default'].createElement(Icon, { color: variants$3[variant].borderColor, width: "24px" })),
         children));
 };
-var templateObject_1$B;
+var templateObject_1$C;
 
-var NotificationDotRoot = styled__default['default'].span(templateObject_1$A || (templateObject_1$A = __makeTemplateObject(["\n  display: inline-flex;\n  position: relative;\n"], ["\n  display: inline-flex;\n  position: relative;\n"])));
-var Dot = styled__default['default'].span(templateObject_2$n || (templateObject_2$n = __makeTemplateObject(["\n  display: ", ";\n  position: absolute;\n  top: 0;\n  right: 0;\n  width: 10px;\n  height: 10px;\n  pointer-events: none;\n  border: 2px solid ", ";\n  border-radius: 50%;\n  background-color: ", ";\n"], ["\n  display: ", ";\n  position: absolute;\n  top: 0;\n  right: 0;\n  width: 10px;\n  height: 10px;\n  pointer-events: none;\n  border: 2px solid ", ";\n  border-radius: 50%;\n  background-color: ", ";\n"])), function (_a) {
+var NotificationDotRoot = styled__default['default'].span(templateObject_1$B || (templateObject_1$B = __makeTemplateObject(["\n  display: inline-flex;\n  position: relative;\n"], ["\n  display: inline-flex;\n  position: relative;\n"])));
+var Dot = styled__default['default'].span(templateObject_2$o || (templateObject_2$o = __makeTemplateObject(["\n  display: ", ";\n  position: absolute;\n  top: 0;\n  right: 0;\n  width: 10px;\n  height: 10px;\n  pointer-events: none;\n  border: 2px solid ", ";\n  border-radius: 50%;\n  background-color: ", ";\n"], ["\n  display: ", ";\n  position: absolute;\n  top: 0;\n  right: 0;\n  width: 10px;\n  height: 10px;\n  pointer-events: none;\n  border: 2px solid ", ";\n  border-radius: 50%;\n  background-color: ", ";\n"])), function (_a) {
     var show = _a.show;
     return (show ? "inline-flex" : "none");
 }, function (_a) {
@@ -2581,9 +2932,9 @@ var NotificationDot = function (_a) {
         React.Children.map(children, function (child) { return React.cloneElement(child, props); }),
         React__default['default'].createElement(Dot, { show: show, color: color })));
 };
-var templateObject_1$A, templateObject_2$n;
+var templateObject_1$B, templateObject_2$o;
 
-var Overlay = styled__default['default'].div.attrs({ role: "presentation" })(templateObject_1$z || (templateObject_1$z = __makeTemplateObject(["\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  background-color: ", ";\n  transition: opacity 0.4s;\n  opacity: ", ";\n  z-index: ", ";\n  pointer-events: ", ";\n"], ["\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  background-color: ", ";\n  transition: opacity 0.4s;\n  opacity: ", ";\n  z-index: ", ";\n  pointer-events: ", ";\n"])), function (_a) {
+var Overlay = styled__default['default'].div.attrs({ role: "presentation" })(templateObject_1$A || (templateObject_1$A = __makeTemplateObject(["\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  background-color: ", ";\n  transition: opacity 0.4s;\n  opacity: ", ";\n  z-index: ", ";\n  pointer-events: ", ";\n"], ["\n  position: fixed;\n  top: 0px;\n  left: 0px;\n  width: 100%;\n  height: 100%;\n  background-color: ", ";\n  transition: opacity 0.4s;\n  opacity: ", ";\n  z-index: ", ";\n  pointer-events: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.overlay;
 }, function (_a) {
@@ -2600,7 +2951,7 @@ Overlay.defaultProps = {
     show: false,
     zIndex: 10,
 };
-var templateObject_1$z;
+var templateObject_1$A;
 
 var scales$4 = {
     SM: "sm",
@@ -2673,25 +3024,28 @@ var getScale$2 = function (property) {
         return scaleKeyValues$1[scale][property];
     };
 };
-var PancakeStack = styled__default['default'].div(templateObject_1$y || (templateObject_1$y = __makeTemplateObject(["\n  position: relative;\n  display: inline-block;\n\n  &:label:before {\n    content: none;\n  }\n\n  .pancakes {\n    position: absolute;\n    transition: 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);\n  }\n\n  .pancake {\n    background: #e27c31;\n    border-radius: 50%;\n    width: ", ";\n    height: ", ";\n    position: absolute;\n    transition: 0.4s ease;\n    top: 2px;\n    left: 4px;\n    box-shadow: 0 ", " 0 ", " #fbbe7c;\n  }\n\n  .pancake:nth-child(1) {\n    background: ", ";\n    box-shadow: 0 ", " 0 ", "\n      ", ";\n  }\n\n  .pancake:nth-child(2) {\n    left: 0;\n    top: ", ";\n    transform: scale(0);\n    transition: 0.2s ease 0.2s;\n  }\n\n  .pancake:nth-child(3) {\n    top: ", ";\n    transform: scale(0);\n    transition: 0.2s ease 0.2s;\n  }\n\n  .pancake:nth-child(3):before,\n  .pancake:nth-child(3):after {\n    content: \"\";\n    position: absolute;\n    background: #ef8927;\n    border-radius: 20px;\n    width: 50%;\n    height: 20%;\n  }\n\n  .pancake:nth-child(3):before {\n    top: ", ";\n    left: ", ";\n  }\n\n  .pancake:nth-child(3):after {\n    top: ", ";\n    right: ", ";\n  }\n\n  .butter {\n    width: ", ";\n    height: ", ";\n    background: #fbdb60;\n    top: ", ";\n    left: ", ";\n    position: absolute;\n    border-radius: ", ";\n    box-shadow: 0 ", " 0 ", " #d67823;\n    transform: scale(0);\n    transition: 0.2s ease;\n  }\n"], ["\n  position: relative;\n  display: inline-block;\n\n  &:label:before {\n    content: none;\n  }\n\n  .pancakes {\n    position: absolute;\n    transition: 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);\n  }\n\n  .pancake {\n    background: #e27c31;\n    border-radius: 50%;\n    width: ", ";\n    height: ", ";\n    position: absolute;\n    transition: 0.4s ease;\n    top: 2px;\n    left: 4px;\n    box-shadow: 0 ", " 0 ", " #fbbe7c;\n  }\n\n  .pancake:nth-child(1) {\n    background: ", ";\n    box-shadow: 0 ", " 0 ", "\n      ", ";\n  }\n\n  .pancake:nth-child(2) {\n    left: 0;\n    top: ", ";\n    transform: scale(0);\n    transition: 0.2s ease 0.2s;\n  }\n\n  .pancake:nth-child(3) {\n    top: ", ";\n    transform: scale(0);\n    transition: 0.2s ease 0.2s;\n  }\n\n  .pancake:nth-child(3):before,\n  .pancake:nth-child(3):after {\n    content: \"\";\n    position: absolute;\n    background: #ef8927;\n    border-radius: 20px;\n    width: 50%;\n    height: 20%;\n  }\n\n  .pancake:nth-child(3):before {\n    top: ", ";\n    left: ", ";\n  }\n\n  .pancake:nth-child(3):after {\n    top: ", ";\n    right: ", ";\n  }\n\n  .butter {\n    width: ", ";\n    height: ", ";\n    background: #fbdb60;\n    top: ", ";\n    left: ", ";\n    position: absolute;\n    border-radius: ", ";\n    box-shadow: 0 ", " 0 ", " #d67823;\n    transform: scale(0);\n    transition: 0.2s ease;\n  }\n"])), getScale$2("pancakeSize"), getScale$2("pancakeSize"), getScale$2("pancakeThickness"), getScale$2("pancakeThickness"), function (_a) {
+var PancakeStack = styled__default['default'].div(templateObject_1$z || (templateObject_1$z = __makeTemplateObject(["\n  position: relative;\n  display: inline-block;\n\n  &:label:before {\n    content: none;\n  }\n\n  .pancakes {\n    position: absolute;\n    transition: 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);\n  }\n\n  .pancake {\n    background: ", ";\n    border-radius: 50%;\n    width: ", ";\n    height: ", ";\n    position: absolute;\n    transition: 0.4s ease;\n    top: 4px;\n    left: 4px;\n    /* box-shadow: 0 ", " 0 ", " #fbbe7c; */\n  }\n\n  .pancake:nth-child(1) {\n    background: ", ";\n    /* box-shadow: 0 ", " 0 ", "\n      ", "; */\n  }\n\n  /* .pancake:nth-child(2) {\n    left: 0;\n    top: ", ";\n    transform: scale(0);\n    transition: 0.2s ease 0.2s;\n  }\n\n  .pancake:nth-child(3) {\n    top: ", ";\n    transform: scale(0);\n    transition: 0.2s ease 0.2s;\n  }\n\n  .pancake:nth-child(3):before,\n  .pancake:nth-child(3):after {\n    content: \"\";\n    position: absolute;\n    background: #ef8927;\n    border-radius: 20px;\n    width: 50%;\n    height: 20%;\n  }\n\n  .pancake:nth-child(3):before {\n    top: ", ";\n    left: ", ";\n  }\n\n  .pancake:nth-child(3):after {\n    top: ", ";\n    right: ", ";\n  }\n\n  .butter {\n    width: ", ";\n    height: ", ";\n    background: #fbdb60;\n    top: ", ";\n    left: ", ";\n    position: absolute;\n    border-radius: ", ";\n    box-shadow: 0 ", " 0 ", " #d67823;\n    transform: scale(0);\n    transition: 0.2s ease;\n  } */\n"], ["\n  position: relative;\n  display: inline-block;\n\n  &:label:before {\n    content: none;\n  }\n\n  .pancakes {\n    position: absolute;\n    transition: 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);\n  }\n\n  .pancake {\n    background: ", ";\n    border-radius: 50%;\n    width: ", ";\n    height: ", ";\n    position: absolute;\n    transition: 0.4s ease;\n    top: 4px;\n    left: 4px;\n    /* box-shadow: 0 ", " 0 ", " #fbbe7c; */\n  }\n\n  .pancake:nth-child(1) {\n    background: ", ";\n    /* box-shadow: 0 ", " 0 ", "\n      ", "; */\n  }\n\n  /* .pancake:nth-child(2) {\n    left: 0;\n    top: ", ";\n    transform: scale(0);\n    transition: 0.2s ease 0.2s;\n  }\n\n  .pancake:nth-child(3) {\n    top: ", ";\n    transform: scale(0);\n    transition: 0.2s ease 0.2s;\n  }\n\n  .pancake:nth-child(3):before,\n  .pancake:nth-child(3):after {\n    content: \"\";\n    position: absolute;\n    background: #ef8927;\n    border-radius: 20px;\n    width: 50%;\n    height: 20%;\n  }\n\n  .pancake:nth-child(3):before {\n    top: ", ";\n    left: ", ";\n  }\n\n  .pancake:nth-child(3):after {\n    top: ", ";\n    right: ", ";\n  }\n\n  .butter {\n    width: ", ";\n    height: ", ";\n    background: #fbdb60;\n    top: ", ";\n    left: ", ";\n    position: absolute;\n    border-radius: ", ";\n    box-shadow: 0 ", " 0 ", " #d67823;\n    transform: scale(0);\n    transition: 0.2s ease;\n  } */\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.colors.deepGreyPrimary;
+}, getScale$2("pancakeSize"), getScale$2("pancakeSize"), getScale$2("pancakeThickness"), getScale$2("pancakeThickness"), function (_a) {
     var theme = _a.theme;
     return theme.pancakeToggle.handleBackground;
 }, getScale$2("pancakeThickness"), getScale$2("pancakeThickness"), function (_a) {
     var theme = _a.theme;
     return theme.pancakeToggle.handleShadow;
 }, getScale$2("pancakeTwoOffset"), getScale$2("pancakeThreeOffset"), getScale$2("butterSmearOneTop"), getScale$2("butterSmearOneLeft"), getScale$2("butterSmearTwoTop"), getScale$2("butterSmearTwoRight"), getScale$2("butterWidth"), getScale$2("butterHeight"), getScale$2("butterTop"), getScale$2("butterLeft"), getScale$2("butterRadius"), getScale$2("butterThickness"), getScale$2("butterThickness"));
-var PancakeInput = styled__default['default'].input(templateObject_2$m || (templateObject_2$m = __makeTemplateObject(["\n  height: 40px;\n  left: 0;\n  opacity: 0;\n  position: absolute;\n  top: 0;\n  width: 40px;\n\n  &:focus + label {\n    box-shadow: ", ";\n  }\n\n  &:checked + label .pancakes {\n    transform: translateX(", ");\n  }\n\n  &:checked + label .pancake:nth-child(1) {\n    background: #e27c31;\n    box-shadow: 0 ", " 0 ", " #fbbe7c;\n    transition-delay: 0.2s;\n  }\n\n  &:checked + label .pancake:nth-child(2) {\n    transform: scale(1);\n    transition-delay: 0.2s;\n  }\n\n  &:checked + label .pancake:nth-child(3) {\n    transform: scale(1);\n    transition-delay: 0.4s;\n  }\n\n  &:checked + label .butter {\n    transform: scale(1);\n    transition-delay: 0.6s;\n  }\n"], ["\n  height: 40px;\n  left: 0;\n  opacity: 0;\n  position: absolute;\n  top: 0;\n  width: 40px;\n\n  &:focus + label {\n    box-shadow: ", ";\n  }\n\n  &:checked + label .pancakes {\n    transform: translateX(", ");\n  }\n\n  &:checked + label .pancake:nth-child(1) {\n    background: #e27c31;\n    box-shadow: 0 ", " 0 ", " #fbbe7c;\n    transition-delay: 0.2s;\n  }\n\n  &:checked + label .pancake:nth-child(2) {\n    transform: scale(1);\n    transition-delay: 0.2s;\n  }\n\n  &:checked + label .pancake:nth-child(3) {\n    transform: scale(1);\n    transition-delay: 0.4s;\n  }\n\n  &:checked + label .butter {\n    transform: scale(1);\n    transition-delay: 0.6s;\n  }\n"])), function (_a) {
+var PancakeInput = styled__default['default'].input(templateObject_2$n || (templateObject_2$n = __makeTemplateObject(["\n  height: 40px;\n  left: 0;\n  opacity: 0;\n  position: absolute;\n  top: 0;\n  width: 40px;\n\n  &:focus + label {\n    box-shadow: ", ";\n  }\n\n  &:checked + label .pancakes {\n    transform: translateX(", ");\n  }\n\n  &:checked + label .pancake:nth-child(1) {\n    background: #e27c31;\n    /* box-shadow: 0 ", " 0 ", " #fbbe7c; */\n    transition-delay: 0.2s;\n  }\n\n  /* &:checked + label .pancake:nth-child(2) {\n    transform: scale(1);\n    transition-delay: 0.2s;\n  }\n\n  &:checked + label .pancake:nth-child(3) {\n    transform: scale(1);\n    transition-delay: 0.4s;\n  }\n\n  &:checked + label .butter {\n    transform: scale(1);\n    transition-delay: 0.6s;\n  } */\n"], ["\n  height: 40px;\n  left: 0;\n  opacity: 0;\n  position: absolute;\n  top: 0;\n  width: 40px;\n\n  &:focus + label {\n    box-shadow: ", ";\n  }\n\n  &:checked + label .pancakes {\n    transform: translateX(", ");\n  }\n\n  &:checked + label .pancake:nth-child(1) {\n    background: #e27c31;\n    /* box-shadow: 0 ", " 0 ", " #fbbe7c; */\n    transition-delay: 0.2s;\n  }\n\n  /* &:checked + label .pancake:nth-child(2) {\n    transform: scale(1);\n    transition-delay: 0.2s;\n  }\n\n  &:checked + label .pancake:nth-child(3) {\n    transform: scale(1);\n    transition-delay: 0.4s;\n  }\n\n  &:checked + label .butter {\n    transform: scale(1);\n    transition-delay: 0.6s;\n  } */\n"])), function (_a) {
     var theme = _a.theme;
     return theme.shadows.focus;
 }, getScale$2("travelDistance"), getScale$2("pancakeThickness"), getScale$2("pancakeThickness"));
-var PancakeLabel = styled__default['default'].label(templateObject_3$a || (templateObject_3$a = __makeTemplateObject(["\n  width: ", ";\n  height: ", ";\n  background: ", ";\n  box-shadow: ", ";\n  display: inline-block;\n  border-radius: 50px;\n  position: relative;\n  transition: all 0.3s ease;\n  transform-origin: 20% center;\n  cursor: pointer;\n"], ["\n  width: ", ";\n  height: ", ";\n  background: ", ";\n  box-shadow: ", ";\n  display: inline-block;\n  border-radius: 50px;\n  position: relative;\n  transition: all 0.3s ease;\n  transform-origin: 20% center;\n  cursor: pointer;\n"])), getScale$2("toggleWidth"), getScale$2("toggleHeight"), function (_a) {
+var PancakeLabel = styled__default['default'].label(templateObject_3$b || (templateObject_3$b = __makeTemplateObject(["\n  width: ", ";\n  height: ", ";\n  background: ", ";\n  box-shadow: ", ";\n  display: inline-block;\n  border-radius: 50px;\n  position: relative;\n  transition: all 0.3s ease;\n  transform-origin: 20% center;\n  cursor: pointer;\n"], ["\n  width: ", ";\n  height: ", ";\n  background: ", ";\n  box-shadow: ", ";\n  display: inline-block;\n  border-radius: 50px;\n  position: relative;\n  transition: all 0.3s ease;\n  transform-origin: 20% center;\n  cursor: pointer;\n"])), getScale$2("toggleWidth"), getScale$2("toggleHeight"), function (_a) {
     var theme = _a.theme, checked = _a.checked;
-    return theme.colors[checked ? "success" : "input"];
+    return theme.colors[checked ? "success" : "greyPrimary"];
 }, function (_a) {
     var theme = _a.theme;
     return theme.shadows.inset;
 });
-var templateObject_1$y, templateObject_2$m, templateObject_3$a;
+var templateObject_1$z, templateObject_2$n, templateObject_3$b;
 
 var PancakeToggle = function (_a) {
     var checked = _a.checked, _b = _a.scale, scale = _b === void 0 ? scales$4.LG : _b, props = __rest(_a, ["checked", "scale"]);
@@ -2726,9 +3080,9 @@ var additionalColors = {
 };
 var lightColors = __assign(__assign(__assign({}, baseColors), additionalColors), { background: "#FAF9FA", backgroundDisabled: "#E9EAEB", backgroundAlt: "#000", backgroundAlt2: "rgba(255, 255, 255, 0.7)", cardBorder: "#E7E3EB", cardBackground: "#1a1a1a", contrast: "#191326", dropdown: "#F6F6F6", dropdownDeep: "#EEEEEE", invertedContrast: "#FFFFFF", input: "#070707", inputSecondary: "#808080", inputBackground: "#FEFBF4", tertiary: "grey", text: "#fff", textDisabled: "#BDC2C4", textSubtle: "#999", textCommon: "#fff", textCommonSecond: "#0D0C33B2", textGrey: "#0A1127", disabled: "#E9EAEB", gradients: {
         cardBorderGradients: "linear-gradient(225deg, #444 0%, #181818 100%)",
-        bubblegum: "linear-gradient(139.73deg, #FFFCF7 0%, #C8DEFF 100%)",
+        bubblegum: "linear-gradient(139.73deg, #242424 0%, #242424 100%)",
         inverseBubblegum: "linear-gradient(139.73deg, #C8DEFF 0%, #FFFCF7 100%)",
-        cardHeader: "linear-gradient(111.68deg, #F2ECF2 0%, #E8F2F6 100%)",
+        cardHeader: "linear-gradient(111.68deg, #242424 0%, #242424 100%)",
         blue: "linear-gradient(180deg, #A7E8F1 0%, #94E1F2 100%)",
         violet: "linear-gradient(180deg, #E2C9FB 0%, #CDB8FA 100%)",
         violetAlt: "linear-gradient(180deg, #CBD7EF 0%, #9A9FD0 100%)",
@@ -2736,9 +3090,9 @@ var lightColors = __assign(__assign(__assign({}, baseColors), additionalColors),
     } });
 var darkColors = __assign(__assign(__assign({}, baseColors), additionalColors), { secondary: "#9A6AFF", background: "#08060B", backgroundDisabled: "#3c3742", backgroundAlt: "#000", backgroundAlt2: "rgba(39, 38, 44, 0.7)", cardBorder: "#383241", cardBackground: "#1a1a1a", contrast: "#FFFFFF", dropdown: "#1E1D20", dropdownDeep: "#100C18", invertedContrast: "#191326", input: "#070707", inputSecondary: "#808080", inputBackground: "#363B42", primaryDark: "#0098A1", tertiary: "grey", text: "#fff", textDisabled: "#666171", textSubtle: "#FAB126", textCommon: "#fff", textCommonSecond: "#FCFCFFB2", textGrey: "#FCFCFF", disabled: "#524B63", gradients: {
         cardBorderGradients: "linear-gradient(225deg, #444 0%, #181818 100%)",
-        bubblegum: "linear-gradient(139.73deg, #4D4A43 0%, #0F2240 100%)",
+        bubblegum: "linear-gradient(139.73deg, #242424 0%, #242424 100%)",
         inverseBubblegum: "linear-gradient(139.73deg, #0F2240 0%, #4D4A43 100%)",
-        cardHeader: "linear-gradient(166.77deg, #3B4155 0%, #3A3045 100%)",
+        cardHeader: "linear-gradient(111.68deg, #242424 0%, #242424 100%)",
         blue: "linear-gradient(180deg, #00707F 0%, #19778C 100%)",
         violet: "linear-gradient(180deg, #6C4999 0%, #6D4DB2 100%)",
         violetAlt: "linear-gradient(180deg, #434575 0%, #66578D 100%)",
@@ -2775,7 +3129,7 @@ var shadows = {
     active: "0px 0px 0px 1px #0098A1, 0px 0px 4px 8px rgba(31, 199, 212, 0.4)",
     success: "0px 0px 0px 1px #31D0AA, 0px 0px 0px 4px rgba(49, 208, 170, 0.2)",
     warning: "0px 0px 0px 1px #ED4B9E, 0px 0px 0px 4px rgba(237, 75, 158, 0.2)",
-    focus: "0px 0px 0px 1px #7645D9, 0px 0px 0px 4px rgba(118, 69, 217, 0.6)",
+    focus: "0px 0px 0px 1px #333, 0px 0px 0px 4px rgba(33, 33, 33, 0.6)",
     inset: "inset 0px 2px 2px -1px rgba(74, 74, 104, 0.1)",
     tooltip: "0px 0px 2px rgba(0, 0, 0, 0.2), 0px 4px 12px -8px rgba(14, 14, 44, 0.1)",
 };
@@ -2853,10 +3207,10 @@ var dark$3 = {
 };
 
 var light$2 = {
-    background: lightColors.backgroundAlt,
+    background: lightColors.greyPrimary,
 };
 var dark$2 = {
-    background: darkColors.backgroundAlt,
+    background: darkColors.greyPrimary,
 };
 
 var light$1 = {
@@ -2908,7 +3262,7 @@ var styleScales = (_b$1 = {},
     },
     _b$1);
 
-var Bar = styled__default['default'].div(templateObject_1$x || (templateObject_1$x = __makeTemplateObject(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  background-color: ", ";\n  height: 100%;\n  transition: width 200ms ease;\n"], ["\n  position: absolute;\n  top: 0;\n  left: 0;\n  background-color: ",
+var Bar = styled__default['default'].div(templateObject_1$y || (templateObject_1$y = __makeTemplateObject(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  background-color: ", ";\n  height: 100%;\n  transition: width 200ms ease;\n"], ["\n  position: absolute;\n  top: 0;\n  left: 0;\n  background-color: ",
     ";\n  height: 100%;\n  transition: width 200ms ease;\n"])), function (_a) {
     var theme = _a.theme, $useDark = _a.$useDark, primary = _a.primary;
     if ($useDark)
@@ -2918,7 +3272,7 @@ var Bar = styled__default['default'].div(templateObject_1$x || (templateObject_1
 Bar.defaultProps = {
     primary: false,
 };
-var StyledProgress = styled__default['default'].div(templateObject_2$l || (templateObject_2$l = __makeTemplateObject(["\n  position: relative;\n  background-color: ", ";\n  box-shadow: ", ";\n  overflow: hidden;\n\n  ", " {\n    border-top-left-radius: ", ";\n    border-bottom-left-radius: ", ";\n  }\n\n  ", "\n  ", "\n  ", "\n"], ["\n  position: relative;\n  background-color: ", ";\n  box-shadow: ", ";\n  overflow: hidden;\n\n  ", " {\n    border-top-left-radius: ", ";\n    border-bottom-left-radius: ", ";\n  }\n\n  ",
+var StyledProgress = styled__default['default'].div(templateObject_2$m || (templateObject_2$m = __makeTemplateObject(["\n  position: relative;\n  background-color: ", ";\n  box-shadow: ", ";\n  overflow: hidden;\n\n  ", " {\n    border-top-left-radius: ", ";\n    border-bottom-left-radius: ", ";\n  }\n\n  ", "\n  ", "\n  ", "\n"], ["\n  position: relative;\n  background-color: ", ";\n  box-shadow: ", ";\n  overflow: hidden;\n\n  ", " {\n    border-top-left-radius: ", ";\n    border-bottom-left-radius: ", ";\n  }\n\n  ",
     "\n  ",
     "\n  ", "\n"])), function (_a) {
     var theme = _a.theme, $useDark = _a.$useDark;
@@ -2938,10 +3292,10 @@ var StyledProgress = styled__default['default'].div(templateObject_2$l || (templ
     prop: "scale",
     variants: styleScales,
 }), styledSystem.space);
-var templateObject_1$x, templateObject_2$l;
+var templateObject_1$y, templateObject_2$m;
 
-var ProgressBunnyWrapper = styled__default['default'].div(templateObject_1$w || (templateObject_1$w = __makeTemplateObject(["\n  display: flex;\n  z-index: 2;\n  top: -65%;\n  position: absolute;\n  transform: translate(-50%, -50%);\n  transition: left 200ms ease-out;\n"], ["\n  display: flex;\n  z-index: 2;\n  top: -65%;\n  position: absolute;\n  transform: translate(-50%, -50%);\n  transition: left 200ms ease-out;\n"])));
-var templateObject_1$w;
+var ProgressBunnyWrapper = styled__default['default'].div(templateObject_1$x || (templateObject_1$x = __makeTemplateObject(["\n  display: flex;\n  z-index: 2;\n  top: -65%;\n  position: absolute;\n  transform: translate(-50%, -50%);\n  transition: left 200ms ease-out;\n"], ["\n  display: flex;\n  z-index: 2;\n  top: -65%;\n  position: absolute;\n  transform: translate(-50%, -50%);\n  transition: left 200ms ease-out;\n"])));
+var templateObject_1$x;
 
 var stepGuard = function (step) {
     if (step < 0) {
@@ -2986,7 +3340,7 @@ var getCheckedScale = function (_a) {
             return "20px";
     }
 };
-var Radio = styled__default['default'].input.attrs({ type: "radio" })(templateObject_1$v || (templateObject_1$v = __makeTemplateObject(["\n  appearance: none;\n  overflow: hidden;\n  cursor: pointer;\n  position: relative;\n  display: inline-block;\n  height: ", ";\n  width: ", ";\n  vertical-align: middle;\n  transition: background-color 0.2s ease-in-out;\n  border: 0;\n  border-radius: 50%;\n  background-color: ", ";\n  box-shadow: ", ";\n\n  &:after {\n    border-radius: 50%;\n    content: \"\";\n    height: ", ";\n    left: 6px;\n    position: absolute;\n    top: 6px;\n    width: ", ";\n  }\n\n  &:hover:not(:disabled):not(:checked) {\n    box-shadow: ", ";\n  }\n\n  &:focus {\n    outline: none;\n    box-shadow: ", ";\n  }\n\n  &:checked {\n    background-color: ", ";\n    &:after {\n      background-color: ", ";\n    }\n  }\n\n  &:disabled {\n    cursor: default;\n    opacity: 0.6;\n  }\n  ", "\n"], ["\n  appearance: none;\n  overflow: hidden;\n  cursor: pointer;\n  position: relative;\n  display: inline-block;\n  height: ", ";\n  width: ", ";\n  vertical-align: middle;\n  transition: background-color 0.2s ease-in-out;\n  border: 0;\n  border-radius: 50%;\n  background-color: ", ";\n  box-shadow: ", ";\n\n  &:after {\n    border-radius: 50%;\n    content: \"\";\n    height: ", ";\n    left: 6px;\n    position: absolute;\n    top: 6px;\n    width: ", ";\n  }\n\n  &:hover:not(:disabled):not(:checked) {\n    box-shadow: ", ";\n  }\n\n  &:focus {\n    outline: none;\n    box-shadow: ", ";\n  }\n\n  &:checked {\n    background-color: ", ";\n    &:after {\n      background-color: ", ";\n    }\n  }\n\n  &:disabled {\n    cursor: default;\n    opacity: 0.6;\n  }\n  ", "\n"])), getScale$1, getScale$1, function (_a) {
+var Radio = styled__default['default'].input.attrs({ type: "radio" })(templateObject_1$w || (templateObject_1$w = __makeTemplateObject(["\n  appearance: none;\n  overflow: hidden;\n  cursor: pointer;\n  position: relative;\n  display: inline-block;\n  height: ", ";\n  width: ", ";\n  vertical-align: middle;\n  transition: background-color 0.2s ease-in-out;\n  border: 0;\n  border-radius: 50%;\n  background-color: ", ";\n  box-shadow: ", ";\n\n  &:after {\n    border-radius: 50%;\n    content: \"\";\n    height: ", ";\n    left: 6px;\n    position: absolute;\n    top: 6px;\n    width: ", ";\n  }\n\n  &:hover:not(:disabled):not(:checked) {\n    box-shadow: ", ";\n  }\n\n  &:focus {\n    outline: none;\n    box-shadow: ", ";\n  }\n\n  &:checked {\n    background-color: ", ";\n    &:after {\n      background-color: ", ";\n    }\n  }\n\n  &:disabled {\n    cursor: default;\n    opacity: 0.6;\n  }\n  ", "\n"], ["\n  appearance: none;\n  overflow: hidden;\n  cursor: pointer;\n  position: relative;\n  display: inline-block;\n  height: ", ";\n  width: ", ";\n  vertical-align: middle;\n  transition: background-color 0.2s ease-in-out;\n  border: 0;\n  border-radius: 50%;\n  background-color: ", ";\n  box-shadow: ", ";\n\n  &:after {\n    border-radius: 50%;\n    content: \"\";\n    height: ", ";\n    left: 6px;\n    position: absolute;\n    top: 6px;\n    width: ", ";\n  }\n\n  &:hover:not(:disabled):not(:checked) {\n    box-shadow: ", ";\n  }\n\n  &:focus {\n    outline: none;\n    box-shadow: ", ";\n  }\n\n  &:checked {\n    background-color: ", ";\n    &:after {\n      background-color: ", ";\n    }\n  }\n\n  &:disabled {\n    cursor: default;\n    opacity: 0.6;\n  }\n  ", "\n"])), getScale$1, getScale$1, function (_a) {
     var theme = _a.theme;
     return theme.colors.input;
 }, function (_a) {
@@ -3009,45 +3363,39 @@ Radio.defaultProps = {
     scale: scales$2.MD,
     m: 0,
 };
-var templateObject_1$v;
-
-var bunnyHeadMain = "data:image/svg+xml,%3Csvg%20width%3D%2224%22%20height%3D%2232%22%20viewBox%3D%220%200%2028%2032%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Crect%20x%3D%221%22%20y%3D%2219%22%20width%3D%2217%22%20height%3D%2211%22%20fill%3D%22%231FC7D4%22%2F%3E%3Cpath%20d%3D%22M9.507%2024.706C8.14635%2026.0666%209.73795%2028.2313%2011.7555%2030.2489C13.7731%2032.2665%2015.9378%2033.8581%2017.2984%2032.4974C18.6591%2031.1368%2017.9685%2028.0711%2015.9509%2026.0535C13.9333%2024.0359%2010.8676%2023.3453%209.507%2024.706Z%22%20fill%3D%22%231FC7D4%22%2F%3E%3Cpath%20d%3D%22M15.507%2022.706C14.1463%2024.0666%2015.7379%2026.2313%2017.7555%2028.2489C19.7731%2030.2665%2021.9378%2031.8581%2023.2984%2030.4974C24.6591%2029.1368%2023.9685%2026.0711%2021.9509%2024.0535C19.9333%2022.0359%2016.8676%2021.3453%2015.507%2022.706Z%22%20fill%3D%22%231FC7D4%22%2F%3E%3Cg%20filter%3D%22url%28%23filter0_d%29%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M14.146%206.75159C14.2105%207.10896%2014.2703%207.48131%2014.3281%207.86164C14.2189%207.85865%2014.1095%207.85714%2014%207.85714C13.3803%207.85714%2012.7648%207.90539%2012.159%207.99779C11.879%207.41458%2011.5547%206.82246%2011.1872%206.23145C8.69897%202.22947%206.53826%201.98679%204.67882%202.98366C2.81938%203.98052%202.85628%206.67644%205.26696%209.40538C5.58076%209.76061%205.90097%2010.1398%206.2247%2010.5286C3.69013%2012.4659%202%2015.2644%202%2018.2695C2%2023.8292%207.78518%2025%2014%2025C20.2148%2025%2026%2023.8292%2026%2018.2695C26%2014.8658%2023.8318%2011.7272%2020.7243%209.80476C20.9022%208.86044%2021%207.83019%2021%206.75159C21%202.19612%2019.2549%201%2017.1022%201C14.9495%201%2013.5261%203.31847%2014.146%206.75159Z%22%20fill%3D%22url%28%23paint0_linear_bunnyhead_main%29%22%2F%3E%3C%2Fg%3E%3Cg%20transform%3D%22translate%282%29%22%3E%3Cpath%20d%3D%22M12.7284%2016.4446C12.796%2017.3149%2012.4446%2019.0556%2010.498%2019.0556%22%20stroke%3D%22%23452A7A%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M12.7457%2016.4446C12.6781%2017.3149%2013.0296%2019.0556%2014.9761%2019.0556%22%20stroke%3D%22%23452A7A%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M9%2014.5C9%2015.6046%208.55228%2016%208%2016C7.44772%2016%207%2015.6046%207%2014.5C7%2013.3954%207.44772%2013%208%2013C8.55228%2013%209%2013.3954%209%2014.5Z%22%20fill%3D%22%23452A7A%22%2F%3E%3Cpath%20d%3D%22M18%2014.5C18%2015.6046%2017.5523%2016%2017%2016C16.4477%2016%2016%2015.6046%2016%2014.5C16%2013.3954%2016.4477%2013%2017%2013C17.5523%2013%2018%2013.3954%2018%2014.5Z%22%20fill%3D%22%23452A7A%22%2F%3E%3C%2Fg%3E%3Cdefs%3E%3Cfilter%20id%3D%22filter0_d%22%3E%3CfeFlood%20flood-opacity%3D%220%22%20result%3D%22BackgroundImageFix%22%2F%3E%3CfeColorMatrix%20in%3D%22SourceAlpha%22%20type%3D%22matrix%22%20values%3D%220%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%20127%200%22%2F%3E%3CfeOffset%20dy%3D%221%22%2F%3E%3CfeGaussianBlur%20stdDeviation%3D%221%22%2F%3E%3CfeColorMatrix%20type%3D%22matrix%22%20values%3D%220%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200.5%200%22%2F%3E%3CfeBlend%20mode%3D%22normal%22%20in2%3D%22BackgroundImageFix%22%20result%3D%22effect1_dropShadow%22%2F%3E%3CfeBlend%20mode%3D%22normal%22%20in%3D%22SourceGraphic%22%20in2%3D%22effect1_dropShadow%22%20result%3D%22shape%22%2F%3E%3C%2Ffilter%3E%3ClinearGradient%20id%3D%22paint0_linear_bunnyhead_main%22%20x1%3D%2214%22%20y1%3D%221%22%20x2%3D%2214%22%20y2%3D%2225%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%3Cstop%20stop-color%3D%22%2353DEE9%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%231FC7D4%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3C%2Fsvg%3E";
-
-var bunnyHeadMax = "data:image/svg+xml,%3Csvg%20width%3D%2224%22%20height%3D%2232%22%20viewBox%3D%220%200%2028%2032%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Crect%20x%3D%221%22%20y%3D%2219%22%20width%3D%2217%22%20height%3D%2211%22%20fill%3D%22%231FC7D4%22%2F%3E%3Cpath%20d%3D%22M9.507%2024.706C8.14635%2026.0666%209.73795%2028.2313%2011.7555%2030.2489C13.7731%2032.2665%2015.9378%2033.8581%2017.2984%2032.4974C18.6591%2031.1368%2017.9685%2028.0711%2015.9509%2026.0535C13.9333%2024.0359%2010.8676%2023.3453%209.507%2024.706Z%22%20fill%3D%22%231FC7D4%22%2F%3E%3Cpath%20d%3D%22M15.507%2022.706C14.1463%2024.0666%2015.7379%2026.2313%2017.7555%2028.2489C19.7731%2030.2665%2021.9378%2031.8581%2023.2984%2030.4974C24.6591%2029.1368%2023.9685%2026.0711%2021.9509%2024.0535C19.9333%2022.0359%2016.8676%2021.3453%2015.507%2022.706Z%22%20fill%3D%22%231FC7D4%22%2F%3E%3Cg%20filter%3D%22url%28%23filter0_d%29%22%3E%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M14.146%206.75159C14.2105%207.10896%2014.2703%207.48131%2014.3281%207.86164C14.2189%207.85865%2014.1095%207.85714%2014%207.85714C13.3803%207.85714%2012.7648%207.90539%2012.159%207.99779C11.879%207.41458%2011.5547%206.82246%2011.1872%206.23145C8.69897%202.22947%206.53826%201.98679%204.67882%202.98366C2.81938%203.98052%202.85628%206.67644%205.26696%209.40538C5.58076%209.76061%205.90097%2010.1398%206.2247%2010.5286C3.69013%2012.4659%202%2015.2644%202%2018.2695C2%2023.8292%207.78518%2025%2014%2025C20.2148%2025%2026%2023.8292%2026%2018.2695C26%2014.8658%2023.8318%2011.7272%2020.7243%209.80476C20.9022%208.86044%2021%207.83019%2021%206.75159C21%202.19612%2019.2549%201%2017.1022%201C14.9495%201%2013.5261%203.31847%2014.146%206.75159Z%22%20fill%3D%22url%28%23paint0_linear_bunnyhead_max%29%22%2F%3E%3C%2Fg%3E%3Cpath%20d%3D%22M11.5047%2016.0634C10.9435%2014.4456%208.79685%2014.4456%208.08131%2016.0635%22%20stroke%3D%22%23452A7A%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M20.8894%2016.0634C20.3283%2014.4456%2018.1816%2014.4456%2017.4661%2016.0635%22%20stroke%3D%22%23452A7A%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M14.7284%2017.4446C14.796%2018.3149%2014.4446%2020.0556%2012.498%2020.0556%22%20stroke%3D%22%23452A7A%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M14.7457%2017.4446C14.6781%2018.3149%2015.0296%2020.0556%2016.9761%2020.0556%22%20stroke%3D%22%23452A7A%22%20stroke-linecap%3D%22round%22%2F%3E%3Cpath%20d%3D%22M13.4505%2020.0787C13.4505%2021.5097%2015.955%2021.5097%2015.955%2020.0787%22%20stroke%3D%22%23452A7A%22%20stroke-linecap%3D%22round%22%2F%3E%3Cdefs%3E%3Cfilter%20id%3D%22filter0_d%22%20x%3D%220%22%20y%3D%220%22%20width%3D%2228%22%20height%3D%2228%22%20filterUnits%3D%22userSpaceOnUse%22%20color-interpolation-filters%3D%22sRGB%22%3E%3CfeFlood%20flood-opacity%3D%220%22%20result%3D%22BackgroundImageFix%22%2F%3E%3CfeColorMatrix%20in%3D%22SourceAlpha%22%20type%3D%22matrix%22%20values%3D%220%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%20127%200%22%2F%3E%3CfeOffset%20dy%3D%221%22%2F%3E%3CfeGaussianBlur%20stdDeviation%3D%221%22%2F%3E%3CfeColorMatrix%20type%3D%22matrix%22%20values%3D%220%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200.5%200%22%2F%3E%3CfeBlend%20mode%3D%22normal%22%20in2%3D%22BackgroundImageFix%22%20result%3D%22effect1_dropShadow%22%2F%3E%3CfeBlend%20mode%3D%22normal%22%20in%3D%22SourceGraphic%22%20in2%3D%22effect1_dropShadow%22%20result%3D%22shape%22%2F%3E%3C%2Ffilter%3E%3ClinearGradient%20id%3D%22paint0_linear_bunnyhead_max%22%20x1%3D%2214%22%20y1%3D%221%22%20x2%3D%2214%22%20y2%3D%2225%22%20gradientUnits%3D%22userSpaceOnUse%22%3E%3Cstop%20stop-color%3D%22%2353DEE9%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%231FC7D4%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3C%2Fsvg%3E";
-
-var bunnyButt = "data:image/svg+xml,%3Csvg%20width%3D%2215%22%20height%3D%2232%22%20viewBox%3D%220%200%2015%2032%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M9.58803%2020.8649C7.72935%2021.3629%208.02539%2024.0334%208.76388%2026.7895C9.50238%2029.5456%2010.5812%2032.0062%2012.4399%2031.5082C14.2986%2031.0102%2015.2334%2028.0099%2014.4949%2025.2538C13.7564%2022.4978%2011.4467%2020.3669%209.58803%2020.8649Z%22%20fill%3D%22%230098A1%22%2F%3E%3Cpath%20d%3D%22M1%2024.4516C1%2020.8885%203.88849%2018%207.45161%2018H15V28H4.54839C2.58867%2028%201%2026.4113%201%2024.4516Z%22%20fill%3D%22%231FC7D4%22%2F%3E%3Cpath%20d%3D%22M6.11115%2017.2246C6.79693%2018.4124%205.77784%2019.3343%204.52793%2020.0559C3.27802%2020.7776%201.97011%2021.1992%201.28433%2020.0114C0.598546%2018.8236%201.1635%2017.1151%202.41341%2016.3935C3.66332%2015.6718%205.42537%2016.0368%206.11115%2017.2246Z%22%20fill%3D%22%2353DEE9%22%2F%3E%3Cpath%20d%3D%22M1.64665%2023.6601C0.285995%2025.0207%201.87759%2027.1854%203.89519%2029.203C5.91279%2031.2206%208.07743%2032.8122%209.43808%2031.4515C10.7987%2030.0909%2010.1082%2027.0252%208.09058%2025.0076C6.07298%2022.99%203.0073%2022.2994%201.64665%2023.6601Z%22%20fill%3D%22%231FC7D4%22%2F%3E%3C%2Fsvg%3E";
+var templateObject_1$w;
 
 var getCursorStyle = function (_a) {
     var _b = _a.disabled, disabled = _b === void 0 ? false : _b;
     return disabled ? "not-allowed" : "cursor";
 };
 var getBaseThumbStyles = function (_a) {
-    var isMax = _a.isMax, disabled = _a.disabled;
-    return "\n  -webkit-appearance: none;\n  background-image: url(" + (isMax ? bunnyHeadMax : bunnyHeadMain) + ");\n  background-color: transparent;\n  border: 0;\n  cursor: " + getCursorStyle + ";\n  width: 24px;\n  height: 32px;\n  filter: " + (disabled ? "grayscale(100%)" : "none") + ";\n  transform: translate(-2px, -2px);\n  transition: 200ms transform;\n\n  &:hover {\n    transform: " + (disabled ? "scale(1) translate(-2px, -2px)" : "scale(1.1) translate(-3px, -3px)") + ";\n  }\n";
+    _a.isMax; var disabled = _a.disabled;
+    return "\n  -webkit-appearance: none;\n  background-color: grey;\n  border: 0;\n  border-radius: 50%;\n  cursor: " + getCursorStyle + ";\n  width: 24px;\n  height: 24px;\n  filter: " + (disabled ? "grayscale(100%)" : "none") + ";\n  transform: translate(4px, 4px);\n  transition: 200ms transform;\n\n  &:hover {\n    transform: " + (disabled ? "scale(1) translate(-2px, -2px)" : "scale(1.1) translate(-3px, -3px)") + ";\n  }\n";
 };
-var SliderLabelContainer = styled__default['default'].div(templateObject_1$u || (templateObject_1$u = __makeTemplateObject(["\n  bottom: 0;\n  position: absolute;\n  left: 14px;\n  width: calc(100% - 30px);\n"], ["\n  bottom: 0;\n  position: absolute;\n  left: 14px;\n  width: calc(100% - 30px);\n"])));
-var SliderLabel = styled__default['default'](Text)(templateObject_2$k || (templateObject_2$k = __makeTemplateObject(["\n  bottom: 0;\n  font-size: 12px;\n  left: ", ";\n  position: absolute;\n  text-align: center;\n  min-width: 24px; // Slider thumb size\n"], ["\n  bottom: 0;\n  font-size: 12px;\n  left: ", ";\n  position: absolute;\n  text-align: center;\n  min-width: 24px; // Slider thumb size\n"])), function (_a) {
+var SliderLabelContainer = styled__default['default'].div(templateObject_1$v || (templateObject_1$v = __makeTemplateObject(["\n  bottom: 0;\n  position: absolute;\n  left: 14px;\n  width: calc(100% - 30px);\n"], ["\n  bottom: 0;\n  position: absolute;\n  left: 14px;\n  width: calc(100% - 30px);\n"])));
+var SliderLabel = styled__default['default'](Text)(templateObject_2$l || (templateObject_2$l = __makeTemplateObject(["\n  bottom: 0;\n  font-size: 12px;\n  left: ", ";\n  position: absolute;\n  text-align: center;\n  min-width: 24px; // Slider thumb size\n"], ["\n  bottom: 0;\n  font-size: 12px;\n  left: ", ";\n  position: absolute;\n  text-align: center;\n  min-width: 24px; // Slider thumb size\n"])), function (_a) {
     var progress = _a.progress;
     return progress;
 });
-var BunnyButt = styled__default['default'].div(templateObject_3$9 || (templateObject_3$9 = __makeTemplateObject(["\n  background: url(", ") no-repeat;\n  height: 32px;\n  filter: ", ";\n  position: absolute;\n  width: 15px;\n"], ["\n  background: url(", ") no-repeat;\n  height: 32px;\n  filter: ", ";\n  position: absolute;\n  width: 15px;\n"])), bunnyButt, function (_a) {
+var BunnyButt = styled__default['default'].div(templateObject_3$a || (templateObject_3$a = __makeTemplateObject(["\n  height: 32px;\n  filter: ", ";\n  position: absolute;\n  width: 15px;\n"], ["\n  height: 32px;\n  filter: ", ";\n  position: absolute;\n  width: 15px;\n"])), function (_a) {
     var disabled = _a.disabled;
     return (disabled ? "grayscale(100%)" : "none");
 });
-var BunnySlider = styled__default['default'].div(templateObject_4$5 || (templateObject_4$5 = __makeTemplateObject(["\n  position: absolute;\n  left: 14px;\n  width: calc(100% - 14px);\n"], ["\n  position: absolute;\n  left: 14px;\n  width: calc(100% - 14px);\n"])));
-var StyledInput = styled__default['default'].input(templateObject_5$2 || (templateObject_5$2 = __makeTemplateObject(["\n  cursor: ", ";\n  height: 32px;\n  position: relative;\n\n  ::-webkit-slider-thumb {\n    ", "\n  }\n\n  ::-moz-range-thumb {\n    ", "\n  }\n\n  ::-ms-thumb {\n    ", "\n  }\n"], ["\n  cursor: ", ";\n  height: 32px;\n  position: relative;\n\n  ::-webkit-slider-thumb {\n    ", "\n  }\n\n  ::-moz-range-thumb {\n    ", "\n  }\n\n  ::-ms-thumb {\n    ", "\n  }\n"])), getCursorStyle, getBaseThumbStyles, getBaseThumbStyles, getBaseThumbStyles);
-var BarBackground = styled__default['default'].div(templateObject_6$1 || (templateObject_6$1 = __makeTemplateObject(["\n  background-color: ", ";\n  height: 2px;\n  position: absolute;\n  top: 18px;\n  width: 100%;\n"], ["\n  background-color: ", ";\n  height: 2px;\n  position: absolute;\n  top: 18px;\n  width: 100%;\n"])), function (_a) {
+var BunnySlider = styled__default['default'].div(templateObject_4$6 || (templateObject_4$6 = __makeTemplateObject(["\n  position: absolute;\n  left: 14px;\n  width: calc(100% - 14px);\n"], ["\n  position: absolute;\n  left: 14px;\n  width: calc(100% - 14px);\n"])));
+var StyledInput = styled__default['default'].input(templateObject_5$3 || (templateObject_5$3 = __makeTemplateObject(["\n  cursor: ", ";\n  height: 32px;\n  position: relative;\n\n  ::-webkit-slider-thumb {\n    ", "\n  }\n\n  ::-moz-range-thumb {\n    ", "\n  }\n\n  ::-ms-thumb {\n    ", "\n  }\n"], ["\n  cursor: ", ";\n  height: 32px;\n  position: relative;\n\n  ::-webkit-slider-thumb {\n    ", "\n  }\n\n  ::-moz-range-thumb {\n    ", "\n  }\n\n  ::-ms-thumb {\n    ", "\n  }\n"])), getCursorStyle, getBaseThumbStyles, getBaseThumbStyles, getBaseThumbStyles);
+var BarBackground = styled__default['default'].div(templateObject_6$2 || (templateObject_6$2 = __makeTemplateObject(["\n  background-color: ", ";\n  height: 2px;\n  position: absolute;\n  top: 18px;\n  width: 100%;\n"], ["\n  background-color: ", ";\n  height: 2px;\n  position: absolute;\n  top: 18px;\n  width: 100%;\n"])), function (_a) {
     var theme = _a.theme, disabled = _a.disabled;
     return theme.colors[disabled ? "textDisabled" : "inputSecondary"];
 });
-var BarProgress = styled__default['default'].div(templateObject_7$1 || (templateObject_7$1 = __makeTemplateObject(["\n  background-color: ", ";\n  filter: ", ";\n  height: 10px;\n  position: absolute;\n  top: 18px;\n"], ["\n  background-color: ", ";\n  filter: ", ";\n  height: 10px;\n  position: absolute;\n  top: 18px;\n"])), function (_a) {
+var BarProgress = styled__default['default'].div(templateObject_7$2 || (templateObject_7$2 = __makeTemplateObject(["\n  background-color: ", ";\n  filter: ", ";\n  height: 10px;\n  position: absolute;\n  top: 18px;\n"], ["\n  background-color: ", ";\n  filter: ", ";\n  height: 10px;\n  position: absolute;\n  top: 18px;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.primary;
 }, function (_a) {
     var disabled = _a.disabled;
     return (disabled ? "grayscale(100%)" : "none");
 });
-var templateObject_1$u, templateObject_2$k, templateObject_3$9, templateObject_4$5, templateObject_5$2, templateObject_6$1, templateObject_7$1;
+var templateObject_1$v, templateObject_2$l, templateObject_3$a, templateObject_4$6, templateObject_5$3, templateObject_6$2, templateObject_7$2;
 
 var Slider = function (_a) {
     var name = _a.name, min = _a.min, max = _a.max, value = _a.value, onValueChanged = _a.onValueChanged, valueLabel = _a.valueLabel, _b = _a.step, step = _b === void 0 ? "any" : _b, _c = _a.disabled, disabled = _c === void 0 ? false : _c, props = __rest(_a, ["name", "min", "max", "value", "onValueChanged", "valueLabel", "step", "disabled"]);
@@ -3088,17 +3436,17 @@ var Icon = function (props) {
             React__default['default'].createElement("circle", { fill: "#FAB126", cx: "12", cy: "12", r: "12" }))));
 };
 
-var rotate = styled.keyframes(templateObject_1$t || (templateObject_1$t = __makeTemplateObject(["\n  0%   {\n    transform: scale(0);\n    opacity: 1;\n  }\n  75%  {\n    transform: scale(.75)\n    opacity: 1;\n  }\n  100% {\n    transform: scale(1);\n    opacity: 0;\n  }\n"], ["\n  0%   {\n    transform: scale(0);\n    opacity: 1;\n  }\n  75%  {\n    transform: scale(.75)\n    opacity: 1;\n  }\n  100% {\n    transform: scale(1);\n    opacity: 0;\n  }\n"])));
-var Container = styled__default['default'].div(templateObject_2$j || (templateObject_2$j = __makeTemplateObject(["\n  position: relative;\n"], ["\n  position: relative;\n"])));
-var RotatingPancakeIcon = styled__default['default'](Icon)(templateObject_3$8 || (templateObject_3$8 = __makeTemplateObject(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  margin-top: -64px;\n  margin-left: -30px;\n  animation: ", " 1.4s infinite;\n"], ["\n  position: absolute;\n  top: 0;\n  left: 0;\n  margin-top: -64px;\n  margin-left: -30px;\n  animation: ", " 1.4s infinite;\n"])), rotate);
+var rotate = styled.keyframes(templateObject_1$u || (templateObject_1$u = __makeTemplateObject(["\n  0%   {\n    transform: scale(0);\n    opacity: 1;\n  }\n  75%  {\n    transform: scale(.75)\n    opacity: 1;\n  }\n  100% {\n    transform: scale(1);\n    opacity: 0;\n  }\n"], ["\n  0%   {\n    transform: scale(0);\n    opacity: 1;\n  }\n  75%  {\n    transform: scale(.75)\n    opacity: 1;\n  }\n  100% {\n    transform: scale(1);\n    opacity: 0;\n  }\n"])));
+var Container = styled__default['default'].div(templateObject_2$k || (templateObject_2$k = __makeTemplateObject(["\n  position: relative;\n"], ["\n  position: relative;\n"])));
+var RotatingPancakeIcon = styled__default['default'](Icon)(templateObject_3$9 || (templateObject_3$9 = __makeTemplateObject(["\n  position: absolute;\n  top: 0;\n  left: 0;\n  margin-top: -64px;\n  margin-left: -30px;\n  animation: ", " 1.4s infinite;\n"], ["\n  position: absolute;\n  top: 0;\n  left: 0;\n  margin-top: -64px;\n  margin-left: -30px;\n  animation: ", " 1.4s infinite;\n"])), rotate);
 var Spinner = function (_a) {
     var _b = _a.size, size = _b === void 0 ? 128 : _b;
     return (React__default['default'].createElement(Container, null,
         React__default['default'].createElement(RotatingPancakeIcon, { width: size * 0.5 + "px" })));
 };
-var templateObject_1$t, templateObject_2$j, templateObject_3$8;
+var templateObject_1$u, templateObject_2$k, templateObject_3$9;
 
-var StepperWrapper = styled__default['default'].div(templateObject_1$s || (templateObject_1$s = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  width: fit-content;\n"], ["\n  display: flex;\n  flex-direction: column;\n  width: fit-content;\n"])));
+var StepperWrapper = styled__default['default'].div(templateObject_1$t || (templateObject_1$t = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  width: fit-content;\n"], ["\n  display: flex;\n  flex-direction: column;\n  width: fit-content;\n"])));
 var Stepper = function (_a) {
     var children = _a.children;
     var numberOfSteps = React__default['default'].Children.count(children);
@@ -3109,7 +3457,7 @@ var Stepper = function (_a) {
         return child;
     })));
 };
-var templateObject_1$s;
+var templateObject_1$t;
 
 var getStepNumberFontColor = function (_a) {
     var theme = _a.theme, status = _a.status;
@@ -3121,11 +3469,11 @@ var getStepNumberFontColor = function (_a) {
     }
     return theme.colors.textDisabled;
 };
-var StyledStep = styled__default['default'](Flex)(templateObject_1$r || (templateObject_1$r = __makeTemplateObject(["\n  ", " {\n    justify-content: center;\n  }\n"], ["\n  ", " {\n    justify-content: center;\n  }\n"])), function (_a) {
+var StyledStep = styled__default['default'](Flex)(templateObject_1$s || (templateObject_1$s = __makeTemplateObject(["\n  ", " {\n    justify-content: center;\n  }\n"], ["\n  ", " {\n    justify-content: center;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.md;
 });
-var Connector = styled__default['default'].div(templateObject_2$i || (templateObject_2$i = __makeTemplateObject(["\n  position: absolute;\n  width: 4px;\n  height: calc(50% + 20px);\n  ", "\n  left: calc(50% - 2px);\n  background-color: ", ";\n"], ["\n  position: absolute;\n  width: 4px;\n  height: calc(50% + 20px);\n  ",
+var Connector = styled__default['default'].div(templateObject_2$j || (templateObject_2$j = __makeTemplateObject(["\n  position: absolute;\n  width: 4px;\n  height: calc(50% + 20px);\n  ", "\n  left: calc(50% - 2px);\n  background-color: ", ";\n"], ["\n  position: absolute;\n  width: 4px;\n  height: calc(50% + 20px);\n  ",
     "\n  left: calc(50% - 2px);\n  background-color: ",
     ";\n"])), function (_a) {
     var $isFirstStep = _a.$isFirstStep, $isLastStep = _a.$isLastStep, $isFirstPart = _a.$isFirstPart;
@@ -3138,23 +3486,23 @@ var Connector = styled__default['default'].div(templateObject_2$i || (templateOb
     var theme = _a.theme, status = _a.status;
     return theme.colors[status === "past" || status === "current" ? "success" : "textDisabled"];
 });
-var ChildrenWrapper = styled__default['default'](Box)(templateObject_3$7 || (templateObject_3$7 = __makeTemplateObject(["\n  ", " {\n    visibility: ", ";\n  }\n"], ["\n  ", " {\n    visibility: ", ";\n  }\n"])), function (_a) {
+var ChildrenWrapper = styled__default['default'](Box)(templateObject_3$8 || (templateObject_3$8 = __makeTemplateObject(["\n  ", " {\n    visibility: ", ";\n  }\n"], ["\n  ", " {\n    visibility: ", ";\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.md;
 }, function (_a) {
     var isVisible = _a.isVisible;
     return (isVisible ? "visible" : "hidden");
 });
-var ChildrenLeftWrapper = styled__default['default'](ChildrenWrapper)(templateObject_4$4 || (templateObject_4$4 = __makeTemplateObject(["\n  display: none;\n  ", " {\n    display: block;\n    margin-right: 16px;\n  }\n"], ["\n  display: none;\n  ", " {\n    display: block;\n    margin-right: 16px;\n  }\n"])), function (_a) {
+var ChildrenLeftWrapper = styled__default['default'](ChildrenWrapper)(templateObject_4$5 || (templateObject_4$5 = __makeTemplateObject(["\n  display: none;\n  ", " {\n    display: block;\n    margin-right: 16px;\n  }\n"], ["\n  display: none;\n  ", " {\n    display: block;\n    margin-right: 16px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.md;
 });
-var ChildrenRightWrapper = styled__default['default'](ChildrenWrapper)(templateObject_5$1 || (templateObject_5$1 = __makeTemplateObject(["\n  margin-left: 8px;\n  ", " {\n    margin-left: 16px;\n  }\n"], ["\n  margin-left: 8px;\n  ", " {\n    margin-left: 16px;\n  }\n"])), function (_a) {
+var ChildrenRightWrapper = styled__default['default'](ChildrenWrapper)(templateObject_5$2 || (templateObject_5$2 = __makeTemplateObject(["\n  margin-left: 8px;\n  ", " {\n    margin-left: 16px;\n  }\n"], ["\n  margin-left: 8px;\n  ", " {\n    margin-left: 16px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.md;
 });
-var Wrapper$2 = styled__default['default'].div(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  align-items: center;\n"], ["\n  position: relative;\n  display: flex;\n  align-items: center;\n"])));
-var StepNumber = styled__default['default'].div(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\n  box-shadow: 0px 1px 4px rgba(25, 19, 38, 0.15);\n  background-color: ", ";\n  border: 2px solid ", ";\n  border-radius: ", ";\n  color: ", ";\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  font-weight: 600;\n  font-size: 32px;\n  width: 48px;\n  height: 48px;\n  z-index: 5;\n  ", " {\n    font-size: 40px;\n    width: 80px;\n    height: 80px;\n  }\n"], ["\n  box-shadow: 0px 1px 4px rgba(25, 19, 38, 0.15);\n  background-color: ", ";\n  border: 2px solid ", ";\n  border-radius: ", ";\n  color: ", ";\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  font-weight: 600;\n  font-size: 32px;\n  width: 48px;\n  height: 48px;\n  z-index: 5;\n  ", " {\n    font-size: 40px;\n    width: 80px;\n    height: 80px;\n  }\n"])), function (_a) {
+var Wrapper$2 = styled__default['default'].div(templateObject_6$1 || (templateObject_6$1 = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  align-items: center;\n"], ["\n  position: relative;\n  display: flex;\n  align-items: center;\n"])));
+var StepNumber = styled__default['default'].div(templateObject_7$1 || (templateObject_7$1 = __makeTemplateObject(["\n  box-shadow: 0px 1px 4px rgba(25, 19, 38, 0.15);\n  background-color: ", ";\n  border: 2px solid ", ";\n  border-radius: ", ";\n  color: ", ";\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  font-weight: 600;\n  font-size: 32px;\n  width: 48px;\n  height: 48px;\n  z-index: 5;\n  ", " {\n    font-size: 40px;\n    width: 80px;\n    height: 80px;\n  }\n"], ["\n  box-shadow: 0px 1px 4px rgba(25, 19, 38, 0.15);\n  background-color: ", ";\n  border: 2px solid ", ";\n  border-radius: ", ";\n  color: ", ";\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  font-weight: 600;\n  font-size: 32px;\n  width: 48px;\n  height: 48px;\n  z-index: 5;\n  ", " {\n    font-size: 40px;\n    width: 80px;\n    height: 80px;\n  }\n"])), function (_a) {
     var theme = _a.theme, status = _a.status;
     return theme.colors[status === "current" ? "secondary" : "invertedContrast"];
 }, function (_a) {
@@ -3184,9 +3532,9 @@ var Step = function (_a) {
             !isFirst && !isLast && React__default['default'].createElement(Connector, { "$isFirstStep": isFirst, "$isLastStep": isLast, status: statusSecondPart })),
         React__default['default'].createElement(ChildrenRightWrapper, { isVisible: isIndexPair }, children)));
 };
-var templateObject_1$r, templateObject_2$i, templateObject_3$7, templateObject_4$4, templateObject_5$1, templateObject_6, templateObject_7;
+var templateObject_1$s, templateObject_2$j, templateObject_3$8, templateObject_4$5, templateObject_5$2, templateObject_6$1, templateObject_7$1;
 
-var InlineMenuContainer = styled__default['default'](Box)(templateObject_1$q || (templateObject_1$q = __makeTemplateObject(["\n  background-color: ", ";\n  border-radius: ", ";\n  box-shadow: ", ";\n"], ["\n  background-color: ", ";\n  border-radius: ", ";\n  box-shadow: ", ";\n"])), function (_a) {
+var InlineMenuContainer = styled__default['default'](Box)(templateObject_1$r || (templateObject_1$r = __makeTemplateObject(["\n  background-color: ", ";\n  border-radius: ", ";\n  box-shadow: ", ";\n"], ["\n  background-color: ", ";\n  border-radius: ", ";\n  box-shadow: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.backgroundAlt;
 }, function (_a) {
@@ -3196,7 +3544,7 @@ var InlineMenuContainer = styled__default['default'](Box)(templateObject_1$q || 
     var theme = _a.theme;
     return theme.shadows.tooltip;
 });
-var SubMenuContainer = styled__default['default'](Flex)(templateObject_2$h || (templateObject_2$h = __makeTemplateObject(["\n  flex-direction: column;\n  overflow: hidden;\n  min-width: 136px;\n  background: ", ";\n  border-radius: ", ";\n  border: ", ";\n"], ["\n  flex-direction: column;\n  overflow: hidden;\n  min-width: 136px;\n  background: ", ";\n  border-radius: ", ";\n  border: ", ";\n"])), function (_a) {
+var SubMenuContainer = styled__default['default'](Flex)(templateObject_2$i || (templateObject_2$i = __makeTemplateObject(["\n  flex-direction: column;\n  overflow: hidden;\n  min-width: 136px;\n  background: ", ";\n  border-radius: ", ";\n  border: ", ";\n"], ["\n  flex-direction: column;\n  overflow: hidden;\n  min-width: 136px;\n  background: ", ";\n  border-radius: ", ";\n  border: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.input;
 }, function (_a) {
@@ -3206,15 +3554,15 @@ var SubMenuContainer = styled__default['default'](Flex)(templateObject_2$h || (t
     var theme = _a.theme;
     return "1px solid " + theme.colors.inputSecondary;
 });
-var ClickableElementContainer = styled__default['default'].div(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  cursor: pointer;\n  display: inline-flex;\n"], ["\n  cursor: pointer;\n  display: inline-flex;\n"])));
-var SubMenuItem = styled__default['default'].button(templateObject_4$3 || (templateObject_4$3 = __makeTemplateObject(["\n  border: 0;\n  outline: 0;\n  cursor: pointer;\n  background: transparent;\n  padding: 8px 16px;\n  color: ", ";\n  width: 100%;\n  font-size: 16px;\n  text-align: left;\n\n  &:hover {\n    background-color: ", ";\n    text-decoration: none;\n  }\n"], ["\n  border: 0;\n  outline: 0;\n  cursor: pointer;\n  background: transparent;\n  padding: 8px 16px;\n  color: ", ";\n  width: 100%;\n  font-size: 16px;\n  text-align: left;\n\n  &:hover {\n    background-color: ", ";\n    text-decoration: none;\n  }\n"])), function (_a) {
+var ClickableElementContainer = styled__default['default'].div(templateObject_3$7 || (templateObject_3$7 = __makeTemplateObject(["\n  cursor: pointer;\n  display: inline-flex;\n"], ["\n  cursor: pointer;\n  display: inline-flex;\n"])));
+var SubMenuItem = styled__default['default'].button(templateObject_4$4 || (templateObject_4$4 = __makeTemplateObject(["\n  border: 0;\n  outline: 0;\n  cursor: pointer;\n  background: transparent;\n  padding: 8px 16px;\n  color: ", ";\n  width: 100%;\n  font-size: 16px;\n  text-align: left;\n\n  &:hover {\n    background-color: ", ";\n    text-decoration: none;\n  }\n"], ["\n  border: 0;\n  outline: 0;\n  cursor: pointer;\n  background: transparent;\n  padding: 8px 16px;\n  color: ", ";\n  width: 100%;\n  font-size: 16px;\n  text-align: left;\n\n  &:hover {\n    background-color: ", ";\n    text-decoration: none;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.inputSecondary;
 });
-var templateObject_1$q, templateObject_2$h, templateObject_3$6, templateObject_4$3;
+var templateObject_1$r, templateObject_2$i, templateObject_3$7, templateObject_4$4;
 
 var portalRoot$1 = document.getElementById("portal-root");
 var BaseMenu = function (_a) {
@@ -3284,14 +3632,14 @@ var SubMenu = function (_a) {
         React__default['default'].createElement(SubMenuContainer, __assign({}, props), children)));
 };
 
-var StyledMenuItemContainer = styled__default['default'].div(templateObject_1$p || (templateObject_1$p = __makeTemplateObject(["\n  position: relative;\n\n  ", ";\n"], ["\n  position: relative;\n\n  ",
+var StyledMenuItemContainer = styled__default['default'].div(templateObject_1$q || (templateObject_1$q = __makeTemplateObject(["\n  position: relative;\n\n  ", ";\n"], ["\n  position: relative;\n\n  ",
     ";\n"])), function (_a) {
     var $isActive = _a.$isActive, $variant = _a.$variant, theme = _a.theme;
     return $isActive &&
         $variant === "subMenu" &&
         "\n      &:before{\n        content: \"\";\n        position: absolute;\n        bottom: 0;\n        height: 4px;\n        width: 100%;\n        background-color: " + theme.colors.primary + ";\n        border-radius: 2px 2px 0 0;\n      }\n    ";
 });
-var StyledMenuItem = styled__default['default'].a(templateObject_2$g || (templateObject_2$g = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  align-items: center;\n\n  color: ", ";\n  font-size: 16px;\n  /* font-weight: ", "; */\n\n  ", "\n\n  ", "\n\n  ", "\n\n  &:hover {\n    background: ", ";\n    ", ";\n  }\n"], ["\n  position: relative;\n  display: flex;\n  align-items: center;\n\n  color: ", ";\n  font-size: 16px;\n  /* font-weight: ", "; */\n\n  ",
+var StyledMenuItem = styled__default['default'].a(templateObject_2$h || (templateObject_2$h = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  align-items: center;\n\n  color: ", ";\n  font-size: 16px;\n  /* font-weight: ", "; */\n\n  ", "\n\n  ", "\n\n  ", "\n\n  &:hover {\n    background: ", ";\n    ", ";\n  }\n"], ["\n  position: relative;\n  display: flex;\n  align-items: center;\n\n  color: ", ";\n  font-size: 16px;\n  /* font-weight: ", "; */\n\n  ",
     "\n\n  ",
     "\n\n  ",
     "\n\n  &:hover {\n    background: ", ";\n    ", ";\n  }\n"])), function (_a) {
@@ -3320,9 +3668,9 @@ var StyledMenuItem = styled__default['default'].a(templateObject_2$g || (templat
     var $variant = _a.$variant;
     return $variant === "default" && "border-radius: 16px;";
 });
-var templateObject_1$p, templateObject_2$g;
+var templateObject_1$q, templateObject_2$h;
 
-var MenuItem = function (_a) {
+var MenuItem$1 = function (_a) {
     var children = _a.children, href = _a.href, _b = _a.isActive, isActive = _b === void 0 ? false : _b, _c = _a.isMain, isMain = _c === void 0 ? false : _c, _d = _a.variant, variant = _d === void 0 ? "default" : _d, statusColor = _a.statusColor, props = __rest(_a, ["children", "href", "isActive", "isMain", "variant", "statusColor"]);
     return (React__default['default'].createElement(StyledMenuItemContainer, { "$isActive": isActive, "$variant": variant },
         React__default['default'].createElement(StyledMenuItem, __assign({ "$isMain": isMain, as: reactRouterDom.Link, to: href, "$isActive": isActive, "$variant": variant, "$statusColor": statusColor }, props), children)));
@@ -3335,7 +3683,7 @@ var IconComponent = function (_a) {
     return IconElement ? React__default['default'].createElement(IconElement, __assign({}, props)) : null;
 };
 
-var StyledSubMenuItems = styled__default['default'](Flex)(templateObject_1$o || (templateObject_1$o = __makeTemplateObject(["\n  ", " {\n    ", ";\n  }\n  flex-grow: 1;\n  background-color: ", ";\n  box-shadow: inset 0px -2px 0px -8px rgba(133, 133, 133, 0.1);\n  overflow-x: scroll;\n  scrollbar-width: none;\n  -ms-overflow-style: none;\n  &::-webkit-scrollbar {\n    display: none;\n  }\n"], ["\n  ", " {\n    ", ";\n  }\n  flex-grow: 1;\n  background-color: ", ";\n  box-shadow: inset 0px -2px 0px -8px rgba(133, 133, 133, 0.1);\n  overflow-x: scroll;\n  scrollbar-width: none;\n  -ms-overflow-style: none;\n  &::-webkit-scrollbar {\n    display: none;\n  }\n"])), function (_a) {
+var StyledSubMenuItems = styled__default['default'](Flex)(templateObject_1$p || (templateObject_1$p = __makeTemplateObject(["\n  ", " {\n    ", ";\n  }\n  flex-grow: 1;\n  background-color: ", ";\n  box-shadow: inset 0px -2px 0px -8px rgba(133, 133, 133, 0.1);\n  overflow-x: scroll;\n  scrollbar-width: none;\n  -ms-overflow-style: none;\n  &::-webkit-scrollbar {\n    display: none;\n  }\n"], ["\n  ", " {\n    ", ";\n  }\n  flex-grow: 1;\n  background-color: ", ";\n  box-shadow: inset 0px -2px 0px -8px rgba(133, 133, 133, 0.1);\n  overflow-x: scroll;\n  scrollbar-width: none;\n  -ms-overflow-style: none;\n  &::-webkit-scrollbar {\n    display: none;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 }, function (_a) {
@@ -3345,34 +3693,34 @@ var StyledSubMenuItems = styled__default['default'](Flex)(templateObject_1$o || 
     var theme = _a.theme;
     return "" + theme.colors.backgroundAlt2;
 });
-var templateObject_1$o;
+var templateObject_1$p;
 
 var SubMenuItems = function (_a) {
     var _b = _a.items, items = _b === void 0 ? [] : _b, activeItem = _a.activeItem, _c = _a.isMobileOnly, isMobileOnly = _c === void 0 ? false : _c, props = __rest(_a, ["items", "activeItem", "isMobileOnly"]);
     return (React__default['default'].createElement(StyledSubMenuItems, __assign({ justifyContent: [isMobileOnly ? "flex-end" : "start", null, "center"] }, props, { pl: ["12px", null, "0px"], "$isMobileOnly": isMobileOnly }), items.map(function (_a) {
         var label = _a.label, href = _a.href, iconName = _a.iconName;
         return label && (React__default['default'].createElement(Box, { key: label, mr: "20px" },
-            React__default['default'].createElement(MenuItem, { href: href, isActive: href === activeItem, variant: "subMenu" },
+            React__default['default'].createElement(MenuItem$1, { href: href, isActive: href === activeItem, variant: "subMenu" },
                 iconName && (React__default['default'].createElement(IconComponent, { color: href === activeItem ? "secondary" : "textSubtle", iconName: iconName, mr: "4px" })),
                 label)));
     })));
 };
 
-var Td = styled__default['default'].td(templateObject_1$n || (templateObject_1$n = __makeTemplateObject(["\n  border-bottom: 1px solid ", ";\n  color: ", ";\n  padding: 16px;\n  vertical-align: middle;\n\n  ", "\n"], ["\n  border-bottom: 1px solid ", ";\n  color: ", ";\n  padding: 16px;\n  vertical-align: middle;\n\n  ", "\n"])), function (_a) {
+var Td = styled__default['default'].td(templateObject_1$o || (templateObject_1$o = __makeTemplateObject(["\n  border-bottom: 1px solid ", ";\n  color: ", ";\n  padding: 16px;\n  vertical-align: middle;\n\n  ", "\n"], ["\n  border-bottom: 1px solid ", ";\n  color: ", ";\n  padding: 16px;\n  vertical-align: middle;\n\n  ", "\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.cardBorder;
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.text;
 }, styledSystem.typography);
-var Th = styled__default['default'](Td).attrs({ as: "th" })(templateObject_2$f || (templateObject_2$f = __makeTemplateObject(["\n  color: ", ";\n  font-size: 12px;\n  text-transform: uppercase;\n"], ["\n  color: ", ";\n  font-size: 12px;\n  text-transform: uppercase;\n"])), function (_a) {
+var Th = styled__default['default'](Td).attrs({ as: "th" })(templateObject_2$g || (templateObject_2$g = __makeTemplateObject(["\n  color: ", ";\n  font-size: 12px;\n  text-transform: uppercase;\n"], ["\n  color: ", ";\n  font-size: 12px;\n  text-transform: uppercase;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.secondary;
 });
-var templateObject_1$n, templateObject_2$f;
+var templateObject_1$o, templateObject_2$g;
 
-var Table = styled__default['default'].table(templateObject_1$m || (templateObject_1$m = __makeTemplateObject(["\n  max-width: 100%;\n  width: 100%;\n\n  tbody tr:last-child {\n    ", " {\n      border-bottom: 0;\n    }\n  }\n\n  ", "\n"], ["\n  max-width: 100%;\n  width: 100%;\n\n  tbody tr:last-child {\n    ", " {\n      border-bottom: 0;\n    }\n  }\n\n  ", "\n"])), Td, styledSystem.space);
-var templateObject_1$m;
+var Table = styled__default['default'].table(templateObject_1$n || (templateObject_1$n = __makeTemplateObject(["\n  max-width: 100%;\n  width: 100%;\n\n  tbody tr:last-child {\n    ", " {\n      border-bottom: 0;\n    }\n  }\n\n  ", "\n"], ["\n  max-width: 100%;\n  width: 100%;\n\n  tbody tr:last-child {\n    ", " {\n      border-bottom: 0;\n    }\n  }\n\n  ", "\n"])), Td, styledSystem.space);
+var templateObject_1$n;
 
 var byTextAscending = function (getTextProperty) {
     return function (objectA, objectB) {
@@ -3743,18 +4091,18 @@ var getScale = function (property) {
         return scaleKeyValues[scale][property];
     };
 };
-var Handle = styled__default['default'].div(templateObject_1$l || (templateObject_1$l = __makeTemplateObject(["\n  background-color: ", ";\n  border-radius: 50%;\n  cursor: pointer;\n  height: ", ";\n  left: ", ";\n  position: absolute;\n  top: ", ";\n  transition: left 200ms ease-in;\n  width: ", ";\n  z-index: 1;\n"], ["\n  background-color: ", ";\n  border-radius: 50%;\n  cursor: pointer;\n  height: ", ";\n  left: ", ";\n  position: absolute;\n  top: ", ";\n  transition: left 200ms ease-in;\n  width: ", ";\n  z-index: 1;\n"])), function (_a) {
+var Handle = styled__default['default'].div(templateObject_1$m || (templateObject_1$m = __makeTemplateObject(["\n  background-color: ", ";\n  border-radius: 50%;\n  cursor: pointer;\n  height: ", ";\n  left: ", ";\n  position: absolute;\n  top: ", ";\n  transition: left 200ms ease-in;\n  width: ", ";\n  z-index: 1;\n"], ["\n  background-color: ", ";\n  border-radius: 50%;\n  cursor: pointer;\n  height: ", ";\n  left: ", ";\n  position: absolute;\n  top: ", ";\n  transition: left 200ms ease-in;\n  width: ", ";\n  z-index: 1;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.toggle.handleBackground;
 }, getScale("handleHeight"), getScale("handleLeft"), getScale("handleTop"), getScale("handleWidth"));
-var Input = styled__default['default'].input(templateObject_2$e || (templateObject_2$e = __makeTemplateObject(["\n  cursor: pointer;\n  opacity: 0;\n  height: 100%;\n  position: absolute;\n  width: 100%;\n  z-index: 3;\n\n  &:checked + ", " {\n    left: ", ";\n  }\n\n  &:focus + ", " {\n    box-shadow: ", ";\n  }\n\n  &:hover + ", ":not(:disabled):not(:checked) {\n    box-shadow: ", ";\n  }\n"], ["\n  cursor: pointer;\n  opacity: 0;\n  height: 100%;\n  position: absolute;\n  width: 100%;\n  z-index: 3;\n\n  &:checked + ", " {\n    left: ", ";\n  }\n\n  &:focus + ", " {\n    box-shadow: ", ";\n  }\n\n  &:hover + ", ":not(:disabled):not(:checked) {\n    box-shadow: ", ";\n  }\n"])), Handle, getScale("checkedLeft"), Handle, function (_a) {
+var Input = styled__default['default'].input(templateObject_2$f || (templateObject_2$f = __makeTemplateObject(["\n  cursor: pointer;\n  opacity: 0;\n  height: 100%;\n  position: absolute;\n  width: 100%;\n  z-index: 3;\n\n  &:checked + ", " {\n    left: ", ";\n  }\n\n  &:focus + ", " {\n    box-shadow: ", ";\n  }\n\n  &:hover + ", ":not(:disabled):not(:checked) {\n    box-shadow: ", ";\n  }\n"], ["\n  cursor: pointer;\n  opacity: 0;\n  height: 100%;\n  position: absolute;\n  width: 100%;\n  z-index: 3;\n\n  &:checked + ", " {\n    left: ", ";\n  }\n\n  &:focus + ", " {\n    box-shadow: ", ";\n  }\n\n  &:hover + ", ":not(:disabled):not(:checked) {\n    box-shadow: ", ";\n  }\n"])), Handle, getScale("checkedLeft"), Handle, function (_a) {
     var theme = _a.theme;
     return theme.shadows.focus;
 }, Handle, function (_a) {
     var theme = _a.theme;
     return theme.shadows.focus;
 });
-var StyledToggle = styled__default['default'].div(templateObject_3$5 || (templateObject_3$5 = __makeTemplateObject(["\n  align-items: center;\n  background-color: ", ";\n  border-radius: 24px;\n  box-shadow: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  height: ", ";\n  position: relative;\n  transition: background-color 200ms;\n  width: ", ";\n"], ["\n  align-items: center;\n  background-color: ",
+var StyledToggle = styled__default['default'].div(templateObject_3$6 || (templateObject_3$6 = __makeTemplateObject(["\n  align-items: center;\n  background-color: ", ";\n  border-radius: 24px;\n  box-shadow: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  height: ", ";\n  position: relative;\n  transition: background-color 200ms;\n  width: ", ";\n"], ["\n  align-items: center;\n  background-color: ",
     ";\n  border-radius: 24px;\n  box-shadow: ", ";\n  cursor: pointer;\n  display: inline-flex;\n  height: ", ";\n  position: relative;\n  transition: background-color 200ms;\n  width: ", ";\n"])), function (_a) {
     var theme = _a.theme, $checked = _a.$checked, $checkedColor = _a.$checkedColor, $defaultColor = _a.$defaultColor;
     return theme.colors[$checked ? $checkedColor : $defaultColor];
@@ -3762,10 +4110,10 @@ var StyledToggle = styled__default['default'].div(templateObject_3$5 || (templat
     var theme = _a.theme;
     return theme.shadows.inset;
 }, getScale("toggleHeight"), getScale("toggleWidth"));
-var templateObject_1$l, templateObject_2$e, templateObject_3$5;
+var templateObject_1$m, templateObject_2$f, templateObject_3$6;
 
 var Toggle = function (_a) {
-    var checked = _a.checked, _b = _a.defaultColor, defaultColor = _b === void 0 ? "input" : _b, _c = _a.checkedColor, checkedColor = _c === void 0 ? "success" : _c, _d = _a.scale, scale = _d === void 0 ? scales$1.LG : _d, startIcon = _a.startIcon, endIcon = _a.endIcon, props = __rest(_a, ["checked", "defaultColor", "checkedColor", "scale", "startIcon", "endIcon"]);
+    var checked = _a.checked, _b = _a.defaultColor, defaultColor = _b === void 0 ? "greyPrimary" : _b, _c = _a.checkedColor, checkedColor = _c === void 0 ? "success" : _c, _d = _a.scale, scale = _d === void 0 ? scales$1.LG : _d, startIcon = _a.startIcon, endIcon = _a.endIcon, props = __rest(_a, ["checked", "defaultColor", "checkedColor", "scale", "startIcon", "endIcon"]);
     var isChecked = !!checked;
     return (React__default['default'].createElement(StyledToggle, { "$checked": isChecked, "$checkedColor": checkedColor, "$defaultColor": defaultColor, scale: scale },
         React__default['default'].createElement(Input, __assign({ checked: checked, scale: scale }, props, { type: "checkbox" })),
@@ -3789,11 +4137,11 @@ var ThemeSwitcher = function (_a) {
 };
 var ThemeSwitcher$1 = React__default['default'].memo(ThemeSwitcher, function (prev, next) { return prev.isDark === next.isDark; });
 
-var Wrapper$1 = styled__default['default'](Flex)(templateObject_1$k || (templateObject_1$k = __makeTemplateObject(["\n  border-bottom: 2px solid ", ";\n  overflow-x: scroll;\n\n  ::-webkit-scrollbar {\n    display: none;\n  }\n  -ms-overflow-style: none; /* IE and Edge */\n  scrollbar-width: none; /* Firefox */\n"], ["\n  border-bottom: 2px solid ", ";\n  overflow-x: scroll;\n\n  ::-webkit-scrollbar {\n    display: none;\n  }\n  -ms-overflow-style: none; /* IE and Edge */\n  scrollbar-width: none; /* Firefox */\n"])), function (_a) {
+var Wrapper$1 = styled__default['default'](Flex)(templateObject_1$l || (templateObject_1$l = __makeTemplateObject(["\n  border-bottom: 2px solid ", ";\n  overflow-x: scroll;\n\n  ::-webkit-scrollbar {\n    display: none;\n  }\n  -ms-overflow-style: none; /* IE and Edge */\n  scrollbar-width: none; /* Firefox */\n"], ["\n  border-bottom: 2px solid ", ";\n  overflow-x: scroll;\n\n  ::-webkit-scrollbar {\n    display: none;\n  }\n  -ms-overflow-style: none; /* IE and Edge */\n  scrollbar-width: none; /* Firefox */\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.textSubtle;
 });
-var Inner$1 = styled__default['default'](Flex)(templateObject_2$d || (templateObject_2$d = __makeTemplateObject(["\n  justify-content: space-between;\n  flex-grow: 1;\n\n  & > button + button {\n    margin-left: 4px;\n  }\n\n  ", " {\n    flex-grow: 0;\n  }\n"], ["\n  justify-content: space-between;\n  flex-grow: 1;\n\n  & > button + button {\n    margin-left: 4px;\n  }\n\n  ", " {\n    flex-grow: 0;\n  }\n"])), function (_a) {
+var Inner$1 = styled__default['default'](Flex)(templateObject_2$e || (templateObject_2$e = __makeTemplateObject(["\n  justify-content: space-between;\n  flex-grow: 1;\n\n  & > button + button {\n    margin-left: 4px;\n  }\n\n  ", " {\n    flex-grow: 0;\n  }\n"], ["\n  justify-content: space-between;\n  flex-grow: 1;\n\n  & > button + button {\n    margin-left: 4px;\n  }\n\n  ", " {\n    flex-grow: 0;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.md;
 });
@@ -3810,7 +4158,7 @@ var ButtonMenu = function (_a) {
             });
         }))));
 };
-var templateObject_1$k, templateObject_2$d;
+var templateObject_1$l, templateObject_2$e;
 
 var getBorderRadius = function (_a) {
     var scale = _a.scale;
@@ -3820,14 +4168,14 @@ var getPadding = function (_a) {
     var scale = _a.scale;
     return (scale === "md" ? "8px" : "16px");
 };
-var Tab = styled__default['default'].button(templateObject_1$j || (templateObject_1$j = __makeTemplateObject(["\n  display: inline-flex;\n  justify-content: center;\n  cursor: pointer;\n  border: 0;\n  outline: 0;\n  flex-grow: 1;\n  padding: ", ";\n  border-radius: ", ";\n  font-size: 16px;\n  font-weight: 600;\n\n  ", " {\n    flex-grow: 0;\n  }\n\n  ", "\n"], ["\n  display: inline-flex;\n  justify-content: center;\n  cursor: pointer;\n  border: 0;\n  outline: 0;\n  flex-grow: 1;\n  padding: ", ";\n  border-radius: ", ";\n  font-size: 16px;\n  font-weight: 600;\n\n  ", " {\n    flex-grow: 0;\n  }\n\n  ", "\n"])), getPadding, getBorderRadius, function (_a) {
+var Tab = styled__default['default'].button(templateObject_1$k || (templateObject_1$k = __makeTemplateObject(["\n  display: inline-flex;\n  justify-content: center;\n  cursor: pointer;\n  border: 0;\n  outline: 0;\n  flex-grow: 1;\n  padding: ", ";\n  border-radius: ", ";\n  font-size: 16px;\n  font-weight: 600;\n\n  ", " {\n    flex-grow: 0;\n  }\n\n  ", "\n"], ["\n  display: inline-flex;\n  justify-content: center;\n  cursor: pointer;\n  border: 0;\n  outline: 0;\n  flex-grow: 1;\n  padding: ", ";\n  border-radius: ", ";\n  font-size: 16px;\n  font-weight: 600;\n\n  ", " {\n    flex-grow: 0;\n  }\n\n  ", "\n"])), getPadding, getBorderRadius, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.md;
 }, styledSystem.color);
 Tab.defaultProps = {
     scale: "md",
 };
-var templateObject_1$j;
+var templateObject_1$k;
 
 var variants$1 = {
     PRIMARY: "primary",
@@ -3893,7 +4241,7 @@ var getOutlineStyles = function (_a) {
     }
     return "";
 };
-var StyledTag = styled__default['default'].div(templateObject_1$i || (templateObject_1$i = __makeTemplateObject(["\n  align-items: center;\n  border-radius: 16px;\n  color: #ffffff;\n  display: inline-flex;\n  font-weight: 400;\n  white-space: nowrap;\n\n  & > svg {\n    fill: currentColor;\n  }\n\n  ", "\n\n  ", "\n  ", "\n  ", "\n  ", "\n\n  ", "\n"], ["\n  align-items: center;\n  border-radius: 16px;\n  color: #ffffff;\n  display: inline-flex;\n  font-weight: 400;\n  white-space: nowrap;\n\n  & > svg {\n    fill: currentColor;\n  }\n\n  ", "\n\n  ",
+var StyledTag = styled__default['default'].div(templateObject_1$j || (templateObject_1$j = __makeTemplateObject(["\n  align-items: center;\n  border-radius: 16px;\n  color: #ffffff;\n  display: inline-flex;\n  font-weight: 400;\n  white-space: nowrap;\n\n  & > svg {\n    fill: currentColor;\n  }\n\n  ", "\n\n  ", "\n  ", "\n  ", "\n  ", "\n\n  ", "\n"], ["\n  align-items: center;\n  border-radius: 16px;\n  color: #ffffff;\n  display: inline-flex;\n  font-weight: 400;\n  white-space: nowrap;\n\n  & > svg {\n    fill: currentColor;\n  }\n\n  ", "\n\n  ",
     "\n  ",
     "\n  ", "\n  ", "\n\n  ", "\n"])), function (_a) {
     var textTransform = _a.textTransform;
@@ -3904,7 +4252,7 @@ var StyledTag = styled__default['default'].div(templateObject_1$i || (templateOb
 }), styledSystem.variant({
     variants: styleVariants,
 }), styledSystem.space, styledSystem.typography, getOutlineStyles);
-var templateObject_1$i;
+var templateObject_1$j;
 
 var Tag = function (_a) {
     var startIcon = _a.startIcon, endIcon = _a.endIcon, children = _a.children, props = __rest(_a, ["startIcon", "endIcon", "children"]);
@@ -3929,11 +4277,11 @@ var isTouchDevice = function () {
     return "ontouchstart" in window || navigator.maxTouchPoints > 0 || navigator.msMaxTouchPoints > 0;
 };
 
-var Arrow = styled__default['default'].div(templateObject_1$h || (templateObject_1$h = __makeTemplateObject(["\n  &,\n  &::before {\n    position: absolute;\n    width: 10px;\n    height: 10px;\n    border-radius: 2px;\n    z-index: -1;\n  }\n\n  &::before {\n    content: \"\";\n    transform: rotate(45deg);\n    background: ", ";\n  }\n"], ["\n  &,\n  &::before {\n    position: absolute;\n    width: 10px;\n    height: 10px;\n    border-radius: 2px;\n    z-index: -1;\n  }\n\n  &::before {\n    content: \"\";\n    transform: rotate(45deg);\n    background: ", ";\n  }\n"])), function (_a) {
+var Arrow = styled__default['default'].div(templateObject_1$i || (templateObject_1$i = __makeTemplateObject(["\n  &,\n  &::before {\n    position: absolute;\n    width: 10px;\n    height: 10px;\n    border-radius: 2px;\n    z-index: -1;\n  }\n\n  &::before {\n    content: \"\";\n    transform: rotate(45deg);\n    background: ", ";\n  }\n"], ["\n  &,\n  &::before {\n    position: absolute;\n    width: 10px;\n    height: 10px;\n    border-radius: 2px;\n    z-index: -1;\n  }\n\n  &::before {\n    content: \"\";\n    transform: rotate(45deg);\n    background: ", ";\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.tooltip.background;
 });
-var StyledTooltip = styled__default['default'].div(templateObject_2$c || (templateObject_2$c = __makeTemplateObject(["\n  padding: 16px;\n  font-size: 16px;\n  line-height: 130%;\n  border-radius: 16px;\n  max-width: 320px;\n  z-index: 101;\n  background: ", ";\n  color: ", ";\n  box-shadow: ", ";\n\n  &[data-popper-placement^=\"top\"] > ", " {\n    bottom: -4px;\n  }\n\n  &[data-popper-placement^=\"bottom\"] > ", " {\n    top: -4px;\n  }\n\n  &[data-popper-placement^=\"left\"] > ", " {\n    right: -4px;\n  }\n\n  &[data-popper-placement^=\"right\"] > ", " {\n    left: -4px;\n  }\n"], ["\n  padding: 16px;\n  font-size: 16px;\n  line-height: 130%;\n  border-radius: 16px;\n  max-width: 320px;\n  z-index: 101;\n  background: ", ";\n  color: ", ";\n  box-shadow: ", ";\n\n  &[data-popper-placement^=\"top\"] > ", " {\n    bottom: -4px;\n  }\n\n  &[data-popper-placement^=\"bottom\"] > ", " {\n    top: -4px;\n  }\n\n  &[data-popper-placement^=\"left\"] > ", " {\n    right: -4px;\n  }\n\n  &[data-popper-placement^=\"right\"] > ", " {\n    left: -4px;\n  }\n"])), function (_a) {
+var StyledTooltip = styled__default['default'].div(templateObject_2$d || (templateObject_2$d = __makeTemplateObject(["\n  padding: 16px;\n  font-size: 16px;\n  line-height: 130%;\n  border-radius: 16px;\n  max-width: 320px;\n  z-index: 101;\n  background: ", ";\n  color: ", ";\n  box-shadow: ", ";\n\n  &[data-popper-placement^=\"top\"] > ", " {\n    bottom: -4px;\n  }\n\n  &[data-popper-placement^=\"bottom\"] > ", " {\n    top: -4px;\n  }\n\n  &[data-popper-placement^=\"left\"] > ", " {\n    right: -4px;\n  }\n\n  &[data-popper-placement^=\"right\"] > ", " {\n    left: -4px;\n  }\n"], ["\n  padding: 16px;\n  font-size: 16px;\n  line-height: 130%;\n  border-radius: 16px;\n  max-width: 320px;\n  z-index: 101;\n  background: ", ";\n  color: ", ";\n  box-shadow: ", ";\n\n  &[data-popper-placement^=\"top\"] > ", " {\n    bottom: -4px;\n  }\n\n  &[data-popper-placement^=\"bottom\"] > ", " {\n    top: -4px;\n  }\n\n  &[data-popper-placement^=\"left\"] > ", " {\n    right: -4px;\n  }\n\n  &[data-popper-placement^=\"right\"] > ", " {\n    left: -4px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.tooltip.background;
 }, function (_a) {
@@ -3943,7 +4291,7 @@ var StyledTooltip = styled__default['default'].div(templateObject_2$c || (templa
     var theme = _a.theme;
     return theme.tooltip.boxShadow;
 }, Arrow, Arrow, Arrow, Arrow);
-var templateObject_1$h, templateObject_2$c;
+var templateObject_1$i, templateObject_2$d;
 
 var invertTheme = function (currentTheme) {
     if (currentTheme.isDark) {
@@ -4111,12 +4459,12 @@ var InfoTooltip = function (_a) {
             React__default['default'].createElement(IconComponent, { iconName: "Info", color: iconColor }))));
 };
 
-var TimelineContainer = styled__default['default'].ul(templateObject_1$g || (templateObject_1$g = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  list-style: none;\n"], ["\n  display: flex;\n  flex-direction: column;\n  list-style: none;\n"])));
-var TimelineEvent = styled__default['default'].li(templateObject_2$b || (templateObject_2$b = __makeTemplateObject(["\n  display: flex;\n  position: relative;\n  margin-bottom: 14px;\n\n  &:after {\n    content: \"\";\n    position: absolute;\n    left: 9px;\n    top: 26px;\n    width: 2px;\n    height: 10px;\n    background-color: ", ";\n  }\n\n  &:last-child:after {\n    display: none;\n  }\n"], ["\n  display: flex;\n  position: relative;\n  margin-bottom: 14px;\n\n  &:after {\n    content: \"\";\n    position: absolute;\n    left: 9px;\n    top: 26px;\n    width: 2px;\n    height: 10px;\n    background-color: ", ";\n  }\n\n  &:last-child:after {\n    display: none;\n  }\n"])), function (_a) {
+var TimelineContainer = styled__default['default'].ul(templateObject_1$h || (templateObject_1$h = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  list-style: none;\n"], ["\n  display: flex;\n  flex-direction: column;\n  list-style: none;\n"])));
+var TimelineEvent = styled__default['default'].li(templateObject_2$c || (templateObject_2$c = __makeTemplateObject(["\n  display: flex;\n  position: relative;\n  margin-bottom: 14px;\n\n  &:after {\n    content: \"\";\n    position: absolute;\n    left: 9px;\n    top: 26px;\n    width: 2px;\n    height: 10px;\n    background-color: ", ";\n  }\n\n  &:last-child:after {\n    display: none;\n  }\n"], ["\n  display: flex;\n  position: relative;\n  margin-bottom: 14px;\n\n  &:after {\n    content: \"\";\n    position: absolute;\n    left: 9px;\n    top: 26px;\n    width: 2px;\n    height: 10px;\n    background-color: ", ";\n  }\n\n  &:last-child:after {\n    display: none;\n  }\n"])), function (_a) {
     var theme = _a.theme, $useDark = _a.$useDark;
     return ($useDark ? theme.colors.textSubtle : lightColors.textSubtle);
 });
-var templateObject_1$g, templateObject_2$b;
+var templateObject_1$h, templateObject_2$c;
 
 var getTextColor$1 = function (_a) {
     var eventStatus = _a.eventStatus, useDark = _a.useDark;
@@ -4339,15 +4687,15 @@ var useKonamiCheatCode = function (matchedCodeHandler) {
     }, [matchedCodeHandler]);
 };
 
-var ModalHeader = styled__default['default'].div(templateObject_1$f || (templateObject_1$f = __makeTemplateObject(["\n  align-items: center;\n  background: ", ";\n  border-bottom: 1px solid ", ";\n  display: flex;\n  padding: 12px 24px;\n"], ["\n  align-items: center;\n  background: ", ";\n  border-bottom: 1px solid ", ";\n  display: flex;\n  padding: 12px 24px;\n"])), function (_a) {
+var ModalHeader = styled__default['default'].div(templateObject_1$g || (templateObject_1$g = __makeTemplateObject(["\n  align-items: center;\n  background: ", ";\n  border-bottom: 1px solid ", ";\n  display: flex;\n  padding: 12px 24px;\n"], ["\n  align-items: center;\n  background: ", ";\n  border-bottom: 1px solid ", ";\n  display: flex;\n  padding: 12px 24px;\n"])), function (_a) {
     var background = _a.background;
     return background || "transparent";
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.cardBorder;
 });
-var ModalTitle = styled__default['default'](Flex)(templateObject_2$a || (templateObject_2$a = __makeTemplateObject(["\n  align-items: center;\n  flex: 1;\n"], ["\n  align-items: center;\n  flex: 1;\n"])));
-var ModalBody = styled__default['default'](Flex)(templateObject_3$4 || (templateObject_3$4 = __makeTemplateObject(["\n  flex-direction: column;\n  max-height: 90vh;\n  overflow-y: auto;\n"], ["\n  flex-direction: column;\n  max-height: 90vh;\n  overflow-y: auto;\n"])));
+var ModalTitle = styled__default['default'](Flex)(templateObject_2$b || (templateObject_2$b = __makeTemplateObject(["\n  align-items: center;\n  flex: 1;\n"], ["\n  align-items: center;\n  flex: 1;\n"])));
+var ModalBody = styled__default['default'](Flex)(templateObject_3$5 || (templateObject_3$5 = __makeTemplateObject(["\n  flex-direction: column;\n  max-height: 90vh;\n  overflow-y: auto;\n"], ["\n  flex-direction: column;\n  max-height: 90vh;\n  overflow-y: auto;\n"])));
 var ModalCloseButton = function (_a) {
     var onDismiss = _a.onDismiss;
     return (React__default['default'].createElement(IconButton, { variant: "text", onClick: onDismiss, "aria-label": "Close the dialog" },
@@ -4358,7 +4706,7 @@ var ModalBackButton = function (_a) {
     return (React__default['default'].createElement(IconButton, { variant: "text", onClick: onBack, "area-label": "go back", mr: "8px" },
         React__default['default'].createElement(Icon$2e, { color: "primary" })));
 };
-var ModalContainer = styled__default['default'](Box)(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  overflow: hidden;\n  background: ", ";\n  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);\n  border: 1px solid ", ";\n  border-radius: 32px;\n  width: 100%;\n  max-height: 100vh;\n  z-index: ", ";\n\n  ", " {\n    width: auto;\n    min-width: ", ";\n    max-width: 100%;\n  }\n"], ["\n  overflow: hidden;\n  background: ", ";\n  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);\n  border: 1px solid ", ";\n  border-radius: 32px;\n  width: 100%;\n  max-height: 100vh;\n  z-index: ", ";\n\n  ", " {\n    width: auto;\n    min-width: ", ";\n    max-width: 100%;\n  }\n"])), function (_a) {
+var ModalContainer = styled__default['default'](Box)(templateObject_4$3 || (templateObject_4$3 = __makeTemplateObject(["\n  overflow: hidden;\n  background: ", ";\n  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);\n  border: 1px solid ", ";\n  border-radius: 32px;\n  width: 100%;\n  max-height: 100vh;\n  z-index: ", ";\n\n  ", " {\n    width: auto;\n    min-width: ", ";\n    max-width: 100%;\n  }\n"], ["\n  overflow: hidden;\n  background: ", ";\n  box-shadow: 0px 20px 36px -8px rgba(14, 14, 44, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.05);\n  border: 1px solid ", ";\n  border-radius: 32px;\n  width: 100%;\n  max-height: 100vh;\n  z-index: ", ";\n\n  ", " {\n    width: auto;\n    min-width: ", ";\n    max-width: 100%;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.modal.background;
 }, function (_a) {
@@ -4374,7 +4722,7 @@ var ModalContainer = styled__default['default'](Box)(templateObject_4$2 || (temp
     var minWidth = _a.minWidth;
     return minWidth;
 });
-var templateObject_1$f, templateObject_2$a, templateObject_3$4, templateObject_4$2;
+var templateObject_1$g, templateObject_2$b, templateObject_3$5, templateObject_4$3;
 
 var Modal = function (_a) {
     var title = _a.title, onDismiss = _a.onDismiss, onBack = _a.onBack, children = _a.children, _b = _a.hideCloseButton, hideCloseButton = _b === void 0 ? false : _b, _c = _a.bodyPadding, bodyPadding = _c === void 0 ? "24px" : _c, _d = _a.headerBackground, headerBackground = _d === void 0 ? "transparent" : _d, _e = _a.minWidth, minWidth = _e === void 0 ? "320px" : _e, props = __rest(_a, ["title", "onDismiss", "onBack", "children", "hideCloseButton", "bodyPadding", "headerBackground", "minWidth"]);
@@ -4388,7 +4736,7 @@ var Modal = function (_a) {
         React__default['default'].createElement(ModalBody, { p: bodyPadding }, children)));
 };
 
-var ModalWrapper = styled__default['default'].div(templateObject_1$e || (templateObject_1$e = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  position: fixed;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  z-index: ", ";\n"], ["\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  position: fixed;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  z-index: ", ";\n"])), function (_a) {
+var ModalWrapper = styled__default['default'].div(templateObject_1$f || (templateObject_1$f = __makeTemplateObject(["\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  position: fixed;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  z-index: ", ";\n"], ["\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  position: fixed;\n  top: 0;\n  right: 0;\n  bottom: 0;\n  left: 0;\n  z-index: ", ";\n"])), function (_a) {
     var theme = _a.theme;
     return theme.zIndices.modal - 1;
 });
@@ -4439,7 +4787,7 @@ var ModalProvider = function (_a) {
                 }))),
         children));
 };
-var templateObject_1$e;
+var templateObject_1$f;
 
 var useModal = function (modal, closeOnOverlayClick, updateOnPropsChange, modalId) {
     if (closeOnOverlayClick === void 0) { closeOnOverlayClick = true; }
@@ -4474,12 +4822,12 @@ var useModal = function (modal, closeOnOverlayClick, updateOnPropsChange, modalI
     return [onPresentCallback, onDismiss];
 };
 
-var StyledIconContainer = styled__default['default'].div(templateObject_1$d || (templateObject_1$d = __makeTemplateObject(["\n  background: ", ";\n"], ["\n  background: ",
+var StyledIconContainer = styled__default['default'].div(templateObject_1$e || (templateObject_1$e = __makeTemplateObject(["\n  background: ", ";\n"], ["\n  background: ",
     ";\n"])), function (_a) {
     var activeBackgroundColor = _a.activeBackgroundColor, theme = _a.theme;
     return activeBackgroundColor ? theme.colors[activeBackgroundColor] : "transparent";
 });
-var StyledAnimatedIconComponent = styled__default['default'].div(templateObject_2$9 || (templateObject_2$9 = __makeTemplateObject(["\n  position: relative;\n  ", ";\n  ", ";\n\n  div:first-child {\n    ", ";\n    ", ";\n    z-index: 0;\n  }\n  ", "\n\n  ", "\n"], ["\n  position: relative;\n  ", ";\n  ", ";\n\n  div:first-child {\n    ", ";\n    ", ";\n    z-index: 0;\n  }\n  ",
+var StyledAnimatedIconComponent = styled__default['default'].div(templateObject_2$a || (templateObject_2$a = __makeTemplateObject(["\n  position: relative;\n  ", ";\n  ", ";\n\n  div:first-child {\n    ", ";\n    ", ";\n    z-index: 0;\n  }\n  ", "\n\n  ", "\n"], ["\n  position: relative;\n  ", ";\n  ", ";\n\n  div:first-child {\n    ", ";\n    ", ";\n    z-index: 0;\n  }\n  ",
     "\n\n  ",
     "\n"])), function (_a) {
     var height = _a.height;
@@ -4502,7 +4850,7 @@ var StyledAnimatedIconComponent = styled__default['default'].div(templateObject_
     return isActive &&
         "\n    div:last-child {\n      " + (height && hasFillIcon && "height:" + height) + ";\n      " + ("width: " + (width || "100%")) + ";\n    }\n  ";
 });
-var templateObject_1$d, templateObject_2$9;
+var templateObject_1$e, templateObject_2$a;
 
 var Icons = IconModule;
 var AnimatedIconComponent = function (_a) {
@@ -4517,12 +4865,12 @@ var AnimatedIconComponent = function (_a) {
             React__default['default'].createElement(IconElementFill, { color: activeColor }))))) : null;
 };
 
-var StyledBottomNavItem = styled__default['default'].button(templateObject_1$c || (templateObject_1$c = __makeTemplateObject(["\n  display: block;\n  border: 0;\n  background: transparent;\n  cursor: pointer;\n  height: 44px;\n  padding: 4px 12px;\n  &:hover {\n    border-radius: 16px;\n  }\n  &:hover,\n  &:hover div {\n    background: ", ";\n  }\n"], ["\n  display: block;\n  border: 0;\n  background: transparent;\n  cursor: pointer;\n  height: 44px;\n  padding: 4px 12px;\n  &:hover {\n    border-radius: 16px;\n  }\n  &:hover,\n  &:hover div {\n    background: ", ";\n  }\n"])), function (_a) {
+var StyledBottomNavItem = styled__default['default'].button(templateObject_1$d || (templateObject_1$d = __makeTemplateObject(["\n  display: block;\n  border: 0;\n  background: transparent;\n  cursor: pointer;\n  height: 44px;\n  padding: 4px 12px;\n  &:hover {\n    border-radius: 16px;\n  }\n  &:hover,\n  &:hover div {\n    background: ", ";\n  }\n"], ["\n  display: block;\n  border: 0;\n  background: transparent;\n  cursor: pointer;\n  height: 44px;\n  padding: 4px 12px;\n  &:hover {\n    border-radius: 16px;\n  }\n  &:hover,\n  &:hover div {\n    background: ", ";\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.tertiary;
 });
-var StyledBottomNavText = styled__default['default'](Text)(templateObject_2$8 || (templateObject_2$8 = __makeTemplateObject(["\n  display: -webkit-box;\n  overflow: hidden;\n  user-select: none;\n  -webkit-line-clamp: 1;\n  -webkit-box-orient: vertical;\n  -webkit-user-select: none;\n  -webkit-touch-callout: none;\n"], ["\n  display: -webkit-box;\n  overflow: hidden;\n  user-select: none;\n  -webkit-line-clamp: 1;\n  -webkit-box-orient: vertical;\n  -webkit-user-select: none;\n  -webkit-touch-callout: none;\n"])));
-var templateObject_1$c, templateObject_2$8;
+var StyledBottomNavText = styled__default['default'](Text)(templateObject_2$9 || (templateObject_2$9 = __makeTemplateObject(["\n  display: -webkit-box;\n  overflow: hidden;\n  user-select: none;\n  -webkit-line-clamp: 1;\n  -webkit-box-orient: vertical;\n  -webkit-user-select: none;\n  -webkit-touch-callout: none;\n"], ["\n  display: -webkit-box;\n  overflow: hidden;\n  user-select: none;\n  -webkit-line-clamp: 1;\n  -webkit-box-orient: vertical;\n  -webkit-user-select: none;\n  -webkit-touch-callout: none;\n"])));
+var templateObject_1$d, templateObject_2$9;
 
 var BottomNavItem = function (_a) {
     var label = _a.label, iconName = _a.iconName, href = _a.href, _b = _a.showItemsOnMobile, showItemsOnMobile = _b === void 0 ? false : _b, _c = _a.isActive, isActive = _c === void 0 ? false : _c, props = __rest(_a, ["label", "iconName", "href", "showItemsOnMobile", "isActive"]);
@@ -4532,18 +4880,18 @@ var BottomNavItem = function (_a) {
     return showItemsOnMobile ? (React__default['default'].createElement(StyledBottomNavItem, __assign({ type: "button" }, props), bottomNavItemContent)) : (React__default['default'].createElement(StyledBottomNavItem, __assign({ as: reactRouterDom.Link, to: href }, props), bottomNavItemContent));
 };
 
-var StyledBottomNav = styled__default['default'](Flex)(templateObject_1$b || (templateObject_1$b = __makeTemplateObject(["\n  position: fixed;\n  bottom: 0px;\n  width: 100%;\n  padding: 5px 8px;\n  background: ", ";\n  border-top: 1px solid ", ";\n  padding-bottom: env(safe-area-inset-bottom);\n  html[data-useragent*=\"TokenPocket_iOS\"] & {\n    padding-bottom: 45px;\n  }\n"], ["\n  position: fixed;\n  bottom: 0px;\n  width: 100%;\n  padding: 5px 8px;\n  background: ", ";\n  border-top: 1px solid ", ";\n  padding-bottom: env(safe-area-inset-bottom);\n  html[data-useragent*=\"TokenPocket_iOS\"] & {\n    padding-bottom: 45px;\n  }\n"])), function (_a) {
+var StyledBottomNav = styled__default['default'](Flex)(templateObject_1$c || (templateObject_1$c = __makeTemplateObject(["\n  position: fixed;\n  bottom: 0px;\n  width: 100%;\n  padding: 5px 8px;\n  background: ", ";\n  border-top: 1px solid ", ";\n  padding-bottom: env(safe-area-inset-bottom);\n  html[data-useragent*=\"TokenPocket_iOS\"] & {\n    padding-bottom: 45px;\n  }\n"], ["\n  position: fixed;\n  bottom: 0px;\n  width: 100%;\n  padding: 5px 8px;\n  background: ", ";\n  border-top: 1px solid ", ";\n  padding-bottom: env(safe-area-inset-bottom);\n  html[data-useragent*=\"TokenPocket_iOS\"] & {\n    padding-bottom: 45px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.backgroundAlt;
 }, function (_a) {
     var theme = _a.theme;
     return theme.colors.cardBorder;
 });
-var StyledOverlay = styled__default['default'].div(templateObject_2$7 || (templateObject_2$7 = __makeTemplateObject(["\n  content: \"\";\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background-color: ", ";\n  backdrop-filter: blur(2px);\n"], ["\n  content: \"\";\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background-color: ", ";\n  backdrop-filter: blur(2px);\n"])), function (_a) {
+var StyledOverlay = styled__default['default'].div(templateObject_2$8 || (templateObject_2$8 = __makeTemplateObject(["\n  content: \"\";\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background-color: ", ";\n  backdrop-filter: blur(2px);\n"], ["\n  content: \"\";\n  position: fixed;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  background-color: ", ";\n  backdrop-filter: blur(2px);\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.text + "99";
 });
-var templateObject_1$b, templateObject_2$7;
+var templateObject_1$c, templateObject_2$8;
 
 var getTextColor = function (_a) {
     var $isActive = _a.$isActive, disabled = _a.disabled, theme = _a.theme;
@@ -4553,7 +4901,7 @@ var getTextColor = function (_a) {
         return theme.colors.textCommon;
     return theme.colors.textCommon;
 };
-var DropdownMenuItem = styled__default['default'].button(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  align-items: center;\n  border: 0;\n  background: transparent;\n  color: ", ";\n  cursor: ", ";\n  font-weight: ", ";\n  display: flex;\n  font-size: 16px;\n  height: 48px;\n  justify-content: space-between;\n  outline: 0;\n  padding-left: 16px;\n  padding-right: 16px;\n  width: 100%;\n\n  &:hover:not(:disabled) {\n    background-color: ", ";\n  }\n\n  &:active:not(:disabled) {\n    opacity: 0.85;\n    transform: translateY(1px);\n  }\n"], ["\n  align-items: center;\n  border: 0;\n  background: transparent;\n  color: ", ";\n  cursor: ", ";\n  font-weight: ", ";\n  display: flex;\n  font-size: 16px;\n  height: 48px;\n  justify-content: space-between;\n  outline: 0;\n  padding-left: 16px;\n  padding-right: 16px;\n  width: 100%;\n\n  &:hover:not(:disabled) {\n    background-color: ", ";\n  }\n\n  &:active:not(:disabled) {\n    opacity: 0.85;\n    transform: translateY(1px);\n  }\n"])), function (_a) {
+var DropdownMenuItem = styled__default['default'].button(templateObject_1$b || (templateObject_1$b = __makeTemplateObject(["\n  align-items: center;\n  border: 0;\n  background: transparent;\n  color: ", ";\n  cursor: ", ";\n  font-weight: ", ";\n  display: flex;\n  font-size: 16px;\n  height: 48px;\n  justify-content: space-between;\n  outline: 0;\n  padding-left: 16px;\n  padding-right: 16px;\n  width: 100%;\n\n  &:hover:not(:disabled) {\n    background-color: ", ";\n  }\n\n  &:active:not(:disabled) {\n    opacity: 0.85;\n    transform: translateY(1px);\n  }\n"], ["\n  align-items: center;\n  border: 0;\n  background: transparent;\n  color: ", ";\n  cursor: ", ";\n  font-weight: ", ";\n  display: flex;\n  font-size: 16px;\n  height: 48px;\n  justify-content: space-between;\n  outline: 0;\n  padding-left: 16px;\n  padding-right: 16px;\n  width: 100%;\n\n  &:hover:not(:disabled) {\n    background-color: ", ";\n  }\n\n  &:active:not(:disabled) {\n    opacity: 0.85;\n    transform: translateY(1px);\n  }\n"])), function (_a) {
     var theme = _a.theme, disabled = _a.disabled, $isActive = _a.$isActive;
     return getTextColor({ theme: theme, disabled: disabled, $isActive: $isActive });
 }, function (_a) {
@@ -4566,12 +4914,12 @@ var DropdownMenuItem = styled__default['default'].button(templateObject_1$a || (
     var theme = _a.theme;
     return theme.colors.tertiary;
 });
-var StyledDropdownMenuItemContainer = styled__default['default'].div(templateObject_2$6 || (templateObject_2$6 = __makeTemplateObject(["\n  &:first-child > ", " {\n    border-top-left-radius: 8px;\n    border-top-right-radius: 8px;\n  }\n\n  &:last-child > ", " {\n    border-bottom-left-radius: 8px;\n    border-bottom-right-radius: 8px;\n  }\n"], ["\n  &:first-child > ", " {\n    border-top-left-radius: 8px;\n    border-top-right-radius: 8px;\n  }\n\n  &:last-child > ", " {\n    border-bottom-left-radius: 8px;\n    border-bottom-right-radius: 8px;\n  }\n"])), DropdownMenuItem, DropdownMenuItem);
-var DropdownMenuDivider = styled__default['default'].hr(templateObject_3$3 || (templateObject_3$3 = __makeTemplateObject(["\n  border-color: ", ";\n  border-style: solid;\n  border-width: 1px 0 0;\n  margin: 4px 0;\n"], ["\n  border-color: ", ";\n  border-style: solid;\n  border-width: 1px 0 0;\n  margin: 4px 0;\n"])), function (_a) {
+var StyledDropdownMenuItemContainer = styled__default['default'].div(templateObject_2$7 || (templateObject_2$7 = __makeTemplateObject(["\n  &:first-child > ", " {\n    border-top-left-radius: 8px;\n    border-top-right-radius: 8px;\n  }\n\n  &:last-child > ", " {\n    border-bottom-left-radius: 8px;\n    border-bottom-right-radius: 8px;\n  }\n"], ["\n  &:first-child > ", " {\n    border-top-left-radius: 8px;\n    border-top-right-radius: 8px;\n  }\n\n  &:last-child > ", " {\n    border-bottom-left-radius: 8px;\n    border-bottom-right-radius: 8px;\n  }\n"])), DropdownMenuItem, DropdownMenuItem);
+var DropdownMenuDivider = styled__default['default'].hr(templateObject_3$4 || (templateObject_3$4 = __makeTemplateObject(["\n  border-color: ", ";\n  border-style: solid;\n  border-width: 1px 0 0;\n  margin: 4px 0;\n"], ["\n  border-color: ", ";\n  border-style: solid;\n  border-width: 1px 0 0;\n  margin: 4px 0;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.colors.cardBorder;
 });
-var StyledDropdownMenu = styled__default['default'].div(templateObject_4$1 || (templateObject_4$1 = __makeTemplateObject(["\n  background-color: ", ";\n  border: 1px solid ", ";\n  border-radius: 16px;\n  padding-bottom: 4px;\n  padding-top: 4px;\n  pointer-events: auto;\n  width: ", ";\n  visibility: visible;\n  z-index: 1001;\n\n  ", "\n"], ["\n  background-color: ", ";\n  border: 1px solid ", ";\n  border-radius: 16px;\n  padding-bottom: 4px;\n  padding-top: 4px;\n  pointer-events: auto;\n  width: ", ";\n  visibility: visible;\n  z-index: 1001;\n\n  ",
+var StyledDropdownMenu = styled__default['default'].div(templateObject_4$2 || (templateObject_4$2 = __makeTemplateObject(["\n  background-color: ", ";\n  border: 1px solid ", ";\n  border-radius: 16px;\n  padding-bottom: 4px;\n  padding-top: 4px;\n  pointer-events: auto;\n  width: ", ";\n  visibility: visible;\n  z-index: 1001;\n\n  ", "\n"], ["\n  background-color: ", ";\n  border: 1px solid ", ";\n  border-radius: 16px;\n  padding-bottom: 4px;\n  padding-top: 4px;\n  pointer-events: auto;\n  width: ", ";\n  visibility: visible;\n  z-index: 1001;\n\n  ",
     "\n"])), function (_a) {
     var theme = _a.theme;
     return theme.card.background;
@@ -4586,7 +4934,7 @@ var StyledDropdownMenu = styled__default['default'].div(templateObject_4$1 || (t
     return !$isOpen &&
         "\n    pointer-events: none;\n    visibility: hidden;\n  ";
 });
-var LinkStatus = styled__default['default'](Text)(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n  border-radius: ", ";\n  padding: 0 8px;\n  border: 2px solid;\n  border-color: ", ";\n  box-shadow: none;\n  color: ", ";\n  margin-left: 8px;\n"], ["\n  border-radius: ", ";\n  padding: 0 8px;\n  border: 2px solid;\n  border-color: ", ";\n  box-shadow: none;\n  color: ", ";\n  margin-left: 8px;\n"])), function (_a) {
+var LinkStatus = styled__default['default'](Text)(templateObject_5$1 || (templateObject_5$1 = __makeTemplateObject(["\n  border-radius: ", ";\n  padding: 0 8px;\n  border: 2px solid;\n  border-color: ", ";\n  box-shadow: none;\n  color: ", ";\n  margin-left: 8px;\n"], ["\n  border-radius: ", ";\n  padding: 0 8px;\n  border: 2px solid;\n  border-color: ", ";\n  box-shadow: none;\n  color: ", ";\n  margin-left: 8px;\n"])), function (_a) {
     var theme = _a.theme;
     return theme.radii.default;
 }, function (_a) {
@@ -4596,7 +4944,7 @@ var LinkStatus = styled__default['default'](Text)(templateObject_5 || (templateO
     var theme = _a.theme, color = _a.color;
     return theme.colors[color];
 });
-var templateObject_1$a, templateObject_2$6, templateObject_3$3, templateObject_4$1, templateObject_5;
+var templateObject_1$b, templateObject_2$7, templateObject_3$4, templateObject_4$2, templateObject_5$1;
 
 exports.DropdownMenuItemType = void 0;
 (function (DropdownMenuItemType) {
@@ -4744,6 +5092,146 @@ var BottomNav = function (_a) {
         }))));
 };
 
+var socials = [
+    {
+        label: "Twitter",
+        icon: "Twitter",
+        href: "https://twitter.com/pancakeswap",
+    },
+    {
+        label: "Telegram",
+        icon: "Telegram",
+        items: [
+            {
+                label: "English",
+                href: "https://t.me/pancakeswap",
+            },
+            {
+                label: "Bahasa Indonesia",
+                href: "https://t.me/PancakeSwapIndonesia",
+            },
+            {
+                label: "中文",
+                href: "https://t.me/PancakeSwap_CN",
+            },
+            {
+                label: "Tiếng Việt",
+                href: "https://t.me/PancakeSwapVN",
+            },
+            {
+                label: "Italiano",
+                href: "https://t.me/pancakeswap_ita",
+            },
+            {
+                label: "русский",
+                href: "https://t.me/pancakeswap_ru",
+            },
+            {
+                label: "Türkiye",
+                href: "https://t.me/pancakeswapturkiye",
+            },
+            {
+                label: "Português",
+                href: "https://t.me/PancakeSwapPortuguese",
+            },
+            {
+                label: "Español",
+                href: "https://t.me/PancakeswapEs",
+            },
+            {
+                label: "日本語",
+                href: "https://t.me/pancakeswapjp",
+            },
+            {
+                label: "Français",
+                href: "https://t.me/pancakeswapfr",
+            },
+            {
+                label: "Announcements",
+                href: "https://t.me/PancakeSwapAnn",
+            },
+            {
+                label: "Whale Alert",
+                href: "https://t.me/PancakeSwapWhales",
+            },
+        ],
+    },
+    {
+        label: "Reddit",
+        icon: "Reddit",
+        href: "https://reddit.com/r/pancakeswap",
+    },
+    {
+        label: "Instagram",
+        icon: "Instagram",
+        href: "https://instagram.com/pancakeswap_official",
+    },
+    {
+        label: "Github",
+        icon: "Github",
+        href: "https://github.com/pancakeswap/",
+    },
+];
+__spreadArray([], Array(20)).map(function (_, i) { return ({
+    code: "en" + i,
+    language: "English" + i,
+    locale: "Locale" + i,
+}); });
+
+var SocialLinks = function (_a) {
+    var props = __rest(_a, []);
+    return (React__default['default'].createElement(Flex, __assign({}, props), socials.map(function (social, index) {
+        var iconProps = {
+            iconName: social.icon,
+            width: "20px",
+            color: darkColors.textSubtle,
+            style: { cursor: "pointer" },
+        };
+        var mr = index < socials.length - 1 ? "24px" : 0;
+        if (social.items) {
+            return (React__default['default'].createElement(Dropdown, { key: social.label, position: "top", target: React__default['default'].createElement(IconComponent, __assign({}, iconProps, { mr: mr })) }, social.items.map(function (item) { return (React__default['default'].createElement(Link, { external: true, key: item.label, href: item.href, "aria-label": item.label, color: "textSubtle" }, item.label)); })));
+        }
+        return (React__default['default'].createElement(Link, { external: true, key: social.label, href: social.href, "aria-label": social.label, mr: mr },
+            React__default['default'].createElement(IconComponent, __assign({}, iconProps))));
+    })));
+};
+var SocialLinks$1 = React__default['default'].memo(SocialLinks, function () { return true; });
+
+var StyledFooter = styled__default['default'](Flex)(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  background: ", ";\n"], ["\n  background: ", ";\n"])), darkColors.backgroundAlt);
+var StyledList = styled__default['default'].ul(templateObject_2$6 || (templateObject_2$6 = __makeTemplateObject(["\n  list-style: none;\n  margin-bottom: 40px;\n\n  ", " {\n    margin-bottom: 0px;\n  }\n"], ["\n  list-style: none;\n  margin-bottom: 40px;\n\n  ", " {\n    margin-bottom: 0px;\n  }\n"])), function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.md;
+});
+var StyledDesc = styled__default['default'].div(templateObject_3$3 || (templateObject_3$3 = __makeTemplateObject(["\n  margin-top: 60px;\n  font-size: 16px;\n  color: #585858;\n  line-height: 19px;\n"], ["\n  margin-top: 60px;\n  font-size: 16px;\n  color: #585858;\n  line-height: 19px;\n"])));
+var StyledListItem = styled__default['default'].li(templateObject_4$1 || (templateObject_4$1 = __makeTemplateObject(["\n  font-size: 14px;\n  margin-bottom: 8px;\n  text-transform: capitalize;\n\n  &:first-child {\n    font-size: 16px;\n    color: ", ";\n    font-weight: 400;\n    text-transform: uppercase;\n    margin-bottom: 44px;\n  }\n"], ["\n  font-size: 14px;\n  margin-bottom: 8px;\n  text-transform: capitalize;\n\n  &:first-child {\n    font-size: 16px;\n    color: ", ";\n    font-weight: 400;\n    text-transform: uppercase;\n    margin-bottom: 44px;\n  }\n"])), darkColors.primary);
+styled__default['default'](Box)(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n  margin-bottom: 24px;\n"], ["\n  margin-bottom: 24px;\n"])));
+styled__default['default'](Flex)(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n  border-color: ", ";\n  border-top-width: 1px;\n  border-bottom-width: 1px;\n  border-style: solid;\n  padding: 24px 0;\n  margin-bottom: 24px;\n\n  ", " {\n    border-top-width: 0;\n    border-bottom-width: 0;\n    padding: 0 0;\n    margin-bottom: 0;\n  }\n"], ["\n  border-color: ", ";\n  border-top-width: 1px;\n  border-bottom-width: 1px;\n  border-style: solid;\n  padding: 24px 0;\n  margin-bottom: 24px;\n\n  ", " {\n    border-top-width: 0;\n    border-bottom-width: 0;\n    padding: 0 0;\n    margin-bottom: 0;\n  }\n"])), darkColors.cardBorder, function (_a) {
+    var theme = _a.theme;
+    return theme.mediaQueries.sm;
+});
+styled__default['default'](SocialLinks$1)(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\n  border-bottom: 1px solid ", ";\n"], ["\n  border-bottom: 1px solid ", ";\n"])), darkColors.cardBorder);
+var StyledText = styled__default['default'].span(templateObject_8 || (templateObject_8 = __makeTemplateObject(["\n  color: ", ";\n"], ["\n  color: ", ";\n"])), darkColors.text);
+var templateObject_1$a, templateObject_2$6, templateObject_3$3, templateObject_4$1, templateObject_5, templateObject_6, templateObject_7, templateObject_8;
+
+var MenuItem = function (_a) {
+    var items = _a.items; _a.isDark; _a.toggleTheme; _a.currentLang; _a.langs; _a.setLang; _a.cakePriceUsd; _a.buyCakeLabel; var props = __rest(_a, ["items", "isDark", "toggleTheme", "currentLang", "langs", "setLang", "cakePriceUsd", "buyCakeLabel"]);
+    return (React__default['default'].createElement(StyledFooter, __assign({ p: ["40px 16px", null, "56px 40px 32px 40px"] }, props, { justifyContent: "center" }),
+        React__default['default'].createElement(Flex, { flexDirection: "column", width: ["100%", null, "1200px;"] },
+            React__default['default'].createElement(Flex, { order: [2, null, 1], flexDirection: ["column", null, "row"], justifyContent: "space-between", alignItems: "flex-start", mb: ["42px", null, "36px"] },
+                React__default['default'].createElement(Flex, { maxWidth: "382px", flexDirection: 'column', display: ["none", null, "block"], alignItems: "flex-start" },
+                    React__default['default'].createElement(LogoWithTextIcon, { alignSelf: "flex-start", isDark: true, width: "315px" }),
+                    React__default['default'].createElement(StyledDesc, null, "Cross-chain decentralized derivatives trading platform Copyrights  Eangelmarkets")), items === null || items === void 0 ? void 0 :
+                items.map(function (item) {
+                    var _a;
+                    return (React__default['default'].createElement(StyledList, { key: item.label },
+                        React__default['default'].createElement(StyledListItem, null, item.label), (_a = item.items) === null || _a === void 0 ? void 0 :
+                        _a.map(function (_a) {
+                            var label = _a.label, href = _a.href, _b = _a.isHighlighted, isHighlighted = _b === void 0 ? false : _b;
+                            return (React__default['default'].createElement(StyledListItem, { key: label }, href ? (React__default['default'].createElement(Link, { href: href, target: "_blank", rel: "noreferrer noopener", color: isHighlighted ? baseColors.warning : darkColors.text, bold: false }, label)) : (React__default['default'].createElement(StyledText, null, label))));
+                        })));
+                })))));
+};
+
 var MenuItems = function (_a) {
     var _b = _a.items, items = _b === void 0 ? [] : _b, activeItem = _a.activeItem, activeSubItem = _a.activeSubItem, isMain = _a.isMain, props = __rest(_a, ["items", "activeItem", "activeSubItem", "isMain"]);
     return (React__default['default'].createElement(Flex, __assign({}, props), items.map(function (_a) {
@@ -4752,7 +5240,7 @@ var MenuItems = function (_a) {
         var statusColor = (_c = (_b = menuItems === null || menuItems === void 0 ? void 0 : menuItems.find(function (menuItem) { return menuItem.status !== undefined; })) === null || _b === void 0 ? void 0 : _b.status) === null || _c === void 0 ? void 0 : _c.color;
         var isActive = activeItem === href;
         return (React__default['default'].createElement(DropdownMenu, { key: label + "#" + href + "#" + icon, items: menuItems, py: 1, activeItem: activeSubItem },
-            React__default['default'].createElement(MenuItem, { href: isTouchDevice() && menuItems && menuItems.length > 0 ? "" : href, isMain: isMain, isActive: isActive, statusColor: statusColor }, label || React__default['default'].createElement(IconComponent, { iconName: icon, color: isActive ? "textCommon" : "textCommon" }))));
+            React__default['default'].createElement(MenuItem$1, { href: isTouchDevice() && menuItems && menuItems.length > 0 ? "" : href, isMain: isMain, isActive: isActive, statusColor: statusColor }, label || React__default['default'].createElement(IconComponent, { iconName: icon, color: isActive ? "textCommon" : "textCommon" }))));
     })));
 };
 
@@ -4933,6 +5421,7 @@ var links = [
     },
 ];
 var MENU_HEIGHT = 136;
+var MOBILE_MENU_HEIGHT = 44;
 
 var MenuButton = styled__default['default'](Button)(templateObject_1$8 || (templateObject_1$8 = __makeTemplateObject(["\n  color: ", ";\n  padding: 0 8px;\n  border-radius: 8px;\n"], ["\n  color: ", ";\n  padding: 0 8px;\n  border-radius: 8px;\n"])), function (_a) {
     var theme = _a.theme;
@@ -4971,7 +5460,7 @@ var BodyWrapper = styled__default['default'](Box)(templateObject_3$1 || (templat
 var Inner = styled__default['default'].div(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  flex-grow: 1;\n  transition: margin-top 0.2s, margin-left 0.2s cubic-bezier(0.4, 0, 0.2, 1);\n  transform: translate3d(0, 0, 0);\n  max-width: 100%;\n"], ["\n  flex-grow: 1;\n  transition: margin-top 0.2s, margin-left 0.2s cubic-bezier(0.4, 0, 0.2, 1);\n  transform: translate3d(0, 0, 0);\n  max-width: 100%;\n"])));
 var Menu$1 = function (_a) {
     var _b;
-    var userMenu = _a.userMenu, globalMenu = _a.globalMenu; _a.isDark; _a.toggleTheme; var currentLang = _a.currentLang, setLang = _a.setLang; _a.cakePriceUsd; var links = _a.links, subLinks = _a.subLinks; _a.footerLinks; var activeItem = _a.activeItem, activeSubItem = _a.activeSubItem, langs = _a.langs; _a.buyCakeLabel; var imgUrl = _a.imgUrl, children = _a.children;
+    var userMenu = _a.userMenu, globalMenu = _a.globalMenu, isDark = _a.isDark, toggleTheme = _a.toggleTheme, currentLang = _a.currentLang, setLang = _a.setLang, cakePriceUsd = _a.cakePriceUsd, links = _a.links, subLinks = _a.subLinks, footerLinks = _a.footerLinks, activeItem = _a.activeItem, activeSubItem = _a.activeSubItem, langs = _a.langs, buyCakeLabel = _a.buyCakeLabel, imgUrl = _a.imgUrl, children = _a.children;
     var isMobile = useMatchBreakpoints().isMobile;
     var _c = React.useState(true), showMenu = _c[0], setShowMenu = _c[1];
     var refPrevOffset = React.useRef(window.pageYOffset);
@@ -5021,7 +5510,9 @@ var Menu$1 = function (_a) {
             React__default['default'].createElement(SubMenuItems, { items: subLinksWithoutMobile, mt: MENU_HEIGHT + 1 + "px", activeItem: activeSubItem }),
             (subLinksMobileOnly === null || subLinksMobileOnly === void 0 ? void 0 : subLinksMobileOnly.length) > 0 && (React__default['default'].createElement(SubMenuItems, { items: subLinksMobileOnly, mt: MENU_HEIGHT + 1 + "px", activeItem: activeSubItem, isMobileOnly: true })))),
         React__default['default'].createElement(BodyWrapper, { mt: !subLinks ? MENU_HEIGHT + 1 + "px" : "0" },
-            React__default['default'].createElement(Inner, { isPushed: false, showMenu: showMenu }, children)),
+            React__default['default'].createElement(Inner, { isPushed: false, showMenu: showMenu },
+                children,
+                React__default['default'].createElement(MenuItem, { items: footerLinks, isDark: isDark, toggleTheme: toggleTheme, langs: langs, setLang: setLang, currentLang: currentLang, cakePriceUsd: cakePriceUsd, buyCakeLabel: buyCakeLabel, mb: [MOBILE_MENU_HEIGHT + "px", null, "0px"] }))),
         isMobile && React__default['default'].createElement(BottomNav, { items: links, activeItem: activeItem, activeSubItem: activeSubItem })));
 };
 var templateObject_1$7, templateObject_2$4, templateObject_3$1, templateObject_4;
@@ -5505,7 +5996,7 @@ exports.LogoExabcIcon = Icon$1q;
 exports.LogoExabcWhiteIcon = Icon$1p;
 exports.LogoIcon = Icon$1r;
 exports.LogoRoundIcon = Icon$1o;
-exports.LogoWithTextIcon = LogoWithText;
+exports.LogoWithTextIcon = LogoWithTextIcon;
 exports.LogoutIcon = Icon$1m;
 exports.MarketValueIcon = Icon$1l;
 exports.MathWalletIcon = Icon$1n;

@@ -5,6 +5,7 @@ import { Colors } from "../../theme";
 export interface SvgProps extends SVGAttributes<HTMLOrSVGElement>, SpaceProps {
     theme?: DefaultTheme;
     spin?: boolean;
+    alignSelf?: string;
 }
 export declare type IconComponentType = {
     iconName: string;
