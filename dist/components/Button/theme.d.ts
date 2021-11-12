@@ -58,9 +58,4 @@ export declare const styleVariants: {
         color: string;
         boxShadow: string;
     };
-    buttonmenuitem: {
-        backgroundColor: string;
-        color: string;
-        boxShadow: string;
-    };
 };

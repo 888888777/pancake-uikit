@@ -193,7 +193,6 @@ var variants$6 = {
     SUBTLE: "subtle",
     SUCCESS: "success",
     LIGHT: "light",
-    BUTTONMENUITEM: "buttonmenuitem",
 };
 
 var _a$4, _b$3;
@@ -255,11 +254,6 @@ var styleVariants$2 = (_b$3 = {},
     _b$3[variants$6.LIGHT] = {
         backgroundColor: "input",
         color: "textSubtle",
-        boxShadow: "none",
-    },
-    _b$3[variants$6.BUTTONMENUITEM] = {
-        backgroundColor: "deepGreyPrimary",
-        color: "text",
         boxShadow: "none",
     },
     _b$3);
@@ -2543,7 +2537,7 @@ var getBottom = function (_a) {
 };
 var DropdownContent = styled__default['default'].div(templateObject_1$Q || (templateObject_1$Q = __makeTemplateObject(["\n  width: max-content;\n  display: none;\n  flex-direction: column;\n  position: absolute;\n  transform: translate(-50%, 0);\n  left: ", ";\n  bottom: ", ";\n  background-color: ", ";\n  box-shadow: ", ";\n  padding: 16px;\n  max-height: 400px;\n  overflow-y: auto;\n  z-index: ", ";\n  border-radius: ", ";\n"], ["\n  width: max-content;\n  display: none;\n  flex-direction: column;\n  position: absolute;\n  transform: translate(-50%, 0);\n  left: ", ";\n  bottom: ", ";\n  background-color: ", ";\n  box-shadow: ", ";\n  padding: 16px;\n  max-height: 400px;\n  overflow-y: auto;\n  z-index: ", ";\n  border-radius: ", ";\n"])), getLeft, getBottom, function (_a) {
     var theme = _a.theme;
-    return theme.nav.background;
+    return theme.colors.greyPrimary;
 }, function (_a) {
     var theme = _a.theme;
     return theme.shadows.level1;
@@ -3207,10 +3201,10 @@ var dark$3 = {
 };
 
 var light$2 = {
-    background: lightColors.greyPrimary,
+    background: lightColors.backgroundAlt,
 };
 var dark$2 = {
-    background: darkColors.greyPrimary,
+    background: darkColors.backgroundAlt,
 };
 
 var light$1 = {
