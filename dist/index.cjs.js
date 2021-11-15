@@ -3633,10 +3633,10 @@ var StyledMenuItemContainer = styled__default['default'].div(templateObject_1$q 
         $variant === "subMenu" &&
         "\n      &:before{\n        content: \"\";\n        position: absolute;\n        bottom: 0;\n        height: 4px;\n        width: 100%;\n        background-color: " + theme.colors.primary + ";\n        border-radius: 2px 2px 0 0;\n      }\n    ";
 });
-var StyledMenuItem = styled__default['default'].a(templateObject_2$h || (templateObject_2$h = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  align-items: center;\n\n  color: ", ";\n  font-size: 16px;\n  /* font-weight: ", "; */\n\n  ", "\n\n  ", "\n\n  ", "\n\n  &:hover {\n    background: ", ";\n    ", ";\n  }\n"], ["\n  position: relative;\n  display: flex;\n  align-items: center;\n\n  color: ", ";\n  font-size: 16px;\n  /* font-weight: ", "; */\n\n  ",
+var StyledMenuItem = styled__default['default'].a(templateObject_2$h || (templateObject_2$h = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  align-items: center;\n\n  color: ", ";\n  font-size: 16px;\n  /* font-weight: ", "; */\n\n  ", "\n\n  ", "\n\n  ", "\n\n  &:hover {\n    /* background: ", "; */\n    ", ";\n  }\n"], ["\n  position: relative;\n  display: flex;\n  align-items: center;\n\n  color: ", ";\n  font-size: 16px;\n  /* font-weight: ", "; */\n\n  ",
     "\n\n  ",
     "\n\n  ",
-    "\n\n  &:hover {\n    background: ", ";\n    ", ";\n  }\n"])), function (_a) {
+    "\n\n  &:hover {\n    /* background: ", "; */\n    ", ";\n  }\n"])), function (_a) {
     var theme = _a.theme, $isActive = _a.$isActive;
     return ($isActive ? theme.colors.textCommon : theme.colors.textCommon);
 }, function (_a) {
