@@ -5323,7 +5323,7 @@ var ConnectModal = function (_a) {
                     !showMore && React__default.createElement(MoreWalletCard, { t: t, onClick: function () { return setShowMore(true); } }))),
             React__default.createElement(Box, { p: "24px" },
                 React__default.createElement(Text, { textAlign: "center", color: "textSubtle", as: "p", mb: "16px" }, t("Haven’t got a crypto wallet yet?")),
-                React__default.createElement(Button, __assign({ as: "a", href: "https://app.gitbook.com/s/qgHPLZjeq05FJRyx4v4Q/get-started/connect-your-wallet-to-exabc", variant: "subtle", width: "100%" }, getExternalLinkProps()), t("Learn How to Connect"))))));
+                React__default.createElement(Button, __assign({ as: "a", href: "https://docs.exabc.xyz/get-started/connect-your-wallet-to-exabc", variant: "subtle", width: "100%" }, getExternalLinkProps()), t("Learn How to Connect"))))));
 };
 var templateObject_1$2;
 
