@@ -284,6 +284,7 @@ var StyledButton = styled__default['default'].button(templateObject_1$16 || (tem
 var templateObject_1$16;
 
 var Button = function (props) {
+    console.log(props);
     var startIcon = props.startIcon, endIcon = props.endIcon, external = props.external, className = props.className, isLoading = props.isLoading, disabled = props.disabled, children = props.children, rest = __rest(props, ["startIcon", "endIcon", "external", "className", "isLoading", "disabled", "children"]);
     var internalProps = external ? getExternalLinkProps() : {};
     var isDisabled = isLoading || disabled;
@@ -5245,54 +5246,12 @@ var connectors = [
         icon: Icon$l,
         connectorId: exports.ConnectorNames.WalletConnect,
         priority: 2,
-    },
-    {
-        title: "Trust Wallet",
-        icon: Icon$u,
-        connectorId: exports.ConnectorNames.Injected,
-        priority: 3,
-    },
-    {
-        title: "MathWallet",
-        icon: Icon$1n,
-        connectorId: exports.ConnectorNames.Injected,
-        priority: 999,
-    },
-    {
-        title: "TokenPocket",
-        icon: Icon$z,
-        connectorId: exports.ConnectorNames.Injected,
-        priority: 999,
-    },
-    {
-        title: "Binance Chain",
-        icon: Icon$23,
-        connectorId: exports.ConnectorNames.BSC,
-        priority: 999,
-    },
-    {
-        title: "SafePal",
-        icon: Icon$R,
-        connectorId: exports.ConnectorNames.Injected,
-        priority: 999,
-    },
-    {
-        title: "Coin98",
-        icon: Icon$1L,
-        connectorId: exports.ConnectorNames.Injected,
-        priority: 999,
-    },
+    }
 ];
 var connectorLocalStorageKey = "connectorIdv2";
 var walletLocalStorageKey = "wallet";
 
 var WalletButton = styled__default['default'](Button).attrs({ width: "100%", variant: "text", py: "16px" })(templateObject_1$3 || (templateObject_1$3 = __makeTemplateObject(["\n  align-items: center;\n  display: flex;\n  flex-direction: column;\n  height: auto;\n  justify-content: center;\n  margin-left: auto;\n  margin-right: auto;\n"], ["\n  align-items: center;\n  display: flex;\n  flex-direction: column;\n  height: auto;\n  justify-content: center;\n  margin-left: auto;\n  margin-right: auto;\n"])));
-var MoreWalletCard = function (_a) {
-    var t = _a.t, props = __rest(_a, ["t"]);
-    return (React__default['default'].createElement(WalletButton, __assign({ variant: "tertiary" }, props),
-        React__default['default'].createElement(Icon$1d, { width: "40px", mb: "8px", color: "textSubtle" }),
-        React__default['default'].createElement(Text, { fontSize: "14px" }, t("More"))));
-};
 var WalletCard = function (_a) {
     var login = _a.login, walletConfig = _a.walletConfig, onDismiss = _a.onDismiss;
     var title = walletConfig.title, Icon = walletConfig.icon;
@@ -5340,10 +5299,10 @@ var getPreferredConfig = function (walletConfig) {
 };
 var ConnectModal = function (_a) {
     var login = _a.login, _b = _a.onDismiss, onDismiss = _b === void 0 ? function () { return null; } : _b, _c = _a.displayCount, displayCount = _c === void 0 ? 3 : _c, t = _a.t;
-    var _d = React.useState(false), showMore = _d[0], setShowMore = _d[1];
+    var _d = React.useState(false), showMore = _d[0]; _d[1];
     var theme = styled.useTheme();
     var sortedConfig = getPreferredConfig(connectors);
-    var displayListConfig = showMore ? sortedConfig : sortedConfig.slice(0, displayCount);
+    showMore ? sortedConfig : sortedConfig.slice(0, displayCount);
     return (React__default['default'].createElement(ModalContainer, { minWidth: "320px" },
         React__default['default'].createElement(ModalHeader, { background: getThemeValue("colors.gradients.bubblegum")(theme) },
             React__default['default'].createElement(ModalTitle, null,
@@ -5351,13 +5310,11 @@ var ConnectModal = function (_a) {
             React__default['default'].createElement(ModalCloseButton, { onDismiss: onDismiss })),
         React__default['default'].createElement(ModalBody, { width: ["320px", null, "340px"] },
             React__default['default'].createElement(WalletWrapper, { py: "24px", maxHeight: "453px", overflowY: "auto" },
-                React__default['default'].createElement(Grid, { gridTemplateColumns: "1fr 1fr" },
-                    displayListConfig.map(function (wallet) { return (React__default['default'].createElement(Box, { key: wallet.title },
-                        React__default['default'].createElement(WalletCard, { walletConfig: wallet, login: login, onDismiss: onDismiss }))); }),
-                    !showMore && React__default['default'].createElement(MoreWalletCard, { t: t, onClick: function () { return setShowMore(true); } }))),
+                React__default['default'].createElement(Grid, { gridTemplateColumns: "1fr 1fr" }, sortedConfig.map(function (wallet) { return (React__default['default'].createElement(Box, { key: wallet.title },
+                    React__default['default'].createElement(WalletCard, { walletConfig: wallet, login: login, onDismiss: onDismiss }))); }))),
             React__default['default'].createElement(Box, { p: "24px" },
                 React__default['default'].createElement(Text, { textAlign: "center", color: "textSubtle", as: "p", mb: "16px" }, t("Haven’t got a crypto wallet yet?")),
-                React__default['default'].createElement(Button, __assign({ as: "a", href: "https://docs.exabc.xyz/get-started/connect-your-wallet-to-exabc", variant: "subtle", width: "100%" }, getExternalLinkProps()), t("Learn How to Connect"))))));
+                React__default['default'].createElement(Button, __assign({ as: "a", href: "https://docs.exabc.xyz/guide-to-exabc/connect-your-wallet", variant: "subtle", width: "100%" }, getExternalLinkProps()), t("Learn How to Connect"))))));
 };
 var templateObject_1$2;
 
