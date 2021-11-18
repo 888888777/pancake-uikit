@@ -17,4 +17,5 @@ export declare type FooterProps = {
     currentLang: string;
     langs: Language[];
     setLang: (lang: Language) => void;
+    footerBackgroundImgUrl: string;
 } & FlexProps;
