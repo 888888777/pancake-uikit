@@ -30,5 +30,4 @@ export interface NavProps {
     imgUrl: string;
     navBackgroundImgUrl: string;
     footerBackgroundImgUrl: string;
-    bodyBackgroundImgUrl: string;
 }

@@ -5473,9 +5473,13 @@ var LangSelector = function (_a) {
 };
 var LangSelector$1 = React__default.memo(LangSelector, function (prev, next) { return prev.currentLang === next.currentLang; });
 
-var Wrapper = styled.div(templateObject_1$7 || (templateObject_1$7 = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n"], ["\n  position: relative;\n  width: 100%;\n"])));
-var StyledNav = styled.nav(templateObject_2$4 || (templateObject_2$4 = __makeTemplateObject(["\n  position: fixed;\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  height: ", "px;\n  /* background-color: ", "; */\n  /* border-bottom: 1px solid ", "; */\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n\n  padding-left: 16px;\n  padding-right: 16px;\n\n  ", " {\n    width: 1200px;\n    left: 50%;\n    transform: translate3d(-50%, 0, 0);\n  }\n\n  ", "\n"], ["\n  position: fixed;\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  height: ", "px;\n  /* background-color: ", "; */\n  /* border-bottom: 1px solid ", "; */\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n\n  padding-left: 16px;\n  padding-right: 16px;\n\n  ", " {\n    width: 1200px;\n    left: 50%;\n    transform: translate3d(-50%, 0, 0);\n  }\n\n  ",
+var Wrapper = styled.div(templateObject_1$7 || (templateObject_1$7 = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n\n  ", "\n"], ["\n  position: relative;\n  width: 100%;\n\n  ",
     "\n"])), function (_a) {
+    var navBackgroundImgUrl = _a.navBackgroundImgUrl;
+    return navBackgroundImgUrl
+        && "\n        background: url(" + navBackgroundImgUrl + ") top/cover no-repeat;\n      ";
+});
+var StyledNav = styled.nav(templateObject_2$4 || (templateObject_2$4 = __makeTemplateObject(["\n  position: fixed;\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  height: ", "px;\n  /* background-color: ", "; */\n  /* border-bottom: 1px solid ", "; */\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n\n  padding-left: 16px;\n  padding-right: 16px;\n\n  ", " {\n    width: 1200px;\n    left: 50%;\n    transform: translate3d(-50%, 0, 0);\n  }\n"], ["\n  position: fixed;\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  height: ", "px;\n  /* background-color: ", "; */\n  /* border-bottom: 1px solid ", "; */\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n\n  padding-left: 16px;\n  padding-right: 16px;\n\n  ", " {\n    width: 1200px;\n    left: 50%;\n    transform: translate3d(-50%, 0, 0);\n  }\n"])), function (_a) {
     var showMenu = _a.showMenu;
     return (showMenu ? 0 : "-" + MENU_HEIGHT + "px");
 }, MENU_HEIGHT, function (_a) {
@@ -5487,16 +5491,12 @@ var StyledNav = styled.nav(templateObject_2$4 || (templateObject_2$4 = __makeTem
 }, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.xxl;
-}, function (_a) {
-    var navBackgroundImgUrl = _a.navBackgroundImgUrl;
-    return navBackgroundImgUrl
-        && "\n        background: url(" + navBackgroundImgUrl + ") top/cover no-repeat;\n      ";
 });
 var BodyWrapper = styled(Box)(templateObject_3$1 || (templateObject_3$1 = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n"], ["\n  position: relative;\n  display: flex;\n"])));
 var Inner = styled.div(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  background-color: #000;\n  flex-grow: 1;\n  transition: margin-top 0.2s, margin-left 0.2s cubic-bezier(0.4, 0, 0.2, 1);\n  transform: translate3d(0, 0, 0);\n  max-width: 100%;\n"], ["\n  background-color: #000;\n  flex-grow: 1;\n  transition: margin-top 0.2s, margin-left 0.2s cubic-bezier(0.4, 0, 0.2, 1);\n  transform: translate3d(0, 0, 0);\n  max-width: 100%;\n"])));
 var Menu$1 = function (_a) {
     var _b;
-    var userMenu = _a.userMenu, globalMenu = _a.globalMenu, isDark = _a.isDark, toggleTheme = _a.toggleTheme, currentLang = _a.currentLang, setLang = _a.setLang, cakePriceUsd = _a.cakePriceUsd, links = _a.links, subLinks = _a.subLinks, footerLinks = _a.footerLinks, activeItem = _a.activeItem, activeSubItem = _a.activeSubItem, langs = _a.langs, buyCakeLabel = _a.buyCakeLabel, imgUrl = _a.imgUrl, children = _a.children, navBackgroundImgUrl = _a.navBackgroundImgUrl, footerBackgroundImgUrl = _a.footerBackgroundImgUrl, bodyBackgroundImgUrl = _a.bodyBackgroundImgUrl;
+    var userMenu = _a.userMenu, globalMenu = _a.globalMenu, isDark = _a.isDark, toggleTheme = _a.toggleTheme, currentLang = _a.currentLang, setLang = _a.setLang, cakePriceUsd = _a.cakePriceUsd, links = _a.links, subLinks = _a.subLinks, footerLinks = _a.footerLinks, activeItem = _a.activeItem, activeSubItem = _a.activeSubItem, langs = _a.langs, buyCakeLabel = _a.buyCakeLabel, imgUrl = _a.imgUrl, children = _a.children, navBackgroundImgUrl = _a.navBackgroundImgUrl, footerBackgroundImgUrl = _a.footerBackgroundImgUrl;
     var isMobile = useMatchBreakpoints().isMobile;
     var _c = useState(true), showMenu = _c[0], setShowMenu = _c[1];
     var refPrevOffset = useRef(window.pageYOffset);
@@ -5532,9 +5532,8 @@ var Menu$1 = function (_a) {
     var homeLink = links.find(function (link) { return link.label === "Home"; });
     var subLinksWithoutMobile = subLinks === null || subLinks === void 0 ? void 0 : subLinks.filter(function (subLink) { return !subLink.isMobileOnly; });
     var subLinksMobileOnly = subLinks === null || subLinks === void 0 ? void 0 : subLinks.filter(function (subLink) { return subLink.isMobileOnly; });
-    return (React__default.createElement(Wrapper, null,
-        React__default.createElement(Flex, { maxWidth: "1200px", justifyContent: "" }),
-        React__default.createElement(StyledNav, { showMenu: showMenu, navBackgroundImgUrl: navBackgroundImgUrl },
+    return (React__default.createElement(Wrapper, { navBackgroundImgUrl: navBackgroundImgUrl },
+        React__default.createElement(StyledNav, { showMenu: showMenu },
             React__default.createElement(Flex, null,
                 React__default.createElement(Logo$1, { imgUrl: imgUrl, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" })),
             React__default.createElement(Flex, { alignItems: "center" },
@@ -5543,7 +5542,7 @@ var Menu$1 = function (_a) {
                 React__default.createElement(Box, { ml: '16px' },
                     React__default.createElement(LangSelector$1, { currentLang: currentLang, langs: langs, setLang: setLang, buttonScale: "xs", color: "text" })),
                 globalMenu)),
-        subLinks && (React__default.createElement(Flex, { justifyContent: "space-around", background: "url('" + bodyBackgroundImgUrl + "') center 136px/cover no-repeat;" },
+        subLinks && (React__default.createElement(Flex, { justifyContent: "space-around" },
             React__default.createElement(SubMenuItems, { items: subLinksWithoutMobile, mt: MENU_HEIGHT + 1 + "px", activeItem: activeSubItem }),
             (subLinksMobileOnly === null || subLinksMobileOnly === void 0 ? void 0 : subLinksMobileOnly.length) > 0 && (React__default.createElement(SubMenuItems, { items: subLinksMobileOnly, mt: MENU_HEIGHT + 1 + "px", activeItem: activeSubItem, isMobileOnly: true })))),
         React__default.createElement(BodyWrapper, { mt: !subLinks ? MENU_HEIGHT + 1 + "px" : "0" },
