@@ -713,7 +713,6 @@ var Icon$1D = function (props) {
 
 var Icon$1C = function (props) {
     return (React__namespace.createElement(Svg, __assign({ viewBox: "0 0 34 37" }, props),
-        React__namespace.createElement("title", null, "\u8DEF\u5F84_5599"),
         React__namespace.createElement("g", { id: "\u5B98\u7F51", stroke: "none", "stroke-width": "1", fill: "none", "fill-rule": "evenodd" },
             React__namespace.createElement("g", { id: "\u6700\u65B0\u5B98\u7F51", transform: "translate(-493.000000, -3291.000000)", fill: "#FFFFFF", "fill-rule": "nonzero" },
                 React__namespace.createElement("g", { id: "\u7F16\u7EC4-12", transform: "translate(470.000000, 3161.000000)" },
@@ -1648,7 +1647,7 @@ var IconModule = /*#__PURE__*/Object.freeze({
     BunnyPlaceholderIcon: Icon$21,
     BurnedAmountIcon: Icon$20,
     CameraIcon: Icon$1$,
-    CardsIcon: Icon$1_,
+    Cards: Icon$1_,
     CardViewIcon: Icon$1Z,
     CalculateIcon: Icon$1Y,
     CircleOutlineIcon: Icon$1X,
@@ -5580,7 +5579,7 @@ exports.CardFooter = CardFooter;
 exports.CardHeader = CardHeader;
 exports.CardRibbon = CardRibbon;
 exports.CardViewIcon = Icon$1Z;
-exports.CardsIcon = Icon$1_;
+exports.Cards = Icon$1_;
 exports.CardsLayout = GridLayout;
 exports.ChartIcon = Icon$1W;
 exports.Checkbox = Checkbox;
