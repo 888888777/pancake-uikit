@@ -5492,11 +5492,11 @@ var LangSelector = function (_a) {
 };
 var LangSelector$1 = React__default.memo(LangSelector, function (prev, next) { return prev.currentLang === next.currentLang; });
 
-var Wrapper = styled.div(templateObject_1$7 || (templateObject_1$7 = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  background-color: #000;\n\n  ", "\n\n  @media screen and (min-width: 1920px) {\n    background-size: 1920px auto;\n  }\n"], ["\n  position: relative;\n  width: 100%;\n  background-color: #000;\n\n  ",
+var Wrapper = styled.div(templateObject_1$7 || (templateObject_1$7 = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n\n  ", "\n\n  @media screen and (min-width: 1920px) {\n    background-size: 1920px auto;\n  }\n"], ["\n  position: relative;\n  width: 100%;\n\n  ",
     "\n\n  @media screen and (min-width: 1920px) {\n    background-size: 1920px auto;\n  }\n"])), function (_a) {
     var navBackgroundImgUrl = _a.navBackgroundImgUrl;
     return navBackgroundImgUrl
-        && "\n        background: url(" + navBackgroundImgUrl + ") top/cover no-repeat;\n      ";
+        && "\n        background: #000 url(" + navBackgroundImgUrl + ") top/cover no-repeat;\n      ";
 });
 var StyledNav = styled.nav(templateObject_2$4 || (templateObject_2$4 = __makeTemplateObject(["\n  position: fixed;\n  top: ", ";\n  left: 0;\n  background-color: ", ";\n  transition: top 0.2s, background-color 0.2s;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 100%;\n  height: ", "px;\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n"], ["\n  position: fixed;\n  top: ", ";\n  left: 0;\n  background-color: ", ";\n  transition: top 0.2s, background-color 0.2s;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 100%;\n  height: ", "px;\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n"])), function (_a) {
     var showMenu = _a.showMenu;
