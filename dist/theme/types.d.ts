@@ -25,6 +25,7 @@ export declare type Shadows = {
     tooltip: string;
 };
 export declare type Gradients = {
+    modalHeaderGradients: string;
     cardBorderGradients: string;
     bubblegum: string;
     inverseBubblegum: string;
@@ -48,6 +49,7 @@ export declare type Colors = {
     disableGrey: string;
     cardBorder: string;
     cardBackground: string;
+    modalBackground: string;
     contrast: string;
     dropdown: string;
     dropdownDeep: string;
