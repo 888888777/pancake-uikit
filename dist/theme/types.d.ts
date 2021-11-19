@@ -25,6 +25,7 @@ export declare type Shadows = {
     tooltip: string;
 };
 export declare type Gradients = {
+    steelGradients: string;
     modalHeaderGradients: string;
     cardBorderGradients: string;
     bubblegum: string;
@@ -68,6 +69,7 @@ export declare type Colors = {
     textCommonSecond: string;
     textGrey: string;
     disabled: string;
+    steelBorder: string;
     gradients: Gradients;
     binance: string;
     overlay: string;

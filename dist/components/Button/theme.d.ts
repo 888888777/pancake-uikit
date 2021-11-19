@@ -58,4 +58,10 @@ export declare const styleVariants: {
         color: string;
         boxShadow: string;
     };
+    steel: {
+        boxShadow: string;
+        borderColor: string;
+        borderWidth: string;
+        color: string;
+    };
 };
