@@ -5526,8 +5526,8 @@ var LangSelector = function (_a) {
 };
 var LangSelector$1 = React__default['default'].memo(LangSelector, function (prev, next) { return prev.currentLang === next.currentLang; });
 
-var Wrapper = styled__default['default'].div(templateObject_1$7 || (templateObject_1$7 = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n\n  ", "\n"], ["\n  position: relative;\n  width: 100%;\n\n  ",
-    "\n"])), function (_a) {
+var Wrapper = styled__default['default'].div(templateObject_1$7 || (templateObject_1$7 = __makeTemplateObject(["\n  position: relative;\n  width: 100%;\n  background-color: #000;\n\n  ", "\n\n  @media screen and (min-width: 1920px) {\n    background-size: 1920px auto;\n  }\n"], ["\n  position: relative;\n  width: 100%;\n  background-color: #000;\n\n  ",
+    "\n\n  @media screen and (min-width: 1920px) {\n    background-size: 1920px auto;\n  }\n"])), function (_a) {
     var navBackgroundImgUrl = _a.navBackgroundImgUrl;
     return navBackgroundImgUrl
         && "\n        background: url(" + navBackgroundImgUrl + ") top/cover no-repeat;\n      ";
@@ -5541,7 +5541,7 @@ var StyledNav = styled__default['default'].nav(templateObject_2$4 || (templateOb
 }, MENU_HEIGHT);
 var StyledNavContainer = styled__default['default'].div(templateObject_3$1 || (templateObject_3$1 = __makeTemplateObject(["\n  width: 100%;\n  height: 100%;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n\n  padding-left: 16px;\n  padding-right: 16px;\n\n  ", " {\n    width: 1200px;\n  }\n"], ["\n  width: 100%;\n  height: 100%;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n\n  padding-left: 16px;\n  padding-right: 16px;\n\n  ", " {\n    width: 1200px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
-    return theme.mediaQueries.xl;
+    return theme.mediaQueries.xxl;
 });
 var BodyWrapper = styled__default['default'](Box)(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n"], ["\n  position: relative;\n  display: flex;\n"])));
 var Inner = styled__default['default'].div(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n  flex-grow: 1;\n  transition: margin-top 0.2s, margin-left 0.2s cubic-bezier(0.4, 0, 0.2, 1);\n  transform: translate3d(0, 0, 0);\n  max-width: 100%;\n"], ["\n  flex-grow: 1;\n  transition: margin-top 0.2s, margin-left 0.2s cubic-bezier(0.4, 0, 0.2, 1);\n  transform: translate3d(0, 0, 0);\n  max-width: 100%;\n"])));
