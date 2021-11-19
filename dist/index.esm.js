@@ -2453,7 +2453,10 @@ CardHeader.defaultProps = {
 };
 var templateObject_1$W;
 
-var CardFooter = styled.div(templateObject_1$V || (templateObject_1$V = __makeTemplateObject(["\n  border-top: 1px solid ", ";\n  ", "\n"], ["\n  border-top: 1px solid ", ";\n  ", "\n"])), function (_a) {
+var CardFooter = styled.div(templateObject_1$V || (templateObject_1$V = __makeTemplateObject(["\n  background-color: ", "\n  /* border-top: 1px solid ", "; */\n  ", "\n"], ["\n  background-color: ", "\n  /* border-top: 1px solid ", "; */\n  ", "\n"])), function (_a) {
+    var theme = _a.theme;
+    return (theme.colors.gradients.cardHeader);
+}, function (_a) {
     var theme = _a.theme;
     return theme.colors.cardBorder;
 }, space);
