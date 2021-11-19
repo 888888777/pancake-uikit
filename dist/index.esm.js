@@ -5481,13 +5481,13 @@ var Wrapper = styled.div(templateObject_1$7 || (templateObject_1$7 = __makeTempl
     return navBackgroundImgUrl
         && "\n        background: url(" + navBackgroundImgUrl + ") top/cover no-repeat;\n      ";
 });
-var StyledNav = styled.nav(templateObject_2$4 || (templateObject_2$4 = __makeTemplateObject(["\n  position: fixed;\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  height: ", "px;\n  /* background-color: ", "; */\n  /* border-bottom: 1px solid ", "; */\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n\n  padding-left: 16px;\n  padding-right: 16px;\n\n  ", " {\n    width: 1200px;\n    left: 50%;\n    transform: translate3d(-50%, 0, 0);\n  }\n"], ["\n  position: fixed;\n  top: ", ";\n  left: 0;\n  transition: top 0.2s;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  height: ", "px;\n  /* background-color: ", "; */\n  /* border-bottom: 1px solid ", "; */\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n\n  padding-left: 16px;\n  padding-right: 16px;\n\n  ", " {\n    width: 1200px;\n    left: 50%;\n    transform: translate3d(-50%, 0, 0);\n  }\n"])), function (_a) {
+var StyledNav = styled.nav(templateObject_2$4 || (templateObject_2$4 = __makeTemplateObject(["\n  position: fixed;\n  top: ", ";\n  left: 0;\n  background-color: ", ";\n  transition: top 0.2s, background-color 0.2s;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  height: ", "px;\n  /* border-bottom: 1px solid ", "; */\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n\n  padding-left: 16px;\n  padding-right: 16px;\n\n  ", " {\n    width: 1200px;\n    left: 50%;\n    transform: translate3d(-50%, 0, 0);\n  }\n"], ["\n  position: fixed;\n  top: ", ";\n  left: 0;\n  background-color: ", ";\n  transition: top 0.2s, background-color 0.2s;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  width: 100%;\n  height: ", "px;\n  /* border-bottom: 1px solid ", "; */\n  z-index: 20;\n  transform: translate3d(0, 0, 0);\n\n  padding-left: 16px;\n  padding-right: 16px;\n\n  ", " {\n    width: 1200px;\n    left: 50%;\n    transform: translate3d(-50%, 0, 0);\n  }\n"])), function (_a) {
     var showMenu = _a.showMenu;
     return (showMenu ? 0 : "-" + MENU_HEIGHT + "px");
-}, MENU_HEIGHT, function (_a) {
-    var theme = _a.theme;
-    return theme.nav.background;
 }, function (_a) {
+    var theme = _a.theme, showMenuBackground = _a.showMenuBackground;
+    return (showMenuBackground ? theme.nav.background : 'transparent');
+}, MENU_HEIGHT, function (_a) {
     var theme = _a.theme;
     return theme.colors.cardBorder;
 }, function (_a) {
@@ -5501,6 +5501,7 @@ var Menu$1 = function (_a) {
     var userMenu = _a.userMenu, globalMenu = _a.globalMenu, isDark = _a.isDark, toggleTheme = _a.toggleTheme, currentLang = _a.currentLang, setLang = _a.setLang, cakePriceUsd = _a.cakePriceUsd, links = _a.links, subLinks = _a.subLinks, footerLinks = _a.footerLinks, activeItem = _a.activeItem, activeSubItem = _a.activeSubItem, langs = _a.langs, buyCakeLabel = _a.buyCakeLabel, imgUrl = _a.imgUrl, children = _a.children, navBackgroundImgUrl = _a.navBackgroundImgUrl, footerBackgroundImgUrl = _a.footerBackgroundImgUrl;
     var isMobile = useMatchBreakpoints().isMobile;
     var _c = useState(true), showMenu = _c[0], setShowMenu = _c[1];
+    var _d = useState(false), showMenuBackground = _d[0], setShowMenuBackground = _d[1];
     var refPrevOffset = useRef(window.pageYOffset);
     useEffect(function () {
         var handleScroll = function () {
@@ -5510,16 +5511,19 @@ var Menu$1 = function (_a) {
             // Always show the menu when user reach the top
             if (isTopOfPage) {
                 setShowMenu(true);
+                setShowMenuBackground(false);
             }
             // Avoid triggering anything at the bottom because of layout shift
             else if (!isBottomOfPage) {
                 if (currentOffset < refPrevOffset.current || currentOffset <= MENU_HEIGHT) {
                     // Has scroll up
                     setShowMenu(true);
+                    setShowMenuBackground(true);
                 }
                 else {
                     // Has scroll down
                     setShowMenu(false);
+                    setShowMenuBackground(true);
                 }
             }
             refPrevOffset.current = currentOffset;
@@ -5535,7 +5539,7 @@ var Menu$1 = function (_a) {
     var subLinksWithoutMobile = subLinks === null || subLinks === void 0 ? void 0 : subLinks.filter(function (subLink) { return !subLink.isMobileOnly; });
     var subLinksMobileOnly = subLinks === null || subLinks === void 0 ? void 0 : subLinks.filter(function (subLink) { return subLink.isMobileOnly; });
     return (React__default.createElement(Wrapper, { navBackgroundImgUrl: navBackgroundImgUrl },
-        React__default.createElement(StyledNav, { showMenu: showMenu },
+        React__default.createElement(StyledNav, { showMenu: showMenu, showMenuBackground: showMenuBackground },
             React__default.createElement(Flex, null,
                 React__default.createElement(Logo$1, { imgUrl: imgUrl, href: (_b = homeLink === null || homeLink === void 0 ? void 0 : homeLink.href) !== null && _b !== void 0 ? _b : "/" })),
             React__default.createElement(Flex, { alignItems: "center" },
