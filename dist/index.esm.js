@@ -4853,11 +4853,11 @@ var StyledList = styled.ul(templateObject_2$6 || (templateObject_2$6 = __makeTem
 });
 var StyledListItem = styled.li(templateObject_3$2 || (templateObject_3$2 = __makeTemplateObject(["\n  font-size: 16px;\n  margin-bottom: 8px;\n  text-transform: capitalize;\n\n  &:first-child {\n    color: ", ";\n    font-weight: 600;\n    text-transform: uppercase;\n  }\n"], ["\n  font-size: 16px;\n  margin-bottom: 8px;\n  text-transform: capitalize;\n\n  &:first-child {\n    color: ", ";\n    font-weight: 600;\n    text-transform: uppercase;\n  }\n"])), darkColors.secondary);
 var StyledIconMobileContainer = styled(Box)(templateObject_4$1 || (templateObject_4$1 = __makeTemplateObject(["\n  margin-bottom: 24px;\n"], ["\n  margin-bottom: 24px;\n"])));
-var StyledToolsContainer = styled(Flex)(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n  border-color: ", ";\n  border-top-width: 1px;\n  border-bottom-width: 1px;\n  border-style: solid;\n  padding: 24px 0;\n  margin-bottom: 24px;\n\n  ", " {\n    border-top-width: 0;\n    border-bottom-width: 0;\n    padding: 0 0;\n    margin-bottom: 0;\n  }\n"], ["\n  border-color: ", ";\n  border-top-width: 1px;\n  border-bottom-width: 1px;\n  border-style: solid;\n  padding: 24px 0;\n  margin-bottom: 24px;\n\n  ", " {\n    border-top-width: 0;\n    border-bottom-width: 0;\n    padding: 0 0;\n    margin-bottom: 0;\n  }\n"])), darkColors.cardBorder, function (_a) {
+var StyledToolsContainer = styled(Flex)(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n  border-color: ", ";\n  /* border-top-width: 1px;\n  border-bottom-width: 1px; */\n  border-style: solid;\n  padding: 24px 0;\n  margin-bottom: 24px;\n\n  ", " {\n    border-top-width: 0;\n    border-bottom-width: 0;\n    padding: 0 0;\n    margin-bottom: 0;\n  }\n"], ["\n  border-color: ", ";\n  /* border-top-width: 1px;\n  border-bottom-width: 1px; */\n  border-style: solid;\n  padding: 24px 0;\n  margin-bottom: 24px;\n\n  ", " {\n    border-top-width: 0;\n    border-bottom-width: 0;\n    padding: 0 0;\n    margin-bottom: 0;\n  }\n"])), darkColors.cardBorder, function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.sm;
 });
-var StyledSocialLinks = styled(SocialLinks$1)(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n  border-bottom: 1px solid ", ";\n"], ["\n  border-bottom: 1px solid ", ";\n"])), darkColors.cardBorder);
+var StyledSocialLinks = styled(SocialLinks$1)(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n  /* border-bottom: 1px solid ", "; */\n"], ["\n  /* border-bottom: 1px solid ", "; */\n"])), darkColors.cardBorder);
 var StyledText = styled.span(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\n  color: ", ";\n"], ["\n  color: ", ";\n"])), darkColors.text);
 var templateObject_1$a, templateObject_2$6, templateObject_3$2, templateObject_4$1, templateObject_5, templateObject_6, templateObject_7;
 
@@ -4885,7 +4885,7 @@ var MenuItem = function (_a) {
         React__default.createElement(Flex, { flexDirection: "column", width: ["100%", null, "1200px;"] },
             React__default.createElement(StyledIconMobileContainer, { display: ["block", null, "none"] },
                 React__default.createElement(LogoWithTextIcon, { isDark: true, width: "130px" })),
-            React__default.createElement(Flex, { order: [2, null, 1], flexDirection: ["column", null, "row"], justifyContent: "space-between", alignItems: "flex-start", mb: ["42px", null, "36px"] }, items === null || items === void 0 ? void 0 :
+            React__default.createElement(Flex, { order: [2, null, 1], flexDirection: ["column", null, "row"], justifyContent: "space-between", alignItems: "flex-start", mb: [null, null, "36px"] }, items === null || items === void 0 ? void 0 :
                 items.map(function (item) {
                     var _a;
                     return (React__default.createElement(StyledList, { key: item.label },
@@ -4897,12 +4897,13 @@ var MenuItem = function (_a) {
                 }),
                 React__default.createElement(Box, { display: ["none", null, "block"] },
                     React__default.createElement(LogoWithTextIcon, { isDark: true, width: "160px" }))),
-            React__default.createElement(StyledSocialLinks, { order: [2], pb: ["42px", null, "32px"], mb: ["0", null, "32px"] }),
-            React__default.createElement(StyledToolsContainer, { order: [1, null, 3], flexDirection: ["column", null, "row"], justifyContent: "space-between" },
-                React__default.createElement(Flex, { order: [2, null, 1], alignItems: "center" },
-                    React__default.createElement(ThemeSwitcher$1, { isDark: isDark, toggleTheme: toggleTheme }),
-                    React__default.createElement(LangSelector$1, { currentLang: currentLang, langs: langs, setLang: setLang, color: darkColors.textSubtle, dropdownPosition: "top-right" })),
-                React__default.createElement(Flex, { order: [1, null, 2], mb: ["24px", null, "0"], justifyContent: "space-between", alignItems: "center" })))));
+            React__default.createElement(Flex, { order: 10, alignItems: ["flex-start", "flex-start", "center",], pb: ["42px", null, "32px"], justifyContent: "space-between", flexDirection: ["column", null, "row"] },
+                React__default.createElement(StyledSocialLinks, { order: [3] }),
+                React__default.createElement(StyledToolsContainer, { order: [1, null, 1], justifyContent: "space-between" },
+                    React__default.createElement(Flex, { order: [2, null, 1], alignItems: "center" },
+                        React__default.createElement(ThemeSwitcher$1, { isDark: isDark, toggleTheme: toggleTheme }),
+                        React__default.createElement(LangSelector$1, { currentLang: currentLang, langs: langs, setLang: setLang, color: darkColors.textSubtle, dropdownPosition: "top-right" })),
+                    React__default.createElement(Flex, { order: [1, null, 2], mb: ["24px", null, "0"], justifyContent: "space-between", alignItems: "center" }))))));
 };
 
 var MenuItems = function (_a) {
@@ -5015,45 +5016,45 @@ var links = [
             },
         ],
     },
-    {
-        label: "",
-        href: "/",
-        icon: "More",
-        items: [
-            {
-                label: "Info & Analytics",
-                href: "/",
-            },
-            {
-                label: "IFO Token Sales",
-                href: "/",
-                status: status.SOON,
-            },
-            {
-                type: DropdownMenuItemType.DIVIDER,
-            },
-            {
-                label: "NFT Collectibles",
-                href: "/",
-            },
-            {
-                label: "Team Leaderboard",
-                href: "/",
-            },
-            {
-                type: DropdownMenuItemType.DIVIDER,
-            },
-            {
-                label: "Blog",
-                href: "/",
-            },
-            {
-                label: "Docs & Guides",
-                href: "/",
-                type: DropdownMenuItemType.EXTERNAL_LINK,
-            },
-        ],
-    },
+    // {
+    //   label: "",
+    //   href: "/",
+    //   icon: "More",
+    //   items: [
+    //     {
+    //       label: "Info & Analytics",
+    //       href: "/",
+    //     },
+    //     {
+    //       label: "IFO Token Sales",
+    //       href: "/",
+    //       status: status.SOON,
+    //     },
+    //     {
+    //       type: DropdownMenuItemType.DIVIDER,
+    //     },
+    //     {
+    //       label: "NFT Collectibles",
+    //       href: "/",
+    //     },
+    //     {
+    //       label: "Team Leaderboard",
+    //       href: "/",
+    //     },
+    //     {
+    //       type: DropdownMenuItemType.DIVIDER,
+    //     },
+    //     {
+    //       label: "Blog",
+    //       href: "/",
+    //     },
+    //     {
+    //       label: "Docs & Guides",
+    //       href: "/",
+    //       type: DropdownMenuItemType.EXTERNAL_LINK,
+    //     },
+    //   ],
+    // },
 ];
 [
     {
