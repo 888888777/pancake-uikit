@@ -250,7 +250,6 @@ var StyledButton = styled.button(templateObject_1$17 || (templateObject_1$17 = _
 var templateObject_1$17;
 
 var Button = function (props) {
-    console.log(props);
     var startIcon = props.startIcon, endIcon = props.endIcon, external = props.external, className = props.className, isLoading = props.isLoading, disabled = props.disabled, children = props.children, rest = __rest(props, ["startIcon", "endIcon", "external", "className", "isLoading", "disabled", "children"]);
     var internalProps = external ? getExternalLinkProps() : {};
     var isDisabled = isLoading || disabled;
@@ -3370,9 +3369,6 @@ var Icons$1 = IconModule;
 var IconComponent = function (_a) {
     var iconName = _a.iconName, props = __rest(_a, ["iconName"]);
     var IconElement = Icons$1[iconName + "Icon"];
-    console.log(Icons$1);
-    console.log("--------", iconName);
-    console.log("--------", IconElement);
     return IconElement ? React__default.createElement(IconElement, __assign({}, props)) : null;
 };
 
@@ -4963,6 +4959,10 @@ var links = [
             {
                 label: "Exchange",
                 href: "https://exchange.pancakeswap.finance",
+            },
+            {
+                label: "Liquidity",
+                href: "https://exchange.pancakeswap.finance/#/pool",
             },
             {
                 label: "Liquidity",
