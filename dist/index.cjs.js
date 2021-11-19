@@ -2994,7 +2994,7 @@ var Overlay = styled__default['default'].div.attrs({ role: "presentation" })(tem
     return theme.colors.overlay;
 }, function (_a) {
     var show = _a.show;
-    return (show ? 0.6 : 0);
+    return (show ? 0.5 : 0);
 }, function (_a) {
     var zIndex = _a.zIndex;
     return zIndex;
@@ -3128,7 +3128,7 @@ var baseColors = {
 };
 var additionalColors = {
     binance: "#F0B90B",
-    overlay: "#525252",
+    overlay: "#000",
     gold: "#FFC700",
     silver: "#B2B2B2",
     bronze: "#E7974D",
