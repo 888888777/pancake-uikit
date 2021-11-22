@@ -291,8 +291,8 @@ var StyledButton = styled__default['default'].button(templateObject_1$17 || (tem
     "\n  ",
     "\n  ", "\n  ", "\n\n  ",
     "\n"])), function (_a) {
-    var round = _a.round;
-    return (round ? '20px' : 'none');
+    var variant = _a.variant;
+    return (variant === 'steel' ? 'none' : '20px');
 }, getOpacity, getDisabledStyles, styledSystem.variant({
     prop: "scale",
     variants: scaleVariants$1,
@@ -300,7 +300,7 @@ var StyledButton = styled__default['default'].button(templateObject_1$17 || (tem
     variants: styleVariants$2,
 }), styledSystem.layout, styledSystem.space, function (_a) {
     var variant = _a.variant, theme = _a.theme;
-    return (variant === 'steel' || variant === 'primary' || variant === 'tertiary')
+    return variant === 'steel'
         && "\n        background: " + theme.colors.gradients.steelGradients + "\n      ";
 });
 var templateObject_1$17;
@@ -2419,7 +2419,7 @@ var ButtonMenuItem = function (_a) {
     if (!isActive) {
         return React__default['default'].createElement(InactiveButton, __assign({ forwardedAs: as, variant: variant }, props));
     }
-    return React__default['default'].createElement(Button, __assign({ as: as, round: true, variant: variant }, props));
+    return React__default['default'].createElement(Button, __assign({ as: as, variant: variant }, props));
 };
 var templateObject_1$Z;
 
@@ -3163,7 +3163,7 @@ var additionalColors = {
     silver: "#B2B2B2",
     bronze: "#E7974D",
 };
-var lightColors = __assign(__assign(__assign({}, baseColors), additionalColors), { background: "#FAF9FA", backgroundDisabled: "#E9EAEB", backgroundAlt: "#000", backgroundAlt2: "rgba(255, 255, 255, 0.7)", cardBorder: "#383838", cardBackground: "#1a1a1a", modalBackground: "#242424", contrast: "#191326", dropdown: "#2d2d2d", dropdownDeep: "#EEEEEE", invertedContrast: "#FFFFFF", input: "#070707", inputSecondary: "#808080", inputBackground: "#070707", tertiary: "grey", text: "#fff", textDisabled: "#BDC2C4", textSubtle: "#999", textCommon: "#fff", textCommonSecond: "#0D0C33B2", textGrey: "#0A1127", disabled: "#E9EAEB", steelBorder: "#585858", gradients: {
+var lightColors = __assign(__assign(__assign({}, baseColors), additionalColors), { background: "#FAF9FA", backgroundDisabled: "#E9EAEB", backgroundAlt: "#000", backgroundAlt2: "rgba(255, 255, 255, 0.7)", cardBorder: "#383838", cardBackground: "#1a1a1a", modalBackground: "#242424", contrast: "#191326", dropdown: "#2d2d2d", dropdownDeep: "#EEEEEE", invertedContrast: "#FFFFFF", input: "#070707", inputSecondary: "#808080", inputBackground: "#070707", tertiary: "#666", text: "#fff", textDisabled: "#BDC2C4", textSubtle: "#999", textCommon: "#fff", textCommonSecond: "#0D0C33B2", textGrey: "#0A1127", disabled: "#E9EAEB", steelBorder: "#585858", gradients: {
         steelGradients: "linear-gradient(90deg, #585858 0%, #202020 100%)",
         modalHeaderGradients: "linear-gradient(90deg, #373737 0%, #323232 100%)",
         cardBorderGradients: "linear-gradient(225deg, #444 0%, #181818 100%)",
@@ -3175,7 +3175,7 @@ var lightColors = __assign(__assign(__assign({}, baseColors), additionalColors),
         violetAlt: "linear-gradient(180deg, #CBD7EF 0%, #9A9FD0 100%)",
         gold: "linear-gradient(180deg, #FFD800 0%, #FDAB32 100%)",
     } });
-var darkColors = __assign(__assign(__assign({}, baseColors), additionalColors), { secondary: "#9A6AFF", background: "#08060B", backgroundDisabled: "#3c3742", backgroundAlt: "#000", backgroundAlt2: "rgba(39, 38, 44, 0.7)", cardBorder: "#383838", cardBackground: "#1a1a1a", modalBackground: "#242424", contrast: "#FFFFFF", dropdown: "#2d2d2d", dropdownDeep: "#100C18", invertedContrast: "#191326", input: "#070707", inputSecondary: "#808080", inputBackground: "#070707", primaryDark: "#0098A1", tertiary: "grey", text: "#fff", textDisabled: "#BDC2C4", textSubtle: "#FAB126", textCommon: "#fff", textCommonSecond: "#FCFCFFB2", textGrey: "#FCFCFF", disabled: "#524B63", steelBorder: "#585858", gradients: {
+var darkColors = __assign(__assign(__assign({}, baseColors), additionalColors), { secondary: "#9A6AFF", background: "#08060B", backgroundDisabled: "#3c3742", backgroundAlt: "#000", backgroundAlt2: "rgba(39, 38, 44, 0.7)", cardBorder: "#383838", cardBackground: "#1a1a1a", modalBackground: "#242424", contrast: "#FFFFFF", dropdown: "#2d2d2d", dropdownDeep: "#100C18", invertedContrast: "#191326", input: "#070707", inputSecondary: "#808080", inputBackground: "#070707", primaryDark: "#0098A1", tertiary: "#666", text: "#fff", textDisabled: "#BDC2C4", textSubtle: "#FAB126", textCommon: "#fff", textCommonSecond: "#FCFCFFB2", textGrey: "#FCFCFF", disabled: "#524B63", steelBorder: "#585858", gradients: {
         steelGradients: "linear-gradient(90deg, #585858 0%, #202020 100%)",
         modalHeaderGradients: "linear-gradient(90deg, #373737 0%, #323232 100%)",
         cardBorderGradients: "linear-gradient(225deg, #444 0%, #181818 100%)",
