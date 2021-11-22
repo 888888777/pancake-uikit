@@ -2487,7 +2487,7 @@ CardHeader.defaultProps = {
 };
 var templateObject_1$W;
 
-var CardFooter = styled__default['default'].div(templateObject_1$V || (templateObject_1$V = __makeTemplateObject(["\n  background: ", "\n  /* border-top: 1px solid ", "; */\n  ", "\n"], ["\n  background: ", "\n  /* border-top: 1px solid ", "; */\n  ", "\n"])), function (_a) {
+var CardFooter = styled__default['default'].div(templateObject_1$V || (templateObject_1$V = __makeTemplateObject(["\n  background: ", ";\n  /* border-top: 1px solid ", "; */\n  ", "\n"], ["\n  background: ", ";\n  /* border-top: 1px solid ", "; */\n  ", "\n"])), function (_a) {
     var theme = _a.theme;
     return (theme.colors.gradients.cardHeader);
 }, function (_a) {
