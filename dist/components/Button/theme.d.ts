@@ -64,4 +64,9 @@ export declare const styleVariants: {
         borderWidth: string;
         color: string;
     };
+    "success-text": {
+        backgroundColor: string;
+        color: string;
+        boxShadow: string;
+    };
 };

@@ -16,6 +16,7 @@ export declare const variants: {
     readonly SUCCESS: "success";
     readonly LIGHT: "light";
     readonly STEEL: "steel";
+    readonly SUCCESS_TEXT: "success-text";
 };
 export declare type Scale = typeof scales[keyof typeof scales];
 export declare type Variant = typeof variants[keyof typeof variants];

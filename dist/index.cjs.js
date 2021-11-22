@@ -194,6 +194,7 @@ var variants$6 = {
     SUCCESS: "success",
     LIGHT: "light",
     STEEL: "steel",
+    SUCCESS_TEXT: "success-text",
 };
 
 var _a$4, _b$3;
@@ -262,6 +263,11 @@ var styleVariants$2 = (_b$3 = {},
         borderColor: "steelBorder",
         borderWidth: "1px",
         color: "text",
+    },
+    _b$3[variants$6.SUCCESS_TEXT] = {
+        backgroundColor: "transparent",
+        color: "success",
+        boxShadow: "none",
     },
     _b$3);
 
@@ -2134,7 +2140,7 @@ ExpandableButton.defaultProps = {
 };
 var ExpandableLabel = function (_a) {
     var onClick = _a.onClick, expanded = _a.expanded, children = _a.children;
-    return (React__default['default'].createElement(Button, { variant: "text", "aria-label": "Hide or show expandable content", onClick: onClick, endIcon: expanded ? React__default['default'].createElement(Icon$1T, { color: "primary" }) : React__default['default'].createElement(Icon$1W, { color: "primary" }) }, children));
+    return (React__default['default'].createElement(Button, { variant: "success-text", "aria-label": "Hide or show expandable content", onClick: onClick, endIcon: expanded ? React__default['default'].createElement(Icon$1T, { color: "success" }) : React__default['default'].createElement(Icon$1W, { color: "success" }) }, children));
 };
 ExpandableLabel.defaultProps = {
     expanded: false,
@@ -2399,9 +2405,14 @@ var ButtonMenu$1 = function (_a) {
 };
 var templateObject_1$_;
 
-var InactiveButton = styled__default['default'](Button)(templateObject_1$Z || (templateObject_1$Z = __makeTemplateObject(["\n  background-color: transparent;\n  color: ", ";\n  &:hover:not(:disabled):not(:active) {\n    background-color: transparent;\n  }\n"], ["\n  background-color: transparent;\n  color: ", ";\n  &:hover:not(:disabled):not(:active) {\n    background-color: transparent;\n  }\n"])), function (_a) {
+var InactiveButton = styled__default['default'](Button)(templateObject_1$Z || (templateObject_1$Z = __makeTemplateObject(["\n  background-color: transparent;\n  color: ", ";\n  &:hover:not(:disabled):not(:active) {\n    background-color: transparent;\n  }\n"], ["\n  background-color: transparent;\n  color: ",
+    ";\n  &:hover:not(:disabled):not(:active) {\n    background-color: transparent;\n  }\n"])), function (_a) {
     var theme = _a.theme, variant = _a.variant;
-    return (variant === variants$6.PRIMARY ? theme.colors.primary : theme.colors.textSubtle);
+    return (variant === variants$6.PRIMARY
+        ? theme.colors.primary
+        : (variant === variants$6.SUCCESS
+            ? theme.colors.success
+            : theme.colors.textSubtle));
 });
 var ButtonMenuItem = function (_a) {
     var _b = _a.isActive, isActive = _b === void 0 ? false : _b, _c = _a.variant, variant = _c === void 0 ? variants$6.PRIMARY : _c, as = _a.as, props = __rest(_a, ["isActive", "variant", "as"]);
@@ -2949,7 +2960,7 @@ var Link = function (_a) {
     return React__default['default'].createElement(StyledLink$1, __assign({ as: "a", bold: true }, internalProps, props));
 };
 Link.defaultProps = {
-    color: "primary",
+    color: "success",
 };
 var templateObject_1$D;
 
@@ -2957,7 +2968,7 @@ var LinkExternal = function (_a) {
     var children = _a.children, props = __rest(_a, ["children"]);
     return (React__default['default'].createElement(Link, __assign({ external: true }, props),
         children,
-        React__default['default'].createElement(Icon$18, { color: props.color ? props.color : "primary", ml: "4px" })));
+        React__default['default'].createElement(Icon$18, { color: props.color ? props.color : "success", ml: "4px" })));
 };
 
 var variants$3 = {
@@ -3138,7 +3149,7 @@ var baseColors = {
     primaryBright: "#fff",
     primaryDark: "#fff",
     secondary: "#6d6d6d",
-    success: "#31D0AA",
+    success: "#1a92cd",
     warning: "#FFB237",
     opened: "#1a92cd",
     greyPrimary: "#666",
@@ -3152,7 +3163,7 @@ var additionalColors = {
     silver: "#B2B2B2",
     bronze: "#E7974D",
 };
-var lightColors = __assign(__assign(__assign({}, baseColors), additionalColors), { background: "#FAF9FA", backgroundDisabled: "#E9EAEB", backgroundAlt: "#000", backgroundAlt2: "rgba(255, 255, 255, 0.7)", cardBorder: "#E7E3EB", cardBackground: "#1a1a1a", modalBackground: "#242424", contrast: "#191326", dropdown: "#F6F6F6", dropdownDeep: "#EEEEEE", invertedContrast: "#FFFFFF", input: "#070707", inputSecondary: "#808080", inputBackground: "#070707", tertiary: "grey", text: "#fff", textDisabled: "#BDC2C4", textSubtle: "#999", textCommon: "#fff", textCommonSecond: "#0D0C33B2", textGrey: "#0A1127", disabled: "#E9EAEB", steelBorder: "#585858", gradients: {
+var lightColors = __assign(__assign(__assign({}, baseColors), additionalColors), { background: "#FAF9FA", backgroundDisabled: "#E9EAEB", backgroundAlt: "#000", backgroundAlt2: "rgba(255, 255, 255, 0.7)", cardBorder: "#E7E3EB", cardBackground: "#1a1a1a", modalBackground: "#242424", contrast: "#191326", dropdown: "#2d2d2d", dropdownDeep: "#EEEEEE", invertedContrast: "#FFFFFF", input: "#070707", inputSecondary: "#808080", inputBackground: "#070707", tertiary: "grey", text: "#fff", textDisabled: "#BDC2C4", textSubtle: "#999", textCommon: "#fff", textCommonSecond: "#0D0C33B2", textGrey: "#0A1127", disabled: "#E9EAEB", steelBorder: "#585858", gradients: {
         steelGradients: "linear-gradient(90deg, #585858 0%, #202020 100%)",
         modalHeaderGradients: "linear-gradient(90deg, #373737 0%, #323232 100%)",
         cardBorderGradients: "linear-gradient(225deg, #444 0%, #181818 100%)",
@@ -3164,7 +3175,7 @@ var lightColors = __assign(__assign(__assign({}, baseColors), additionalColors),
         violetAlt: "linear-gradient(180deg, #CBD7EF 0%, #9A9FD0 100%)",
         gold: "linear-gradient(180deg, #FFD800 0%, #FDAB32 100%)",
     } });
-var darkColors = __assign(__assign(__assign({}, baseColors), additionalColors), { secondary: "#9A6AFF", background: "#08060B", backgroundDisabled: "#3c3742", backgroundAlt: "#000", backgroundAlt2: "rgba(39, 38, 44, 0.7)", cardBorder: "#383241", cardBackground: "#1a1a1a", modalBackground: "#242424", contrast: "#FFFFFF", dropdown: "#1E1D20", dropdownDeep: "#100C18", invertedContrast: "#191326", input: "#070707", inputSecondary: "#808080", inputBackground: "#070707", primaryDark: "#0098A1", tertiary: "grey", text: "#fff", textDisabled: "#666171", textSubtle: "#FAB126", textCommon: "#fff", textCommonSecond: "#FCFCFFB2", textGrey: "#FCFCFF", disabled: "#524B63", steelBorder: "#585858", gradients: {
+var darkColors = __assign(__assign(__assign({}, baseColors), additionalColors), { secondary: "#9A6AFF", background: "#08060B", backgroundDisabled: "#3c3742", backgroundAlt: "#000", backgroundAlt2: "rgba(39, 38, 44, 0.7)", cardBorder: "#383241", cardBackground: "#1a1a1a", modalBackground: "#242424", contrast: "#FFFFFF", dropdown: "#2d2d2d", dropdownDeep: "#100C18", invertedContrast: "#191326", input: "#070707", inputSecondary: "#808080", inputBackground: "#070707", primaryDark: "#0098A1", tertiary: "grey", text: "#fff", textDisabled: "#666171", textSubtle: "#FAB126", textCommon: "#fff", textCommonSecond: "#FCFCFFB2", textGrey: "#FCFCFF", disabled: "#524B63", steelBorder: "#585858", gradients: {
         steelGradients: "linear-gradient(90deg, #585858 0%, #202020 100%)",
         modalHeaderGradients: "linear-gradient(90deg, #373737 0%, #323232 100%)",
         cardBorderGradients: "linear-gradient(225deg, #444 0%, #181818 100%)",
@@ -4315,7 +4326,7 @@ var getOutlineStyles = function (_a) {
     if (outline) {
         var themeColorKey = styleVariants[variantKey].backgroundColor;
         var color = theme.colors[themeColorKey];
-        return "\n      color: " + color + ";\n      background: " + theme.colors.background + ";\n      border: 2px solid " + color + ";\n    ";
+        return "\n      color: " + color + ";\n      background: #242424;\n      border: 2px solid " + color + ";\n    ";
     }
     return "";
 };
