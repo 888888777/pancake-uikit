@@ -253,12 +253,12 @@ var getOpacity = function (_a) {
     var _b = _a.$isLoading, $isLoading = _b === void 0 ? false : _b;
     return $isLoading ? ".5" : "1";
 };
-var StyledButton = styled.button(templateObject_1$17 || (templateObject_1$17 = __makeTemplateObject(["\n  align-items: center;\n  border: 0;\n  /* border-radius: ", "; */\n  box-shadow: 0px -1px 0px 0px rgba(14, 14, 44, 0.4) inset;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  letter-spacing: 0.03em;\n  line-height: 1;\n  opacity: ", ";\n  outline: 0;\n  transition: background-color 0.2s, opacity 0.2s;\n\n  &:hover:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled):not(:active) {\n    opacity: 0.65;\n  }\n\n  &:active:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled) {\n    opacity: 0.85;\n    transform: translateY(1px);\n    box-shadow: none;\n  }\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n\n  ", "\n"], ["\n  align-items: center;\n  border: 0;\n  /* border-radius: ", "; */\n  box-shadow: 0px -1px 0px 0px rgba(14, 14, 44, 0.4) inset;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  letter-spacing: 0.03em;\n  line-height: 1;\n  opacity: ", ";\n  outline: 0;\n  transition: background-color 0.2s, opacity 0.2s;\n\n  &:hover:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled):not(:active) {\n    opacity: 0.65;\n  }\n\n  &:active:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled) {\n    opacity: 0.85;\n    transform: translateY(1px);\n    box-shadow: none;\n  }\n\n  ", "\n  ",
+var StyledButton = styled.button(templateObject_1$17 || (templateObject_1$17 = __makeTemplateObject(["\n  align-items: center;\n  border: 0;\n  border-radius: ", ";\n  box-shadow: 0px -1px 0px 0px rgba(14, 14, 44, 0.4) inset;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  letter-spacing: 0.03em;\n  line-height: 1;\n  opacity: ", ";\n  outline: 0;\n  transition: background-color 0.2s, opacity 0.2s;\n\n  &:hover:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled):not(:active) {\n    opacity: 0.65;\n  }\n\n  &:active:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled) {\n    opacity: 0.85;\n    transform: translateY(1px);\n    box-shadow: none;\n  }\n\n  ", "\n  ", "\n  ", "\n  ", "\n  ", "\n\n  ", "\n"], ["\n  align-items: center;\n  border: 0;\n  border-radius: ", ";\n  box-shadow: 0px -1px 0px 0px rgba(14, 14, 44, 0.4) inset;\n  cursor: pointer;\n  display: inline-flex;\n  font-family: inherit;\n  font-size: 16px;\n  font-weight: 600;\n  justify-content: center;\n  letter-spacing: 0.03em;\n  line-height: 1;\n  opacity: ", ";\n  outline: 0;\n  transition: background-color 0.2s, opacity 0.2s;\n\n  &:hover:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled):not(:active) {\n    opacity: 0.65;\n  }\n\n  &:active:not(:disabled):not(.pancake-button--disabled):not(.pancake-button--disabled) {\n    opacity: 0.85;\n    transform: translateY(1px);\n    box-shadow: none;\n  }\n\n  ", "\n  ",
     "\n  ",
     "\n  ", "\n  ", "\n\n  ",
     "\n"])), function (_a) {
-    var variant = _a.variant;
-    return (variant === 'steel' ? 'none' : '20px');
+    var round = _a.round;
+    return (round ? '20px' : 'none');
 }, getOpacity, getDisabledStyles, variant$1({
     prop: "scale",
     variants: scaleVariants$1,
@@ -266,7 +266,7 @@ var StyledButton = styled.button(templateObject_1$17 || (templateObject_1$17 = _
     variants: styleVariants$2,
 }), layout, space, function (_a) {
     var variant = _a.variant, theme = _a.theme;
-    return variant === 'steel'
+    return (variant === 'steel' || variant === 'primary' || variant === 'tertiary')
         && "\n        background: " + theme.colors.gradients.steelGradients + "\n      ";
 });
 var templateObject_1$17;
@@ -2385,7 +2385,7 @@ var ButtonMenuItem = function (_a) {
     if (!isActive) {
         return React__default.createElement(InactiveButton, __assign({ forwardedAs: as, variant: variant }, props));
     }
-    return React__default.createElement(Button, __assign({ as: as, variant: variant }, props));
+    return React__default.createElement(Button, __assign({ as: as, round: true, variant: variant }, props));
 };
 var templateObject_1$Z;
 
