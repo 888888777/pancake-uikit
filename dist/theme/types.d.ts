@@ -51,7 +51,9 @@ export declare type Colors = {
     inputSecondary: string;
     inputBackground: string;
     background: string;
+    backgroundMenuItem: string;
     backgroundDisabled: string;
+    backgroundToggleInactive: string;
     backgroundAlt: string;
     backgroundAlt2: string;
     text: string;
@@ -67,6 +69,7 @@ export declare type Colors = {
     gold: string;
     silver: string;
     bronze: string;
+    selected: string;
 };
 export declare type ZIndices = {
     dropdown: number;

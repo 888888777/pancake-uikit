@@ -61,6 +61,8 @@ export { default as LogoExabcWhiteIcon } from "./Icons/LogoExabcWhite";
 export { default as LogoWithTextIcon } from "./Icons/LogoWithText";
 export { default as LogoRoundIcon } from "./Icons/LogoRound";
 export { default as MathWalletIcon } from "./Icons/MathWallet";
+export { default as MediumIcon } from "./Icons/Medium";
+export { default as DiscordIcon } from "./Icons/Discord";
 export { default as LogoutIcon } from "./Icons/Logout";
 export { default as MarketValueIcon } from "./Icons/MarketValue";
 export { default as MedalBronzeIcon } from "./Icons/MedalBronze";
