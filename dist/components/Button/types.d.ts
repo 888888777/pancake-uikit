@@ -8,6 +8,7 @@ export declare const scales: {
 };
 export declare const variants: {
     readonly PRIMARY: "primary";
+    readonly SWITCH: "switch";
     readonly SECONDARY: "secondary";
     readonly TERTIARY: "tertiary";
     readonly TEXT: "text";

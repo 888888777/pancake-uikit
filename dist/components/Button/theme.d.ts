@@ -18,6 +18,10 @@ export declare const styleVariants: {
         backgroundColor: string;
         color: string;
     };
+    switch: {
+        backgroundColor: string;
+        color: string;
+    };
     secondary: {
         backgroundColor: string;
         border: string;

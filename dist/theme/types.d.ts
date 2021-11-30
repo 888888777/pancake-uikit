@@ -52,6 +52,7 @@ export declare type Colors = {
     inputBackground: string;
     background: string;
     backgroundMenuItem: string;
+    backgroundMenuItemSecondary: string;
     backgroundDisabled: string;
     backgroundToggleInactive: string;
     backgroundAlt: string;
