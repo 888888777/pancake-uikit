@@ -49,19 +49,13 @@ export declare type Colors = {
     invertedContrast: string;
     input: string;
     inputSecondary: string;
-    inputBackground: string;
     background: string;
-    backgroundMenuItem: string;
     backgroundDisabled: string;
-    backgroundToggleInactive: string;
     backgroundAlt: string;
     backgroundAlt2: string;
     text: string;
     textDisabled: string;
     textSubtle: string;
-    textCommon: string;
-    textCommonSecond: string;
-    textGrey: string;
     disabled: string;
     gradients: Gradients;
     binance: string;
@@ -69,7 +63,6 @@ export declare type Colors = {
     gold: string;
     silver: string;
     bronze: string;
-    selected: string;
 };
 export declare type ZIndices = {
     dropdown: number;
