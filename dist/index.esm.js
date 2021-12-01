@@ -3727,8 +3727,9 @@ var templateObject_1$q, templateObject_2$h;
 
 var MenuItem$1 = function (_a) {
     var children = _a.children, href = _a.href, _b = _a.isActive, isActive = _b === void 0 ? false : _b, _c = _a.isMain, isMain = _c === void 0 ? false : _c, _d = _a.variant, variant = _d === void 0 ? "default" : _d, statusColor = _a.statusColor, props = __rest(_a, ["children", "href", "isActive", "isMain", "variant", "statusColor"]);
-    return (React__default.createElement(StyledMenuItemContainer, { "$isActive": isActive, "$variant": variant },
-        React__default.createElement(StyledMenuItem, __assign({ "$isMain": isMain, as: Link$1, to: href, "$isActive": isActive, "$variant": variant, "$statusColor": statusColor }, props), children)));
+    return (React__default.createElement(StyledMenuItemContainer, { "$isActive": isActive, "$variant": variant }, href.indexOf('http') > -1
+        ? (React__default.createElement(StyledMenuItem, __assign({ "$isMain": isMain, as: "a", target: "_blank", href: href, "$isActive": isActive, "$variant": variant, "$statusColor": statusColor }, props), children))
+        : (React__default.createElement(StyledMenuItem, __assign({ "$isMain": isMain, as: Link$1, to: href, "$isActive": isActive, "$variant": variant, "$statusColor": statusColor }, props), children))));
 };
 
 var Icons$1 = IconModule;
