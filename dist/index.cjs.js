@@ -5354,7 +5354,6 @@ var Logo = function (_a) {
     var imgUrl = _a.imgUrl, href = _a.href;
     var isAbsoluteUrl = href.startsWith("http");
     var innerLogo = (React__default['default'].createElement(React__default['default'].Fragment, null,
-        React__default['default'].createElement(StyledLogoImage, { className: "mobile-icon", src: imgUrl }),
         React__default['default'].createElement(StyledLogoImage, { className: "desktop-icon", src: imgUrl })));
     return (React__default['default'].createElement(Flex, null, isAbsoluteUrl ? (React__default['default'].createElement(StyledLink, { as: "a", href: href, "aria-label": "Pancake home page" }, innerLogo)) : (React__default['default'].createElement(StyledLink, { to: href, "aria-label": "Pancake home page" }, innerLogo))));
 };
