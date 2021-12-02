@@ -3373,7 +3373,7 @@ var StyledMenuItemContainer = styled.div(templateObject_1$q || (templateObject_1
     var $isActive = _a.$isActive, $variant = _a.$variant; _a.theme;
     return $isActive &&
         $variant === "subMenu" &&
-        "\n      &:before{\n        content: \"\";\n        position: absolute;\n        bottom: 0;\n        height: 4px;\n        width: 100%;\n        background-color: \"#24262e\";\n        border-radius: 2px 2px 0 0;\n      }\n    ";
+        "\n      &:before{\n        content: \"\";\n        position: absolute;\n        bottom: 0;\n        height: 4px;\n        width: 100%;\n        background-color: #24262e;\n        border-radius: 2px;\n      }\n    ";
 });
 var StyledMenuItem = styled.a(templateObject_2$h || (templateObject_2$h = __makeTemplateObject(["\n  position: relative;\n  display: flex;\n  align-items: center;\n\n  color: ", ";\n  font-size: 16px;\n  font-weight: ", ";\n\n  ", "\n\n  ", "\n\n  &:hover {\n    background: ", ";\n    ", ";\n  }\n"], ["\n  position: relative;\n  display: flex;\n  align-items: center;\n\n  color: ", ";\n  font-size: 16px;\n  font-weight: ", ";\n\n  ",
     "\n\n  ",
