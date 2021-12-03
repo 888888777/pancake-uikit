@@ -3129,7 +3129,7 @@ var additionalColors = {
     silver: "#B2B2B2",
     bronze: "#E7974D",
 };
-var lightColors = __assign(__assign(__assign({}, baseColors), additionalColors), { background: "#FAF9FA", backgroundDisabled: "#E9EAEB", backgroundAlt: "#000", backgroundAlt2: "rgba(255, 255, 255, 0.7)", cardBorder: "#383838", cardBackground: "#1a1a1a", modalBackground: "#242424", contrast: "#191326", dropdown: "#2d2d2d", dropdownDeep: "#EEEEEE", invertedContrast: "#FFFFFF", input: "#070707", inputSecondary: "#808080", inputBackground: "#070707", tertiary: "#333", text: "#fff", textDisabled: "#666", textSubtle: "#999", textCommon: "#fff", textCommonSecond: "#0D0C33B2", textGrey: "#0A1127", disabled: "#E9EAEB", steelBorder: "#585858", gradients: {
+var lightColors = __assign(__assign(__assign({}, baseColors), additionalColors), { background: "#545454", backgroundDisabled: "#E9EAEB", backgroundAlt: "#000", backgroundAlt2: "rgba(255, 255, 255, 0.7)", cardBorder: "#383838", cardBackground: "#1a1a1a", modalBackground: "#242424", contrast: "#191326", dropdown: "#2d2d2d", dropdownDeep: "#EEEEEE", invertedContrast: "#FFFFFF", input: "#070707", inputSecondary: "#808080", inputBackground: "#070707", tertiary: "#333", text: "#fff", textDisabled: "#666", textSubtle: "#999", textCommon: "#fff", textCommonSecond: "#0D0C33B2", textGrey: "#0A1127", disabled: "#E9EAEB", steelBorder: "#585858", gradients: {
         steelGradients: "linear-gradient(90deg, #585858 0%, #202020 100%)",
         modalHeaderGradients: "linear-gradient(90deg, #373737 0%, #323232 100%)",
         cardBorderGradients: "linear-gradient(225deg, #444 0%, #181818 100%)",
