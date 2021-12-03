@@ -226,8 +226,8 @@ var styleVariants$2 = (_b$3 = {},
     },
     _b$3[variants$6.STEEL] = {
         boxShadow: "none",
-        borderColor: "steelBorder",
-        borderWidth: "1px",
+        // borderColor: "steelBorder",
+        // borderWidth: "1px",
         color: "text",
     },
     _b$3[variants$6.SUCCESS_TEXT] = {
@@ -267,7 +267,7 @@ var StyledButton = styled.button(templateObject_1$17 || (templateObject_1$17 = _
 }), layout, space, function (_a) {
     var variant = _a.variant, theme = _a.theme;
     return variant === 'steel'
-        && "\n        background: " + theme.colors.gradients.steelGradients + "\n      ";
+        && "\n        background: " + theme.colors.gradients.steelGradients + ";\n        border: 1px solid " + theme.colors.steelBorder + ";\n      ";
 });
 var templateObject_1$17;
 

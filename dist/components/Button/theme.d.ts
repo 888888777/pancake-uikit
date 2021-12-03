@@ -60,8 +60,6 @@ export declare const styleVariants: {
     };
     steel: {
         boxShadow: string;
-        borderColor: string;
-        borderWidth: string;
         color: string;
     };
     "success-text": {
