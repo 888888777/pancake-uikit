@@ -4922,7 +4922,7 @@ var LangSelector = function (_a) {
 var LangSelector$1 = React__default.memo(LangSelector, function (prev, next) { return prev.currentLang === next.currentLang; });
 
 var MenuItem = function (_a) {
-    var items = _a.items; _a.isDark; _a.toggleTheme; var currentLang = _a.currentLang, langs = _a.langs, setLang = _a.setLang; _a.cakePriceUsd; _a.buyCakeLabel; var props = __rest(_a, ["items", "isDark", "toggleTheme", "currentLang", "langs", "setLang", "cakePriceUsd", "buyCakeLabel"]);
+    var items = _a.items; _a.isDark; _a.toggleTheme; var currentLang = _a.currentLang, langs = _a.langs, setLang = _a.setLang; _a.cakePriceUsd; _a.buyCakeLabel; var addEcoNet = _a.addEcoNet, props = __rest(_a, ["items", "isDark", "toggleTheme", "currentLang", "langs", "setLang", "cakePriceUsd", "buyCakeLabel", "addEcoNet"]);
     return (React__default.createElement(StyledFooter, __assign({ p: ["40px 16px", null, "56px 40px 32px 40px"] }, props, { justifyContent: "center" }),
         React__default.createElement(Flex, { flexDirection: "column", width: ["100%", null, "1200px;"] },
             React__default.createElement(StyledIconMobileContainer, { display: ["block", null, "none"] },
@@ -4943,6 +4943,7 @@ var MenuItem = function (_a) {
                 React__default.createElement(StyledSocialLinks, { order: [3] }),
                 React__default.createElement(StyledToolsContainer, { order: [1, null, 1], justifyContent: "space-between" },
                     React__default.createElement(Flex, { order: [2, null, 1], alignItems: "center" },
+                        React__default.createElement("button", { type: "button", onClick: addEcoNet }, "\u6DFB\u52A0eco\u7F51\u7EDC"),
                         React__default.createElement(LangSelector$1, { currentLang: currentLang, langs: langs, setLang: setLang, color: lightColors.textSubtle, dropdownPosition: "top-right" })),
                     React__default.createElement(Flex, { order: [1, null, 2], mb: ["24px", null, "0"], justifyContent: "space-between", alignItems: "center" }))))));
 };
@@ -5158,7 +5159,7 @@ var Gate = styled.div(templateObject_5 || (templateObject_5 = __makeTemplateObje
 var Inner = styled.div(templateObject_6 || (templateObject_6 = __makeTemplateObject(["\n  flex-grow: 1;\n  transition: margin-top 0.2s, margin-left 0.2s cubic-bezier(0.4, 0, 0.2, 1);\n  transform: translate3d(0, 0, 0);\n  max-width: 100%;\n"], ["\n  flex-grow: 1;\n  transition: margin-top 0.2s, margin-left 0.2s cubic-bezier(0.4, 0, 0.2, 1);\n  transform: translate3d(0, 0, 0);\n  max-width: 100%;\n"])));
 var Menu$1 = function (_a) {
     var _b;
-    var userMenu = _a.userMenu, globalMenu = _a.globalMenu, isDark = _a.isDark, toggleTheme = _a.toggleTheme, currentLang = _a.currentLang, setLang = _a.setLang, cakePriceUsd = _a.cakePriceUsd, links = _a.links, subLinks = _a.subLinks, footerLinks = _a.footerLinks, activeItem = _a.activeItem, activeSubItem = _a.activeSubItem, langs = _a.langs, buyCakeLabel = _a.buyCakeLabel, children = _a.children;
+    var userMenu = _a.userMenu, globalMenu = _a.globalMenu, isDark = _a.isDark, toggleTheme = _a.toggleTheme, currentLang = _a.currentLang, setLang = _a.setLang, cakePriceUsd = _a.cakePriceUsd, links = _a.links, subLinks = _a.subLinks, footerLinks = _a.footerLinks, activeItem = _a.activeItem, activeSubItem = _a.activeSubItem, langs = _a.langs, buyCakeLabel = _a.buyCakeLabel, addEcoNet = _a.addEcoNet, children = _a.children;
     var isMobile = useMatchBreakpoints().isMobile;
     var _c = useState(true), showMenu = _c[0], setShowMenu = _c[1];
     var refPrevOffset = useRef(window.pageYOffset);
@@ -5213,7 +5214,7 @@ var Menu$1 = function (_a) {
         React__default.createElement(BodyWrapper, { mt: !subLinks ? MENU_HEIGHT + 1 + "px" : "0" },
             React__default.createElement(Inner, { isPushed: false, showMenu: showMenu },
                 children,
-                React__default.createElement(MenuItem, { items: footerLinks, isDark: isDark, toggleTheme: toggleTheme, langs: langs, setLang: setLang, currentLang: currentLang, cakePriceUsd: cakePriceUsd, buyCakeLabel: buyCakeLabel, mb: [MOBILE_MENU_HEIGHT + "px", null, "0px"] }))),
+                React__default.createElement(MenuItem, { items: footerLinks, isDark: isDark, toggleTheme: toggleTheme, langs: langs, setLang: setLang, currentLang: currentLang, cakePriceUsd: cakePriceUsd, buyCakeLabel: buyCakeLabel, addEcoNet: addEcoNet, mb: [MOBILE_MENU_HEIGHT + "px", null, "0px"] }))),
         isMobile && React__default.createElement(BottomNav, { items: links, activeItem: activeItem, activeSubItem: activeSubItem })));
 };
 var templateObject_1$7, templateObject_2$4, templateObject_3$1, templateObject_4, templateObject_5, templateObject_6;

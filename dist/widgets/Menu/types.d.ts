@@ -27,4 +27,5 @@ export interface NavProps {
     buyCakeLabel: string;
     langs: Language[];
     setLang: (lang: Language) => void;
+    addEcoNet: () => {};
 }
