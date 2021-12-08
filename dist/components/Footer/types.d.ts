@@ -18,4 +18,5 @@ export declare type FooterProps = {
     langs: Language[];
     setLang: (lang: Language) => void;
     addEcoNet: () => {};
+    addEcoNetLabel: string;
 } & FlexProps;

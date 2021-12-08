@@ -28,4 +28,5 @@ export interface NavProps {
     langs: Language[];
     setLang: (lang: Language) => void;
     addEcoNet: () => {};
+    addEcoNetLabel: string;
 }
