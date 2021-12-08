@@ -4922,12 +4922,12 @@ var SocialLinks = function (_a) {
 };
 var SocialLinks$1 = React__default['default'].memo(SocialLinks, function () { return true; });
 
-var StyledFooter = styled__default['default'](Flex)(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  background: ", ";\n"], ["\n  background: ", ";\n"])), darkColors.backgroundAlt);
+var StyledFooter = styled__default['default'](Flex)(templateObject_1$a || (templateObject_1$a = __makeTemplateObject(["\n  background: ", ";\n  .addEcoNet {\n    background-color: rgba(255, 255, 255, .1);\n  }\n"], ["\n  background: ", ";\n  .addEcoNet {\n    background-color: rgba(255, 255, 255, .1);\n  }\n"])), darkColors.backgroundAlt);
 var StyledList = styled__default['default'].ul(templateObject_2$6 || (templateObject_2$6 = __makeTemplateObject(["\n  list-style: none;\n  margin-bottom: 40px;\n\n  ", " {\n    margin-bottom: 0px;\n  }\n"], ["\n  list-style: none;\n  margin-bottom: 40px;\n\n  ", " {\n    margin-bottom: 0px;\n  }\n"])), function (_a) {
     var theme = _a.theme;
     return theme.mediaQueries.md;
 });
-var StyledListItem = styled__default['default'].li(templateObject_3$2 || (templateObject_3$2 = __makeTemplateObject(["\n  font-size: 16px;\n  margin-bottom: 8px;\n  text-transform: capitalize;\n\n  &:first-child {\n    color: #CA952F;\n    font-weight: 600;\n    text-transform: uppercase;\n  }\n"], ["\n  font-size: 16px;\n  margin-bottom: 8px;\n  text-transform: capitalize;\n\n  &:first-child {\n    color: #CA952F;\n    font-weight: 600;\n    text-transform: uppercase;\n  }\n"])));
+var StyledListItem = styled__default['default'].li(templateObject_3$2 || (templateObject_3$2 = __makeTemplateObject(["\n  font-size: 16px;\n  margin-bottom: 8px;\n  text-transform: capitalize;\n\n  &:first-child {\n    color: #FAB126;\n    font-weight: 600;\n    text-transform: uppercase;\n  }\n"], ["\n  font-size: 16px;\n  margin-bottom: 8px;\n  text-transform: capitalize;\n\n  &:first-child {\n    color: #FAB126;\n    font-weight: 600;\n    text-transform: uppercase;\n  }\n"])));
 var StyledIconMobileContainer = styled__default['default'](Box)(templateObject_4$1 || (templateObject_4$1 = __makeTemplateObject(["\n  margin-bottom: 24px;\n"], ["\n  margin-bottom: 24px;\n"])));
 var StyledToolsContainer = styled__default['default'](Flex)(templateObject_5$1 || (templateObject_5$1 = __makeTemplateObject(["\n  border-color: ", ";\n  /* border-top-width: 1px;\n  border-bottom-width: 1px; */\n  border-style: solid;\n  padding: 24px 0;\n  margin-bottom: 24px;\n\n  ", " {\n    border-top-width: 0;\n    border-bottom-width: 0;\n    padding: 0 0;\n    margin-bottom: 0;\n  }\n"], ["\n  border-color: ", ";\n  /* border-top-width: 1px;\n  border-bottom-width: 1px; */\n  border-style: solid;\n  padding: 24px 0;\n  margin-bottom: 24px;\n\n  ", " {\n    border-top-width: 0;\n    border-bottom-width: 0;\n    padding: 0 0;\n    margin-bottom: 0;\n  }\n"])), darkColors.cardBorder, function (_a) {
     var theme = _a.theme;
@@ -4968,7 +4968,7 @@ var MenuItem = function (_a) {
                         React__default['default'].createElement(StyledListItem, null, item.label), (_a = item.items) === null || _a === void 0 ? void 0 :
                         _a.map(function (_a) {
                             var label = _a.label, href = _a.href, _b = _a.isHighlighted, isHighlighted = _b === void 0 ? false : _b;
-                            return (React__default['default'].createElement(StyledListItem, { key: label }, href ? (React__default['default'].createElement(Link, { href: href, target: "_blank", rel: "noreferrer noopener", color: isHighlighted ? baseColors.warning : darkColors.text, bold: false }, label)) : (React__default['default'].createElement(StyledText, null, label))));
+                            return (React__default['default'].createElement(StyledListItem, { key: label }, href ? (React__default['default'].createElement(Link, { href: href, target: "_blank", rel: "noreferrer noopener", color: isHighlighted ? baseColors.warning : "#d0d0d0", bold: false }, label)) : (React__default['default'].createElement(StyledText, null, label))));
                         })));
                 }),
                 React__default['default'].createElement(Box, { display: ["none", null, "block"] },
@@ -4977,7 +4977,7 @@ var MenuItem = function (_a) {
                 React__default['default'].createElement(StyledSocialLinks, { order: [3] }),
                 React__default['default'].createElement(StyledToolsContainer, { order: [1, null, 1], justifyContent: "space-between" },
                     React__default['default'].createElement(Flex, { order: [2, null, 1], alignItems: "center" },
-                        React__default['default'].createElement(Button, { variant: "primary", scale: "sm", startIcon: React__default['default'].createElement(Icon$1h, null), type: "button", onClick: addEcoNet }, addEcoNetLabel),
+                        React__default['default'].createElement(Button, { className: "addEcoNet", variant: "primary", scale: "sm", startIcon: React__default['default'].createElement(Icon$1h, null), type: "button", onClick: addEcoNet }, addEcoNetLabel),
                         React__default['default'].createElement(LangSelector$1, { currentLang: currentLang, langs: langs, setLang: setLang, color: lightColors.textSubtle, dropdownPosition: "top-right" })),
                     React__default['default'].createElement(Flex, { order: [1, null, 2], mb: ["24px", null, "0"], justifyContent: "space-between", alignItems: "center" }))))));
 };
