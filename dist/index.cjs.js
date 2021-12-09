@@ -5428,7 +5428,7 @@ var links = [
     },
     {
         label: "Win",
-        href: "http://www.baidu.com",
+        href: "https://www.google.com",
         icon: "Trophy",
         items: [],
     },
