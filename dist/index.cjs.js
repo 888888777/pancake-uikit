@@ -3163,7 +3163,7 @@ var additionalColors = {
     silver: "#B2B2B2",
     bronze: "#E7974D",
 };
-var lightColors = __assign(__assign(__assign({}, baseColors), additionalColors), { background: "#545454", backgroundDisabled: "#E9EAEB", backgroundAlt: "#000", backgroundAlt2: "rgba(255, 255, 255, 0.7)", cardBorder: "#383838", cardBackground: "#1a1a1a", modalBackground: "#242424", contrast: "#191326", dropdown: "#2d2d2d", dropdownDeep: "#EEEEEE", invertedContrast: "#FFFFFF", input: "#070707", inputSecondary: "#808080", inputBackground: "#070707", tertiary: "#333", text: "#fff", textDisabled: "#666", textSubtle: "#999", textCommon: "#fff", textCommonSecond: "#0D0C33B2", textGrey: "#0A1127", disabled: "#E9EAEB", steelBorder: "#585858", gradients: {
+var lightColors = __assign(__assign(__assign({}, baseColors), additionalColors), { background: "#545454", backgroundDisabled: "#E9EAEB", backgroundAlt: "#000", backgroundAlt2: "rgba(255, 255, 255, 0.7)", cardBorder: "#383838", cardBackground: "#1a1a1a", modalBackground: "#242424", contrast: "#191326", dropdown: "#2d2d2d", dropdownDeep: "#EEEEEE", invertedContrast: "#1A1A1A", input: "#070707", inputSecondary: "#808080", inputBackground: "#070707", tertiary: "#333", text: "#fff", textDisabled: "#666", textSubtle: "#999", textCommon: "#fff", textCommonSecond: "#0D0C33B2", textGrey: "#0A1127", disabled: "#E9EAEB", steelBorder: "#585858", gradients: {
         steelGradients: "linear-gradient(90deg, #585858 0%, #202020 100%)",
         modalHeaderGradients: "linear-gradient(90deg, #373737 0%, #323232 100%)",
         cardBorderGradients: "linear-gradient(225deg, #444 0%, #181818 100%)",
@@ -3175,7 +3175,7 @@ var lightColors = __assign(__assign(__assign({}, baseColors), additionalColors),
         violetAlt: "linear-gradient(180deg, #CBD7EF 0%, #9A9FD0 100%)",
         gold: "linear-gradient(180deg, #FFD800 0%, #FDAB32 100%)",
     } });
-var darkColors = __assign(__assign(__assign({}, baseColors), additionalColors), { secondary: "#9A6AFF", background: "#08060B", backgroundDisabled: "#3c3742", backgroundAlt: "#000", backgroundAlt2: "rgba(39, 38, 44, 0.7)", cardBorder: "#383838", cardBackground: "#1a1a1a", modalBackground: "#242424", contrast: "#FFFFFF", dropdown: "#2d2d2d", dropdownDeep: "#100C18", invertedContrast: "#191326", input: "#070707", inputSecondary: "#808080", inputBackground: "#070707", primaryDark: "#0098A1", tertiary: "#333", text: "#fff", textDisabled: "#666", textSubtle: "#FAB126", textCommon: "#fff", textCommonSecond: "#FCFCFFB2", textGrey: "#FCFCFF", disabled: "#524B63", steelBorder: "#585858", gradients: {
+var darkColors = __assign(__assign(__assign({}, baseColors), additionalColors), { secondary: "#9A6AFF", background: "#08060B", backgroundDisabled: "#3c3742", backgroundAlt: "#000", backgroundAlt2: "rgba(39, 38, 44, 0.7)", cardBorder: "#383838", cardBackground: "#1a1a1a", modalBackground: "#242424", contrast: "#FFFFFF", dropdown: "#2d2d2d", dropdownDeep: "#100C18", invertedContrast: "#1A1A1A", input: "#070707", inputSecondary: "#808080", inputBackground: "#070707", primaryDark: "#0098A1", tertiary: "#333", text: "#fff", textDisabled: "#666", textSubtle: "#FAB126", textCommon: "#fff", textCommonSecond: "#FCFCFFB2", textGrey: "#FCFCFF", disabled: "#524B63", steelBorder: "#585858", gradients: {
         steelGradients: "linear-gradient(90deg, #585858 0%, #202020 100%)",
         modalHeaderGradients: "linear-gradient(90deg, #373737 0%, #323232 100%)",
         cardBorderGradients: "linear-gradient(225deg, #444 0%, #181818 100%)",
@@ -3761,9 +3761,12 @@ var templateObject_1$q, templateObject_2$h;
 
 var MenuItem$1 = function (_a) {
     var children = _a.children, href = _a.href, _b = _a.isActive, isActive = _b === void 0 ? false : _b, _c = _a.isMain, isMain = _c === void 0 ? false : _c, _d = _a.variant, variant = _d === void 0 ? "default" : _d, statusColor = _a.statusColor, props = __rest(_a, ["children", "href", "isActive", "isMain", "variant", "statusColor"]);
-    return (React__default['default'].createElement(StyledMenuItemContainer, { "$isActive": isActive, "$variant": variant }, href.indexOf('http') > -1
-        ? (React__default['default'].createElement(StyledMenuItem, __assign({ "$isMain": isMain, as: "a", target: "_blank", href: href, "$isActive": isActive, "$variant": variant, "$statusColor": statusColor }, props), children))
-        : (React__default['default'].createElement(StyledMenuItem, __assign({ "$isMain": isMain, as: reactRouterDom.Link, to: href, "$isActive": isActive, "$variant": variant, "$statusColor": statusColor }, props), children))));
+    var isAbsoluteUrl = href.startsWith("http");
+    return (React__default['default'].createElement(StyledMenuItemContainer, { "$isActive": isActive, "$variant": variant }, href === 'none'
+        ? (React__default['default'].createElement(StyledMenuItem, __assign({ "$isMain": isMain, as: "div", "$variant": variant, "$statusColor": statusColor }, props), children))
+        : (isAbsoluteUrl
+            ? (React__default['default'].createElement(StyledMenuItem, __assign({ "$isMain": isMain, as: "a", target: "_blank", href: href, "$isActive": isActive, "$variant": variant, "$statusColor": statusColor }, props), children))
+            : (React__default['default'].createElement(StyledMenuItem, __assign({ "$isMain": isMain, as: reactRouterDom.Link, to: href, "$isActive": isActive, "$variant": variant, "$statusColor": statusColor }, props), children)))));
 };
 
 var Icons$1 = IconModule;
@@ -5437,7 +5440,7 @@ var links = [
     },
     {
         label: "",
-        href: "/",
+        href: "none",
         icon: "More",
         items: [
             {
