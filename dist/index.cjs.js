@@ -4974,7 +4974,9 @@ var BottomNavItem = function (_a) {
     var isAbsoluteUrl = href.startsWith("http");
     var bottomNavItemContent = (React__default['default'].createElement(Flex, { flexDirection: "column", justifyContent: "center", alignItems: "center", height: "100%" },
         iconName && (React__default['default'].createElement(AnimatedIconComponent, { iconName: iconName, height: "22px", width: "21px", color: isActive ? "primary" : "primary", activeColor: "primary", isActive: isActive, activeBackgroundColor: "backgroundAlt" })),
-        React__default['default'].createElement(StyledBottomNavText, { color: isActive ? "primary" : "primary", fontWeight: isActive ? "600" : "400", fontSize: "10px" }, label)));
+        React__default['default'].createElement(StyledBottomNavText, { color: isActive ? "primary" : "primary", fontWeight: isActive ? "600" : "400", fontSize: "10px" },
+            href,
+            label)));
     return showItemsOnMobile ? (isAbsoluteUrl
         ? (React__default['default'].createElement(StyledBottomNavItemAsA, __assign({ as: "a", href: href, target: "_blank" }, props), bottomNavItemContent))
         : (React__default['default'].createElement(StyledBottomNavItem, __assign({ type: "button" }, props), bottomNavItemContent)))
